@@ -2,6 +2,7 @@
 
 from typing import Any, Dict, List
 
+import numpy as np
 from fastapi import APIRouter, HTTPException
 
 from pathlib import Path
@@ -241,3 +242,63 @@ def _extract_vector(props: Dict, key: str, default: List[float]) -> List[float]:
         except (ValueError, TypeError):
             return default
     return default
+
+
+@router.get("/contour/{item_id}")
+async def get_contour(item_id: int, mode: int = 7, component: str = "magnitude"):
+    """Get contour color data for a FEM part's mode shape."""
+    doc = get_document()
+    item = doc.find_item(item_id)
+    if item is None:
+        raise HTTPException(404, f"Item {item_id} not found")
+
+    mnf_file = item.properties.get("_mnf_file", "")
+    if not mnf_file:
+        raise HTTPException(400, "Item has no MNF file")
+
+    from ..visualization.mnf_parser import parse_mnf_xml
+    from ..visualization.contour import scalar_to_vertex_colors, generate_legend_data
+
+    mnf_data = parse_mnf_xml(str(mnf_file))
+    if mnf_data["mode_shapes"] is None or mode not in mnf_data["mode_shapes"]:
+        raise HTTPException(400, f"Mode {mode} not available")
+
+    shape = mnf_data["mode_shapes"][mode]  # (num_nodes, 6): dx,dy,dz,ax,ay,az
+    comp_map = {"dx": 0, "dy": 1, "dz": 2, "ax": 3, "ay": 4, "az": 5}
+    if component == "magnitude":
+        values = np.sqrt(shape[:, 0]**2 + shape[:, 1]**2 + shape[:, 2]**2)
+    elif component in comp_map:
+        values = shape[:, comp_map[component]]
+    else:
+        raise HTTPException(400, f"Unknown component: {component}")
+
+    color_data = scalar_to_vertex_colors(values)
+    legend = generate_legend_data(color_data["vmin"], color_data["vmax"])
+
+    return {
+        "colors": color_data["colors"],
+        "vmin": color_data["vmin"],
+        "vmax": color_data["vmax"],
+        "legend": legend,
+        "mode": mode,
+        "component": component,
+    }
+
+
+@router.get("/modes/{item_id}")
+async def get_modes(item_id: int):
+    """List available modes for a FEM part."""
+    doc = get_document()
+    item = doc.find_item(item_id)
+    if item is None:
+        raise HTTPException(404, f"Item {item_id} not found")
+    mnf_file = item.properties.get("_mnf_file", "")
+    if not mnf_file:
+        return {"modes": []}
+    from ..visualization.mnf_parser import parse_mnf_xml
+    try:
+        mnf_data = parse_mnf_xml(str(mnf_file))
+        modes = sorted(mnf_data["mode_shapes"].keys()) if mnf_data["mode_shapes"] else []
+        return {"modes": modes}
+    except Exception:
+        return {"modes": []}
