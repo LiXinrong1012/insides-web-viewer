@@ -1,0 +1,7 @@
+a001    Assembly,子结构
+a002    Assembly instance, 子结构实例
+a003    Parameter, 参数
+a004    RigidPart, 刚体
+a005    RigidPart instance, 刚体实例
+a006    FEMPart, 柔性体
+a007    FEMPart instance, 柔性体实例

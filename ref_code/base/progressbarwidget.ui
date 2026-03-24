@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProgressBarWidgetClass</class>
+ <widget class="QWidget" name="ProgressBarWidgetClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>494</width>
+    <height>60</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ProgressBarWidget</string>
+  </property>
+  <layout class="QVBoxLayout" name="PBWVerticalLayout">
+   <item>
+    <widget class="QLabel" name="_PBWDisplayText">
+     <property name="text">
+      <string>Loading</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QProgressBar" name="_PBWProgressBar">
+     <property name="value">
+      <number>0</number>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

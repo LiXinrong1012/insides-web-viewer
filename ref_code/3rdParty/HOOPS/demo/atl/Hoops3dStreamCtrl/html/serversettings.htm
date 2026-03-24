@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Developer Studio">
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1">
+<TITLE>Server Settings</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function setupParameters()
+{
+	parent.opener.ServerAddress = serveraddress.value
+	parent.opener.ServerPort = serverport.value
+	parent.opener.AccessPassword = accesspassword.value
+	parent.opener.AdminPassword = adminpassword.value
+//	parent.opener.atltest.SetCamera(-0.080314, 0.070744, 0.036483, -0.014936, 0.031742, -0.008561, 0.406058, 0.894660, -0.185300, 0.035382, 0.035382)
+//	serveraddress.value = parent.opener.atltest.CameraParameters
+	window.close()
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+
+<div align=left>
+<TABLE>
+<TR>
+<TD ALIGN="left">
+<div ALIGN = "left">
+<FONT style='font-size: 12px'>
+Server Address:
+</TD>
+<TD>
+<INPUT style='font-size: 9px' TYPE=text NAME="serveraddress" SIZE=20 VALUE = "">
+</TD>
+</TR>
+<TR>
+<TD ALIGN="left">
+<div ALIGN = "left">
+<FONT style='font-size: 12px'>
+Server Port:
+</TD>
+<TD>
+<INPUT style='font-size: 9px' TYPE=text NAME="serverport" SIZE=20 VALUE = "">
+</TD>
+</TR>
+<TR>
+<TD>
+<FONT style='font-size: 12px'>
+Access Password:
+</TD>
+<TD>
+<INPUT style='font-size: 9px' TYPE=password NAME="accesspassword" SIZE=20 VALUE = "">
+</TD>
+</TR>
+<TR>
+<TD>
+<FONT style='font-size: 12px'>
+Admin Password:
+</TD>
+<TD>
+<INPUT style='font-size: 9px' TYPE=password NAME="adminpassword" SIZE=20 VALUE = "">
+</TD>
+</TR>
+<br>
+</div>
+</TABLE>
+</div>
+<div align = "center">
+<INPUT TYPE="button" style='font-size: 9px;font-family:arial' NAME="b_submit" Value="Submit" onClick="setupParameters()">
+<INPUT TYPE="button" style='font-size: 9px;font-family:arial' NAME="b_cancel" Value="Cancel" onClick="window.close()">
+<SCRIPT LANGUAGE="JavaScript">
+serveraddress.value = parent.opener.ServerAddress
+serverport.value = parent.opener.ServerPort
+accesspassword.value = parent.opener.AccessPassword
+adminpassword.value = parent.opener.AdminPassword
+</SCRIPT>
+</BODY>
+</HTML>

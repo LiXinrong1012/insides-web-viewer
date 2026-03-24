@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TDYPre>
+  <Configuration>
+    <TYPE_GROUP>
+
+      <TYPE_ITEM ID="2" NAME="Folder" TDYKEY="Folder" ID_TEXT="TDY_PRE_CATE_FOLDER" ICON=":/resources/items/folder.png">
+        <PROPERTY_GROUP>
+        </PROPERTY_GROUP>
+      </TYPE_ITEM>
+
+      <TYPE_ITEM ID="3" NAME="Rigid" TDYKEY="Rigid6" ID_TEXT="TDY_PRE_CATE_RIGIDPART" ICON=":/resources/items/a004x16x16.png" INSICON=":/resources/items/a005x16x16.png">
+        <PROPERTY_GROUP NAME="rigid information">
+          <PROPERTY KEYNAME="MASS" TEXT="Mass" TIP="Mass of the rigid" />
+          <PROPERTY KEYNAME="IP" TEXT="IP" TIP="" />
+          <PROPERTY KEYNAME="QG" TEXT="QG" TIP="" />
+          <PROPERTY KEYNAME="QR" TEXT="QR" TIP="" />
+        </PROPERTY_GROUP>
+      </TYPE_ITEM>
+
+      <TYPE_ITEM ID="6" NAME="Assembly" TDYKEY="Assembly" ID_TEXT="TDY_PRE_CATE_ASSEMBLY" ICON=":/resources/items/a001x16x16.png" INSICON=":/resources/items/a002x16x16.png">
+        <PROPERTY_GROUP NAME="assembly information">
+          <PROPERTY KEYNAME="IP" TEXT="IP" TIP="" />
+          <PROPERTY KEYNAME="QG" TEXT="QG" TIP="" />
+          <PROPERTY KEYNAME="QR" TEXT="QR" TIP="" />
+        </PROPERTY_GROUP>
+      </TYPE_ITEM>
+
+      <TYPE_ITEM ID="7" NAME="Load" TDYKEY="LOAD" ID_TEXT="TDY_PRE_CATE_LOAD" ICON=":/resources/items/load.png">
+        <PROPERTY_GROUP NAME="load information">
+        </PROPERTY_GROUP>
+      </TYPE_ITEM>
+
+      <TYPE_ITEM ID="8" NAME="Marker" TDYKEY="Marker" ID_TEXT="TDY_PRE_CATE_MARKER" ICON=":/resources/items/marker.png">
+        <PROPERTY_GROUP NAME="Marker information">
+          <PROPERTY KEYNAME="RIG " TEXT="RIG " TIP="" />
+          <PROPERTY KEYNAME="QG" TEXT="QG" TIP="" />
+          <PROPERTY KEYNAME="QR" TEXT="QR" TIP="" />
+          <PROPERTY KEYNAME="XG" TEXT="XG" TIP="" />
+          <PROPERTY KEYNAME="YG" TEXT="YG" TIP="" />
+          <PROPERTY KEYNAME="ZG" TEXT="ZG" TIP="" />
+        </PROPERTY_GROUP>
+      </TYPE_ITEM>
+
+      <TYPE_ITEM ID="10" NAME="Instance" TDYKEY="Instance" ID_TEXT="TDY_PRE_CATE_INSTANCE" ICON=":/resources/items/instance.png">
+        <PROPERTY_GROUP NAME="Information">
+          <PROPERTY KEYNAME="CENTER" TEXT="center " TIP="" />
+          <PROPERTY KEYNAME="XG" TEXT="XG" TIP="" />
+          <PROPERTY KEYNAME="YG" TEXT="YG" TIP="" />
+          <PROPERTY KEYNAME="ZG" TEXT="ZG" TIP="" />
+          <PROPERTY KEYNAME="XAXIS" TEXT="XAXIS" TIP="" />
+          <PROPERTY KEYNAME="YAXIS" TEXT="YAXIS" TIP="" />
+          <PROPERTY KEYNAME="ZAXIS" TEXT="ZAXIS" TIP="" />
+        </PROPERTY_GROUP>
+      </TYPE_ITEM>
+
+      <TYPE_ITEM ID="11" NAME="Parameters" TDYKEY="Parameters" ID_TEXT="TDY_PRE_CATE_PARAMETERS" ICON=":/resources/items/a003x16x16.png">
+        <PROPERTY_GROUP NAME="Information">
+        </PROPERTY_GROUP>
+      </TYPE_ITEM>
+
+      <TYPE_ITEM ID="12" NAME="STL" TDYKEY="STL" ID_TEXT="TDY_PRE_CATE_STL" ICON=":/resources/items/stl.png">
+        <PROPERTY_GROUP NAME="Information">
+            <PROPERTY KEYNAME="FILENAME" TEXT="filename " TIP="" />
+        </PROPERTY_GROUP>
+      </TYPE_ITEM>
+
+      <TYPE_ITEM ID="13" NAME="Shape" TDYKEY="SHAPE" ID_TEXT="TDY_PRE_CATE_SHAPE" ICON=":/resources/items/shapes.png">
+        <PROPERTY_GROUP NAME="Information">
+            <PROPERTY KEYNAME="SHAPEKEYNAME" TEXT="shape name " TIP="" />
+            <PROPERTY KEYNAME="DATAVEC" TEXT="data" TIP="" />
+        </PROPERTY_GROUP>
+      </TYPE_ITEM>
+
+      <TYPE_ITEM ID="15" NAME="Motion" TDYKEY="motion" ID_TEXT="TDY_PRE_CATE_MOTION" ICON=":/resources/items/shapes.png">
+        <PROPERTY_GROUP NAME="Information">
+            <PROPERTY KEYNAME="JOINT" TEXT="joint" TIP="" />
+            <PROPERTY KEYNAME="FUNCTION" TEXT="function" TIP="" />
+        </PROPERTY_GROUP>
+      </TYPE_ITEM>
+
+      <TYPE_ITEM ID="16" NAME="Joint" TDYKEY="joint" ID_TEXT="TDY_PRE_CATE_JOINT" ICON=":/resources/items/shapes.png">
+        <PROPERTY_GROUP NAME="Information">
+            <PROPERTY KEYNAME="I" TEXT="I" TIP="" />
+            <PROPERTY KEYNAME="J" TEXT="J" TIP="" />
+            <PROPERTY KEYNAME="TYPE" TEXT="type" TIP="" />
+        </PROPERTY_GROUP>
+      </TYPE_ITEM>
+
+      <TYPE_ITEM ID="17" NAME="INTPAR" TDYKEY="INTPAR" ID_TEXT="TDY_PRE_CATE_INTPAR" ICON=":/resources/items/shapes.png">
+        <PROPERTY_GROUP NAME="Information">
+            <PROPERTY KEYNAME="START_T" TEXT="start time" TIP="" />
+            <PROPERTY KEYNAME="END_T" TEXT="stop time" TIP="" />
+            <PROPERTY KEYNAME="ERROR" TEXT="error" TIP="" />
+            <PROPERTY KEYNAME="HMAX" TEXT="hmax" TIP="" />
+        </PROPERTY_GROUP>
+      </TYPE_ITEM>
+
+      <TYPE_ITEM ID="18" NAME="Ground" TDYKEY="GROUND" ID_TEXT="TDY_PRE_CATE_GROUND" ICON=":/resources/items/ground.png">
+      </TYPE_ITEM>
+
+       <TYPE_ITEM ID="19" NAME="FEMPart" TDYKEY="FEMPart" ID_TEXT="TDY_PRE_CATE_FEMPART" ICON=":/resources/items/a006x16x16.png" INSICON=":/resources/items/a007x16x16">
+        <PROPERTY_GROUP NAME="FEMPart information">
+          <PROPERTY KEYNAME="NODECOUNT" TEXT="Node Count" TIP="" />
+          <PROPERTY KEYNAME="ELEMENTCOUNT" TEXT="Element Count" TIP="" />
+        </PROPERTY_GROUP>
+      </TYPE_ITEM>
+
+    <TYPE_ITEM ID="20" NAME="Contact" TDYKEY="CONTACT" ID_TEXT="TDY_PRE_CATE_CONTACT" ICON=":/resources/items/contact.png">
+        <PROPERTY_GROUP NAME="contact information">
+        </PROPERTY_GROUP>
+      </TYPE_ITEM>
+
+    </TYPE_GROUP>
+  </Configuration>
+</TDYPre>

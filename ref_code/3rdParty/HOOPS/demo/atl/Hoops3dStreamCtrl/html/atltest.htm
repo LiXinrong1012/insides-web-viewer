@@ -1,0 +1,722 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (WinNT; U) [Netscape]">
+<SCRIPT LANGUAGE="JavaScript">
+
+var messages=new Array()
+var maxmessages = 10
+var nummessages = 0
+var padlength = 22
+var padlength_chat = 26
+var ClientIsConnected = false
+var ServerIsConnected = false
+var DownloadInProgress = false
+var ServerAddress = "www.hoops3d.com"
+var ServerPort = "11111"
+var AdminPassword = "techsoft"
+var AccessPassword = "hoops3d"
+var cameraOperator = "orbit"
+var filenum = 0
+var snum = 0
+var clk=0
+var doonce = true
+function addOpt(opt)
+{
+
+    opti = new Option(opt, opt,false,false)
+	viewlist.options[viewlist.options.length] = opti
+}
+
+ 
+
+function clearClk()
+{
+	clk = 0
+}
+function selectView(num)
+{
+
+ 	switch(filenum)
+	{
+		case 0:
+		switch(num)
+		{
+ 			case 1:				
+ 				atltest.SetCamera(-0.001165, 0.026454, 0.255483, -0.000009, 0.013459, 0.004574, -0.004951, 0.998654, -0.051745, 0.100498, 0.100498)
+				break;
+			case 2:
+				atltest.SetCamera(-0.346183, 0.045961, -0.008038, -0.000009, 0.013459, 0.004574, 0.093006, 0.995590, 0.012867, 0.139169, 0.139169)
+				break;
+			case 3:
+				atltest.SetCamera(-0.227112, 0.156120, 0.226209, -0.000009, 0.013459, 0.004574, 0.306163, 0.911913, -0.273263, 0.139169, 0.139169)
+				break;
+
+			case 5:				
+ 				atltest.SetCamera(-0.080314, 0.070744, 0.036483, -0.014936, 0.031742, -0.008561, 0.406058, 0.894660, -0.185300, 0.035382, 0.035382)
+				break;
+			case 6:
+				atltest.SetCamera(0.087968, 0.007207, -0.069953, -0.009419, -0.010473, -0.025682, -0.092729, 0.978529, 0.186789, 0.043371, 0.043371)
+				break;
+			case 7:
+				atltest.SetCamera(-0.069951, 0.061590, 0.145397, 0.032826, 0.012474, 0.024889, 0.014015, 0.930067, -0.367121, 0.066330, 0.066330)
+				break;
+			case 8:
+				atltest.SetCamera(-0.003956, 0.012329, -0.088624, -0.004139, 0.006616, -0.072000, 0.047254, 0.944504, 0.325098, 0.007031, 0.007031)
+				break;
+		}
+		break;
+		case 1:
+		switch(num)
+		{
+
+			case 1:				
+ 				atltest.SetCamera(-0.179138, 0.597608, 4.643982, -0.000234, 0.105329, -0.128234, -0.014282, 0.994578, -0.103131, 1.920323, 1.920323)
+				break;
+			case 2:
+ 				atltest.SetCamera(-6.639161, 0.476251, 0.328360, -0.000234, 0.105329, -0.128234, 0.058400, 0.997548, 0.038769, 2.665975, 2.665975)
+				break;
+			case 3:
+ 				atltest.SetCamera(-3.711770, 3.192556, 4.446656, 0.087947, -0.023236, 0.014716, 0.272311, 0.874605, -0.401143, 2.665980, 2.665980)
+				break;
+
+			case 5:				
+ 				atltest.SetCamera(0.853814, -0.241802, -1.920130, 0.173739, -0.283929, -1.171037, 0.061793, 0.992020, 0.111889, 0.405050, 0.405050)
+				break;
+			case 6:
+ 				atltest.SetCamera(0.120776, 0.847705, -1.815612, 0.013235, 0.450093, -0.194399, 0.015869, 0.970896, 0.239171, 0.669089, 0.669089)
+				break;
+			case 7:
+ 				atltest.SetCamera(-1.458231, -0.245247, 1.313997, -0.560540, -0.314222, 0.719212, 0.024653, 0.996625, -0.078367, 0.431620, 0.431620)
+				break;
+			case 8:
+ 				atltest.SetCamera(0.539763, -0.319921, -1.329466, 0.005405, -0.372310, -1.316573, -0.095207, 0.992257, 0.086042, 0.214827, 0.214827)
+				break;
+  		}
+		break;
+		case 2:
+		switch(num)
+		{
+			case 1:				
+ 				atltest.SetCamera(0.645939, -0.009392, 0.091291, -0.098640, 0.008248, 0.022883, -0.091606, -0.003126, 0.996270, 0.299167, 0.299167)
+				break;
+			case 2:
+ 				atltest.SetCamera(-0.051530, -0.845413, 0.107597, -0.094100, 0.021996, 0.037171, 0.005488, 0.081194, 0.996711, 0.348517, 0.348517)
+				break;
+			case 3:
+ 				atltest.SetCamera(0.474204, -0.287262, 0.338609, -0.080168, 0.029911, 0.011372, -0.407699, 0.205363, 0.889730, 0.287054, 0.287054)
+				break;
+
+			case 5:				
+ 				atltest.SetCamera(0.023962, -0.040768, 0.089181, -0.047773, 0.060110, 0.040818, -0.286319, 0.240827, 0.926998, 0.053158, 0.053158)
+				break;
+			case 6:
+ 				atltest.SetCamera(0.138180, -0.290702, 0.374338, -0.003409, 0.005481, 0.041956, -0.161622, 0.701700, 0.694128, 0.186869, 0.186869)
+				break;
+			case 7:
+ 				atltest.SetCamera(0.034959, -0.036270, 0.110694, 0.026788, -0.018540, 0.098608, -0.138859, 0.513409, 0.847029, 0.009184, 0.009184)
+				break;
+ 		}
+		break;
+
+		case 3:
+		switch(num)
+		{
+
+			case 1:				
+ 				atltest.SetCamera(0.010349, 0.083835, -1.453794, 0.000000, -0.000000, 0.000000, 0.001262, 0.998347, 0.057581, 0.582494, 0.582494)
+				break;
+			case 2:
+ 				atltest.SetCamera(2.298901, 0.305231, 0.160111, 0.000730, -0.007154, 0.003558, -0.134868, 0.990844, 0.002714, 0.929833, 0.929833)
+				break;
+			case 3:
+ 				atltest.SetCamera(1.039451, 0.764495, -1.586659, -0.018404, -0.096464, -0.060070, -0.244456, 0.907054, 0.342160, 0.818856, 0.818856)
+				break;
+
+			case 5:				
+ 				atltest.SetCamera(-0.161474, -0.025073, -0.620941, -0.134416, -0.045617, -0.484222, 0.045960, 0.989150, 0.139538, 0.056351, 0.056351)
+				break;
+			case 6:
+ 				atltest.SetCamera(-0.026542, -0.010522, -0.422794, -0.026868, -0.012327, -0.397882, 0.029800, 0.997507, 0.072691, 0.009992, 0.009992)
+				break;
+			case 7:
+ 				atltest.SetCamera(-1.458231, -0.245247, 1.313997, -0.560540, -0.314222, 0.719212, 0.024653, 0.996625, -0.078367, 0.431620, 0.431620)
+				break;
+ 		}
+		break;
+		case 4:
+		switch(num)
+		{
+
+			case 1:				
+ 				atltest.SetCamera(16.520264, 216.220505, 30.319921, 18.525000, 10.490002, 19.360001, 0.014678, -0.053050, 0.998491, 82.411659, 82.411659)
+				break;
+			case 2:
+ 				atltest.SetCamera(224.376465, 12.240495, 27.793863, 18.525000, 10.490002, 19.360001, -0.040842, -0.010834, 0.999112, 82.411659, 82.411659)
+				break;
+			case 3:
+ 				atltest.SetCamera(131.415985, -91.655998, 86.740784, 21.793659, 10.795614, 14.813631, -0.323277, 0.287149, 0.901708, 66.557060, 66.557060)
+				break;
+
+			case 5:				
+ 				atltest.SetCamera(27.930382, 1.751758, 48.630711, 23.347324, 5.877258, 36.767986, -0.077586, -0.950588, -0.300611, 5.347845, 5.347845)
+				break;
+			case 6:
+ 				atltest.SetCamera(-41.583141, -28.778421, 21.822514, -6.865107, 15.312129, 11.801351, 0.105864, 0.140387, 0.984431, 22.802731, 22.802731)
+				break;
+			case 7:
+ 				atltest.SetCamera(-1.458231, -0.245247, 1.313997, -0.560540, -0.314222, 0.719212, 0.024653, 0.996625, -0.078367, 0.431620, 0.431620)
+				break;
+ 		}
+		break;
+
+		case 5:
+		switch(num)
+		{
+			case 1:				
+ 				atltest.SetCamera(2715.696533, 10707.886719, 2176.937256, 2269.742432, 1806.140869, 28.826128, -0.002604, -0.234457, 0.972127, 3667.245850, 3667.245850)
+				break;
+			case 2:
+ 				atltest.SetCamera(9585.001953, 1526.893921, 1038.025757, 2255.084961, 1806.845337, 28.949036, -0.136820, -0.012015, 0.990528, 2961.725098, 2961.725098)
+				break;
+			case 3:
+ 				atltest.SetCamera(8372.141602, -698.386780, 3369.989258, 2360.008301, 1912.862305, -73.836472, -0.365056, 0.314958, 0.876118, 2961.737305, 2961.737305)
+				break;
+
+			case 5:				
+ 				atltest.SetCamera(2577.546143, 2094.651611, 79.987755, 2587.186279, 2084.195313, 10.728682, 0.930156, -0.321157, 0.177955, 28.281614, 28.281614)
+				break;
+  		}
+		break;
+  	}
+	viewlist.selectedIndex = 0
+	
+}
+
+
+ 
+
+function doZoomExtents(t)
+{
+	if (t == true)
+	{
+ 		zoomtoextents.src = "zoomtoextentsdown.bmp"
+		atltest.FitWorld()
+	}
+	else
+ 		zoomtoextents.src = "zoomtoextents.bmp"
+
+}
+
+function UpdateImages()
+{
+	orbit.src = "orbit.bmp"
+	pan.src = "pan.bmp"
+	zoom.src = "zoom.bmp"
+	freehand.src = "freehand.bmp"
+	postit.src = "postit.bmp"
+
+	if (cameraOperator == "HOpCameraManipulate")
+	{
+		orbit.src = "orbitdown.bmp"
+	}
+
+	if (cameraOperator == "HOpCameraPan")
+	{
+		pan.src = "pandown.bmp"
+	}
+
+	if (cameraOperator == "HOpCameraZoom")
+	{
+		zoom.src = "zoomdown.bmp"
+	}
+	if (cameraOperator == "HOpMarkupFreehand")
+	{
+		freehand.src = "freehanddown.bmp"
+	}
+	if (cameraOperator == "HOpMarkupPostIt")
+	{
+		postit.src = "postitdown.bmp"
+	}
+}
+
+
+	
+
+function doOrbit()
+{
+ 	cameraOperator = "HOpCameraManipulate"
+	atltest.SetOperator("HOpCameraManipulate")
+ 	UpdateImages()
+ 
+}
+function doPan()
+{
+	cameraOperator = "HOpCameraPan"
+	atltest.SetOperator("HOpCameraPan")
+ 	UpdateImages()
+ 
+}
+function doZoom()
+{
+
+	cameraOperator = "HOpCameraZoom"
+	atltest.SetOperator("HOpCameraZoom")
+	UpdateImages()
+}
+function doFreehand()
+{
+
+	cameraOperator = "HOpMarkupFreehand"
+	atltest.SetOperator("HOpMarkupFreehand")
+	UpdateImages()
+}
+function doPostIt()
+{
+
+	cameraOperator = "HOpMarkupPostIt"
+	atltest.SetOperator("HOpMarkupPostIt")
+	UpdateImages()
+}
+
+function serverSettings()
+{
+ 	window.open("serversettings.htm", "ServerSettings", "width=300, height=175, status = no, resizable = no")
+}
+
+function connectToServer(form) {
+   if (ServerIsConnected == false)
+   {
+ 		atltest.ConnectToServer(ServerAddress, ServerPort, AccessPassword)
+   }
+   else
+   {
+		atltest.DisconnectFromServer()
+   }
+
+	
+
+   RefreshServerList()
+   UpdateData()
+
+ 
+}
+
+
+function cutFloat(text)
+{
+	for (iii=0;iii < text.length;iii++)
+	{
+		if (text.charAt(iii) == '.')
+		{
+			return text.substring(0,iii)
+		}
+	}
+	return text
+}
+
+function UpdateData()
+{
+	if (atltest.HasControlToken == true)
+	{
+		if (b_requestcontrol.value != "Release Control")
+		{
+			b_requestcontrol.value = "Release Control"
+		}
+	}
+	else
+	{
+		if (b_requestcontrol.value != "Request Control")
+		{
+			b_requestcontrol.value = "Request Control"
+		}
+	}
+
+	if (atltest.ClientListRefreshed == true)
+	{
+		atltest.StartClientEnumeration()
+		clientlist.options.length = 0
+	   do {
+			name = atltest.NextClient
+		if (name != "")
+		{		 
+			opt = new Option(addSpace(name,padlength), name,false,false)
+			clientlist.options[clientlist.options.length] = opt
+		}
+
+ 		}while (name!="");
+	}
+	if (atltest.ChatMessagesAvailable > 0)
+	{
+		addLongMessage(atltest.NextChatMessage)
+ 	}
+
+	if ((atltest.ClientIsConnected == true ) && (ClientIsConnected == false))
+	{
+ 		ClientIsConnected = true
+	   	sessionconnect.innerHTML = "<INPUT TYPE='button' style='font-size: 9px;font-family:arial' NAME='b_sessiondisconnect' Value='Leave Session' onClick='leaveSession()'>" 
+	}
+
+	if ((atltest.ClientIsConnected == false ) && (ClientIsConnected == true))
+	{
+		ClientIsConnected = false
+	   	sessionconnect.innerHTML = "<INPUT TYPE='button' style='font-size: 9px;font-family:arial' NAME='b_sessionjoin' Value='Join' onClick='joinSession()'>" 
+		sessionconnect.innerHTML += "<INPUT TYPE='button' style='font-size: 9px;font-family:arial' NAME='b_sessioncreate' Value='Create' onClick='createSession()'>"
+		clientlist.options.length = 0
+
+ 	}
+
+/*
+	if ((atltest.DLinProgress == true ) && (atltest.DownloadDataMax>0))
+	{
+		DownloadInProgress = true
+		v=atltest.DownloadDataReceived/atltest.DownloadDataMax*100.0;
+	   	downloadstatus.innerHTML = "Download Status:" + cutFloat(v.toString()) + "%" 
+ 	}
+*/
+	if ((DownloadInProgress == true) && (atltest.DLinProgress == false ))
+	{
+		DownloadInProgress = true
+ 	   	downloadstatus.innerHTML = "" 
+	}
+		
+	if (cameraOperator != atltest.CurrentOperator)
+	{
+		cameraOperator = atltest.CurrentOperator
+		UpdateImages()
+	}
+
+
+	if ((atltest.ServerIsConnected == true ) && (ServerIsConnected == false))
+	{
+ 		ServerIsConnected = true
+		b_connecttoserver.value="Disconect\nServer"
+ 	}
+
+	if ((atltest.ServerIsConnected == false ) && (ServerIsConnected == true))
+	{
+		ServerIsConnected = false
+		b_connecttoserver.value = "Connect\nto Server"
+ 	}
+	
+	if ((atltest.ControlActive == true) && (doonce == true))
+	{
+		doonce = false
+		atltest.SetBackgroundColors(0.7, 0.7, 0.7, 1.0, 1.0, 1.0, 50)
+	}
+
+	setTimeout("UpdateData()",1000)
+}
+
+
+function leaveSession()
+{
+	atltest.DisconnectFromSession()
+}
+
+function joinSession() {
+ 	 atltest.JoinSession(sessionname.value, sessionpassword.value, username.value)  
+	 atltest.HandleChatProcessing(true)
+}
+
+
+function createSession() {
+ 	 atltest.CreateSession(sessionname.value, sessionpassword.value, username.value, AdminPassword)  
+	 atltest.HandleChatProcessing(true)
+	   RefreshServerList()
+}
+
+
+function RefreshServerList() {
+ 
+   atltest.StartSessionEnumeration();
+
+	sessionlist.options.length = 0
+   do {
+	name = atltest.NextSession
+	if (name != "")
+	{
+ 	    opt = new Option(addSpace(name,15), name,false,false)
+ 		sessionlist.options[sessionlist.options.length] = opt
+	}
+
+ 	}while (name!="");
+ 
+}
+
+
+function selectSession(i)
+{
+	sessionname.value =  sessionlist.options[i].value
+}
+
+
+function changeControl(i)
+{
+	if (atltest.HasControlToken == true)
+		atltest.RequestControlToken(false);
+	else
+		atltest.RequestControlToken(true);
+
+}
+
+
+
+function sendChatMessage(message) {
+
+	chattext.value = ""
+  	clients = ""
+	first = true
+	for (i=0; i < clientlist.options.length; i++)
+	{
+ 
+			if (clientlist.options[i].selected)
+			{
+				if (first)
+				{
+					first = false;
+	 				clients = clientlist.options[i].value
+				}
+				else
+				{
+ 					clients = clients + " " + clientlist.options[i].value
+				}
+ 			}
+	}
+
+	addLongMessage(">" + message) 
+	atltest.SendChatMessage(clients, message)
+}
+
+
+ 
+
+function addLongMessage(message)
+{
+	newmessage = message
+	start = 0
+	end = 0
+	leng = message.length
+
+  	while (leng-start>padlength_chat)
+	{
+		newpad = padlength_chat-1
+		while (message.charAt(start+newpad) != ' ' && newpad>0)
+		{
+			newpad--;
+		}
+		if (newpad==0)
+		{
+			newpad = padlength_chat-1
+		}
+ 
+ 		addMessage(message.substring(start,start + newpad))
+		start+=newpad
+ 	}
+ 	addMessage(message.substring(start,leng))
+
+
+}
+
+
+
+
+function addMessage(message) {
+
+ 
+
+
+	if (nummessages < maxmessages)
+	{
+		for (i=0;i < maxmessages-nummessages; i++)
+		{
+			messages[i] = ""
+		}
+	}
+
+
+ 	for (i=0;i < maxmessages;i++)
+	{
+		messages[i] = messages[i+1]
+	}
+
+	messages[maxmessages-1] = message
+	nummessages++
+	chatbox.options.length = 0
+ 	for (ii=0;ii < maxmessages;ii++)
+	{
+		opt = new Option(addSpace(messages[ii],padlength_chat), messages[ii],false,false)
+		chatbox.options[chatbox.options.length] = opt		
+ 	}	
+	 	
+//	chatbox.selectedIndex = 19
+//	chatbox.selectedIndex = -1
+
+
+}
+
+
+string= function addSpace(t,pl)
+{
+
+	if (t.length < pl)
+	{
+		l = pl - t.length
+	for (i=0;i < l;i++)
+	{
+		t+= "\xa0"
+	}
+	}
+	return t
+}
+
+string= function removeSpace(t)
+{
+	for (i=0;i < t.length;i++)
+	{
+		if (t.charAt(i) == '\xa0')
+		{
+			return t.substring(0,i)
+ 		}
+	}
+ 	return t
+}
+
+
+function tester()
+{
+alert("hello")
+}
+</SCRIPT>
+
+
+</HEAD>
+<BODY>
+
+
+<p>
+<CENTER>
+<TABLE   ALIGN= "left"  BORDER="0" RULES=none CELLPADDING="0" CELLSPACING="0">
+<TR>
+<TD align= "right" VALIGN = "top" BACKGROUND = "top_chat_bar_image.gif" COLSPAN="3" ROWSPAN="1" height="120px">
+<INPUT TYPE="button" style='font-size: 9px;font-family:arial' NAME="b_serversettings" Value="Server Settings" onClick="serverSettings()">
+<br>
+<br>
+<br>
+<br>
+<SELECT style='font-size: 11px;font-family:monospace' NAME="viewlist" SIZE="1" align="right"
+onclick="selectView(viewlist.selectedIndex)">
+<OPTION>  &#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160
+</SELECT>
+</div>
+</TD>
+</TR>
+<TR>
+<TD  width = "240px" height = "530px" nowrap BACKGROUND = "left_chat_bar_image.jpg" ALIGN = center VALIGN = top>
+<CENTER><B><FONT style='font-size: 16px' COLOR="#000099">Session Selection</FONT></B></CENTER>
+<FONT style='font-size: 3px'>
+<br>
+<br>
+<TABLE>
+<TR ALIGN="left">
+<TD width="32%">
+<div ALIGN = left>
+<INPUT TYPE="button" style='font-size: 9px;font-family:arial' NAME="b_connecttoserver" Value="Connect &#013 to Server" onClick="connectToServer()">
+<INPUT TYPE="button" style='font-size: 9px;font-family:arial' NAME="b_sessionrefresh" Value="Refresh" onClick="RefreshServerList()">
+</TD>
+<TD ROWSPAN="2" ALIGN="left">
+<SELECT style='font-size: 11px;font-family:monospace' NAME="sessionlist" SIZE="4" align="left"
+onChange="selectSession(sessionlist.selectedIndex)">
+<OPTION>  &#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160
+</SELECT>
+</TD>
+</TR>
+</TABLE>
+<div align=left>
+<TABLE>
+<TR>
+<TD ALIGN="left">
+<div ALIGN = "left">
+<FONT style='font-size: 12px'>
+Session Name:
+</TD>
+<TD>
+<INPUT style='font-size: 9px' TYPE=text NAME="sessionname" SIZE=20 VALUE = "">
+</TD>
+</TR>
+<TR>
+<TD>
+<FONT style='font-size: 12px'>
+Session Password:
+</TD>
+<TD>
+<INPUT style='font-size: 9px' TYPE=password NAME="sessionpassword" SIZE=20 VALUE = "">
+</TD>
+</TR>
+<TR>
+<TD>
+<FONT style='font-size: 12px'>
+User Name:
+</TD>
+<TD>
+<INPUT style='font-size: 9px' TYPE=text NAME="username" SIZE=20 VALUE = "">
+</TD>
+</TR>
+<br>
+</div>
+</TABLE>
+</div>
+<div id="sessionconnect">
+<INPUT TYPE="button" style='font-size: 9px;font-family:arial' NAME="b_sessionjoin" Value="Join" onClick="joinSession()">
+<INPUT TYPE="button" style='font-size: 9px;font-family:arial' NAME="b_sessioncreate" Value="Create" onClick="createSession()">
+</div>
+<hr align=left width=222px>
+<CENTER><B><FONT style='font-size: 16px' COLOR="#000099">Participants</FONT></B></CENTER>
+<br>
+<SELECT multiple style='font-size: 11px;font-family:monospace' NAME="clientlist" SIZE="4">
+<OPTION>  &#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160
+</SELECT>
+<hr align=left width=222px>
+<INPUT style='font-size: 9px;font-family:arial' TYPE="button" NAME="b_requestcontrol" Value="Request Control" onClick="changeControl()">
+<hr align=left width=222px>
+<CENTER><B><FONT style='font-size: 16px' COLOR="#000099">Chat</FONT></B></CENTER>
+<div align=left>
+<SELECT multiple style='font-size: 11px;font-family:monospace' NAME="chatbox" SIZE="10">
+<OPTION>  &#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160
+</SELECT>
+</div>
+<br>
+<INPUT style='font-size: 9px' TYPE=text NAME="chattext" SIZE=29>
+<INPUT style='font-size: 9px;font-family:arial' TYPE="button" NAME="b_sendchat" Value="Send" onClick="sendChatMessage(chattext.value)">
+</TD>
+<TD ROWSPAN = 1 BGCOLOR ="#ffffff" ALIGN = "left" VALIGN = "top">
+
+<OBJECT 
+	name = "atltest" 
+    classid ="clsid:AD5F3C4B-BD73-11D5-838B-0050042DF1E4"
+     width=600 
+    height=500 ><PARAM name="AllowMenu" value=1></OBJECT>
+<br>
+<div id="downloadstatus">
+</div>
+<P>
+</TD>
+<TD ALIGN = LEFT VALIGN = TOP  nowrap BACKGROUND = "right_button_background.jpg">
+<IMG align = "left" name = "orbit" hspace = "0" src = "orbit.bmp" border = "0" onClick="doOrbit()">
+<br clear = all>
+<IMG align = "left" name = "pan" hspace = "0" src = "pan.bmp" border = "0" onClick="doPan()">
+<br clear = all>
+<IMG align = "left" name = "zoom" hspace = "0" src = "zoom.bmp" border = "0" onClick="doZoom()" onLoad="UpdateData()">
+<br clear = all>
+<IMG align = "left" name = "zoomtoextents" vspace= "10" hspace = "0" src = "zoomtoextents.bmp" border = "0" OnMouseDown="doZoomExtents(true)" onmouseup="doZoomExtents(false)">
+<br clear = all>
+<IMG align = "left" name = "freehand" vspace= "10" hspace = "0" src = "freehand.bmp" border = "0" OnMouseDown="doFreehand(true)" onmouseup="doFreehand(false)">
+<br clear = all>
+<IMG align = "left" name = "postit" vspace= "0" hspace = "0" src = "postit.bmp" border = "0" OnMouseDown="doPostIt(true)" onmouseup="doPostIt(false)">
+<br clear = all>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+</BODY>
+</HTML>

@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2D30BAEA-C746-34E5-8A4F-B456D1FE81B5}</ProjectGuid>
+    <RootNamespace>log4qt-0.3</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <OutputDirectory>lib\debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <IntermediateDirectory>tmp\debug\obj\</IntermediateDirectory>
+    <PrimaryOutput>log4qt-0.3</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <OutputDirectory>lib\release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <IntermediateDirectory>tmp\release\obj\</IntermediateDirectory>
+    <PrimaryOutput>log4qt-0.3</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lib\debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">tmp\debug\obj\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">log4qt-0.3</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">lib\release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tmp\release\obj\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">log4qt-0.3</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>"d:\JPrograms\Qt\4.8.4\include\QtCore";"d:\JPrograms\Qt\4.8.4\include\QtGui";"d:\JPrograms\Qt\4.8.4\include";"..\..\src";"d:\JPrograms\Qt\4.8.4\include\ActiveQt";"tmp\debug\moc";d:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>tmp\debug\obj\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>tmp\debug\obj\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_DLL;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d:\JPrograms\Qt\4.8.4\lib\QtGuid4.lib;d:\JPrograms\Qt\4.8.4\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>d:\JPrograms\Qt\4.8.4\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <OutputFile>$(OutDir)\log4qt-0.3.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_DLL;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>"d:\JPrograms\Qt\4.8.4\include\QtCore";"d:\JPrograms\Qt\4.8.4\include\QtGui";"d:\JPrograms\Qt\4.8.4\include";"..\..\src";"d:\JPrograms\Qt\4.8.4\include\ActiveQt";"tmp\release\moc";d:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>tmp\release\obj\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>tmp\release\obj\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_DLL;QT_NO_DEBUG;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d:\JPrograms\Qt\4.8.4\lib\QtGui4.lib;d:\JPrograms\Qt\4.8.4\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>d:\JPrograms\Qt\4.8.4\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\log4qt-0.3.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_DLL;QT_NO_DEBUG;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="appenderskeleton.cpp" />
+    <ClCompile Include="basicconfigurator.cpp" />
+    <ClCompile Include="helpers\classlogger.cpp" />
+    <ClCompile Include="helpers\configuratorhelper.cpp" />
+    <ClCompile Include="consoleappender.cpp" />
+    <ClCompile Include="dailyrollingfileappender.cpp" />
+    <ClCompile Include="helpers\datetime.cpp" />
+    <ClCompile Include="varia\debugappender.cpp" />
+    <ClCompile Include="varia\denyallfilter.cpp" />
+    <ClCompile Include="helpers\factory.cpp" />
+    <ClCompile Include="fileappender.cpp" />
+    <ClCompile Include="spi\filter.cpp" />
+    <ClCompile Include="hierarchy.cpp" />
+    <ClCompile Include="helpers\initialisationhelper.cpp" />
+    <ClCompile Include="layout.cpp" />
+    <ClCompile Include="level.cpp" />
+    <ClCompile Include="varia\levelmatchfilter.cpp" />
+    <ClCompile Include="varia\levelrangefilter.cpp" />
+    <ClCompile Include="varia\listappender.cpp" />
+    <ClCompile Include="log4qt.cpp" />
+    <ClCompile Include="helpers\logerror.cpp" />
+    <ClCompile Include="logger.cpp" />
+    <ClCompile Include="loggerrepository.cpp" />
+    <ClCompile Include="loggingevent.cpp" />
+    <ClCompile Include="logmanager.cpp" />
+    <ClCompile Include="helpers\logobject.cpp" />
+    <ClCompile Include="helpers\logobjectptr.cpp" />
+    <ClCompile Include="mdc.cpp" />
+    <ClCompile Include="ndc.cpp" />
+    <ClCompile Include="varia\nullappender.cpp" />
+    <ClCompile Include="helpers\optionconverter.cpp" />
+    <ClCompile Include="helpers\patternformatter.cpp" />
+    <ClCompile Include="patternlayout.cpp" />
+    <ClCompile Include="helpers\properties.cpp" />
+    <ClCompile Include="propertyconfigurator.cpp" />
+    <ClCompile Include="rollingfileappender.cpp" />
+    <ClCompile Include="simplelayout.cpp" />
+    <ClCompile Include="varia\stringmatchfilter.cpp" />
+    <ClCompile Include="ttcclayout.cpp" />
+    <ClCompile Include="writerappender.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="appender.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;appender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 appender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_appender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC appender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_appender.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;appender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 appender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_appender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC appender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_appender.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="appenderskeleton.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;appenderskeleton.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 appenderskeleton.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_appenderskeleton.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC appenderskeleton.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_appenderskeleton.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;appenderskeleton.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 appenderskeleton.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_appenderskeleton.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC appenderskeleton.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_appenderskeleton.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="basicconfigurator.h" />
+    <ClInclude Include="helpers\classlogger.h" />
+    <CustomBuild Include="helpers\configuratorhelper.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;helpers\configuratorhelper.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 helpers\configuratorhelper.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_configuratorhelper.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC helpers\configuratorhelper.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_configuratorhelper.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;helpers\configuratorhelper.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 helpers\configuratorhelper.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_configuratorhelper.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC helpers\configuratorhelper.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_configuratorhelper.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="consoleappender.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;consoleappender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 consoleappender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_consoleappender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC consoleappender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_consoleappender.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;consoleappender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 consoleappender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_consoleappender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC consoleappender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_consoleappender.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="dailyrollingfileappender.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;dailyrollingfileappender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 dailyrollingfileappender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_dailyrollingfileappender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC dailyrollingfileappender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_dailyrollingfileappender.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;dailyrollingfileappender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 dailyrollingfileappender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_dailyrollingfileappender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC dailyrollingfileappender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_dailyrollingfileappender.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="helpers\datetime.h" />
+    <CustomBuild Include="varia\debugappender.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;varia\debugappender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 varia\debugappender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_debugappender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC varia\debugappender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_debugappender.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;varia\debugappender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 varia\debugappender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_debugappender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC varia\debugappender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_debugappender.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="varia\denyallfilter.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;varia\denyallfilter.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 varia\denyallfilter.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_denyallfilter.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC varia\denyallfilter.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_denyallfilter.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;varia\denyallfilter.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 varia\denyallfilter.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_denyallfilter.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC varia\denyallfilter.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_denyallfilter.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="helpers\factory.h" />
+    <CustomBuild Include="fileappender.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;fileappender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 fileappender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_fileappender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC fileappender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_fileappender.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;fileappender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 fileappender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_fileappender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC fileappender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_fileappender.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="spi\filter.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;spi\filter.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 spi\filter.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_filter.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC spi\filter.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_filter.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;spi\filter.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 spi\filter.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_filter.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC spi\filter.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_filter.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="hierarchy.h" />
+    <ClInclude Include="helpers\initialisationhelper.h" />
+    <CustomBuild Include="layout.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;layout.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 layout.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_layout.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC layout.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_layout.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;layout.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 layout.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_layout.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC layout.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_layout.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="level.h" />
+    <CustomBuild Include="varia\levelmatchfilter.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;varia\levelmatchfilter.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 varia\levelmatchfilter.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_levelmatchfilter.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC varia\levelmatchfilter.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_levelmatchfilter.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;varia\levelmatchfilter.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 varia\levelmatchfilter.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_levelmatchfilter.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC varia\levelmatchfilter.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_levelmatchfilter.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="varia\levelrangefilter.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;varia\levelrangefilter.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 varia\levelrangefilter.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_levelrangefilter.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC varia\levelrangefilter.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_levelrangefilter.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;varia\levelrangefilter.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 varia\levelrangefilter.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_levelrangefilter.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC varia\levelrangefilter.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_levelrangefilter.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="varia\listappender.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;varia\listappender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 varia\listappender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_listappender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC varia\listappender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_listappender.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;varia\listappender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 varia\listappender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_listappender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC varia\listappender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_listappender.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="log4qt.h" />
+    <ClInclude Include="helpers\logerror.h" />
+    <CustomBuild Include="logger.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;logger.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 logger.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_logger.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC logger.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_logger.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;logger.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 logger.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_logger.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC logger.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_logger.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="loggerrepository.h" />
+    <ClInclude Include="loggingevent.h" />
+    <ClInclude Include="logmanager.h" />
+    <CustomBuild Include="helpers\logobject.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;helpers\logobject.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 helpers\logobject.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_logobject.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC helpers\logobject.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_logobject.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;helpers\logobject.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 helpers\logobject.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_logobject.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC helpers\logobject.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_logobject.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="helpers\logobjectptr.h" />
+    <ClInclude Include="mdc.h" />
+    <ClInclude Include="ndc.h" />
+    <CustomBuild Include="varia\nullappender.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;varia\nullappender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 varia\nullappender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_nullappender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC varia\nullappender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_nullappender.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;varia\nullappender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 varia\nullappender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_nullappender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC varia\nullappender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_nullappender.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="helpers\optionconverter.h" />
+    <ClInclude Include="helpers\patternformatter.h" />
+    <CustomBuild Include="patternlayout.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;patternlayout.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 patternlayout.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_patternlayout.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC patternlayout.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_patternlayout.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;patternlayout.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 patternlayout.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_patternlayout.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC patternlayout.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_patternlayout.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="helpers\properties.h" />
+    <ClInclude Include="propertyconfigurator.h" />
+    <CustomBuild Include="rollingfileappender.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;rollingfileappender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 rollingfileappender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_rollingfileappender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC rollingfileappender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_rollingfileappender.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;rollingfileappender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 rollingfileappender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_rollingfileappender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC rollingfileappender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_rollingfileappender.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="simplelayout.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;simplelayout.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 simplelayout.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_simplelayout.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC simplelayout.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_simplelayout.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;simplelayout.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 simplelayout.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_simplelayout.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC simplelayout.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_simplelayout.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="varia\stringmatchfilter.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;varia\stringmatchfilter.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 varia\stringmatchfilter.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_stringmatchfilter.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC varia\stringmatchfilter.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_stringmatchfilter.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;varia\stringmatchfilter.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 varia\stringmatchfilter.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_stringmatchfilter.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC varia\stringmatchfilter.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_stringmatchfilter.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="ttcclayout.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;ttcclayout.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 ttcclayout.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_ttcclayout.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ttcclayout.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_ttcclayout.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;ttcclayout.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 ttcclayout.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_ttcclayout.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ttcclayout.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_ttcclayout.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="writerappender.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;writerappender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\debug\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 writerappender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_writerappender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC writerappender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\debug\moc\moc_writerappender.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;writerappender.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"d:\JPrograms\Qt\4.8.4\include\QtCore" -I"d:\JPrograms\Qt\4.8.4\include\QtGui" -I"d:\JPrograms\Qt\4.8.4\include" -I"..\..\src" -I"d:\JPrograms\Qt\4.8.4\include\ActiveQt" -I"tmp\release\moc" -Id:\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 writerappender.h -o c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_writerappender.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC writerappender.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c:\Users\Jerry\Desktop\TDYPre\trunk\src\3rdParty\log4qt\src\log4qt\tmp\release\moc\moc_writerappender.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="tmp\debug\moc\moc_appender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_appender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_appenderskeleton.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_appenderskeleton.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_configuratorhelper.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_configuratorhelper.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_consoleappender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_consoleappender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_dailyrollingfileappender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_dailyrollingfileappender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_debugappender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_debugappender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_denyallfilter.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_denyallfilter.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_fileappender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_fileappender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_filter.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_filter.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_layout.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_layout.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_levelmatchfilter.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_levelmatchfilter.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_levelrangefilter.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_levelrangefilter.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_listappender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_listappender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_logger.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_logger.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_logobject.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_logobject.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_nullappender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_nullappender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_patternlayout.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_patternlayout.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_rollingfileappender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_rollingfileappender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_simplelayout.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_simplelayout.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_stringmatchfilter.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_stringmatchfilter.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_ttcclayout.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_ttcclayout.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\debug\moc\moc_writerappender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\release\moc\moc_writerappender.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

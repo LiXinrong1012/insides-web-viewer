@@ -1,0 +1,2 @@
+python convertAll.py
+pause

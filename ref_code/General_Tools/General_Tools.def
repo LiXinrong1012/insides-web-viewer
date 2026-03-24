@@ -1,0 +1,4 @@
+EXPORTS
+getSharedMemoryAddress
+releaseSharedMemoryAddress
+VdsSys_DeleteFile

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$a00338.html" title="General group node which maintains a list of children." alt="" coords="33,237,119,267"/>
+<area shape="rect" id="node4" href="$a00490.html" title="Base class for all internal nodes in the scene graph." alt="" coords="36,160,116,189"/>
+<area shape="rect" id="node6" href="$a00500.html" title="Base class/standard interface for objects which require IO support, cloning and reference counting..." alt="" coords="32,83,120,112"/>
+<area shape="rect" id="node8" href="$a00628.html" title="Base class from providing referencing counted objects." alt="" coords="19,5,133,35"/>
+</map>

@@ -1,0 +1,37 @@
+#ifndef RESULTFUNCTIONS_H
+#define RESULTFUNCTIONS_H
+
+#include "preparameter/BasicFunctionOperand.h"
+
+/*!
+	@brief   暂不清楚下面三个类的作用
+	@date    2015.7.3
+	@author  Jerry
+*/
+class ResultCompFunction: public BaseFunction
+{
+public:
+	ResultCompFunction(){m_iNumOfPara=5;m_strFuncName="RESULT_COMP";}
+
+	virtual Expression	FuncLink	( Expression Exprs[], const int nPara ) throw(ErrNotPermitted)  ;
+	virtual double		EvalValue	( BasicExpression& a  );
+};
+
+class ContactCompFunction : public BaseFunction
+{
+public:
+	ContactCompFunction(){m_iNumOfPara=5;m_strFuncName="CONTACT_COMP";}
+	virtual Expression	FuncLink	( Expression Exprs[], const int nPara ) throw(ErrNotPermitted)  ;
+	virtual double		EvalValue	( BasicExpression& a  );
+};
+
+class TimeFunction : public BaseFunction
+{
+public:
+	TimeFunction(){m_iNumOfPara=0;m_strFuncName="TIME";}
+
+	virtual Expression	FuncLink	( Expression Exprs[], const int nPara ) throw(ErrNotPermitted)  ;
+	virtual double		EvalValue	( BasicExpression& a  );
+};
+
+#endif // RESULTFUNCTIONS_H

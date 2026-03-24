@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ExpressInputDialog</class>
+ <widget class="QDialog" name="ExpressInputDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>580</width>
+    <height>556</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Expression &amp; parameter</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="4" column="0" colspan="2">
+    <widget class="QListWidget" name="listSymbols"/>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>math functions</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>constants</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>model functions</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>defined parameters</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSelect">
+       <property name="text">
+        <string>Select</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="6" column="1">
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QPushButton" name="btnOk">
+       <property name="text">
+        <string>OK</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnCancel">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>Name*</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineName"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Description</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineDescription"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Expression &amp; parameter *</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QTextEdit" name="txtExpression"/>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <widget class="QLabel" name="labelHelp">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>comboBox</sender>
+   <signal>activated(int)</signal>
+   <receiver>ExpressInputDialog</receiver>
+   <slot>onShowList(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>296</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>292</x>
+     <y>314</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listSymbols</sender>
+   <signal>itemClicked(QListWidgetItem*)</signal>
+   <receiver>ExpressInputDialog</receiver>
+   <slot>onHelpShow(QListWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>407</x>
+     <y>362</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>438</x>
+     <y>291</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listSymbols</sender>
+   <signal>itemDoubleClicked(QListWidgetItem*)</signal>
+   <receiver>ExpressInputDialog</receiver>
+   <slot>onAddTxtToEnd(QListWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>458</x>
+     <y>375</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>498</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnOk</sender>
+   <signal>clicked()</signal>
+   <receiver>ExpressInputDialog</receiver>
+   <slot>onOK()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>320</x>
+     <y>537</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>222</x>
+     <y>531</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnCancel</sender>
+   <signal>clicked()</signal>
+   <receiver>ExpressInputDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>486</x>
+     <y>531</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>132</x>
+     <y>525</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>ExpressInputDialog</receiver>
+   <slot>onShowMenu()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>193</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onShowList(int)</slot>
+  <slot>onHelpShow(QListWidgetItem*)</slot>
+  <slot>onAddTxtToEnd(QListWidgetItem*)</slot>
+  <slot>onShowMenu()</slot>
+  <slot>onOK()</slot>
+ </slots>
+</ui>

@@ -1,0 +1,40 @@
+HKCR
+{
+	Hoops3dStream.Hoops3dStreamCtrl.1 = s 'HOOPS 3D Stream Control Class'
+	{
+		CLSID = s '%CLSIDCTRLCLASS%'
+		'Insertable'
+	}
+	Hoops3dStream.Hoops3dStreamCtrl = s 'HOOPS 3D Stream Control Class'
+	{
+		CLSID = s '%CLSIDCTRLCLASS%'
+		CurVer = s 'Hoops3dStream.Hoops3dStreamCtrl.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove %CLSIDCTRLCLASS% = s 'HOOPS 3D Stream Control Class'
+		{
+			ProgID = s 'Hoops3dStream.Hoops3dStreamCtrl.1'
+			VersionIndependentProgID = s 'Hoops3dStream.Hoops3dStreamCtrl'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			ForceRemove 'Control'
+			ForceRemove 'Insertable'
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 101'
+			'MiscStatus' = s '0'
+			{
+			    '1' = s '131473'
+			}
+			'TypeLib' = s '%CLSIDTYPELIB%'
+			'Version' = s '1.0'
+
+  'Verb'
+   {
+   '-7' = s '&Properties, 0, 2'
+   }
+		}
+	}
+}

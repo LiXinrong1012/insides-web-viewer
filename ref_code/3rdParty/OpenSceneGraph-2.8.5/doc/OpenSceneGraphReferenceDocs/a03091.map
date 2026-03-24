@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$a00247.html" title="An abstract base class for particle emitters." alt="" coords="36,315,172,344"/>
+<area shape="rect" id="node4" href="$a00541.html" title="A common base interface for those classes which need to do something on particles." alt="" coords="5,237,203,267"/>
+<area shape="rect" id="node6" href="$a00490.html" title="Base class for all internal nodes in the scene graph." alt="" coords="64,160,144,189"/>
+<area shape="rect" id="node8" href="$a00500.html" title="Base class/standard interface for objects which require IO support, cloning and reference counting..." alt="" coords="60,83,148,112"/>
+<area shape="rect" id="node10" href="$a00628.html" title="Base class from providing referencing counted objects." alt="" coords="47,5,161,35"/>
+</map>

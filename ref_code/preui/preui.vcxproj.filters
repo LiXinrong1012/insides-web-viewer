@@ -1,0 +1,765 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{ea12be07-076c-46cc-b566-637538979fb5}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{ad41c65a-bf0d-4fdd-b54d-4ecf7cb36239}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PropertyBrowserWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_PropertyBrowserWidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_PropertyBrowserWidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="preui_global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mainapplication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_ui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_main_ui.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_main_ui.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="opsavemodelthread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_opsavemodelthread.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_opsavemodelthread.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="oploadmodelthread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_oploadmodelthread.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_oploadmodelthread.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="oploadtdythread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oploadtdyresthread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_oploadtdyresthread.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_oploadtdyresthread.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_oploadtdythread.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_oploadtdythread.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="optestthread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_optestthread.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_optestthread.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="ribbonwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ribbonwindow.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ribbonwindow.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="testwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_testwidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_testwidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="localserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_localserver.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_localserver.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_preui.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="preui_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_vinteractivetablewidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mainapplication.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_main_ui.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hoops_init.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_testwidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="PropertyBrowserWidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="vinteractivetablewidget.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="main_ui.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="main_ui.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="opsavemodelthread.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="oploadmodelthread.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="oploadtdyresthread.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="oploadtdythread.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="optestthread.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ribbonwindow.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="testwidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="testwidget.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="localserver.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="preui.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\items\marker.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\rigid.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\folder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\instance.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\parameters.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\stl.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\shapes.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\new.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\open.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\save.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\quit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\redo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\undo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\gointo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\goout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\rigid.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\stl.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\shapes.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\invisual.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\undefined.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\visual.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\dialog\parameter\add.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\dialog\parameter\down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\dialog\parameter\edit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\dialog\parameter\go-up.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\dialog\parameter\ok.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\dialog\parameter\remove.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\paraviewicon\SplitViewHorizontal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\paraviewicon\SplitViewVertical.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\ani_back.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\ani_pause.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\ani_play.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\ani_play_pause.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\ani_stop.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\animate.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\annotate.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\attributeicon.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\back.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\bottom.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\circlemkp.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\clashdetect.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\clipboard.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\conceptual.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\cone.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\curvature.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\cutting.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\cuttingplane.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\cylinder.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\distance.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\fileclosed.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\fileopen.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\fittowindow.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\flat.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\folder.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\freehandmkp.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\front.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\geomicon.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\gouraud.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\hidden.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\hidden3D.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\home.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\intersect.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\isometric.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\layerFreeze.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\layerOff.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\layerProp.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\left.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\letters.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\named_view.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\nurb3d.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\nurbs.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\open.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\orbit.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\page.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\pan.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\parellel.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\perspetive.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\plot.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\plot_preview.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\print.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\publish.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\query.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\realistic.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\realtime_pan.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\realtime_zoom.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\rectanglemkp.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\redo.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\right.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\rotate.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\saveas.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\savemkp1.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\savemkp2.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\select.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\selectwindow.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\sphere.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\subtract.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\textmkp.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\top.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\translate.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\tsa.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\undo.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\union.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\walk.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\wire.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\wireFrame2D.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\wireframe3D.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\zoom3d.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\zoomin.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\zoominter.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\zoomout.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\zoomtoextent.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\zoomtoprev.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\hoops\zoomtowindow.xpm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\ani\left.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\ani\pause.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\ani\play.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\ani\right.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\ani\stop.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\assembly.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\ground.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\joint.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\shape.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\solver.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\fempart.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\contact.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\items\load.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\contours.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\repaint.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\search.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\export.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\menu\viewall.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\qtnres\about.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\qtnres\favicon.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\qtnres\qtitan.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\qtnres\qtitanlogo32x32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\qtnres\qtitanlogo64x64.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\qtnres\question.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\qtnres\ribbonMaximize.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\qtnres\ribbonMinimize.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\qtnres\sysbutton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\qtnres\topheader.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\h012b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\h012a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\h011b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\h011a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\h010b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\h010a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\c001a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\c001b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\c002a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\c002b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\c003a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\c003b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\c004a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\c004b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\c005a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\c005b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\c006a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\c006b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\h016a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\h016b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\h017a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\h017b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d001a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d001b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d002a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d002b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d003a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d003b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d004a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d004b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d005a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d005b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d006a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d006b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d007a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d007b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d024a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d024b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d025a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d025b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d026a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d026b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d027a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d027b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d028a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newmenu\d028b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

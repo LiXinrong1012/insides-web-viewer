@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5a26fc99-a45a-49b7-88f6-8c40178bd896}</UniqueIdentifier>
+      <Extensions>txt</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Toolbar.bmp" />
+    <None Include="Visualize.ico" />
+    <None Include="Visualize.rc2" />
+    <None Include="VisualizeDoc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="HVisualizeModel.cpp" />
+    <ClCompile Include="HVisualizeSelectionSet.cpp" />
+    <ClCompile Include="HVisualizeView.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="Visualize.cpp" />
+    <ClCompile Include="VisualizeDoc.cpp" />
+    <ClCompile Include="VisualizeView.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="HVisualizeModel.h" />
+    <ClInclude Include="HVisualizeSelectionSet.h" />
+    <ClInclude Include="HVisualizeView.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="Visualize.h" />
+    <ClInclude Include="VisualizeDoc.h" />
+    <ClInclude Include="VisualizeView.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Visualize.rc" />
+  </ItemGroup>
+</Project>

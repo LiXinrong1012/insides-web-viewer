@@ -1,0 +1,24 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$a00507.html" title="osg::observer_ptr\&lt; AnimationManagerBase \&gt;" alt="" coords="655,836,937,865"/>
+<area shape="rect" id="node5" href="$a00507.html" title="osg::observer_ptr\&lt; Bone \&gt;" alt="" coords="709,450,883,480"/>
+<area shape="rect" id="node7" href="$a00507.html" title="osg::observer_ptr\&lt; DatabasePager \&gt;" alt="" coords="679,40,913,69"/>
+<area shape="rect" id="node9" href="$a00507.html" title="osg::observer_ptr\&lt; Object \&gt;" alt="" coords="705,214,887,244"/>
+<area shape="rect" id="node11" href="$a00507.html" title="osg::observer_ptr\&lt; osg::Camera \&gt;" alt="" coords="687,629,905,658"/>
+<area shape="rect" id="node13" href="$a00507.html" title="osg::observer_ptr\&lt; osg::GraphicsContext \&gt;" alt="" coords="661,129,931,158"/>
+<area shape="rect" id="node15" href="$a00507.html" title="osg::observer_ptr\&lt; osg::Group \&gt;" alt="" coords="692,506,900,536"/>
+<area shape="rect" id="node17" href="$a00507.html" title="osg::observer_ptr\&lt; osg::Image \&gt;" alt="" coords="692,298,900,328"/>
+<area shape="rect" id="node19" href="$a00507.html" title="osg::observer_ptr\&lt; osg::Object \&gt;" alt="" coords="691,565,901,594"/>
+<area shape="rect" id="node21" href="$a00507.html" title="osg::observer_ptr\&lt; osgAnimation::AnimationManagerBase \&gt;" alt="" coords="611,1278,981,1308"/>
+<area shape="rect" id="node23" href="$a00507.html" title="osg::observer_ptr\&lt; osgUtil::CullVisitor \&gt;" alt="" coords="671,1569,921,1598"/>
+<area shape="rect" id="node25" href="$a00507.html" title="osg::observer_ptr\&lt; osgViewer::View \&gt;" alt="" coords="676,900,916,929"/>
+<area shape="rect" id="node27" href="$a00507.html" title="osg::observer_ptr\&lt; Skeleton \&gt;" alt="" coords="699,1372,893,1401"/>
+<area shape="rect" id="node29" href="$a00507.html" title="osg::observer_ptr\&lt; View \&gt;" alt="" coords="709,1121,883,1150"/>
+<area shape="rect" id="node31" href="$a00507.html" title="osg::observer_ptr\&lt; ViewData \&gt;" alt="" coords="696,1494,896,1524"/>
+<area shape="rect" id="node33" href="$a00507.html" title="osg::observer_ptr\&lt; ViewDependentShadowTechnique \&gt;" alt="" coords="627,737,965,766"/>
+<area shape="rect" id="node35" href="$a00507.html" title="osg::observer_ptr\&lt; ViewerBase \&gt;" alt="" coords="689,396,903,425"/>
+<area shape="rect" id="node37" href="$a00507.html" title="osg::observer_ptr\&lt; Widget \&gt;" alt="" coords="703,1430,889,1460"/>
+<area shape="rect" id="node39" href="$a00507.html" title="osg::observer_ptr\&lt; Window \&gt;" alt="" coords="701,1212,891,1241"/>
+<area shape="rect" id="node41" href="$a00507.html" title="osg::observer_ptr\&lt; WindowManager \&gt;" alt="" coords="676,1022,916,1052"/>
+<area shape="rect" id="node43" href="$a00507.html" title="Smart pointer for observed objects, that automatically set pointers to them to null when they deleted..." alt="" coords="160,830,312,860"/>
+<area shape="rect" id="node65" href="$a00744.html" title="Encapsulates the current applied OpenGL modes, attributes and vertex arrays settings, implements lazy state updating and provides accessors for querying the current state." alt="" coords="195,1666,277,1696"/>
+</map>

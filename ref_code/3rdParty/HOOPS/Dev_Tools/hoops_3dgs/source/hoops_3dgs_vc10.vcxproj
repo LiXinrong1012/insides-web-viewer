@@ -1,0 +1,1324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{15D00717-2819-422C-87DA-ABA73023708C}</ProjectGuid>
+    <RootNamespace>hoops_3dgs_vc10</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">hoops1900_vc10d</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">hoops1900_vc10</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">hoops1900_x64_vc10d</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">hoops1900_x64_vc10</TargetName>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\bin\nt_i386_vc10d\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug_nt_i386_vc10\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\bin\nt_i386_vc10\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release_nt_i386_vc10\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\..\bin\nt_x64_vc10d\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Debug_nt_x64_vc10\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\..\bin\nt_x64_vc10\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Release_nt_x64_vc10\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\$(IntDir)$(TargetName).tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>./;./Jpeg;./png;./Zlib;./freetype-237/include;./glew/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>VALIDATE_MEMORY;FREETYPE;WIN32_OPENGL_DRIVER;WIN32_OPENGL2_DRIVER;IMAGE_DRIVER;MSW_DRIVER;GLEW_MX;GLEW_STATIC;WIN32_LEAN_AND_MEAN;_DEBUG;HOOPS_DEBUG_BUILD;DYNAMIC_LOADER;$(EXTRA_CFLAGS);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>.\$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/verbose %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>psapi.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>libc;libcmt;libcd;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>.\$(IntDir)$(TargetName).map</MapFileName>
+      <BaseAddress>0x1C000000</BaseAddress>
+      <ImportLibrary>..\lib\nt_i386_vc10\hoopsd.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\$(IntDir)$(TargetName).tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>./;./Jpeg;./png;./Zlib;./freetype-237/include;./glew/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>FREETYPE;IMAGE_DRIVER;WIN32_OPENGL_DRIVER;WIN32_OPENGL2_DRIVER;MSW_DRIVER;GLEW_MX;GLEW_STATIC;WIN32_LEAN_AND_MEAN;NDEBUG;DYNAMIC_LOADER;$(EXTRA_CFLAGS);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>.\$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>$(RELEASE_PDB) %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>psapi.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>libc;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <BaseAddress>0x1C000000</BaseAddress>
+      <ImportLibrary>..\lib\nt_i386_vc10\hoops.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\$(IntDir)$(TargetName).tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>./;./Jpeg;./png;./Zlib;./freetype-237/include;./glew/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>VALIDATE_MEMORY;FREETYPE;IMAGE_DRIVER;WIN32_OPENGL_DRIVER;WIN32_OPENGL2_DRIVER;MSW_DRIVER;GLEW_MX;GLEW_STATIC;WIN32_LEAN_AND_MEAN;_DEBUG;HOOPS_DEBUG_BUILD;DYNAMIC_LOADER;WIN64;$(EXTRA_CFLAGS);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>.\$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>psapi.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>libc;libcmt;libcd;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>.\$(IntDir)$(TargetName).map</MapFileName>
+      <BaseAddress>0x1C000000</BaseAddress>
+      <ImportLibrary>..\lib\nt_x64_vc10\hoopsd.lib</ImportLibrary>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\$(IntDir)$(TargetName).tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>./;./Jpeg;./png;./Zlib;./freetype-237/include;./glew/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>FREETYPE;IMAGE_DRIVER;WIN32_OPENGL_DRIVER;WIN32_OPENGL2_DRIVER;MSW_DRIVER;GLEW_MX;GLEW_STATIC;WIN32_LEAN_AND_MEAN;NDEBUG;DYNAMIC_LOADER;WIN64;$(EXTRA_CFLAGS);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>.\$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>$(RELEASE_PDB) %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>psapi.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>libc;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <BaseAddress>0x1C000000</BaseAddress>
+      <ImportLibrary>..\lib\nt_x64_vc10\hoops.lib</ImportLibrary>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="hcd.cpp" />
+    <ClCompile Include="freetype-237\src\autofit\autofit.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\cff\cff.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\base\ftbase.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\base\ftbitmap.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\base\ftglyph.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\base\ftinit.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\base\ftsystem.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\psaux\psaux.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\pshinter\pshinter.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\psnames\psnames.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\raster\raster.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\sfnt\sfnt.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\smooth\smooth.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\truetype\truetype.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\type1\type1.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="glew\src\glew.c" />
+    <ClCompile Include="Zlib\adler32.c" />
+    <ClCompile Include="Zlib\compress.c" />
+    <ClCompile Include="Zlib\crc32.c" />
+    <ClCompile Include="Zlib\deflate.c" />
+    <ClCompile Include="Zlib\gzio.c" />
+    <ClCompile Include="Zlib\infblock.c" />
+    <ClCompile Include="Zlib\infcodes.c" />
+    <ClCompile Include="Zlib\inffast.c" />
+    <ClCompile Include="Zlib\inflate.c" />
+    <ClCompile Include="Zlib\inftrees.c" />
+    <ClCompile Include="Zlib\infutil.c" />
+    <ClCompile Include="Zlib\trees.c" />
+    <ClCompile Include="Zlib\uncompr.c" />
+    <ClCompile Include="Zlib\zutil.c" />
+    <ClCompile Include="hoops_png.cpp" />
+    <ClCompile Include="png\png.c" />
+    <ClCompile Include="png\pngerror.c" />
+    <ClCompile Include="png\pngget.c" />
+    <ClCompile Include="png\pngmem.c" />
+    <ClCompile Include="png\pngpread.c" />
+    <ClCompile Include="png\pngread.c" />
+    <ClCompile Include="png\pngrio.c" />
+    <ClCompile Include="png\pngrtran.c" />
+    <ClCompile Include="png\pngrutil.c" />
+    <ClCompile Include="png\pngset.c" />
+    <ClCompile Include="png\pngtrans.c" />
+    <ClCompile Include="png\pngvcrd.c" />
+    <ClCompile Include="png\pngwio.c" />
+    <ClCompile Include="png\pngwrite.c" />
+    <ClCompile Include="png\pngwtran.c" />
+    <ClCompile Include="png\pngwutil.c" />
+    <ClCompile Include="hoops_jpeg.cpp" />
+    <ClCompile Include="Jpeg\jcapimin.c" />
+    <ClCompile Include="Jpeg\jcapistd.c" />
+    <ClCompile Include="Jpeg\jccoefct.c" />
+    <ClCompile Include="Jpeg\jccolor.c" />
+    <ClCompile Include="Jpeg\jcdctmgr.c" />
+    <ClCompile Include="Jpeg\jchuff.c" />
+    <ClCompile Include="Jpeg\jcinit.c" />
+    <ClCompile Include="Jpeg\jcmainct.c" />
+    <ClCompile Include="Jpeg\jcmarker.c" />
+    <ClCompile Include="Jpeg\jcmaster.c" />
+    <ClCompile Include="Jpeg\jcomapi.c" />
+    <ClCompile Include="Jpeg\jcparam.c" />
+    <ClCompile Include="Jpeg\jcphuff.c" />
+    <ClCompile Include="Jpeg\jcprepct.c" />
+    <ClCompile Include="Jpeg\jcsample.c" />
+    <ClCompile Include="Jpeg\jctrans.c" />
+    <ClCompile Include="Jpeg\jdapimin.c" />
+    <ClCompile Include="Jpeg\jdapistd.c" />
+    <ClCompile Include="Jpeg\jdatadst.c" />
+    <ClCompile Include="Jpeg\jdatasrc.c" />
+    <ClCompile Include="Jpeg\jdcoefct.c" />
+    <ClCompile Include="Jpeg\jdcolor.c" />
+    <ClCompile Include="Jpeg\jddctmgr.c" />
+    <ClCompile Include="Jpeg\jdhuff.c" />
+    <ClCompile Include="Jpeg\jdinput.c" />
+    <ClCompile Include="Jpeg\jdmainct.c" />
+    <ClCompile Include="Jpeg\jdmarker.c" />
+    <ClCompile Include="Jpeg\jdmaster.c" />
+    <ClCompile Include="Jpeg\jdmerge.c" />
+    <ClCompile Include="Jpeg\jdphuff.c" />
+    <ClCompile Include="Jpeg\jdpostct.c" />
+    <ClCompile Include="Jpeg\jdsample.c" />
+    <ClCompile Include="Jpeg\jdtrans.c" />
+    <ClCompile Include="Jpeg\jerror.c" />
+    <ClCompile Include="Jpeg\jfdctflt.c" />
+    <ClCompile Include="Jpeg\jfdctfst.c" />
+    <ClCompile Include="Jpeg\jfdctint.c" />
+    <ClCompile Include="Jpeg\jidctflt.c" />
+    <ClCompile Include="Jpeg\jidctfst.c" />
+    <ClCompile Include="Jpeg\jidctint.c" />
+    <ClCompile Include="Jpeg\jidctred.c" />
+    <ClCompile Include="Jpeg\jmemmgr.c" />
+    <ClCompile Include="Jpeg\jmemnobs.c" />
+    <ClCompile Include="Jpeg\jquant1.c" />
+    <ClCompile Include="Jpeg\jquant2.c" />
+    <ClCompile Include="Jpeg\jutils.c" />
+    <ClCompile Include="bounding.cpp" />
+    <ClCompile Include="callback.cpp" />
+    <ClCompile Include="camera.cpp" />
+    <ClCompile Include="clip_region.cpp" />
+    <ClCompile Include="color.cpp" />
+    <ClCompile Include="color_map.cpp" />
+    <ClCompile Include="conditions.cpp" />
+    <ClCompile Include="driver_options.cpp" />
+    <ClCompile Include="find_attribute.cpp" />
+    <ClCompile Include="find_net_attribute.cpp" />
+    <ClCompile Include="glyphs.cpp" />
+    <ClCompile Include="handedness.cpp" />
+    <ClCompile Include="heuristics.cpp" />
+    <ClCompile Include="line_styles.cpp" />
+    <ClCompile Include="modelling_matrix.cpp" />
+    <ClCompile Include="mset_face_specific.cpp" />
+    <ClCompile Include="mset_vertex_colors.cpp" />
+    <ClCompile Include="mset_vertex_normals.cpp" />
+    <ClCompile Include="mset_vertex_parameters.cpp" />
+    <ClCompile Include="mset_vertex_visibilities.cpp" />
+    <ClCompile Include="named_defs.cpp" />
+    <ClCompile Include="normal.cpp" />
+    <ClCompile Include="onebytes.cpp" />
+    <ClCompile Include="onefloats.cpp" />
+    <ClCompile Include="parameter.cpp" />
+    <ClCompile Include="priority.cpp" />
+    <ClCompile Include="redraw_attribute.cpp" />
+    <ClCompile Include="rendering_options.cpp" />
+    <ClCompile Include="selectability.cpp" />
+    <ClCompile Include="set_attribute.cpp" />
+    <ClCompile Include="set_onename.cpp" />
+    <ClCompile Include="show_one_color.cpp" />
+    <ClCompile Include="streaming_mode.cpp" />
+    <ClCompile Include="text_font.cpp" />
+    <ClCompile Include="texture_matrix.cpp" />
+    <ClCompile Include="unset_one.cpp" />
+    <ClCompile Include="user_options.cpp" />
+    <ClCompile Include="visibility.cpp" />
+    <ClCompile Include="window.cpp" />
+    <ClCompile Include="define_color.cpp" />
+    <ClCompile Include="evaluate_color.cpp" />
+    <ClCompile Include="compute_boolean_shell.cpp" />
+    <ClCompile Include="compute_bounding.cpp" />
+    <ClCompile Include="compute_color.cpp" />
+    <ClCompile Include="compute_convex_hull.cpp" />
+    <ClCompile Include="compute_intersect_polyline.cpp" />
+    <ClCompile Include="compute_matrix_math.cpp" />
+    <ClCompile Include="compute_minimized_shell.cpp" />
+    <ClCompile Include="compute_point_inside_shell.cpp" />
+    <ClCompile Include="compute_selection_by_shell.cpp" />
+    <ClCompile Include="compute_transform.cpp" />
+    <ClCompile Include="compute_transform_matrix.cpp" />
+    <ClCompile Include="compute_vector.cpp" />
+    <ClCompile Include="compute_window_extent.cpp" />
+    <ClCompile Include="shell_utilities.cpp" />
+    <ClCompile Include="lod_main.cpp" />
+    <ClCompile Include="regenerate_lod.cpp" />
+    <ClCompile Include="age_activity.cpp" />
+    <ClCompile Include="code_generation.cpp" />
+    <ClCompile Include="control_update.cpp" />
+    <ClCompile Include="define_callback_name.cpp" />
+    <ClCompile Include="define_default_colors.cpp" />
+    <ClCompile Include="define_driver_config.cpp" />
+    <ClCompile Include="define_system_options.cpp" />
+    <ClCompile Include="error.cpp" />
+    <ClCompile Include="exit_program.cpp" />
+    <ClCompile Include="read_metafile.cpp" />
+    <ClCompile Include="reset_internal_data.cpp" />
+    <ClCompile Include="reset_system.cpp" />
+    <ClCompile Include="set_default_attributes.cpp" />
+    <ClCompile Include="show_device_info.cpp" />
+    <ClCompile Include="show_system_info.cpp" />
+    <ClCompile Include="start_hoops.cpp" />
+    <ClCompile Include="text_font_defined.cpp" />
+    <ClCompile Include="textures.cpp" />
+    <ClCompile Include="update_display.cpp" />
+    <ClCompile Include="write_metafile.cpp" />
+    <ClCompile Include="3d_common.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="3d_common_post.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="3d_common_tristrip.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="cgm3_driver.cpp" />
+    <ClCompile Include="direct3d_utility.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="display_lists.cpp" />
+    <ClCompile Include="dx9_driver.cpp" />
+    <ClCompile Include="hpgl2_driver.cpp" />
+    <ClCompile Include="hpgl_driver.cpp" />
+    <ClCompile Include="image_driver.cpp" />
+    <ClCompile Include="msw_driver.cpp" />
+    <ClCompile Include="ogl.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="ogl2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="ogl2_agl.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="ogl2_glx.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="ogl2_post.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="ogl2_wgl.cpp" />
+    <ClCompile Include="ogl_agl.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="ogl_glx.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="ogl_tristrip.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="ogl_vbo_tristrip.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="ogl_mgl.cpp" />
+    <ClCompile Include="ogl_wgl.cpp" />
+    <ClCompile Include="oglfstrip.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="oglvstrip.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="pdf_driver.cpp" />
+    <ClCompile Include="postscript_driver.cpp" />
+    <ClCompile Include="printf_driver.cpp" />
+    <ClCompile Include="qt_driver.cpp" />
+    <ClCompile Include="qtzdrive.cpp" />
+    <ClCompile Include="start_drivers.cpp" />
+    <ClCompile Include="whip2d_driver.cpp" />
+    <ClCompile Include="x11_driver.cpp" />
+    <ClCompile Include="buffer_dc_dot.cpp" />
+    <ClCompile Include="buffer_dc_line.cpp" />
+    <ClCompile Include="buffer_dc_raster.cpp" />
+    <ClCompile Include="buffer_dc_rectangle.cpp" />
+    <ClCompile Include="buffer_dc_triangle.cpp" />
+    <ClCompile Include="rasterize_dc_span.cpp" />
+    <ClCompile Include="span_dc_line.cpp" />
+    <ClCompile Include="span_dc_rectangle.cpp" />
+    <ClCompile Include="span_dc_triangle.cpp" />
+    <ClCompile Include="span_utilities.cpp" />
+    <ClCompile Include="szb_line.cpp" />
+    <ClCompile Include="szb_rectangle.cpp" />
+    <ClCompile Include="szb_triangle.cpp" />
+    <ClCompile Include="draw_builtin_text.cpp" />
+    <ClCompile Include="hoops_freetype.cpp" />
+    <ClCompile Include="text_font_gather.cpp" />
+    <ClCompile Include="text_font_process.cpp" />
+    <ClCompile Include="w32fonts.cpp" />
+    <ClCompile Include="cut_hidden_by_plane.cpp" />
+    <ClCompile Include="draw_hidden_item.cpp" />
+    <ClCompile Include="free_hidden_list.cpp" />
+    <ClCompile Include="hide_dc_items.cpp" />
+    <ClCompile Include="insert_in_hidden_tree.cpp" />
+    <ClCompile Include="linearize_hidden_tree.cpp" />
+    <ClCompile Include="see_whats_hidden.cpp" />
+    <ClCompile Include="hl_hide_dc_items.cpp" />
+    <ClCompile Include="hl_see_whats_hidden.cpp" />
+    <ClCompile Include="elaborate_selection.cpp" />
+    <ClCompile Include="select_curve.cpp" />
+    <ClCompile Include="select_dot.cpp" />
+    <ClCompile Include="select_ellipse.cpp" />
+    <ClCompile Include="select_elliptical_arc.cpp" />
+    <ClCompile Include="select_fundamental.cpp" />
+    <ClCompile Include="select_grid.cpp" />
+    <ClCompile Include="select_image.cpp" />
+    <ClCompile Include="select_inner_window.cpp" />
+    <ClCompile Include="select_marker.cpp" />
+    <ClCompile Include="select_nurbs_surface.cpp" />
+    <ClCompile Include="select_polyglin.cpp" />
+    <ClCompile Include="select_polyhedron.cpp" />
+    <ClCompile Include="select_sphere.cpp" />
+    <ClCompile Include="select_text.cpp" />
+    <ClCompile Include="selection_downwind.cpp" />
+    <ClCompile Include="selection_render.cpp" />
+    <ClCompile Include="std_select.cpp" />
+    <ClCompile Include="clip_dc_geometry.cpp" />
+    <ClCompile Include="defer_tree.cpp" />
+    <ClCompile Include="draw_deferred_trees.cpp" />
+    <ClCompile Include="draw_indexicated_3d_polyedge.cpp" />
+    <ClCompile Include="draw_indexicated_3d_tristrip.cpp" />
+    <ClCompile Include="draw_lighted_face.cpp" />
+    <ClCompile Include="draw_overlay_tree.cpp" />
+    <ClCompile Include="draw_partial_erase_tree.cpp" />
+    <ClCompile Include="draw_silhouette_edges.cpp" />
+    <ClCompile Include="draw_software_z_buffered_tree.cpp" />
+    <ClCompile Include="draw_trimmed_dc_image.cpp" />
+    <ClCompile Include="get_actions.cpp" />
+    <ClCompile Include="get_current_info.cpp" />
+    <ClCompile Include="get_physical_info.cpp" />
+    <ClCompile Include="preprocess.cpp" />
+    <ClCompile Include="simple_shadow.cpp" />
+    <ClCompile Include="std_compute_shading.cpp" />
+    <ClCompile Include="std_compute_texture.cpp" />
+    <ClCompile Include="std_draw_3d_curve.cpp" />
+    <ClCompile Include="std_draw_3d_cylinder.cpp" />
+    <ClCompile Include="std_draw_3d_ellipse.cpp" />
+    <ClCompile Include="std_draw_3d_grid.cpp" />
+    <ClCompile Include="std_draw_3d_image.cpp" />
+    <ClCompile Include="std_draw_3d_light.cpp" />
+    <ClCompile Include="std_draw_3d_marker.cpp" />
+    <ClCompile Include="std_draw_3d_nurbs_surface.cpp" />
+    <ClCompile Include="std_draw_3d_polyedge.cpp" />
+    <ClCompile Include="std_draw_3d_polygon.cpp" />
+    <ClCompile Include="std_draw_3d_polyhedron.cpp" />
+    <ClCompile Include="std_draw_3d_polyline.cpp" />
+    <ClCompile Include="std_draw_3d_polymarker.cpp" />
+    <ClCompile Include="std_draw_3d_sphere.cpp" />
+    <ClCompile Include="std_draw_3d_stencil.cpp" />
+    <ClCompile Include="std_draw_3d_text.cpp" />
+    <ClCompile Include="std_draw_3d_tristrip.cpp" />
+    <ClCompile Include="std_draw_dc_colorized_face.cpp" />
+    <ClCompile Include="std_draw_dc_colorized_line.cpp" />
+    <ClCompile Include="std_draw_dc_colorized_marker.cpp" />
+    <ClCompile Include="std_draw_dc_dot.cpp" />
+    <ClCompile Include="std_draw_dc_ellipse.cpp" />
+    <ClCompile Include="std_draw_dc_elliptical_arc.cpp" />
+    <ClCompile Include="std_draw_dc_face.cpp" />
+    <ClCompile Include="std_draw_dc_gouraud_line.cpp" />
+    <ClCompile Include="std_draw_dc_image.cpp" />
+    <ClCompile Include="std_draw_dc_line.cpp" />
+    <ClCompile Include="std_draw_dc_marker.cpp" />
+    <ClCompile Include="std_draw_dc_polygon.cpp" />
+    <ClCompile Include="std_draw_dc_polyline.cpp" />
+    <ClCompile Include="std_draw_dc_rectangle.cpp" />
+    <ClCompile Include="std_draw_dc_stencil.cpp" />
+    <ClCompile Include="std_draw_dc_triangle.cpp" />
+    <ClCompile Include="std_draw_inter_text.cpp" />
+    <ClCompile Include="std_draw_overlay_list.cpp" />
+    <ClCompile Include="std_draw_tree.cpp" />
+    <ClCompile Include="std_draw_window.cpp" />
+    <ClCompile Include="std_draw_window_frame.cpp" />
+    <ClCompile Include="std_driver.cpp" />
+    <ClCompile Include="std_render.cpp" />
+    <ClCompile Include="std_update.cpp" />
+    <ClCompile Include="acquire_clip_points.cpp" />
+    <ClCompile Include="collect_cut_geometry.cpp" />
+    <ClCompile Include="compute_screen_transform.cpp" />
+    <ClCompile Include="driver_utility.cpp" />
+    <ClCompile Include="figure_light.cpp" />
+    <ClCompile Include="find_cutting_planes.cpp" />
+    <ClCompile Include="find_geometry_screen_plane.cpp" />
+    <ClCompile Include="find_lights.cpp" />
+    <ClCompile Include="gather_device_info.cpp" />
+    <ClCompile Include="gather_screen_extent.cpp" />
+    <ClCompile Include="generic_size_units.cpp" />
+    <ClCompile Include="get_bit_patterns.cpp" />
+    <ClCompile Include="hic_wrap.cpp" />
+    <ClCompile Include="image_to_rasters.cpp" />
+    <ClCompile Include="intermediate.cpp" />
+    <ClCompile Include="octree.cpp" />
+    <ClCompile Include="point_within_cutting_planes.cpp" />
+    <ClCompile Include="transform_and_test.cpp" />
+    <ClCompile Include="transform_and_test_bounding.cpp" />
+    <ClCompile Include="validate_world_to_screen.cpp" />
+    <ClCompile Include="delete_renditions.cpp" />
+    <ClCompile Include="downwind_camera.cpp" />
+    <ClCompile Include="downwind_color.cpp" />
+    <ClCompile Include="downwind_color_map.cpp" />
+    <ClCompile Include="downwind_handedness.cpp" />
+    <ClCompile Include="downwind_modelling_matrix.cpp" />
+    <ClCompile Include="downwind_rendition.cpp" />
+    <ClCompile Include="downwind_text_font.cpp" />
+    <ClCompile Include="downwind_window.cpp" />
+    <ClCompile Include="record_driver_options.cpp" />
+    <ClCompile Include="renditions.cpp" />
+    <ClCompile Include="set_dc_cutting_planes.cpp" />
+    <ClCompile Include="set_z_buffering_transform.cpp" />
+    <ClCompile Include="undo_redo_screen.cpp" />
+    <ClCompile Include="upwind_driver_options.cpp" />
+    <ClCompile Include="assemble_3d_polyedges.cpp" />
+    <ClCompile Include="assemble_3d_polymarkers.cpp" />
+    <ClCompile Include="assemble_3d_tristrips.cpp" />
+    <ClCompile Include="assemble_edge_normals.cpp" />
+    <ClCompile Include="assemble_face_normals.cpp" />
+    <ClCompile Include="assemble_mesh_tristrips.cpp" />
+    <ClCompile Include="assemble_shell_tristrips.cpp" />
+    <ClCompile Include="circle.cpp" />
+    <ClCompile Include="circular_arc.cpp" />
+    <ClCompile Include="curve.cpp" />
+    <ClCompile Include="cutting_plane.cpp" />
+    <ClCompile Include="cylinder.cpp" />
+    <ClCompile Include="ellipse.cpp" />
+    <ClCompile Include="elliptical_arc.cpp" />
+    <ClCompile Include="geometry_bounding.cpp" />
+    <ClCompile Include="geometry.cpp" />
+    <ClCompile Include="grid.cpp" />
+    <ClCompile Include="image.cpp" />
+    <ClCompile Include="infinite_line.cpp" />
+    <ClCompile Include="ink.cpp" />
+    <ClCompile Include="insert_geometry.cpp" />
+    <ClCompile Include="light.cpp" />
+    <ClCompile Include="line.cpp" />
+    <ClCompile Include="marker.cpp" />
+    <ClCompile Include="mesh.cpp" />
+    <ClCompile Include="nurbs_surface.cpp" />
+    <ClCompile Include="open_edge.cpp" />
+    <ClCompile Include="open_face.cpp" />
+    <ClCompile Include="open_geometry.cpp" />
+    <ClCompile Include="open_lod.cpp" />
+    <ClCompile Include="open_vertex.cpp" />
+    <ClCompile Include="polygon.cpp" />
+    <ClCompile Include="polyline.cpp" />
+    <ClCompile Include="regions.cpp" />
+    <ClCompile Include="shell.cpp" />
+    <ClCompile Include="sphere.cpp" />
+    <ClCompile Include="string_cursor.cpp" />
+    <ClCompile Include="text.cpp" />
+    <ClCompile Include="text_region.cpp" />
+    <ClCompile Include="compute_selection.cpp" />
+    <ClCompile Include="events.cpp" />
+    <ClCompile Include="find_driver.cpp" />
+    <ClCompile Include="au_revoir.cpp" />
+    <ClCompile Include="generic_delete.cpp" />
+    <ClCompile Include="hoops_memory.cpp" />
+    <ClCompile Include="disentangle.cpp" />
+    <ClCompile Include="alias.cpp" />
+    <ClCompile Include="contents_search.cpp" />
+    <ClCompile Include="segment_search.cpp" />
+    <ClCompile Include="bring_to_front.cpp" />
+    <ClCompile Include="copy_segment.cpp" />
+    <ClCompile Include="create_segment.cpp" />
+    <ClCompile Include="decipher_type_names.cpp" />
+    <ClCompile Include="delete_by_key.cpp" />
+    <ClCompile Include="delete_segment.cpp" />
+    <ClCompile Include="segment_bounding.cpp" />
+    <ClCompile Include="flush_by_key.cpp" />
+    <ClCompile Include="flush_segment.cpp" />
+    <ClCompile Include="for_each.cpp" />
+    <ClCompile Include="include_segment.cpp" />
+    <ClCompile Include="move_by_key.cpp" />
+    <ClCompile Include="open_segment.cpp" />
+    <ClCompile Include="optimize_tree.cpp" />
+    <ClCompile Include="output_parse.cpp" />
+    <ClCompile Include="parse_path.cpp" />
+    <ClCompile Include="rename_segment.cpp" />
+    <ClCompile Include="renumber_key.cpp" />
+    <ClCompile Include="show_existence.cpp" />
+    <ClCompile Include="show_owner.cpp" />
+    <ClCompile Include="show_pathname_expansion.cpp" />
+    <ClCompile Include="styles.cpp" />
+    <ClCompile Include="aix_system.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="generic_system.cpp" />
+    <ClCompile Include="hpux_system.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="irix_system.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="linux_system.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="osx_system.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="solaris_system.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="threaded_time.cpp" />
+    <ClCompile Include="win32_system.cpp" />
+    <ClCompile Include="create_polygon_wedge_tree.cpp" />
+    <ClCompile Include="define_nice_option.cpp" />
+    <ClCompile Include="exponentiate.cpp" />
+    <ClCompile Include="find_polygon_plane.cpp" />
+    <ClCompile Include="find_scoping_window.cpp" />
+    <ClCompile Include="generate_curve_polyline.cpp" />
+    <ClCompile Include="hvbsp.cpp" />
+    <ClCompile Include="more_or_less.cpp" />
+    <ClCompile Include="normalize.cpp" />
+    <ClCompile Include="parse_options.cpp" />
+    <ClCompile Include="parse_string.cpp" />
+    <ClCompile Include="propagate_activity.cpp" />
+    <ClCompile Include="propagate_bounding.cpp" />
+    <ClCompile Include="propagate_maybes.cpp" />
+    <ClCompile Include="returns.cpp" />
+    <ClCompile Include="scans.cpp" />
+    <ClCompile Include="show_key_type.cpp" />
+    <ClCompile Include="sincos.cpp" />
+    <ClCompile Include="sort_array.cpp" />
+    <ClCompile Include="sprintf1.cpp" />
+    <ClCompile Include="string_utilities.cpp" />
+    <ClCompile Include="tessellate_nurbs_surface.cpp" />
+    <ClCompile Include="text_font_encoding.cpp" />
+    <ClCompile Include="triangulate_face.cpp" />
+    <ClCompile Include="uv_trim.cpp" />
+    <ClCompile Include="vwrapper.cpp" />
+    <ClCompile Include="wings_intersect.cpp" />
+    <ClCompile Include="utility\huffman.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="utility\vdlist.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="utility\vhash.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="utility\vlist.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="utility\vconf.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RuntimeTypeInfo>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RuntimeTypeInfo>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Zlib\deflate.h" />
+    <ClInclude Include="Zlib\infblock.h" />
+    <ClInclude Include="Zlib\infcodes.h" />
+    <ClInclude Include="Zlib\inffast.h" />
+    <ClInclude Include="Zlib\inffixed.h" />
+    <ClInclude Include="Zlib\inftrees.h" />
+    <ClInclude Include="Zlib\infutil.h" />
+    <ClInclude Include="Zlib\trees.h" />
+    <ClInclude Include="Zlib\zconf.h" />
+    <ClInclude Include="Zlib\zlib.h" />
+    <ClInclude Include="Zlib\zutil.h" />
+    <ClInclude Include="png\pngconf.h" />
+    <ClInclude Include="png\png.h" />
+    <ClInclude Include="Jpeg\jchuff.h" />
+    <ClInclude Include="Jpeg\jdct.h" />
+    <ClInclude Include="Jpeg\jdhuff.h" />
+    <ClInclude Include="Jpeg\jerror.h" />
+    <ClInclude Include="Jpeg\jinclude.h" />
+    <ClInclude Include="Jpeg\jmemsys.h" />
+    <ClInclude Include="Jpeg\jmorecfg.h" />
+    <ClInclude Include="Jpeg\jpegint.h" />
+    <ClInclude Include="Jpeg\jpeglib.h" />
+    <ClInclude Include="Jpeg\jversion.h" />
+    <ClInclude Include="3d_common.h" />
+    <CustomBuildStep Include="3d_common_shader.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <ClInclude Include="adt.h" />
+    <ClInclude Include="csutil.h" />
+    <ClInclude Include="d3dutil.h" />
+    <ClInclude Include="database.h" />
+    <ClInclude Include="driver.h" />
+    <ClInclude Include="dx9_driver.h" />
+    <ClInclude Include="filedata.h" />
+    <ClInclude Include="hc.h" />
+    <ClInclude Include="hc_proto.h" />
+    <ClInclude Include="hd_proto.h" />
+    <ClInclude Include="hi_proto.h" />
+    <ClInclude Include="hic.h" />
+    <ClInclude Include="hic_calls.h" />
+    <ClInclude Include="hic_types.h" />
+    <ClInclude Include="hic_wrap.h" />
+    <ClInclude Include="hidden.h" />
+    <ClInclude Include="hl.h" />
+    <ClInclude Include="hmutex.h" />
+    <ClInclude Include="hoops.h" />
+    <ClInclude Include="hoops_memory.h" />
+    <ClInclude Include="hpserror.h" />
+    <ClInclude Include="hqsort.h" />
+    <ClInclude Include="hversion.h" />
+    <ClInclude Include="lod.h" />
+    <ClInclude Include="metafile.h" />
+    <ClInclude Include="msw.h" />
+    <ClInclude Include="ogl.h" />
+    <ClInclude Include="ogl2.h" />
+    <CustomBuildStep Include="ogl2_post.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <ClInclude Include="oglext.h" />
+    <ClInclude Include="path.h" />
+    <ClInclude Include="patterns.h" />
+    <ClInclude Include="phdraw.h" />
+    <ClInclude Include="phedron.h" />
+    <ClInclude Include="please.h" />
+    <ClInclude Include="searchh.h" />
+    <ClInclude Include="select.h" />
+    <ClInclude Include="span.h" />
+    <ClInclude Include="tags.h" />
+    <ClInclude Include="tandt.h" />
+    <ClInclude Include="task_queue.h" />
+    <ClInclude Include="topology.h" />
+    <ClInclude Include="windows_wrapper.h" />
+    <ClInclude Include="x11data.h" />
+    <ClInclude Include="utility\hqsort.h" />
+    <ClInclude Include="utility\varray.h" />
+    <ClInclude Include="utility\vdlist.h" />
+    <ClInclude Include="utility\vhash.h" />
+    <ClInclude Include="utility\vheap.h" />
+    <ClInclude Include="utility\vlist.h" />
+    <ClInclude Include="utility\vconf.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Jpeg\jconfig.vc" />
+    <None Include="hoops.ico" />
+    <None Include="cocoa_common.mm" />
+    <None Include="dx9_common.hlsl" />
+    <None Include="dx9_header.hlsl" />
+    <None Include="dx9_pixel.hlsl" />
+    <None Include="dx9_post_header.hlsl" />
+    <None Include="dx9_post_pixel.hlsl" />
+    <None Include="dx9_post_vertex.hlsl" />
+    <None Include="dx9_post_vertex_3d.hlsl" />
+    <None Include="dx9_vertex.hlsl" />
+    <None Include="h3d_common.hlsl" />
+    <None Include="h3d_macros.hlsl" />
+    <None Include="h3d_matarial.hlsl" />
+    <None Include="h3d_pixel.hlsl" />
+    <None Include="h3d_post_add_8.hlsl" />
+    <None Include="h3d_post_ambient_occlusion.hlsl" />
+    <None Include="h3d_post_ambient_occlusion_filter.hlsl" />
+    <None Include="h3d_post_apply_reflection.hlsl" />
+    <None Include="h3d_post_capture_bloom.hlsl" />
+    <None Include="h3d_post_capture_depth.hlsl" />
+    <None Include="h3d_post_clear_alpha.hlsl" />
+    <None Include="h3d_post_copy.hlsl" />
+    <None Include="h3d_post_depth_filter.hlsl" />
+    <None Include="h3d_post_depth_of_field.hlsl" />
+    <None Include="h3d_post_depth_to_focus.hlsl" />
+    <None Include="h3d_post_external_silhouette.hlsl" />
+    <None Include="h3d_post_filter.hlsl" />
+    <None Include="h3d_post_filter_12.hlsl" />
+    <None Include="h3d_post_filter_16.hlsl" />
+    <None Include="h3d_post_filter_4.hlsl" />
+    <None Include="h3d_post_filter_8.hlsl" />
+    <None Include="h3d_post_focus_filter.hlsl" />
+    <None Include="h3d_post_mask_bloom.hlsl" />
+    <None Include="h3d_post_reproject.hlsl" />
+    <None Include="h3d_post_silhouette.hlsl" />
+    <None Include="h3d_vertex.hlsl" />
+    <None Include="ogl2_cocoa.mm" />
+    <None Include="ogl2_common.hlsl" />
+    <None Include="ogl2_header.hlsl" />
+    <None Include="ogl2_pixel.hlsl" />
+    <None Include="ogl2_post_header.hlsl" />
+    <None Include="ogl2_post_pixel.hlsl" />
+    <None Include="ogl2_post_vertex.hlsl" />
+    <None Include="ogl2_post_vertex_3d.hlsl" />
+    <None Include="ogl2_vertex.hlsl" />
+    <None Include="ogl_cocoa.mm" />
+    <CustomBuildStep Include="exceptions">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="filemap">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="gen-exp.pl">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="gen-fort.pl">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="gen-hch.pl">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="gen-py.pl">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="gen-rc.pl">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="hc.nam">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="hp.pas">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="make-obf.pl">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="makefile">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="hoops32.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

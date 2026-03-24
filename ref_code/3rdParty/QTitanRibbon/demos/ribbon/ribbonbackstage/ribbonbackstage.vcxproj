@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A29339B3-F86F-3DC2-95E1-FC414E5DEF1B}</ProjectGuid>
+    <RootNamespace>ribbonbackstage</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <OutputDirectory>..\..\..\bin\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>ribbonbackstaged</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <OutputDirectory>..\..\..\bin\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>ribbonbackstaged</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <OutputDirectory>..\..\..\bin\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>ribbonbackstage</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <OutputDirectory>..\..\..\bin\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>ribbonbackstage</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\bin\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\..\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ribbonbackstaged</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ribbonbackstaged</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\bin\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\..\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ribbonbackstage</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ribbonbackstage</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore";"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui";"..\..\..\..\JPrograms\Qt\4.8.4\include";"..\..\..\include";"..\..\shared";"..\shared";"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt";"debug";".";..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>debug\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_DLL;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d:\JPrograms\Qt\4.8.4\lib\qtmaind.lib;D:\BBB\/bin/qtnribbond3.lib;d:\JPrograms\Qt\4.8.4\lib\QtGuid4.lib;d:\JPrograms\Qt\4.8.4\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>d:\JPrograms\Qt\4.8.4\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\ribbonbackstaged.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_DLL;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore";"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui";"..\..\..\..\JPrograms\Qt\4.8.4\include";"..\..\..\include";"..\..\shared";"..\shared";"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt";"debug";".";..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>debug\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_DLL;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d:\JPrograms\Qt\4.8.4\lib\qtmaind.lib;D:\BBB\/bin/qtnribbond3.lib;d:\JPrograms\Qt\4.8.4\lib\QtGuid4.lib;d:\JPrograms\Qt\4.8.4\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>d:\JPrograms\Qt\4.8.4\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\ribbonbackstaged.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_DLL;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore";"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui";"..\..\..\..\JPrograms\Qt\4.8.4\include";"..\..\..\include";"..\..\shared";"..\shared";"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt";"release";".";..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>release\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_DLL;QT_NO_DEBUG;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d:\JPrograms\Qt\4.8.4\lib\qtmain.lib;D:\BBB\/bin/qtnribbon3.lib;d:\JPrograms\Qt\4.8.4\lib\QtGui4.lib;d:\JPrograms\Qt\4.8.4\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>d:\JPrograms\Qt\4.8.4\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\ribbonbackstage.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_DLL;QT_NO_DEBUG;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore";"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui";"..\..\..\..\JPrograms\Qt\4.8.4\include";"..\..\..\include";"..\..\shared";"..\shared";"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt";"release";".";..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>release\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_DLL;QT_NO_DEBUG;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d:\JPrograms\Qt\4.8.4\lib\qtmain.lib;D:\BBB\/bin/qtnribbon3.lib;d:\JPrograms\Qt\4.8.4\lib\QtGui4.lib;d:\JPrograms\Qt\4.8.4\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>d:\JPrograms\Qt\4.8.4\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\ribbonbackstage.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_DLL;QT_NO_DEBUG;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\shared\aboutdialog.cpp" />
+    <ClCompile Include="backstagepages.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainwindow.cpp" />
+    <ClCompile Include="..\shared\ribbonwindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\shared\aboutdialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\shared\aboutdialog.h;D:\JPrograms\Qt\4.8.4\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\shared\aboutdialog.h;D:\JPrograms\Qt\4.8.4\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui" -I"..\..\..\..\JPrograms\Qt\4.8.4\include" -I"..\..\..\include" -I"..\..\shared" -I"..\shared" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt" -I"debug" -I"." -I..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 ..\..\shared\aboutdialog.h -o debug\moc_aboutdialog.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui" -I"..\..\..\..\JPrograms\Qt\4.8.4\include" -I"..\..\..\include" -I"..\..\shared" -I"..\shared" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt" -I"debug" -I"." -I..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 ..\..\shared\aboutdialog.h -o debug\moc_aboutdialog.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ..\..\shared\aboutdialog.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ..\..\shared\aboutdialog.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\moc_aboutdialog.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_aboutdialog.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\shared\aboutdialog.h;D:\JPrograms\Qt\4.8.4\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\shared\aboutdialog.h;D:\JPrograms\Qt\4.8.4\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui" -I"..\..\..\..\JPrograms\Qt\4.8.4\include" -I"..\..\..\include" -I"..\..\shared" -I"..\shared" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt" -I"release" -I"." -I..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 ..\..\shared\aboutdialog.h -o release\moc_aboutdialog.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui" -I"..\..\..\..\JPrograms\Qt\4.8.4\include" -I"..\..\..\include" -I"..\..\shared" -I"..\shared" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt" -I"release" -I"." -I..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 ..\..\shared\aboutdialog.h -o release\moc_aboutdialog.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ..\..\shared\aboutdialog.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ..\..\shared\aboutdialog.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\moc_aboutdialog.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_aboutdialog.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="backstagepages.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;backstagepages.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;backstagepages.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui" -I"..\..\..\..\JPrograms\Qt\4.8.4\include" -I"..\..\..\include" -I"..\..\shared" -I"..\shared" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt" -I"debug" -I"." -I..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 backstagepages.h -o debug\moc_backstagepages.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui" -I"..\..\..\..\JPrograms\Qt\4.8.4\include" -I"..\..\..\include" -I"..\..\shared" -I"..\shared" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt" -I"debug" -I"." -I..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 backstagepages.h -o debug\moc_backstagepages.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC backstagepages.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC backstagepages.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\moc_backstagepages.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_backstagepages.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;backstagepages.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;backstagepages.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui" -I"..\..\..\..\JPrograms\Qt\4.8.4\include" -I"..\..\..\include" -I"..\..\shared" -I"..\shared" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt" -I"release" -I"." -I..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 backstagepages.h -o release\moc_backstagepages.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui" -I"..\..\..\..\JPrograms\Qt\4.8.4\include" -I"..\..\..\include" -I"..\..\shared" -I"..\shared" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt" -I"release" -I"." -I..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 backstagepages.h -o release\moc_backstagepages.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC backstagepages.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC backstagepages.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\moc_backstagepages.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_backstagepages.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="mainwindow.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;mainwindow.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;mainwindow.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui" -I"..\..\..\..\JPrograms\Qt\4.8.4\include" -I"..\..\..\include" -I"..\..\shared" -I"..\shared" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt" -I"debug" -I"." -I..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 mainwindow.h -o debug\moc_mainwindow.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui" -I"..\..\..\..\JPrograms\Qt\4.8.4\include" -I"..\..\..\include" -I"..\..\shared" -I"..\shared" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt" -I"debug" -I"." -I..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 mainwindow.h -o debug\moc_mainwindow.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC mainwindow.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC mainwindow.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\moc_mainwindow.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_mainwindow.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;mainwindow.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\moc.exe;mainwindow.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui" -I"..\..\..\..\JPrograms\Qt\4.8.4\include" -I"..\..\..\include" -I"..\..\shared" -I"..\shared" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt" -I"release" -I"." -I..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 mainwindow.h -o release\moc_mainwindow.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui" -I"..\..\..\..\JPrograms\Qt\4.8.4\include" -I"..\..\..\include" -I"..\..\shared" -I"..\shared" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt" -I"release" -I"." -I..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 mainwindow.h -o release\moc_mainwindow.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC mainwindow.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC mainwindow.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\moc_mainwindow.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_mainwindow.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\shared\ribbonwindow.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\shared\ribbonwindow.h;D:\JPrograms\Qt\4.8.4\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\shared\ribbonwindow.h;D:\JPrograms\Qt\4.8.4\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui" -I"..\..\..\..\JPrograms\Qt\4.8.4\include" -I"..\..\..\include" -I"..\..\shared" -I"..\shared" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt" -I"debug" -I"." -I..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 ..\shared\ribbonwindow.h -o debug\moc_ribbonwindow.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui" -I"..\..\..\..\JPrograms\Qt\4.8.4\include" -I"..\..\..\include" -I"..\..\shared" -I"..\shared" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt" -I"debug" -I"." -I..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 ..\shared\ribbonwindow.h -o debug\moc_ribbonwindow.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ..\shared\ribbonwindow.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ..\shared\ribbonwindow.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\moc_ribbonwindow.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_ribbonwindow.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\shared\ribbonwindow.h;D:\JPrograms\Qt\4.8.4\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\shared\ribbonwindow.h;D:\JPrograms\Qt\4.8.4\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui" -I"..\..\..\..\JPrograms\Qt\4.8.4\include" -I"..\..\..\include" -I"..\..\shared" -I"..\shared" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt" -I"release" -I"." -I..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 ..\shared\ribbonwindow.h -o release\moc_ribbonwindow.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtCore" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\QtGui" -I"..\..\..\..\JPrograms\Qt\4.8.4\include" -I"..\..\..\include" -I"..\..\shared" -I"..\shared" -I"..\..\..\..\JPrograms\Qt\4.8.4\include\ActiveQt" -I"release" -I"." -I..\..\..\..\JPrograms\Qt\4.8.4\mkspecs\win32-msvc2010 -D_MSC_VER=1600 -DWIN32 ..\shared\ribbonwindow.h -o release\moc_ribbonwindow.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ..\shared\ribbonwindow.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ..\shared\ribbonwindow.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\moc_ribbonwindow.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_ribbonwindow.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="debug\moc_aboutdialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_aboutdialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_backstagepages.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_backstagepages.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_mainwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_mainwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_ribbonwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_ribbonwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\qrc_aboutdialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\qrc_aboutdialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\qrc_ribbonbackstage.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\qrc_ribbonbackstage.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClInclude Include="ui_helppage.h" />
+    <ClInclude Include="ui_infopage.h" />
+    <ClInclude Include="ui_saveemailpage.h" />
+    <ClInclude Include="ui_savepage.h" />
+    <ClInclude Include="ui_savewebpage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="helppage.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;helppage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;helppage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe helppage.ui -o ui_helppage.h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe helppage.ui -o ui_helppage.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIC helppage.ui</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UIC helppage.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ui_helppage.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ui_helppage.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;helppage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;helppage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe helppage.ui -o ui_helppage.h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe helppage.ui -o ui_helppage.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIC helppage.ui</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UIC helppage.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ui_helppage.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ui_helppage.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="infopage.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;infopage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;infopage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe infopage.ui -o ui_infopage.h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe infopage.ui -o ui_infopage.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIC infopage.ui</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UIC infopage.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ui_infopage.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ui_infopage.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;infopage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;infopage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe infopage.ui -o ui_infopage.h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe infopage.ui -o ui_infopage.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIC infopage.ui</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UIC infopage.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ui_infopage.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ui_infopage.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="saveemailpage.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;saveemailpage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;saveemailpage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe saveemailpage.ui -o ui_saveemailpage.h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe saveemailpage.ui -o ui_saveemailpage.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIC saveemailpage.ui</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UIC saveemailpage.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ui_saveemailpage.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ui_saveemailpage.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;saveemailpage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;saveemailpage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe saveemailpage.ui -o ui_saveemailpage.h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe saveemailpage.ui -o ui_saveemailpage.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIC saveemailpage.ui</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UIC saveemailpage.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ui_saveemailpage.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ui_saveemailpage.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="savepage.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;savepage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;savepage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe savepage.ui -o ui_savepage.h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe savepage.ui -o ui_savepage.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIC savepage.ui</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UIC savepage.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ui_savepage.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ui_savepage.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;savepage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;savepage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe savepage.ui -o ui_savepage.h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe savepage.ui -o ui_savepage.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIC savepage.ui</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UIC savepage.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ui_savepage.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ui_savepage.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="savewebpage.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;savewebpage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;savewebpage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe savewebpage.ui -o ui_savewebpage.h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe savewebpage.ui -o ui_savewebpage.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIC savewebpage.ui</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UIC savewebpage.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ui_savewebpage.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ui_savewebpage.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;savewebpage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe;QtnRibbonBackstageView.h;savewebpage.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\uic.exe savewebpage.ui -o ui_savewebpage.h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\uic.exe savewebpage.ui -o ui_savewebpage.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIC savewebpage.ui</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UIC savewebpage.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ui_savewebpage.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ui_savewebpage.h;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ChangeFileType.png" />
+    <None Include="res\CheckIssues.png" />
+    <None Include="res\CreateDocument.png" />
+    <None Include="res\MngVersions.png" />
+    <None Include="res\ProtectDocument.png" />
+    <None Include="res\Publish.png" />
+    <None Include="res\SaveSharePoint.png" />
+    <None Include="res\SaveWeb.png" />
+    <None Include="res\ScreenPreview.png" />
+    <None Include="res\SendUsing.png" />
+    <None Include="..\..\shared\res\about.png" />
+    <CustomBuild Include="..\..\shared\aboutdialog.qrc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\shared\aboutdialog.qrc;..\..\shared\res\favicon.ico;..\..\shared\res\qtitan.png;..\..\shared\res\qtitanlogo32x32.png;..\..\shared\res\qtitanlogo64x64.png;..\..\shared\res\question.png;..\..\shared\res\topheader.png;D:\JPrograms\Qt\4.8.4\bin\rcc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\shared\aboutdialog.qrc;..\..\shared\res\favicon.ico;..\..\shared\res\qtitan.png;..\..\shared\res\qtitanlogo32x32.png;..\..\shared\res\qtitanlogo64x64.png;..\..\shared\res\question.png;..\..\shared\res\topheader.png;D:\JPrograms\Qt\4.8.4\bin\rcc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\rcc.exe -name aboutdialog ..\..\shared\aboutdialog.qrc -o debug\qrc_aboutdialog.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\rcc.exe -name aboutdialog ..\..\shared\aboutdialog.qrc -o debug\qrc_aboutdialog.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">RCC ..\..\shared\aboutdialog.qrc</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">RCC ..\..\shared\aboutdialog.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\qrc_aboutdialog.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\qrc_aboutdialog.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\shared\aboutdialog.qrc;..\..\shared\res\favicon.ico;..\..\shared\res\qtitan.png;..\..\shared\res\qtitanlogo32x32.png;..\..\shared\res\qtitanlogo64x64.png;..\..\shared\res\question.png;..\..\shared\res\topheader.png;D:\JPrograms\Qt\4.8.4\bin\rcc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\shared\aboutdialog.qrc;..\..\shared\res\favicon.ico;..\..\shared\res\qtitan.png;..\..\shared\res\qtitanlogo32x32.png;..\..\shared\res\qtitanlogo64x64.png;..\..\shared\res\question.png;..\..\shared\res\topheader.png;D:\JPrograms\Qt\4.8.4\bin\rcc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\rcc.exe -name aboutdialog ..\..\shared\aboutdialog.qrc -o release\qrc_aboutdialog.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\rcc.exe -name aboutdialog ..\..\shared\aboutdialog.qrc -o release\qrc_aboutdialog.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">RCC ..\..\shared\aboutdialog.qrc</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">RCC ..\..\shared\aboutdialog.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\qrc_aboutdialog.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\qrc_aboutdialog.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="res\clipboard.png" />
+    <None Include="res\devmachines.png" />
+    <None Include="..\..\shared\res\favicon.ico" />
+    <None Include="res\help.png" />
+    <None Include="..\..\shared\res\qtitan.png" />
+    <None Include="..\..\shared\res\qtitanlogo32x32.png" />
+    <None Include="..\..\shared\res\qtitanlogo64x64.png" />
+    <None Include="..\..\shared\res\question.png" />
+    <None Include="..\..\shared\res\ribbonMaximize.png" />
+    <None Include="..\..\shared\res\ribbonMinimize.png" />
+    <CustomBuild Include="ribbonbackstage.qrc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\shared\res\about.png;..\..\shared\res\qtitan.png;..\..\shared\res\qtitanlogo32x32.png;..\..\shared\res\ribbonMaximize.png;..\..\shared\res\ribbonMinimize.png;D:\JPrograms\Qt\4.8.4\bin\rcc.exe;res\ChangeFileType.png;res\CheckIssues.png;res\CreateDocument.png;res\MngVersions.png;res\ProtectDocument.png;res\Publish.png;res\SaveSharePoint.png;res\SaveWeb.png;res\ScreenPreview.png;res\SendUsing.png;res\clipboard.png;res\devmachines.png;res\help.png;res\smallClipboard.png;res\smallClose.png;res\smallCopy.png;res\smallCut.png;res\smallFormatPainter.png;res\smallNew.png;res\smallOpen.png;res\smallOptions.png;res\smallRedo.png;res\smallSave.png;res\smallSaveAs.png;res\smallUndo.png;ribbonbackstage.qrc;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\shared\res\about.png;..\..\shared\res\qtitan.png;..\..\shared\res\qtitanlogo32x32.png;..\..\shared\res\ribbonMaximize.png;..\..\shared\res\ribbonMinimize.png;D:\JPrograms\Qt\4.8.4\bin\rcc.exe;res\ChangeFileType.png;res\CheckIssues.png;res\CreateDocument.png;res\MngVersions.png;res\ProtectDocument.png;res\Publish.png;res\SaveSharePoint.png;res\SaveWeb.png;res\ScreenPreview.png;res\SendUsing.png;res\clipboard.png;res\devmachines.png;res\help.png;res\smallClipboard.png;res\smallClose.png;res\smallCopy.png;res\smallCut.png;res\smallFormatPainter.png;res\smallNew.png;res\smallOpen.png;res\smallOptions.png;res\smallRedo.png;res\smallSave.png;res\smallSaveAs.png;res\smallUndo.png;ribbonbackstage.qrc;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\JPrograms\Qt\4.8.4\bin\rcc.exe -name ribbonbackstage ribbonbackstage.qrc -o debug\qrc_ribbonbackstage.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\JPrograms\Qt\4.8.4\bin\rcc.exe -name ribbonbackstage ribbonbackstage.qrc -o debug\qrc_ribbonbackstage.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">RCC ribbonbackstage.qrc</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">RCC ribbonbackstage.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\qrc_ribbonbackstage.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\qrc_ribbonbackstage.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\shared\res\about.png;..\..\shared\res\qtitan.png;..\..\shared\res\qtitanlogo32x32.png;..\..\shared\res\ribbonMaximize.png;..\..\shared\res\ribbonMinimize.png;D:\JPrograms\Qt\4.8.4\bin\rcc.exe;res\ChangeFileType.png;res\CheckIssues.png;res\CreateDocument.png;res\MngVersions.png;res\ProtectDocument.png;res\Publish.png;res\SaveSharePoint.png;res\SaveWeb.png;res\ScreenPreview.png;res\SendUsing.png;res\clipboard.png;res\devmachines.png;res\help.png;res\smallClipboard.png;res\smallClose.png;res\smallCopy.png;res\smallCut.png;res\smallFormatPainter.png;res\smallNew.png;res\smallOpen.png;res\smallOptions.png;res\smallRedo.png;res\smallSave.png;res\smallSaveAs.png;res\smallUndo.png;ribbonbackstage.qrc;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\shared\res\about.png;..\..\shared\res\qtitan.png;..\..\shared\res\qtitanlogo32x32.png;..\..\shared\res\ribbonMaximize.png;..\..\shared\res\ribbonMinimize.png;D:\JPrograms\Qt\4.8.4\bin\rcc.exe;res\ChangeFileType.png;res\CheckIssues.png;res\CreateDocument.png;res\MngVersions.png;res\ProtectDocument.png;res\Publish.png;res\SaveSharePoint.png;res\SaveWeb.png;res\ScreenPreview.png;res\SendUsing.png;res\clipboard.png;res\devmachines.png;res\help.png;res\smallClipboard.png;res\smallClose.png;res\smallCopy.png;res\smallCut.png;res\smallFormatPainter.png;res\smallNew.png;res\smallOpen.png;res\smallOptions.png;res\smallRedo.png;res\smallSave.png;res\smallSaveAs.png;res\smallUndo.png;ribbonbackstage.qrc;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\JPrograms\Qt\4.8.4\bin\rcc.exe -name ribbonbackstage ribbonbackstage.qrc -o release\qrc_ribbonbackstage.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\JPrograms\Qt\4.8.4\bin\rcc.exe -name ribbonbackstage ribbonbackstage.qrc -o release\qrc_ribbonbackstage.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">RCC ribbonbackstage.qrc</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">RCC ribbonbackstage.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\qrc_ribbonbackstage.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\qrc_ribbonbackstage.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="res\smallClipboard.png" />
+    <None Include="res\smallClose.png" />
+    <None Include="res\smallCopy.png" />
+    <None Include="res\smallCut.png" />
+    <None Include="res\smallFormatPainter.png" />
+    <None Include="res\smallNew.png" />
+    <None Include="res\smallOpen.png" />
+    <None Include="res\smallOptions.png" />
+    <None Include="res\smallRedo.png" />
+    <None Include="res\smallSave.png" />
+    <None Include="res\smallSaveAs.png" />
+    <None Include="res\smallUndo.png" />
+    <None Include="..\..\shared\res\topheader.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

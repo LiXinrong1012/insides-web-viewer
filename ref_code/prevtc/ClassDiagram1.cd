@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MyCurveViewProducer" Collapsed="true">
+    <Position X="56" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>exchangeview.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CurveParasSerialize" Collapsed="true">
+    <Position X="52.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAgAAACAAAAAAIIAAAACCAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>CurveParasSerialize.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExchangeView" Collapsed="true">
+    <Position X="59.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAEAAA=</HashCode>
+      <FileName>exchangeview.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CurvePlotSettingDialog" Collapsed="true">
+    <Position X="54.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIwgAgRAAECgAACQAIAAAAIEAAAAgAQAACIBwEEAA=</HashCode>
+      <FileName>CurvePlotSettingDialog.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CurveSettingDialog" Collapsed="true">
+    <Position X="56" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAIQAAABAAAAgAACAAAAIAAAEAAAAgQQCAIIAAAAAA=</HashCode>
+      <FileName>CurveSettingDialog.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResultSelectorWidget" Collapsed="true">
+    <Position X="59.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CDAAAAAgAMQAECACAAAGAAFABAAAGABAAAAIBAAAABA=</HashCode>
+      <FileName>resultselectorwidget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPPainter" Collapsed="true">
+    <Position X="54.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAIAQAiAIAIAEAIAAAAQQAAEQIAAAAAAgAAEAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPLayer" Collapsed="true">
+    <Position X="57.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAQAABAAAAQABCAEAAQAoAgACAABAAI=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPLayerable" Collapsed="true">
+    <Position X="26.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YAAAAAgBAAAQAAgCAQIAAAEABAEAgIwCIBQCDEQAACA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPRange" Collapsed="true">
+    <Position X="56" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>sBgAEAkAAAAQAAIAAIAAAQABAAAAAIAAAAAAAAAAIAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPMarginGroup" Collapsed="true">
+    <Position X="52.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAEABAAABAAAAQAAAAAAAAAIAAQAAAAQAI=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPLayoutElement" Collapsed="true">
+    <Position X="24.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIsYAAUAABBIQBAEEQMQIgFBAAGSAIAAAIACCIAEoAQ=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPLayout" Collapsed="true">
+    <Position X="28.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAIAAAAAABAIBAECAAAAAAgAAQAAAAAICACIAAFAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPLayoutGrid" Collapsed="true">
+    <Position X="29.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAESgAEAQBCGABKEAgAAAAAoAQQCAACEsYICIAQhBAQ=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPLayoutInset" Collapsed="true">
+    <Position X="27.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAAAEwEAAAAAAAAAgCAAAAChAQQAAAIAIQACIAABAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPLineEnding" Collapsed="true">
+    <Position X="59.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAABABAAAAAJIAASEIQAAAABAAEAAgAAAAQAAAAAAQ=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPGrid" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAIAAAEAAgAAEBDpAAACAIAJABIAAAIAEhACAAAg=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPAxis" Collapsed="true">
+    <Position X="5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>LznJ2LFvwf6QJzjNlx4Ty0b9DDaw0KU/OS7TKXFvsG4=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPAbstractPlottable" Collapsed="true">
+    <Position X="11.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAMYEAIAEpJAgAqRARoUABBAAhAMgIBEFQ4KjgGCACA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPItemAnchor" Collapsed="true">
+    <Position X="0.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEQAAAAAAAAAAAAABAAQAQAAAAEAQAAIEgCAAAAAAI=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPItemPosition" Collapsed="true">
+    <Position X="0.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAEAEAAAECAUCAAQAAAUQAAAgRBFACAEACABAAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPAbstractItem" Collapsed="true">
+    <Position X="41" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQFAiEAEAAAAIAwRAUIAIAAFAAAAgIAgBQQCCgAQIKA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCustomPlot" Collapsed="true">
+    <Position X="57.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oMpoDJhKoDVNITLUba+zuIDwCkAatMReJXwQjKHRsoU=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPColorGradient" Collapsed="true">
+    <Position X="59.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAALEAASAAAAAASACAgAAQIECAAAAAiEACBAAIACAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPAxisRect" Collapsed="true">
+    <Position X="18.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAsYmEARkAhAADQAQKsIKAngiEEaBoVQAeRQAAKEuCA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPAbstractLegendItem" Collapsed="true">
+    <Position X="20.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAMAAAAAgAAABAiQBQIACAAAAACAgoAERAQCCgCAACA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPPlottableLegendItem" Collapsed="true">
+    <Position X="20.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAABAABEAAAAAAAIACAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPLegend" Collapsed="true">
+    <Position X="29.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>8AoMjMAAwoABAAiFAAaUKQEIADWogsBGQAQCDECCJGI=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPPlotTitle" Collapsed="true">
+    <Position X="23" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAMQAAAAgBAAAECQBAIACACCAACAgqAMRAQCCkCAACA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPColorScaleAxisRectPrivate" Collapsed="true">
+    <Position X="18.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAABQAAAAAAAAAAgIAgAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPColorScale" Collapsed="true">
+    <Position X="25.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEMASEIAAARAABgASEEAIBBoARARCJBACQDAAEAEAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPData" Collapsed="true">
+    <Position X="56" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAEAAAAAAAAgCAAAAAQkAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPGraph" Collapsed="true">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARM4gQIAQAKCAHAAFAMmAEISgcGjgADQAgAyQQCARBA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPCurveData" Collapsed="true">
+    <Position X="54.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABEAAAAAAAAACAAAAQAAAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPCurve" Collapsed="true">
+    <Position X="16.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARMAgQIAQAAAgEAAEAYAAAAQAUAhAACAAAAWAACAAEA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPBarData" Collapsed="true">
+    <Position X="57.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAEAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPBars" Collapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAMAhQIAAAAABAAAUAIIGAIQAQABIAAAAEESAACAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPStatisticalBox" Collapsed="true">
+    <Position X="11.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoMAJIIIAhAipAgAQAoEBQCAgAECCAQQAAEaDoCAVRA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPColorMapData" Collapsed="true">
+    <Position X="52.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEEAAAAABAgABEgQEAAAAAggBCQARAAAAAi0EqCgYCA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPColorMap" Collapsed="true">
+    <Position X="14" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAsASGIkAARAARgCQBIAAgAoAAAEAxAACAASBECAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPItemStraightLine" Collapsed="true">
+    <Position X="43.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAACAAAAAiACAAAoAgAAAAAgAAAAAEQACgAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPItemLine" Collapsed="true">
+    <Position X="45.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAYAAACgAAAgACgCAoAAAAAQAAAAAAAEQACgAAADgA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPItemCurve" Collapsed="true">
+    <Position X="47.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAYAAACgAAAgACgAAoEAAAAQAABAQAAEQACgAAABgA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPItemRect" Collapsed="true">
+    <Position X="50" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgQAAAEAoAAgBCAAAoEABgAAEAIAEAAEQAChAICkAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPItemText" Collapsed="true">
+    <Position X="32" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACoQACAkBoAQgFCAAAqEIByiCECIgASMVRALhBIKkgg=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPItemEllipse" Collapsed="true">
+    <Position X="34.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoQAAAEAoAYgBCAAQoEABgAIAAIAAAAEQAChAICkAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPItemPixmap" Collapsed="true">
+    <Position X="36.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgQAAAEAAMAgBCAAAoAQAgCAUEIgAACESACggYAkAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPItemTracer" Collapsed="true">
+    <Position X="38.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIgQAAAQAoAIgAiBAIoEIBIACAAcACgAEQAChAAiACA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QCPItemBracket" Collapsed="true">
+    <Position X="41" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAgQAABEAAAAgACAAEoQAAAAAAAsAIgAEQACgAAAgAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemCurveWidget" Collapsed="true">
+    <Position X="54.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAEBAEIAAADAAQAEAAAAAgIAhAAAAAAAAAAA=</HashCode>
+      <FileName>itemcurvewidget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemCurveView" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAGCACAAACAAAAAAAQAAgABIIAAA=</HashCode>
+      <FileName>itemcurveview.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomCurvePlot" Collapsed="true">
+    <Position X="57.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAABCAAAQAAEIASAAQQAEACICAiIIAQAAAAAgAIAA=</HashCode>
+      <FileName>customcurveplot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui_axisGeneral" Collapsed="true">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ywAgAACAAIAABBAAgAAAQAAAAIQAICAAAIAAAEAABAA=</HashCode>
+      <FileName>GeneratedFiles\ui_axisGeneral.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui_axisSetting" Collapsed="true">
+    <Position X="3.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAAAgIAAAAQAoEAAAACACAIAwAIAoAAICAQsgABAA=</HashCode>
+      <FileName>GeneratedFiles\ui_axisSetting.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui_curveSetting" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gEAAAgAQAQAACAAABAEAAAQAgAQAIAQABIAAEEAAgBA=</HashCode>
+      <FileName>GeneratedFiles\ui_curveSetting.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui_ResultSelectorWidget" Collapsed="true">
+    <Position X="6.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAJIAAAAAABAACAAAEAIAAAQAIFAQAgAAAEAABAA=</HashCode>
+      <FileName>GeneratedFiles\ui_resultselectorwidget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui_ItemCurveWidget" Collapsed="true">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAACAAAAAAAAAAAAAQAIAAAAAAAAEAAAAA=</HashCode>
+      <FileName>GeneratedFiles\ui_itemcurvewidget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui::ResultSelectorWidget" Collapsed="true">
+    <Position X="6.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratedFiles\ui_resultselectorwidget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui::axisGeneral" Collapsed="true">
+    <Position X="6.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratedFiles\ui_axisGeneral.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui::axisSetting" Collapsed="true">
+    <Position X="3.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratedFiles\ui_axisSetting.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui::curveSetting" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratedFiles\ui_curveSetting.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui::ItemCurveWidget" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratedFiles\ui_itemcurvewidget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSIDES::IResultItem" Collapsed="true">
+    <Position X="52.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEAQigiEkAAALAAICGwAAACABAgAJAAAQ4AEBABAAAA=</HashCode>
+      <FileName>d:\tsinghuadir\insviewerplugins\src\precore\iresultitem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Base::View" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAQEAAFAAAAEAAAAAACAABAAQAAAAgAAIIAAA=</HashCode>
+      <FileName>d:\tsinghuadir\insviewerplugins\src\base\view.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="AxisGeneralSetting" Collapsed="true">
+    <Position X="52.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAIAAAAAAAAAIAAAAAAACAAAAAIAiBAAAAAE=</HashCode>
+      <FileName>CustomPlotViewSetting.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="AxisSetting" Collapsed="true">
+    <Position X="54.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAARAAAAAAhAAABBAAAAAAABAAAAACAEAAhBAAABAA=</HashCode>
+      <FileName>CustomPlotViewSetting.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="CurveSetting" Collapsed="true">
+    <Position X="57.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACBAAAAAAIAAAAIIAAAAAQAAgAAgAAAAAAA=</HashCode>
+      <FileName>CustomPlotViewSetting.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="CutsomPlotAxisSetting" Collapsed="true">
+    <Position X="59.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAgAAAAQAAAAIAAAAAAAAAEgAAAAAAA=</HashCode>
+      <FileName>CustomPlotViewSetting.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="CurveItemTitle" Collapsed="true">
+    <Position X="56" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAABAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>resultselectorwidget.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TickLabelData" Collapsed="true">
+    <Position X="52.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAEAAAAAAACAAAEAAAAAAEAAQBAAAAAAQ=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="QCPDataMap" Collapsed="true">
+    <Position X="54.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="QCPDataMapIterator" Collapsed="true">
+    <Position X="56" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="QCPDataMutableMapIterator" Collapsed="true">
+    <Position X="57.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="QCPCurveDataMap" Collapsed="true">
+    <Position X="57.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="QCPCurveDataMapIterator" Collapsed="true">
+    <Position X="59.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="QCPCurveDataMutableMapIterator" Collapsed="true">
+    <Position X="52.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="QCPBarDataMap" Collapsed="true">
+    <Position X="52.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="QCPBarDataMapIterator" Collapsed="true">
+    <Position X="54.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="QCPBarDataMutableMapIterator" Collapsed="true">
+    <Position X="56" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="AxisType" Collapsed="true">
+    <Position X="54.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomPlotViewSetting.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="QCP::MarginSide" Collapsed="true">
+    <Position X="57.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAABAAAAAIAAAAAIAAAAIAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="QCP::AntialiasedElement" Collapsed="true">
+    <Position X="52.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACIACAAAAAACAQQAAAAAAAAAhAEABAgAAAAAAAABA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="QCP::PlottingHint" Collapsed="true">
+    <Position X="59.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAACAAIAAAAgAAAAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="QCP::Interaction" Collapsed="true">
+    <Position X="56" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAEAAAAAAAAAAAAABAAACCAAQEAAAAAAIAAAAA=</HashCode>
+      <FileName>D:\tsinghuaDir\INSViewerPlugins\src\3rdParty\qcustomplot\qcustomplot.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>

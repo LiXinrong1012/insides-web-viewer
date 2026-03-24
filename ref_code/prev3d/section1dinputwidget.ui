@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Section1DInputWidget</class>
+ <widget class="QWidget" name="Section1DInputWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>342</width>
+    <height>254</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Section 1D</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <property name="spacing">
+      <number>9</number>
+     </property>
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="_points"/>
+     </item>
+     <item row="5" column="1">
+      <widget class="QDoubleSpinBox" name="_ylength">
+       <property name="decimals">
+        <number>6</number>
+       </property>
+       <property name="minimum">
+        <double>0.000100000000000</double>
+       </property>
+       <property name="maximum">
+        <double>999999.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.000100000000000</double>
+       </property>
+       <property name="value">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="_txtYLength">
+       <property name="text">
+        <string>y length</string>
+       </property>
+       <property name="buddy">
+        <cstring>_ylength</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="_txtYRadius">
+       <property name="text">
+        <string>y radius</string>
+       </property>
+       <property name="buddy">
+        <cstring>_yradius</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="_txtSlice">
+       <property name="text">
+        <string>slice</string>
+       </property>
+       <property name="buddy">
+        <cstring>_slice</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="_txtXRadius">
+       <property name="text">
+        <string>x radius</string>
+       </property>
+       <property name="buddy">
+        <cstring>_xradius</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QDoubleSpinBox" name="_radius">
+       <property name="decimals">
+        <number>6</number>
+       </property>
+       <property name="minimum">
+        <double>0.000100000000000</double>
+       </property>
+       <property name="maximum">
+        <double>999999.000000000000000</double>
+       </property>
+       <property name="value">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QDoubleSpinBox" name="_xlength">
+       <property name="decimals">
+        <number>6</number>
+       </property>
+       <property name="minimum">
+        <double>0.000100000000000</double>
+       </property>
+       <property name="maximum">
+        <double>999999.000000000000000</double>
+       </property>
+       <property name="value">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="_txtParameters">
+       <property name="text">
+        <string>parameters</string>
+       </property>
+       <property name="buddy">
+        <cstring>_parameters</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QDoubleSpinBox" name="_xradius">
+       <property name="decimals">
+        <number>6</number>
+       </property>
+       <property name="minimum">
+        <double>0.000100000000000</double>
+       </property>
+       <property name="maximum">
+        <double>999999.000000000000000</double>
+       </property>
+       <property name="value">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QSpinBox" name="_slice">
+       <property name="minimum">
+        <number>4</number>
+       </property>
+       <property name="maximum">
+        <number>500</number>
+       </property>
+       <property name="value">
+        <number>20</number>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QDoubleSpinBox" name="_yradius">
+       <property name="decimals">
+        <number>6</number>
+       </property>
+       <property name="minimum">
+        <double>0.000100000000000</double>
+       </property>
+       <property name="maximum">
+        <double>999999.000000000000000</double>
+       </property>
+       <property name="value">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="_txtPoints">
+       <property name="text">
+        <string>points</string>
+       </property>
+       <property name="buddy">
+        <cstring>_points</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLineEdit" name="_parameters">
+       <property name="text">
+        <string>1,1,1,1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="_txtRadius">
+       <property name="text">
+        <string>radius</string>
+       </property>
+       <property name="buddy">
+        <cstring>_radius</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="_txtXLength">
+       <property name="text">
+        <string>x length</string>
+       </property>
+       <property name="buddy">
+        <cstring>_xlength</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="_type">
+       <item>
+        <property name="text">
+         <string>Circle</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Rectangle</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ellipse</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>User defined</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="_txtType">
+       <property name="text">
+        <string>type</string>
+       </property>
+       <property name="buddy">
+        <cstring>_type</cstring>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>_type</tabstop>
+  <tabstop>_radius</tabstop>
+  <tabstop>_xradius</tabstop>
+  <tabstop>_yradius</tabstop>
+  <tabstop>_xlength</tabstop>
+  <tabstop>_ylength</tabstop>
+  <tabstop>_slice</tabstop>
+  <tabstop>_points</tabstop>
+  <tabstop>_parameters</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>_type</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Section1DInputWidget</receiver>
+   <slot>onTypeChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>126</x>
+     <y>-14</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onTypeChanged()</slot>
+ </slots>
+</ui>

@@ -1,0 +1,33 @@
+#include <winver.h>
+
+HoopsIcon ICON hoops.ico
+
+VS_VERSION_INFO   VERSIONINFO
+FILEVERSION       19,0,0,0
+PRODUCTVERSION    19,0,0,0
+FILEFLAGSMASK     VS_FFI_FILEFLAGSMASK
+FILEFLAGS         0    // final version
+FILEOS            VOS_NT_WINDOWS32
+FILETYPE          VFT_DLL
+FILESUBTYPE       0    // not used
+BEGIN
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 1252
+    END
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "Company Name",     "Tech Soft 3D, Inc.\0"
+            VALUE "FileDescription",  "HOOPS Device Driver DLL - compliant with the HOOPS Device Interface (HDI)\0"
+            VALUE "FileVersion",      "1.299\0"
+            VALUE "InternalName",     "PDF1900\0"
+            VALUE "LegalCopyright",   "Copyright 1986-2000 Tech Soft 3D, Inc.\0"
+            VALUE "LegalTrademarks",  "HOOPS is a registered trademark of Tech Soft 3D, LLC\0"
+            VALUE "OriginalFilename", "PDF1900.HDI\0"
+            VALUE "ProductName",      "HOOPS\0"
+            VALUE "ProductVersion",   "19,0,0,0\0"
+        END
+    END
+END

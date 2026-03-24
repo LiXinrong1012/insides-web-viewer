@@ -1,0 +1,1390 @@
+/*
+ * Copyright (c) 1998 by Tech Soft 3D, LLC.
+ * The information contained herein is confidential and proprietary to
+ * Tech Soft 3D, LLC., and considered a trade secret as defined under
+ * civil and criminal statutes.  Tech Soft 3D shall pursue its civil
+ * and criminal remedies in the event of unauthorized use or misappropriation
+ * of its trade secrets.  Use of this information by anyone other than
+ * authorized employees of Tech Soft 3D, LLC. is granted only under a
+ * written non-disclosure agreement, expressly prescribing the scope and
+ * manner of such use.
+ *
+ * $Id: hc.nam,v 1.474 2010-06-25 22:17:12 trask Exp $
+ */
+
+/*
+ * HOOPS export naming file
+ *
+ * Routines with HC_ prefixes will have prototypes and
+ * language glue generated.
+ * 
+ * We not longer generate export files, so the order of functions
+ * is not guaranteed in dynamic libraries, so users generally need to
+ * relink against new versions.  The order is currently just historical
+ * (new ones added at the end with version comments)
+ *
+ * This file #define's shortened forms of the Hoops routine name for
+ * those routines that can be called by the user.  Hoops subroutine 
+ * specifications...
+ *
+ *  Comment fields are argument-types plus return-type
+ *  Second comment may be specified for alternate function namings
+ *	(a comma separated list of one or more names)
+ *
+ *  Possible data types are:
+ *
+ *    a - 4x4 array
+ *    b - boolean				<- return value only ->
+ *    c - character (byte) array (NOT strings)
+ *    f - float					<- may be returned ->
+ *    i - integer				<- may be returned ->
+ *    j - array of keys
+ *    k - key					<- may be returned ->
+ *    l - long integer
+ *    m - pointer sized integer			    [user value]
+ *    p - point (one or more)
+ *    q - plane (one or more)
+ *    r - subroutine address (== int (*)() )
+ *    s - string
+ *    t - subroutine address (== void (*)() )
+ *    u - void * (unknown)			    [user index, image data, special]
+ *    v - void					<- may be returned ->
+ *    x - array of unsigned short integers	    [pixel array, unicode text]
+ *    y	- array of regular integers		    [shell face list]
+ *    z - array of floats			    [FIndex list]
+ *
+ *  Capital letters are for modified/written arguments,
+ *  return type always lowercase.
+ *
+ *  Here are the actual C type maps. See hc.h for HC_ defines:
+ *
+ *    A : float *
+ *    a : const float *
+ *    b : HC_BOOLEAN
+ *    C : char *
+ *    c : const char *
+ *    F : float *
+ *    f : double
+ *    I : int *
+ *    i : int
+ *    J : HC_KEY *
+ *    j : const HC_KEY *
+ *    K : HC_KEY *
+ *    k : HC_KEY
+ *    L : long *
+ *    l : long
+ *    M : HC_POINTER_SIZED_INT *
+ *    m : HC_POINTER_SIZED_INT
+ *    P : HC_POINT *
+ *    p : const HC_POINT *
+ *    Q : HC_PLANE *
+ *    q : const HC_PLANE *
+ *    R : int(HC_CDECL **)(HC_ANY_ARGS)
+ *    r : int(HC_CDECL *)(HC_ANY_ARGS)
+ *    S : char *
+ *    s : const char *
+ *    T : void(HC_CDECL **)(HC_ANY_ARGS)
+ *    t : void(HC_CDECL *)(HC_ANY_ARGS)
+ *    U : void *
+ *    u : const void *
+ *    v : void
+ *    X : unsigned short *
+ *    x : const unsigned short *
+ *    Y	: int *
+ *    y	: const int *
+ *    Z : float *
+ *    z : const float *
+ */
+
+#define	HC_Abort_Program		/* s v */
+#define	HC_Append_Modelling_Matrix	/* a v */
+#define	HC_Await_Event			/* S v */
+#define	HC_Bring_To_Front		/* s v */
+#define	HC_Bring_To_Front_By_Key	/* k v */
+#define	HC_Check_For_Events		/* v i */
+#define	HC_Close_Segment		/* v v */
+#define	HC_Compute_Selection		/* sssff i */
+#define	HC_Compute_Selection_By_Area	/* sssffff i */
+#define	HC_Copy_Geometry		/* ks v */
+#define	HC_Copy_Segment			/* ss v */
+#define	HC_Create_Segment		/* s v */
+#define	HC_Define_Alias			/* ss v */
+#define	HC_Define_Error_Handler		/* t v */
+#define	HC_Define_Exit_Handler		/* t v */
+#define	HC_Delete_By_Key		/* k v */
+#define	HC_Delete_Segment		/* s v */
+#define	HC_Disable_Button_Events	/* ss v */
+#define	HC_Disable_Location_Events	/* sss v */
+#define	HC_Disable_Selection_Events	/* ss v */
+#define	HC_Disable_String_Events	/* sk v */
+#define	HC_Disable_Wakeup_Events	/* f v */
+#define	HC_Dolly_Camera			/* fff v */
+#define	HC_Edit_Polygon			/* kiiip v */
+#define	HC_Edit_Polyline		/* kiiip v */
+#define	HC_Edit_Text			/* kiiiis v */
+#define	HC_Enable_Button_Events		/* ss v */
+#define	HC_Enable_Location_Events	/* sss v */
+#define	HC_Enable_Selection_Events	/* ss v */
+#define	HC_Enable_String_Events		/* sk v */
+#define	HC_Enable_Wakeup_Events		/* f v */
+#define	HC_Exit_Program			/* v v */
+#define	HC_Flush_All_Events		/* v v */
+#define	HC_Flush_By_Key			/* k v */
+#define	HC_Get_Button			/* S v */
+#define	HC_Get_Location			/* FF v */
+#define	HC_Get_Selection		/* S v */
+#define	HC_Get_String			/* sS v */
+#define	HC_Get_Wakeup			/* f v */
+#define	HC_Include_Segment		/* s v */
+#define	HC_Insert_Distant_Light		/* fff v */
+#define	HC_Insert_Ink			/* fff v */
+#define	HC_Insert_Line			/* ffffff v */
+#define	HC_Insert_Marker		/* fff v */
+#define	HC_Insert_Polygon		/* ip v */
+#define	HC_Insert_Polyline		/* ip v */
+#define	HC_Insert_Text			/* fffs v */
+#define	HC_Modify_Color_Map		/* is v */
+#define	HC_Modify_Color_Map_By_Value	/* isip v */
+#define	HC_Move_By_Key			/* ks v */
+#define	HC_Move_Distant_Light		/* kfff v */
+#define	HC_Move_Segment			/* ss v */
+#define	HC_Move_String_Cursor		/* kii v */
+#define	HC_Open_Segment			/* s v */
+#define	HC_Open_Segment_By_Key		/* k v */
+#define	HC_Orbit_Camera			/* ff v */
+#define	HC_Pan_Camera			/* ff v */
+#define	HC_Pause			/* v v */
+#define	HC_Print_Version		/* v v */
+#define	HC_Rename_Segment		/* ss v */
+#define	HC_Report_Error			/* iiiiuiu v */
+#define	HC_Requeue_Event		/* v v */
+#define	HC_Reset_System			/* v v */
+#define	HC_Restart_Ink			/* v v */
+#define	HC_Roll_Camera			/* f v */
+#define	HC_Rotate_Object		/* fff v */
+#define	HC_Rotate_Object_Offaxis	/* ffff v */
+#define	HC_Scale_Object			/* fff v */
+#define	HC_Scroll_Text			/* kii v */
+#define	HC_Set_Camera			/* pppffs v */
+#define	HC_Set_Camera_By_Volume		/* sffff v */
+#define	HC_Set_Camera_Field		/* ff v */
+#define	HC_Set_Camera_Position		/* fff v */
+#define	HC_Set_Camera_Projection	/* s v */
+#define	HC_Set_Camera_Target		/* fff v */
+#define	HC_Set_Camera_Up_Vector		/* fff v */
+#define	HC_Set_Color			/* s v */
+#define	HC_Set_Color_By_Index		/* si v */
+#define	HC_Set_Color_By_Value		/* ssfff v */
+#define	HC_Set_Color_Map		/* s v */
+#define	HC_Set_Color_Map_By_Value	/* sip v */
+#define	HC_Set_Driver			/* r v */
+#define	HC_Set_Driver_Options		/* s v */
+#define	HC_Set_Edge_Pattern		/* s v */
+#define	HC_Set_Edge_Weight		/* f v */
+#define	HC_Set_Face_Pattern		/* s v */
+#define	HC_Set_Handedness		/* s v */
+#define	HC_Set_Heuristics		/* s v */
+#define	HC_Set_Line_Pattern		/* s v */
+#define	HC_Set_Line_Weight		/* f v */
+#define	HC_Set_Marker_Size		/* f v */
+#define	HC_Set_Marker_Symbol		/* s v */
+#define	HC_Set_Modelling_Matrix		/* a v */
+#define	HC_Set_Selectability		/* s v */
+#define	HC_Set_Streaming_Mode		/* s v */
+#define	HC_Set_Text_Alignment		/* s v */
+#define	HC_Set_Text_Font		/* s v */
+#define	HC_Set_Text_Path		/* fff v */
+#define	HC_Set_Text_Size		/* f v */
+#define	HC_Set_Text_Spacing		/* f v */
+#define	HC_Set_User_Options		/* s v */
+#define	HC_Set_User_Value		/* m v */
+#define	HC_Set_Visibility		/* s v */
+#define	HC_Set_Window			/* ffff v */
+#define	HC_Set_Window_Frame		/* s v */
+#define	HC_Set_Window_Pattern		/* s v */
+#define	HC_Show_Button			/* S v */
+#define	HC_Show_Button_Source		/* SSI v */
+#define	HC_Show_Camera			/* PPPFFS v */
+#define	HC_Show_Camera_By_Volume	/* SFFFF v */
+#define	HC_Show_Camera_Field		/* FF v */
+#define	HC_Show_Camera_Position		/* FFF v */
+#define	HC_Show_Camera_Projection	/* S v */
+#define	HC_Show_Camera_Target		/* FFF v */
+#define	HC_Show_Camera_Up_Vector	/* FFF v */
+#define	HC_Show_Color			/* S v */
+#define	HC_Show_Color_By_Index		/* SI v */
+#define	HC_Show_Color_By_Value		/* SSFFF v */
+#define	HC_Show_Color_Map		/* S v */
+#define	HC_Show_Color_Map_By_Value	/* SIP v */
+#define	HC_Show_Color_Map_Count		/* I v */
+#define	HC_Show_Driver			/* R v */
+#define	HC_Show_Driver_Options		/* S v */
+#define	HC_Show_Edge_Pattern		/* S v */
+#define	HC_Show_Edge_Weight		/* F v */
+#define	HC_Show_Face_Pattern		/* S v */
+#define	HC_Show_Handedness		/* S v */
+#define	HC_Show_Heuristics		/* S v */
+#define	HC_Show_Line_Pattern		/* S v */
+#define	HC_Show_Line_Weight		/* F v */
+#define	HC_Show_Location		/* FF v */
+#define	HC_Show_Location_Source		/* SSSI v */
+#define	HC_Show_Location_Status		/* I v */
+#define	HC_Show_Marker_Size		/* F v */
+#define	HC_Show_Marker_Symbol		/* S v */
+#define	HC_Show_Modelling_Matrix	/* A v */
+#define	HC_Show_Net_Camera		/* PPPFFS v */
+#define	HC_Show_Net_Camera_By_Volume	/* SFFFF v */
+#define	HC_Show_Net_Camera_Field	/* FF v */
+#define	HC_Show_Net_Camera_Position	/* FFF v */
+#define	HC_Show_Net_Camera_Projection	/* S v */
+#define	HC_Show_Net_Camera_Target	/* FFF v */
+#define	HC_Show_Net_Camera_Up_Vector	/* FFF v */
+#define	HC_Show_Net_Color		/* S v */
+#define	HC_Show_Net_Color_By_Index	/* SI v */
+#define	HC_Show_Net_Color_By_Value	/* SSFFF v */
+#define	HC_Show_Net_Color_Map		/* S v */
+#define	HC_Show_Net_Color_Map_By_Value	/* SIP v */
+#define	HC_Show_Net_Color_Map_Count	/* I v */
+#define	HC_Show_Net_Driver		/* R v */
+#define	HC_Show_Net_Driver_Options	/* S v */
+#define	HC_Show_Net_Edge_Pattern	/* S v */
+#define	HC_Show_Net_Edge_Weight		/* F v */
+#define	HC_Show_Net_Face_Pattern	/* S v */
+#define	HC_Show_Net_Handedness		/* S v */
+#define	HC_Show_Net_Heuristics		/* S v */
+#define	HC_Show_Net_Line_Pattern	/* S v */
+#define	HC_Show_Net_Line_Weight		/* F v */
+#define	HC_Show_Net_Marker_Size		/* F v */
+#define	HC_Show_Net_Marker_Symbol	/* S v */
+#define	HC_Show_Net_Modelling_Matrix	/* A v */
+#define	HC_Show_Net_Selectability	/* S v */
+#define	HC_Show_Net_Streaming_Mode	/* S v */
+#define	HC_Show_Net_Text_Alignment	/* S v */
+#define	HC_Show_Net_Text_Font		/* S v */
+#define	HC_Show_Net_Text_Path		/* FFF v */
+#define	HC_Show_Net_Text_Size		/* F v */
+#define	HC_Show_Net_Text_Spacing	/* F v */
+#define	HC_Show_Net_User_Options	/* S v */
+#define	HC_Show_Net_User_Value		/* M v */
+#define	HC_Show_Net_Visibility		/* S v */
+#define	HC_Show_Net_Window		/* FFFF v */
+#define	HC_Show_Net_Window_Frame	/* S v */
+#define	HC_Show_Net_Window_Pattern	/* S v */
+#define	HC_Show_One_Color		/* sS v */
+#define	HC_Show_One_Color_By_Index	/* sI v */
+#define	HC_Show_One_Color_By_Value	/* sSFFF v */
+#define	HC_Show_One_Color_Map		/* iS v */
+#define	HC_Show_One_Color_Map_By_Value	/* iSFFF v */
+#define	HC_Show_One_Driver_Option	/* sS v */
+#define	HC_Show_One_Heuristic		/* sS v */
+#define	HC_Show_One_Net_Color		/* sS v */
+#define	HC_Show_One_Net_Color_By_Index	/* sI v */
+#define	HC_Show_One_Net_Color_By_Value	/* sSFFF v */
+#define	HC_Show_One_Net_Color_Map	/* iS v */
+#define	HC_Show_One_Net_Color_Map_By_V	/* iSFFF v */		/* HC_Show_One_Net_Color_Map_By_Value */
+#define	HC_Show_One_Net_Driver_Option	/* sS v */
+#define	HC_Show_One_Net_Heuristic	/* sS v */
+#define	HC_Show_One_Net_Selectability	/* sS v */
+#define	HC_Show_One_Net_User_Option	/* sS v */
+#define	HC_Show_One_Net_Visibility	/* sS v */
+#define	HC_Show_One_Selectability	/* sS v */
+#define	HC_Show_One_User_Option		/* sS v */
+#define	HC_Show_One_Visibility		/* sS v */
+#define	HC_Show_Selectability		/* S v */
+#define	HC_Show_Selection		/* S v */
+#define	HC_Show_Selection_Item		/* KII v */
+#define	HC_Show_Selection_Location	/* FFFFF v */
+#define	HC_Show_Selection_Pathname	/* S v */
+#define	HC_Show_Selection_Source	/* SSSI v */
+#define	HC_Show_Streaming_Mode		/* S v */
+#define	HC_Show_String			/* S v */
+#define	HC_Show_String_Source		/* SK v */
+#define	HC_Show_Text_Alignment		/* S v */
+#define	HC_Show_Text_Font		/* S v */
+#define	HC_Show_Text_Path		/* FFF v */
+#define	HC_Show_Text_Size		/* F v */
+#define	HC_Show_Text_Spacing		/* F v */
+#define	HC_Show_Time			/* F v */
+#define	HC_Show_User_Options		/* S v */
+#define	HC_Show_User_Value		/* M v */
+#define	HC_Show_Visibility		/* S v */
+#define	HC_Show_Wakeup			/* F v */
+#define	HC_Show_Window			/* FFFF v */
+#define	HC_Show_Window_Frame		/* S v */
+#define	HC_Show_Window_Pattern		/* S v */
+#define	HC_Style_Segment		/* s v */
+#define	HC_Translate_Object		/* fff v */
+#define	HC_UnDefine_Alias		/* s v */
+#define	HC_UnDefine_Error_Handler	/* t v */
+#define	HC_UnDefine_Exit_Handler	/* t v */
+#define	HC_UnSet_Camera			/* v v */
+#define	HC_UnSet_Color			/* v v */
+#define	HC_UnSet_Color_Map		/* v v */
+#define	HC_UnSet_Driver			/* v v */
+#define	HC_UnSet_Driver_Options		/* v v */
+#define	HC_UnSet_Edge_Pattern		/* v v */
+#define	HC_UnSet_Edge_Weight		/* v v */
+#define	HC_UnSet_Face_Pattern		/* v v */
+#define	HC_UnSet_Handedness		/* v v */
+#define	HC_UnSet_Heuristics		/* v v */
+#define	HC_UnSet_Line_Pattern		/* v v */
+#define	HC_UnSet_Line_Weight		/* v v */
+#define	HC_UnSet_Marker_Size		/* v v */
+#define	HC_UnSet_Marker_Symbol		/* v v */
+#define	HC_UnSet_Modelling_Matrix	/* v v */
+#define	HC_UnSet_Selectability		/* v v */
+#define	HC_UnSet_Streaming_Mode		/* v v */
+#define	HC_UnSet_Text_Alignment		/* v v */
+#define	HC_UnSet_Text_Font		/* v v */
+#define	HC_UnSet_Text_Path		/* v v */
+#define	HC_UnSet_Text_Spacing		/* v v */
+#define	HC_UnSet_User_Options		/* v v */
+#define	HC_UnSet_User_Value		/* v v */
+#define	HC_UnSet_Visibility		/* v v */
+#define	HC_UnSet_Window			/* v v */
+#define	HC_UnSet_Window_Frame		/* v v */
+#define	HC_UnSet_Window_Pattern		/* v v */
+#define	HC_Update_Display		/* v b */
+#define	HC_Zoom_Camera			/* f v */
+
+/* new in 2.0 */
+
+#define	HC_Begin_Alias_Search		/* v v */
+#define	HC_Begin_Color_Name_Search	/* v v */
+#define	HC_Begin_Contents_Search	/* ss v */
+#define	HC_Begin_Open_Segment_Search	/* v v */
+#define	HC_Begin_Segment_Search		/* s v */
+#define	HC_Define_Color_Name		/* ssss v */
+#define	HC_End_Alias_Search		/* v v */
+#define	HC_End_Color_Name_Search	/* v v */
+#define	HC_End_Contents_Search		/* v v */
+#define	HC_End_Open_Segment_Search	/* v v */
+#define	HC_End_Segment_Search		/* v v */
+#define	HC_Find_Alias			/* S b */
+#define	HC_Find_Color_Name		/* SSS b */
+#define	HC_Find_Contents		/* SK b */
+#define	HC_Find_Open_Segment		/* S b */
+#define	HC_Find_Related_Selection	/* v b */
+#define	HC_Find_Segment			/* S b */
+#define	HC_Parse_String			/* ssiS b */
+#define	HC_Queue_Button_Event		/* ssi v */
+#define	HC_Queue_Location_Event		/* ssffsi v */
+#define	HC_Queue_String_Event		/* ssk v */
+#define	HC_Queue_Wakeup_Event		/* f v */
+#define	HC_Queue_Special_Event		/* ss v */
+#define	HC_Show_Alias			/* sS v */
+#define	HC_Show_Alias_Count		/* I v */
+#define	HC_Show_Color_Name_Count	/* I v */
+#define	HC_Show_Color_Name		/* sS v */
+#define	HC_Show_Contents_Count		/* I v */
+#define	HC_Show_Distant_Light		/* kFFF v */
+#define	HC_Show_Environment		/* sS b */
+#define	HC_Show_Include_Segment		/* kS v */
+#define	HC_Show_Key_Type		/* kS v */
+#define	HC_Show_Line			/* kFFFFFF v */
+#define	HC_Show_Marker			/* kFFF v */
+#define	HC_Show_Memory_Usage		/* LL v */
+#define	HC_Show_Open_Segment_Count	/* I v */
+#define	HC_Show_Owner			/* sS v */
+#define	HC_Show_Owner_By_Key		/* kS v */
+#define	HC_Show_Partial_Polygon		/* kiiP v */
+#define	HC_Show_Partial_Polyline	/* kiiP v */
+#define	HC_Show_Pathname_Expansion	/* sS v */
+#define	HC_Show_Polygon			/* kIP v */
+#define	HC_Show_Polygon_Count		/* kI v */
+#define	HC_Show_Polyline		/* kIP v */
+#define	HC_Show_Polyline_Count		/* kI v */
+#define	HC_Show_Segment			/* kS v */
+#define	HC_Show_Segment_Count		/* I v */
+#define	HC_Show_Special_Event		/* SS v */
+#define	HC_Show_Style_Segment		/* kS v */
+#define	HC_Show_Text			/* kFFFS v */
+#define	HC_Show_Text_Length		/* kI v */
+#define	HC_UnDefine_Color_Name		/* s v */
+
+/* new in 2.1 */
+#define	HC_Define_System_Options	/* s v */
+#define	HC_Show_Device_Info		/* ssS v */
+#define	HC_Show_One_System_Option	/* sS v */
+#define	HC_Show_System_Options		/* S v */
+
+/* New in 2.2: */
+#define	HC_Show_One_Text_Font		/* sS v */
+#define	HC_Show_One_Net_Text_Font	/* sS v */
+
+
+#define	HC_Show_Existence		/* s i */
+
+#define	HC_Compute_Color		/* ssP b */
+#define	HC_Compute_Color_By_Value	/* spsP b */
+
+#define	HC_Begin_Font_Search		/* ss v */
+#define	HC_Show_Font_Count		/* I v */
+#define	HC_Find_Font			/* S b */
+#define	HC_End_Font_Search		/* v v */
+#define	HC_Show_Font_Info		/* sssS v */
+#define	HC_Compute_Text_Extent		/* ssFF v */
+#define	HC_Compute_Text_Extent_By_Key	/* kFF v */
+
+#define	HC_Compute_Coordinates		/* sspsP b */
+#define	HC_Compute_Cross_Product	/* ppP v */
+#define	HC_Compute_Dot_Product		/* pp f */
+#define	HC_Compute_Vector_Length	/* p f */
+#define	HC_Compute_Matrix_Product	/* aaA v */
+#define	HC_Compute_Matrix_Adjoint	/* aA v */
+#define	HC_Compute_Matrix_Determinant	/* a f */
+#define	HC_Compute_Matrix_Inverse	/* aA b */
+#define	HC_Compute_Normalized_Matrix	/* aA b */
+#define	HC_Compute_Normalized_Vector	/* pP b */
+#define	HC_Compute_Identity_Matrix	/* A v */
+#define	HC_Compute_Scale_Matrix		/* fffA v */
+#define	HC_Compute_Translation_Matrix	/* fffA v */
+#define	HC_Compute_Rotation_Matrix	/* fffA v */
+#define	HC_Compute_Offaxis_Rotation	/* ffffA v */
+#define	HC_Compute_Offcenter_Rotation	/* ffffffA v */
+#define	HC_Compute_Polygon_Normal	/* ipsP b */
+#define	HC_Compute_Polygon_Plane	/* ipsQ b */
+#define	HC_Compute_Transformed_Plane	/* qaQ v */
+#define	HC_Compute_Transformed_Points	/* ipaP v */
+
+#define	HC_Insert_Circle		/* ppp v */
+#define	HC_Insert_Circular_Arc		/* ppp v */
+#define	HC_Insert_Ellipse		/* ppp v */
+#define	HC_Insert_Elliptical_Arc	/* pppff v */
+#define	HC_Show_Circle			/* kPPP v */
+#define	HC_Show_Circular_Arc		/* kPPP v */
+#define	HC_Show_Ellipse			/* kPPP v */
+#define	HC_Show_Elliptical_Arc		/* kPPPFF v */
+
+/* new in 3.0: */
+#define	HC_Set_Color_By_FIndex		/* sf v */
+#define	HC_Set_Normal			/* fff v */
+#define	HC_UnSet_Normal			/* v v */
+#define	HC_Show_Normal			/* FFF v */
+#define	HC_Show_Net_Normal		/* FFF v */
+#define	HC_MSet_Vertex_Normals		/* kiip v */
+#define	HC_MSet_Vertex_Colors_By_FIndex /* ksiiz v */
+#define	HC_MSet_Vertex_Colors_By_Value  /* ksisip v */
+#define	HC_Set_Rendering_Options	/* s v */
+#define	HC_Show_Rendering_Options	/* S v */
+#define	HC_Show_Net_Rendering_Options	/* S v */
+#define	HC_Show_One_Rendering_Option	/* sS v */
+#define	HC_Show_One_Net_Rendering_Optio	/* sS v */		/* HC_Show_One_Net_Rendering_Option */
+#define	HC_UnSet_Rendering_Options	/* v v */
+
+#define	HC_Compute_Convex_Hull		/* ipIY v */
+#define	HC_Compute_Transform		/* sssA b */
+
+#define	HC_Edit_Mesh			/* kiiiip v */
+#define	HC_Edit_Shell_Faces		/* kiiiy v */
+#define	HC_Edit_Shell_Points		/* kiiip v */
+#define	HC_Insert_Mesh			/* iip v */
+#define	HC_Insert_Mesh_By_Ref		/* iip v */
+#define	HC_Insert_Shell			/* ipiy v */
+#define	HC_Insert_Shell_By_Ref		/* ipiy v */
+#define	HC_Show_Mesh			/* kIIP v */
+#define	HC_Show_Mesh_Size		/* kII v */
+#define	HC_Show_Shell			/* kIPIY v */
+#define	HC_Show_Shell_Size		/* kII v */
+
+#define	HC_Flush_Attributes		/* s v */
+#define	HC_Flush_Contents		/* ss v */
+#define	HC_Flush_Geometry		/* s v */
+
+#define	HC_Open_Edge			/* ii v */
+#define	HC_Open_Vertex			/* i v */
+#define	HC_Open_Face			/* i v */
+#define	HC_Open_Geometry		/* k v */
+#define	HC_Close_Edge			/* v v */
+#define	HC_Close_Vertex			/* v v */
+#define	HC_Close_Face			/* v v */
+#define	HC_Close_Geometry		/* v v */
+
+#define	HC_Renumber_Key			/* kks v */
+
+#define	HC_Show_Selection_Element	/* KIII v */
+
+#define	HC_Move_Text			/* kfff v */
+#define	HC_Show_String_Cursor		/* kKII v */
+
+#define	HC_UnSet_One_Driver_Option	/* s v */
+#define	HC_UnSet_One_Heuristic		/* s v */
+#define	HC_UnSet_One_Color		/* s v */
+#define	HC_UnSet_One_Rendering_Option   /* s v */
+#define	HC_UnSet_One_Selectability	/* s v */
+#define	HC_UnSet_One_Text_Font		/* s v */
+#define	HC_UnSet_One_User_Option	/* s v */
+#define	HC_UnSet_One_Visibility		/* s v */
+
+#define	HC_Read_Metafile		/* sss v */
+#define	HC_Write_Metafile		/* sss v */
+#define	HC_Show_Selection_Position	/* FFFFFF v */
+
+#define	HC_Compute_Text_From_Text16	/* ixsS v */
+#define	HC_Compute_Text16_From_Text	/* ssIX v */
+#define	HC_Compute_Selection_By_Volume	/* sssffffff i */
+#define	HC_Compute_Text_Extent_With_Enc /* sssFF v */		/* HC_Compute_Text_Extent_With_Encoding */
+#define	HC_Get_String_With_Encoding	/* ssU v */
+#define	HC_Insert_Text_With_Encoding	/* fffsu v */
+#define	HC_Show_Existence_By_Key	/* ks i */
+#define	HC_Show_Text_Count		/* kI v */
+#define	HC_Show_Text_Encoding		/* kS v */
+#define	HC_Show_Text_With_Encoding	/* kFFFSU v */
+#define	HC_Show_String_Count		/* I v */
+#define	HC_Show_String_Length		/* I v */
+#define	HC_Show_String_With_Encoding    /* SU v */
+#define	HC_Insert_Grid                  /* spppii v */
+#define	HC_Show_Grid			/* kSPPPII v */
+#define	HC_Show_Selection_Keys          /* IJ v */
+#define	HC_Show_Selection_Keys_Count    /* I v */
+
+/* CHANGED! in 3.0: */
+#define	HC_Queue_Related_Selection	/* skiiiffffff v */
+#define	HC_Queue_Selection_Event	/* sssiskiiiffffff v */
+
+/* ADDED! in 3.00-5 */
+#define	HC_Mark_As_Updated		/* s v */
+#define	HC_Mark_As_Refresh_Needed	/* sffff v */
+
+/* new for 3.1 */
+#define	HC_Insert_Local_Light		/* fff	v */
+#define	HC_Insert_Spot_Light		/* pps	v */
+#define	HC_Insert_Area_Light		/* ips	v */
+#define	HC_Show_Local_Light		/* kFFF	v */
+#define	HC_Show_Spot_Light		/* kPPS	v */
+#define	HC_Show_Area_Light		/* kIPS	v */
+#define	HC_Show_Area_Light_Count	/* kIS	v */
+
+#define	HC_Insert_Image			/* fffsiiu v */
+#define	HC_Insert_Image_By_Ref		/* fffsiiu v */
+#define	HC_Edit_Image			/* kiiiiu v */
+#define	HC_Move_Image			/* kfff v */
+#define	HC_Show_Image			/* kFFFSIIU v */
+#define	HC_Show_Partial_Image		/* kiiiiU v */
+#define	HC_Show_Image_Size		/* kFFFSII v */
+
+#define	HC_Move_Light_Position		/* kfff v */
+#define	HC_Move_Light_Target		/* kfff v */
+
+#define	HC_Show_Event			/* S v */
+
+#define	HC_Show_Partial_Shell		/* kiiPiiIY v */
+#define	HC_Show_Partial_Shell_Size	/* kiiI v */
+
+/* new for 3.11 */
+
+#define	HC_Define_Callback_Name		/* st v */
+#define	HC_UnDefine_Callback_Name	/* s v */
+#define	HC_Begin_Callback_Name_Search	/* v v */
+#define	HC_End_Callback_Name_Search	/* v v */
+#define	HC_Find_Callback_Name		/* S b */
+#define	HC_Show_Callback_Name		/* sT v */
+#define	HC_Show_Callback_Name_Count	/* I v */
+#define	HC_Set_Callback			/* s v */
+#define	HC_Show_Callback		/* S v */
+#define	HC_Show_Net_Callback		/* S v */
+#define	HC_Show_One_Callback		/* sS v */
+#define	HC_Show_One_Net_Callback	/* sS v */
+#define	HC_UnSet_Callback		/* v v */
+#define	HC_UnSet_One_Callback		/* s v */
+#define	HC_Include_Segment_By_Key	/* k v */
+#define	HC_Style_Segment_By_Key		/* k v */
+#define	HC_Show_Partial_Mesh		/* kiiiiP v */
+
+/* new in 3.12/3.2... */
+#define	HC_Insert_Cutting_Plane		/* ffff v */
+#define	HC_Show_Cutting_Plane		/* kFFFF v */
+
+#define	HC_Define_Font			/* ssic v */
+#define	HC_Define_Font_By_Reference	/* ssic v */		/* HC_Define_Font_By_Ref */
+#define	HC_Show_Font			/* sSIC v */
+#define	HC_Show_Font_Size 		/* sSI v */
+#define	HC_UnDefine_Font		/* s v */
+
+#define	HC_Show_System_Info		/* sS v */
+
+/* new in 3.12/3.2... */
+#define	HC_Insert_Circular_Chord	/* ppp v */
+#define	HC_Insert_Circular_Wedge	/* ppp v */
+#define	HC_Show_Circular_Chord		/* kPPP v */
+#define	HC_Show_Circular_Wedge		/* kPPP v */
+
+#define HC_Compute_Minimized_Shell	/* ipiysIPIYYY v */
+#define	HC_MSet_Vertex_Parameters	/* kiiiz v */
+#define	HC_Set_Parameter		/* iz v */
+#define	HC_UnSet_Parameter		/* v v */
+#define	HC_Show_Parameter		/* IZ v */
+
+#define	HC_Show_Key_Status		/* kS v */
+
+#define	HC_Control_Update		/* ss v */
+#define	HC_Control_Update_Area		/* sffffs v */
+#define	HC_Control_Update_By_Key	/* ks v */
+#define	HC_Control_Update_Area_By_Key	/* kffffs v */
+
+#define	HC_Relinquish_Memory		/* v v */
+
+/* new in 3.3 */
+#define HC_Compute_Circumsphere		/* sPF b */
+#define HC_Compute_Circumcuboid		/* sPP b */
+#define HC_Compute_Circumsphere_By_Key	/* kPF b */
+#define HC_Compute_Circumcuboid_By_Key	/* kPP b */
+
+#define HC_Set_Priority			/* kl v */
+#define HC_Show_Priority		/* kL v */
+
+#define HC_Set_Bounding_Sphere		/* pf v */
+#define HC_Set_Bounding_Sphere_By_Key	/* kpf v */
+
+/* new in 4.0 */
+#define HC_Set_Bounding_Cuboid		/* pp v */
+#define HC_Set_Bounding_Cuboid_By_Key	/* kpp v */
+
+#define HC_Show_Bounding_Sphere		/* PF b */
+#define HC_Show_Bounding_Sphere_By_Key	/* kPF b */
+#define HC_Show_Bounding_Cuboid		/* PP b */
+#define HC_Show_Bounding_Cuboid_By_Key	/* kPP b */
+
+#define HC_Show_Bounding_Info		/* S v */
+#define HC_Show_Bounding_Info_By_Key	/* kS v */
+
+#define HC_UnSet_Bounding_Volume	/* v v */
+#define HC_UnSet_Bounding_Volume_By_Key	/* k v */
+
+#define	HC_Begin_Texture_Search		/* v v */
+#define	HC_Begin_Local_Texture_Search	/* v v */
+#define	HC_Show_Texture_Count		/* I v */
+#define	HC_Find_Texture			/* S b */
+#define	HC_End_Texture_Search		/* v v */
+#define	HC_Define_Texture		/* ss v */
+#define	HC_Define_Local_Texture		/* ss v */
+#define	HC_UnDefine_Texture		/* s v */
+#define	HC_UnDefine_Local_Texture	/* s v */
+#define	HC_Show_Texture			/* sS v */
+#define	HC_Show_Local_Texture		/* sS v */
+
+#define	HC_Compute_Selection_By_Polylin	/* sssip i */		/* HC_Compute_Selection_By_Polyline */
+#define	HC_Compute_Selection_By_Polygon	/* sssip i */
+
+#define	HC_Append_Texture_Matrix	/* a v */
+#define	HC_Rotate_Texture_Offaxis	/* ffff v */
+#define	HC_Rotate_Texture		/* fff v */
+#define	HC_Scale_Texture		/* fff v */
+#define	HC_Translate_Texture		/* fff v */
+#define	HC_Set_Texture_Matrix		/* a v */
+#define	HC_UnSet_Texture_Matrix		/* v v */
+#define	HC_Show_Texture_Matrix		/* A v */
+#define	HC_Show_Net_Texture_Matrix	/* A v */
+
+#define	HC_Show_Parameter_Size		/* I v */
+
+#define	HC_Set_User_Index		/* lu v */
+#define	HC_UnSet_One_User_Index		/* l v */
+#define	HC_Show_User_Index_Count	/* I v */
+#define	HC_Show_User_Indices		/* ILU v */
+#define	HC_Show_One_User_Index		/* lU b */
+#define	HC_Show_Net_User_Index_Count	/* I v */
+#define	HC_Show_Net_User_Indices	/* ILU v */
+#define	HC_Show_One_Net_User_Index	/* lU b */
+#define	HC_Compute_Text_Outline		/* ssIPIY v */
+#define	HC_Compute_Text_Outline_Size	/* ssII v */
+#define	HC_Compute_Text_Outline_With_En	/* sssIPIY v */		/* HC_Compute_Text_Outline_With_Encoding */
+#define	HC_Compute_Text_Outline_Size_Wi	/* sssII v */		/* HC_Compute_Text_Outline_Size_With_Encoding */
+#define	HC_Compute_Text_Outline_By_Key	/* kIPIY v */
+#define	HC_Compute_Text_Outline_Size_By	/* kII v */		/* HC_Compute_Text_Outline_Size_By_Key */
+#define HC_Dump_Memory_Profile		/* s i */
+#define HC_Zero_Memory_Profile		/* s v */
+#define HC_Record_Instance_Handle	/* u v */
+#define HC_Record_Profile_Source	/* ss v */
+#define HC_Compute_Optimized_Shell	/* ippiysIPIYYY v */
+#define HC_MSet_Face_Colors_By_FIndex   /* ksiiz v */
+#define HC_MSet_Face_Colors_By_Value    /* ksisip v */
+#define HC_Insert_NURBS_Curve		/* iipzzff v */
+#define HC_Show_NURBS_Curve_Count	/* kIII v */
+#define HC_Show_NURBS_Curve		/* kIIPZZZZ v */
+#define HC_Edit_NURBS_Curve		/* kiiiipzz v */
+#define HC_Open_LOD			/* i v */
+#define HC_Close_LOD			/* v v */
+#define	HC_Insert_Shell_By_Tristrips	/* ipiyiy v */
+#define	HC_Show_Shell_By_Tristrips	/* kIPIYIY v */
+#define	HC_Show_Shell_By_Tristrips_Size	/* kIII v */
+#define	HC_Show_LOD_Type		/* kiS v */
+#define	HC_Show_Selection_Elements	/* KIYYY v */
+#define	HC_Show_Selection_Elements_Coun	/* KI v */		/* HC_Show_Selection_Elements_Count */
+#define	HC_Compute_Coordinates_By_Path	/* ijspsP b */
+#define	HC_Compute_Transform_By_Path	/* ijssA b */
+#define	HC_Compute_Text_Extent_By_Path	/* ijsFF v */
+#define	HC_Compute_Text_Extent_Enc_Path /* ijssFF v */
+#define	HC_PShow_Net_Callback		/* ijS v */
+#define	HC_PShow_Net_Camera		/* ijPPPFFS v */
+#define	HC_PShow_Net_Camera_By_Volume	/* ijSFFFF v */
+#define	HC_PShow_Net_Camera_Field	/* ijFF v */
+#define	HC_PShow_Net_Camera_Position	/* ijFFF v */
+#define	HC_PShow_Net_Camera_Projection	/* ijS v */
+#define	HC_PShow_Net_Camera_Target	/* ijFFF v */
+#define	HC_PShow_Net_Camera_Up_Vector	/* ijFFF v */
+#define	HC_PShow_Net_Color		/* ijS v */
+#define	HC_PShow_Net_Color_Map		/* ijS v */
+#define	HC_PShow_Net_Color_Map_By_Value	/* ijSIP v */
+#define	HC_PShow_Net_Color_Map_Count	/* ijI v */
+#define	HC_PShow_Net_Driver		/* ijR v */
+#define	HC_PShow_Net_Driver_Options	/* ijS v */
+#define	HC_PShow_Net_Edge_Pattern	/* ijS v */
+#define	HC_PShow_Net_Edge_Weight	/* ijF v */
+#define	HC_PShow_Net_Face_Pattern	/* ijS v */
+#define	HC_PShow_Net_Handedness		/* ijS v */
+#define	HC_PShow_Net_Heuristics		/* ijS v */
+#define	HC_PShow_Net_Line_Pattern	/* ijS v */
+#define	HC_PShow_Net_Line_Weight	/* ijF v */
+#define	HC_PShow_Net_Marker_Size	/* ijF v */
+#define	HC_PShow_Net_Marker_Symbol	/* ijS v */
+#define	HC_PShow_Net_Modelling_Matrix	/* ijA v */
+#define	HC_PShow_Net_Rendering_Options	/* ijS v */
+#define	HC_PShow_Net_Selectability	/* ijS v */
+#define	HC_PShow_Net_Streaming_Mode	/* ijS v */
+#define	HC_PShow_Net_Text_Alignment	/* ijS v */
+#define	HC_PShow_Net_Text_Font		/* ijS v */
+#define	HC_PShow_Net_Text_Path		/* ijFFF v */
+#define	HC_PShow_Net_Text_Spacing	/* ijF v */
+#define	HC_PShow_Net_Texture_Matrix	/* ijA v */
+#define	HC_PShow_Net_User_Index_Count	/* ijI v */
+#define	HC_PShow_Net_User_Indices	/* ijILU v */
+#define	HC_PShow_Net_User_Options	/* ijS v */
+#define	HC_PShow_Net_User_Value		/* ijM v */
+#define	HC_PShow_Net_Visibility		/* ijS v */
+#define	HC_PShow_Net_Window		/* ijFFFF v */
+#define	HC_PShow_Net_Window_Frame	/* ijS v */
+#define	HC_PShow_Net_Window_Pattern	/* ijS v */
+#define	HC_PShow_One_Net_Callback	/* ijsS v */
+#define	HC_PShow_One_Net_Color		/* ijsS v */
+#define	HC_PShow_One_Net_Color_By_Index	/* ijsI v */
+#define	HC_PShow_One_Net_Color_By_Value	/* ijsSFFF v */
+#define	HC_PShow_One_Net_Color_Map	/* ijiS v */
+#define	HC_PShow_One_Net_Color_Map_By_V	/* ijiSFFF v */		/* HC_PShow_One_Net_Color_Map_By_Value */
+#define	HC_PShow_One_Net_Driver_Option	/* ijsS v */
+#define	HC_PShow_One_Net_Heuristic	/* ijsS v */
+#define	HC_PShow_One_Net_Rendering_Opti	/* ijsS v */		/* HC_PShow_One_Net_Rendering_Option */
+#define	HC_PShow_One_Net_Selectability	/* ijsS v */
+#define	HC_PShow_One_Net_Text_Font	/* ijsS v */
+#define	HC_PShow_One_Net_User_Index	/* ijlU b */
+#define	HC_PShow_One_Net_User_Option	/* ijsS v */
+#define	HC_PShow_One_Net_Visibility	/* ijsS v */
+#define	HC_Update_Display_Timed		/* f b */
+#define	HC_Update_One_Display		/* s b */
+#define	HC_Show_Geometry_Pointer	/* ksU v */
+
+/* new in 7.0 */
+
+#define HC_Insert_Cylinder		/* ppfs v */
+#define HC_Show_Cylinder		/* kPPFS v */
+#define HC_Insert_NURBS_Surface		/* iiiipzzz v */
+#define HC_Show_NURBS_Surface_Size	/* kIIIIIII v */
+#define HC_Show_NURBS_Surface		/* kIIIIPZZZ v */
+#define HC_Trim_NURBS_Surface_By_Poly   /* iz v */
+#define HC_Trim_NURBS_Surface_By_Curve  /* iizzzff v */
+#define HC_Create_Trim_Collection	/* v v */
+#define HC_Open_Trim			/* i v */
+#define HC_Close_Trim			/* v v */
+#define HC_Set_Trim_Operation		/* is v */
+#define HC_Delete_Trim			/* i v */
+#define HC_Show_Trim_Count		/* I v */
+#define HC_Show_Trim_Type		/* iS v */
+#define HC_Show_Trim_Poly_Count		/* iI v */
+#define HC_Show_Trim_Poly		/* iIZ v */
+#define HC_Show_Trim_Curve_Count	/* iIIII v */
+#define HC_Show_Trim_Curve		/* iIIZZZFF v */
+#define HC_Show_Trim_Operation		/* iS v */
+#define HC_Edit_NURBS_Surface		/* kiiiiiiiipzzz v */
+#define HC_Edit_NURBS_Surface_Points	/* kiip v */
+#define HC_Edit_NURBS_Surface_Weights	/* kiiz v */
+#define HC_Edit_NURBS_Surface_Knots	/* kiiiizz v */
+#define HC_Show_NURBS_Curve_Size	/* kIIII v */
+
+/* 7.5 */
+
+#define	HC_Set_Variable_Edge_Weight	/* s v */
+#define	HC_Set_Variable_Line_Weight	/* s v */
+#define	HC_Set_Variable_Marker_Size	/* s v */
+
+#define	HC_Show_Variable_Edge_Weight	/* S v */
+#define	HC_Show_Variable_Line_Weight	/* S v */
+#define	HC_Show_Variable_Marker_Size	/* S v */
+#define	HC_Show_Net_Var_Edge_Weight	/* S v */		/* HC_Show_Net_Variable_Edge_Weight */
+#define	HC_Show_Net_Var_Line_Weight	/* S v */		/* HC_Show_Net_Variable_Line_Weight */
+#define	HC_Show_Net_Var_Marker_Size	/* S v */		/* HC_Show_Net_Variable_Marker_Size */
+#define	HC_PShow_Net_Var_Edge_Weight	/* ijS v */		/* HC_PShow_Net_Variable_Edge_Weight */
+#define	HC_PShow_Net_Var_Line_Weight	/* ijS v */		/* HC_PShow_Net_Variable_Line_Weight */
+#define	HC_PShow_Net_Var_Marker_Size	/* ijS v */		/* HC_PShow_Net_Variable_Marker_Size */
+
+#define	HC_Open_Region			/* i v */
+#define	HC_Close_Region			/* v v */
+#define	HC_Set_Faces			/* ii v */
+#define	HC_Set_Region			/* i v */
+#define	HC_MSet_Region_Faces		/* kiii v */
+#define	HC_MSet_Face_Regions		/* kiiy v */
+#define	HC_Show_Faces			/* IY v */
+#define	HC_Show_Faces_Count		/* I v */
+#define	HC_Show_Region			/* I v */
+#define	HC_MShow_Region_Faces		/* kiIY v */
+#define	HC_MShow_Region_Faces_Count	/* kiI v */
+#define	HC_MShow_Face_Regions		/* kIY v */
+#define	HC_MShow_Face_Regions_Count	/* kI v */
+#define	HC_MShow_Partial_Face_Regions	/* kiiY v */
+#define	HC_Show_Region_Range		/* kII v */
+
+#define HC_Insert_PolyCylinder		/* ipizs v */
+#define HC_Show_PolyCylinder		/* kIPIZS v */
+#define HC_Show_PolyCylinder_Counts	/* kIIS v */
+#define	HC_Insert_Shell_From_Region	/* kis v */
+
+#define	HC_Update_One_Display_Timed	/* sf b */
+
+#define	HC_Insert_Unicode_Text		/* fffx v */
+#define	HC_Show_Unicode_Text		/* kFFFX v */
+
+/* new in 8.0 */
+
+#define	HC_Compute_Transformed_Planes	/* iqaQ v */
+#define HC_Compute_Selection_By_Shell   /* ssipiy i */
+#define HC_Begin_Shell_Selection	/* v v */
+#define HC_End_Shell_Selection	        /* v v */
+#define HC_Compute_Intersect_Polyline   /* ipiyipiyIIIP i */
+#define HC_Show_Intersect_Polyline_Size /* ipiyipiyII i */
+
+/* new in 9.0 */
+
+#define HC_Compute_Point_Inside_Shell	/* pipiy b */
+#define HC_Compute_Shell_Enclosure	/* ipiyipiyS v */
+#define HC_Compute_Selection_By_Ray	/* sspp i */
+
+/* new in 10.0 */
+
+#define HC_Compute_Point_On_Shell	/* pfipiy b */
+
+
+#define	HC_Set_Unicode_Options		/* x v */
+#define	HC_Show_Unicode_Options		/* X v */
+#define	HC_PShow_Net_Unicode_Options	/* ijX v */
+#define	HC_Show_Net_Unicode_Options	/* X v */
+#define	HC_Show_One_Unicode_Option	/* xX v */
+#define	HC_PShow_One_Net_Unicode_Opt	/* ijxX v */		/* HC_PShow_One_Net_Unicode_Option */
+#define	HC_Show_One_Net_Unicode_Option	/* xX v */
+#define	HC_UnSet_Unicode_Options	/* v v */
+#define	HC_UnSet_One_Unicode_Option	/* x v */
+#define HC_Filter_Circumsphere		/* ssPF b */
+#define HC_Filter_Circumcuboid		/* ssPP b */
+#define HC_Filter_Circumsphere_By_Key	/* ksPF b */
+#define HC_Filter_Circumcuboid_By_Key	/* ksPP b */
+#define	HC_Set_Polygonal_Clip_Region	/* ips v */
+#define	HC_Show_Clip_Region		/* IIPS v */
+#define	HC_Show_Clip_Region_Size	/* IIS v */
+#define	HC_Show_Net_Clip_Region		/* IIPS v */
+#define	HC_Show_Net_Clip_Region_Size	/* IIS v */
+#define	HC_PShow_Net_Clip_Region	/* ijIIPS v */
+#define	HC_PShow_Net_Clip_Region_Size	/* ijIIS v */
+#define	HC_UnSet_Clip_Region		/* v v */
+#define HC_Regenerate_LOD		/* ss v */
+#define HC_Regenerate_LOD_By_Key	/* ks v */
+
+#define	HC_Set_Text_Region		/* ips v */
+#define	HC_UnSet_Text_Region		/* v v */
+#define	HC_Show_Text_Region		/* IPS v */
+#define	HC_Show_Text_Region_Count	/* I v */
+
+
+#define	HC_Compute_Screen_Extent	/* ssFFFF v */
+#define	HC_Compute_Screen_Extent_By_Pat	/* ijsFFFF v */		   /* HC_Compute_Screen_Extent_By_Path */
+#define	HC_Compute_Screen_Extent_By_Key	/* ksFFFF v */
+
+/* 11.0 */
+
+#define	HC_Set_Camera_Near_Limit	/* f v */
+#define	HC_Show_Camera_Near_Limit	/* F b */
+#define	HC_PShow_Net_Camera_Near_Limit	/* ijF b */
+#define	HC_Show_Net_Camera_Near_Limit	/* F b */
+
+
+#define	HC_Show_User_Options_Length	/* I v */
+#define	HC_PShow_Net_User_Opt_Length	/* ijI v */		/* HC_PShow_Net_User_Options_Length */
+#define	HC_Show_Net_User_Opt_Length	/* I v */		/* HC_Show_Net_User_Options_Length */
+#define	HC_Show_Unicode_Options_Length	/* I v */
+#define	HC_PShow_Net_Unicode_Opt_Length	/* ijI v */		/* HC_PShow_Net_Unicode_Options_Length */
+#define	HC_Show_Net_Unicode_Opt_Length	/* I v */		/* HC_Show_Net_Unicode_Options_Length */
+
+#define	HC_Show_One_User_Option_Length	/* sI v */
+#define	HC_PShow_One_Net_User_Opt_Len	/* ijsI v */		/* HC_PShow_One_Net_User_Option_Length */
+#define	HC_Show_One_Net_User_Opt_Len	/* sI v */  		/* HC_Show_One_Net_User_Option_Length */
+#define	HC_Show_One_Uni_Option_Length	/* xI v */  		/* HC_Show_One_Unicode_Option_Length */
+#define	HC_PShow_One_Net_Uni_Opt_Len	/* ijxI v */		/* HC_PShow_One_Net_Unicode_Option_Length */
+#define	HC_Show_One_Net_Uni_Opt_Len	/* xI v */  		/* HC_Show_One_Net_Unicode_Option_Length */
+
+
+/* 12.0 */
+
+#define	HC_Compute_Vector_Angle		/* pp f */
+#define	HC_Show_Selection_Original_Key	/* K v */
+
+#define	HC_Edit_Circle			/* kppp v */
+#define	HC_Edit_Circular_Arc		/* kppp v */
+#define	HC_Edit_Circular_Chord		/* kppp v */
+#define	HC_Edit_Circular_Wedge		/* kppp v */
+#define	HC_Edit_Cutting_Plane		/* kffff v */
+#define	HC_Edit_Ellipse			/* kppp v */
+#define	HC_Edit_Elliptical_Arc		/* kpppff v */
+#define	HC_Edit_Grid			/* kspppii v */
+#define	HC_Edit_Line			/* kffffff v */
+#define	HC_Edit_Marker			/* kfff v */
+#define	HC_Edit_Cylinder		/* kppfs v */
+#define	HC_Edit_PolyCylinder		/* kipizs v */
+
+#define HC_Insert_Sphere		/* pfpp v */
+#define HC_Show_Sphere			/* kPFPP v */
+#define HC_Edit_Sphere			/* kpfpp v */
+#define HC_Insert_Circle_By_Radius	/* pfp v */
+#define HC_Show_Circle_By_Radius	/* kPFP v */
+#define HC_Edit_Circle_By_Radius	/* kpfp v */
+
+
+#define HC_Set_Conditions		/* s v */
+#define HC_UnSet_Conditions		/* v v */
+#define HC_UnSet_One_Condition		/* s v */
+#define HC_Conditional_Style		/* ss v */
+#define HC_Conditional_Style_By_Key	/* ks v */
+#define HC_Conditional_Include		/* ss v */
+#define HC_Conditional_Include_By_Key	/* ks v */
+
+#define	HC_Show_Conditions		/* S v */
+#define	HC_Show_Net_Conditions		/* S v */
+#define	HC_PShow_Net_Conditions		/* ijS v */
+#define	HC_Show_Conditions_Length	/* I v */
+#define	HC_Show_Net_Conditions_Length	/* I v */
+#define	HC_PShow_Net_Conditions_Length	/* ijI v */
+#define	HC_Show_One_Condition		/* sS v */
+#define	HC_Show_One_Net_Condition	/* sS v */
+#define	HC_PShow_One_Net_Condition	/* ijsS v */
+
+#define	HC_Show_Conditional_Style	/* kSS v */
+#define	HC_Show_Conditional_Include	/* kSS v */
+
+
+#define	HC_Define_Glyph			/* sic v */
+#define	HC_UnDefine_Glyph		/* s v */
+#define	HC_Show_Glyph			/* sC v */
+#define	HC_Show_Glyph_Size		/* sI v */
+#define	HC_Begin_Glyph_Search		/* v v */
+#define	HC_Find_Glyph			/* S b */
+#define	HC_Show_Glyph_Count		/* I v */
+#define	HC_End_Glyph_Search		/* v v */
+
+
+#define	HC_Define_Line_Style		/* ss v */
+#define	HC_UnDefine_Line_Style		/* s v */
+#define	HC_Show_Line_Style		/* sS v */
+#define	HC_Show_Line_Style_Size		/* sI v */
+#define	HC_Begin_Line_Style_Search	/* v v */
+#define	HC_Find_Line_Style		/* S b */
+#define	HC_Show_Line_Style_Count	/* I v */
+#define	HC_End_Line_Style_Search	/* v v */
+
+
+#define	HC_Copy_Segment_With_Mapping	/* ssijJ v */
+
+#define	HC_Reverse_Contents_Search	/* v v */
+
+#define	HC_Show_Geometry_Options	/* kS v */
+
+#define	HC_Show_Selection_Original_Keys /* IJ v */
+
+
+/* 13.0 */
+
+#define	HC_MSet_Character_Attributes    /* kiis v */
+#define	HC_MUnSet_Character_Attributes  /* kiis v */
+#define	HC_Show_Character_Attribute_Cou /* kI v */            /* HC_Show_Character_Attribute_Count */  
+#define	HC_MShow_Character_Attributes   /* kiiS v */
+#define	HC_Show_One_Character_Attribute /* kisS v */
+
+#define	HC_MShow_Vertex_Colors_By_Value /* ksiiP v */
+#define	HC_MShow_Vertex_Colors_By_FInd  /* ksiiZ v */		/* HC_MShow_Vertex_Colors_By_FIndex */
+#define HC_MShow_Face_Colors_By_Value   /* kiiP v */
+#define HC_MShow_Face_Colors_By_FIndex  /* kiiZ v */
+#define	HC_MShow_Vertex_Normals		/* kiiP v */
+#define	HC_MShow_Vertex_Parameters	/* kiiIZ v */
+#define	HC_MShow_Vertex_Parameter_Size	/* kI v */
+
+
+#define	HC_MShow_Net_Vertex_Normals	/* kiiP v */
+
+#define	HC_Set_Circular_Center  	/* fff v */
+#define	HC_Set_Circular_Center_By_Key  	/* kfff v */
+#define	HC_Show_Circular_Center  	/* kFFF b */
+
+#define HC_Show_Error                   /* SII b */
+
+#define HC_Define_Driver_Config		/* ssss v */
+
+#define HC_MSet_Face_Visibilities       /* kiic v */
+#define HC_MShow_Face_Visibilities      /* kiiC v */
+
+/* 14.0 */
+
+#define	HC_MUnSet_Face_Colors		/* kii v */
+#define	HC_MUnSet_Vertex_Colors		/* kii v */
+#define	HC_MUnSet_Face_Visibilities	/* kii v */
+
+#define	HC_Insert_Cutting_Section	/* iq v */
+#define	HC_Show_Cutting_Section		/* kIQ v */
+#define	HC_Show_Cutting_Section_Count	/* kI v */
+#define	HC_Edit_Cutting_Section		/* kiiiq v */
+
+#define	HC_MSet_Specific_Face_Vis	/* kiyc v */	/* HC_MSet_Specific_Face_Visibilities,HC_MSet_Face_Visibilities_By_Index */
+#define	HC_MShow_Specific_Face_Vis	/* kiyC v */	/* HC_MShow_Specific_Face_Visibilities,HC_MShow_Face_Visibilities_By_Index */
+#define	HC_MUnSet_Specific_Face_Vis	/* kiy v */	/* HC_MUnSet_Specific_Face_Visibilities,HC_MUnSet_Face_Visibilities_By_Index */
+
+#define HC_Compute_Triangulation	/* piyIY v */
+#define HC_Compute_Triangulation_Size	/* piyI v */
+#define HC_Compute_Polyline_From_Curve	/* ksIP v */
+#define HC_Compute_Pline_From_Crv_Size	/* ksI v */		/* HC_Compute_Polyline_From_Curve_Size */
+
+#define	HC_Optimize_Segment_Tree	/* ss v */
+#define	HC_Show_Optimized_Mapping	/* sskkiKKI v */
+
+#define HC_Show_Net_Texture		/* sSK v */
+#define HC_PShow_Net_Texture		/* ijsSK v */
+#define HC_Show_One_Net_Texture		/* ssS v */
+#define HC_PShow_One_Net_Texture	/* ijssS v */
+
+
+#define HC_Set_Explicit_Color		/* sspss v */
+#define HC_Show_Explicit_Color		/* ssZSS v */
+#define HC_Show_Net_Explicit_Color	/* ssZSS v */ 
+#define HC_PShow_Net_Explicit_Color	/* ijssZSS v */
+
+#define HC_Show_Priority_Range		/* kLL v */
+
+#define	HC_Show_Selection_Source_Elem	/* IIIP v */		/* HC_Show_Selection_Source_Element */
+#define HC_Compute_Selection_Dist_By_Sh	/* ssipiys f */		/* HC_Compute_Selection_Distance_By_Shell */
+
+#define HC_Delete_Specific_Shell_Points	/* kiy v */
+#define HC_Delete_Specific_Shell_Faces	/* kiy v */
+#define HC_Compute_Selection_By_Key	/* sska i */
+
+#define	HC_MSet_Spec_Vert_Col_By_FIndex	/* ksiyz v */		/* HC_MSet_Specific_Vertex_Colors_By_FIndex */
+#define	HC_MSet_Spec_Vert_Col_By_Value	/* ksiysp v */		/* HC_MSet_Specific_Vertex_Colors_By_Value */
+#define	HC_MSet_Spec_Face_Col_By_FIndex	/* kiyz v */		/* HC_MSet_Specific_Face_Colors_By_FIndex */
+#define	HC_MSet_Spec_Face_Col_By_Value	/* kiysp v */		/* HC_MSet_Specific_Face_Colors_By_Value */
+#define	HC_MShow_Spec_Vert_Col_By_FInd	/* ksiyZ v */		/* HC_MShow_Specific_Vertex_Colors_By_FIndex */
+#define	HC_MShow_Spec_Vert_Col_By_Value	/* ksiyP v */		/* HC_MShow_Specific_Vertex_Colors_By_Value */
+#define	HC_MShow_Spec_Face_Col_By_FInd	/* kiyZ v */		/* HC_MShow_Specific_Face_Colors_By_FIndex */
+#define	HC_MShow_Spec_Face_Col_By_Value	/* kiyP v */		/* HC_MShow_Specific_Face_Colors_By_Value */
+#define	HC_MUnSet_Spec_Vertex_Colors	/* kiy v */		/* HC_MUnSet_Specific_Vertex_Colors */
+#define	HC_MUnSet_Spec_Face_Colors	/* kiy v */		/* HC_MUnSet_Specific_Face_Colors */
+
+#define HC_Compute_Points_On_Shell	/* ipfipiyY i */
+#define HC_Compute_Points_Distance_F_Sh /* ipfipiysZ i */       /* HC_Compute_Points_Distance_From_Shell */
+#define HC_Compute_Points_Inside_Shell	/* ippipiysY v */
+
+#define HC_Generate_Shell_From_Geometry	/* ks k */
+
+#define	HC_Optimize_Segment_Tree_By_Key	/* ks v */
+
+#define HC_Generate_Poly_From_Geometry	/* ks k */		/* HC_Generate_Polyline_From_Geometry */
+
+
+/* 15.0 */
+
+#define HC_MSet_Face_Normals		/* kiip v */
+
+#define	HC_UnSet_Camera_Near_Limit	/* v v */
+#define HC_Compute_Face_Neighborhood_Si /* kiI v */		/* HC_Compute_Face_Neighborhood_Size */
+#define HC_Compute_Face_Neighborhood	/* kiII v */
+
+/* 16.0 */
+
+#define	HC_Set_Callback_With_Data			/* su v */
+
+#define	HC_Show_One_Callback_With_Data		/* sSU v */
+#define	HC_Show_One_Net_Callback_WD			/* sSU v */			/* HC_Show_One_Net_Callback_With_Data */
+#define	HC_PShow_One_Net_Callback_WD		/* ijSU v */		/* HC_PShow_One_Net_Callback_With_Data */
+
+
+#define	HC_Show_Shell_Face_Count			/* kI v */
+#define HC_Rollback_Ink						/* i v */
+#define	HC_Insert_Infinite_Line				/* ffffff v */
+#define	HC_Show_Infinite_Line				/* kFFFFFF v */
+#define	HC_Edit_Infinite_Line				/* kffffff v */
+
+#define HC_Reference_Geometry				/* s v */
+#define HC_Reference_Geometry_By_Key		/* k v */
+#define HC_Conditional_Reference			/* ss v */
+#define HC_Conditional_Reference_By_Key		/* ks v */
+
+#define HC_Compute_Swept_Shell				/* kpKKKs i */		/* HC_Compute_Shell_Sweep */
+
+#define	HC_Show_Shell_Tristrip_Count		/* kI v */
+
+#define	HC_Show_Image_Name					/* kS v */
+#define	HC_Show_Device_Info_By_Key			/* ksS v */
+
+/* 16.0 */
+
+#define	HC_Set_Geometry_Options				/* ks v */			/* HC_Edit_Geometry_Options */
+#define HC_Insert_Infinite_Ray				/* ffffff v */
+#define	HC_Show_Infinite_Ray				/* kFFFFFF v */
+#define	HC_Edit_Infinite_Ray				/* kffffff v */
+
+#define	 HC_Begin_Open_Item_Search			/* v v */
+#define	 HC_Find_Open_Item					/* KSII b */ 
+#define	 HC_Show_Open_Item_Count			/* I v */
+#define	 HC_End_Open_Item_Search			/* v v */
+#define	 HC_Compute_Selection_By_Sh_W_Op   /* ssipiys i */		/* HC_Compute_Selection_By_Shell_With_Options */
+#define	 HC_Compute_Selection_By_Swept_S	/* sskias i */		/* HC_Compute_Selection_By_Swept_Shell */
+#define	 HC_Compute_Swept_Shell_Along_P		/* kias v */		/* HC_Compute_Swept_Shell_Along_Path */
+
+ 
+#define	HC_Show_Existence_Unicode			/* x i */
+#define	HC_Show_Existence_Unicode_By_K		/* kx i */			/* HC_Show_Existence_Unicode_By_Key */
+
+
+/* 17.0 */
+
+#define	HC_Edit_Image_Options				/* ks v */
+
+#define	HC_Show_Color_Map_Length			/* I v */
+#define	HC_Show_Net_Color_Map_Length		/* I v */
+#define	HC_PShow_Net_Color_Map_Length		/* ijI v */
+
+#define HC_Compute_Subshell					/* kiyiyyYY k */
+#define HC_MSet_Vertex_Visibilities			/* kiiu v */
+#define HC_MSet_Specific_Vertex_Vis			/* kiyu v */		/* HC_MSet_Specific_Vertex_Visibilities */
+#define HC_MSet_Specific_Edge_Vis			/* kiyyu v */		/* HC_MSet_Specific_Edge_Visibilities */
+#define HC_MShow_Vertex_Visibilities		/* kiiU v */
+#define HC_MUnSet_Vertex_Visibilities		/* kii v */
+#define HC_MShow_Specific_Vertex_Vis		/* kiyU v */		/* HC_MShow_Specific_Vertex_Visibilities */
+#define HC_MUnSet_Specific_Vertex_Vis		/* kiy v */			/* HC_MUnSet_Specific_Vertex_Visibilities */
+#define HC_MShow_Specific_Edge_Vis			/* kiyyU v */		/* HC_MShow_Specific_Edge_Visibilities */
+#define HC_MUnSet_Specific_Edge_Vis			/* kiyy v */		/* HC_MUnSet_Specific_Edge_Visibilities */
+
+#define	HC_Begin_Error_Handler_Search		/* v v */
+#define	HC_Show_Error_Handler_Count			/* I v */
+#define	HC_Find_Error_Handler				/* T b */
+#define	HC_End_Error_Handler_Search			/* v v */
+
+#define	HC_Begin_Exit_Handler_Search		/* v v */
+#define	HC_Show_Exit_Handler_Count			/* I v */
+#define	HC_Find_Exit_Handler				/* T b */
+#define	HC_End_Exit_Handler_Search			/* v v */
+
+#define	HC_Compute_Text_Outline_By_Path		/* ijsIPIY v */
+#define	HC_Compute_Text_Outline_Size_Pa		/* ijsII v */		/* HC_Compute_Text_Outline_Size_By_Path */
+
+
+/* 18.0 */
+
+#define	HC_UnSet_One_Visibility_By_Key		/* ks v */
+#define HC_UnSet_One_Color_By_Key			/* ks v */
+#define HC_UnSet_One_Condition_By_Key		/* ks v */
+#define HC_UnSet_One_Heuristic_By_Key		/* ks v */
+#define HC_UnSet_One_Rendering_Opt_By_K		/* ks v */			/* HC_UnSet_One_Rendering_Option_By_Key */
+#define HC_UnSet_One_Selectability_By_K		/* ks v */			/* HC_UnSet_One_Selectability_By_Key */
+#define HC_UnSet_One_Text_Font_By_Key		/* ks v */
+#define HC_UnSet_One_Driver_Option_By_K		/* ks v */			/* HC_UnSet_One_Driver_Option_By_Key */
+#define HC_UnSet_One_User_Option_By_Key		/* ks v */
+#define HC_UnSet_One_Uni_Option_By_Key		/* kx v */			/* HC_UnSet_One_Unicode_Option_By_Key */
+
+#define HC_Set_Visibility_By_Key			/* ks v */
+#define HC_Show_Visibility_By_Key			/* kS v */
+#define HC_Show_One_Visibility_By_Key		/* ksS v */
+#define HC_UnSet_Visibility_By_Key			/* k v */
+
+#define HC_Set_Selectability_By_Key			/* ks v */
+#define HC_Show_Selectability_By_Key		/* kS v */
+#define HC_Show_One_Selectability_By_K		/* ksS v */			/* HC_Show_One_Selectability_By_Key */
+#define HC_UnSet_Selectability_By_Key		/* k v */
+
+#define HC_Set_Camera_By_Key				/* kpppffs v */
+#define HC_Show_Camera_By_Key				/* kPPPFFS v */
+#define	HC_Show_Camera_Field_By_Key			/* kFF v */
+#define	HC_Show_Camera_Near_Limit_By_K		/* kF b */			/* HC_Show_Camera_Near_Limit_By_Key */
+#define	HC_Show_Camera_Position_By_Key		/* kFFF v */
+#define	HC_Show_Camera_Projection_By_K		/* kS v */			/* HC_Show_Camera_Projection_By_Key */
+#define	HC_Show_Camera_Target_By_Key		/* kFFF v */
+#define	HC_Show_Camera_Up_Vector_By_Key		/* kFFF v */
+#define HC_UnSet_Camera_By_Key				/* k v */ 
+
+#define HC_Show_Reference_Geometry_Filt		/* kS v */			/* HC_Show_Reference_Geometry_Filter */
+#define	HC_Show_Reference_Keys				/* kIK v */
+#define	HC_Show_Reference_Keys_Count		/* kI v */
+
+#define HC_Set_Marker_Symbol_By_Key			/* ks v */
+#define HC_Show_Marker_Symbol_By_Key		/* kS v */
+#define HC_UnSet_Marker_Symbol_By_Key		/* k v */
+
+#define	HC_MShow_Face_Normals				/* kiiP v */
+#define	HC_MShow_Net_Face_Normals			/* kiiP v */
+
+#define	HC_Set_Variable_Marker_Size_By		/* ks v */			/* HC_Set_Variable_Marker_Size_By_Key */
+#define	HC_Show_Variable_Marker_Size_By		/* kS v */			/* HC_Show_Variable_Marker_Size_By_Key */
+#define	HC_UnSet_Marker_Size_By_Key			/* k v */
+#define	HC_Set_Marker_Size_By_Key			/* kf v */
+#define	HC_Show_Marker_Size_By_Key			/* kF v */
+#define	HC_Move_Key_By_Key				/* kk v */			/* HC_Move_By_Key_By_Key */
+
+#define HC_Show_Text_Alignment_By_Key		/* kS v */
+#define HC_Show_Text_Spacing_By_Key			/* kF v */
+#define HC_Show_Text_Font_By_Key			/* kS v */
+#define HC_Show_One_Text_Font_By_Key		/* ksS v */
+#define HC_Show_Text_Path_By_Key			/* kFFF v */
+#define HC_UnSet_Text_Alignment_By_Key		/* k v */
+#define HC_UnSet_Text_Font_By_Key			/* k v */
+#define HC_UnSet_Text_Spacing_By_Key		/* k v */
+#define HC_UnSet_Text_Path_By_Key			/* k v */
+#define HC_Set_Text_Alignment_By_Key		/* ks v */
+#define HC_Set_Text_Font_By_Key				/* ks v */
+#define HC_Set_Text_Path_By_Key				/* kfff v */
+#define HC_Set_Text_Spacing_By_Key			/* kf v */
+
+#define	HC_Show_Font_Info_By_Path			/* ijssS v */
+
+#define HC_Set_Modelling_Matrix_By_Key		/* kz v */
+#define HC_Append_Modelling_Matrix_By_K		/* kz v */			/* HC_Append_Modelling_Matrix_By_Key */
+#define HC_Show_Modelling_Matrix_By_Key		/* kZ v */
+#define HC_UnSet_Modelling_Matrix_By_Ke		/* k v */			/* HC_UnSet_Modelling_Matrix_By_Key */
+#define HC_Set_Texture_Matrix_By_Key		/* kz v */
+#define HC_Append_Texture_Matrix_By_Key		/* kz v */
+#define HC_Show_Texture_Matrix_By_Key		/* kZ v */
+#define HC_UnSet_Texture_Matrix_By_Key		/* k v */
+
+#define HC_UnSet_Color_By_Key			/* k v */
+#define HC_Set_Color_By_Key			/* ks v */
+#define HC_Set_Color_By_Index_By_Key		/* ksi v */
+#define HC_Set_Explicit_Color_By_Key		/* ksspss v */
+#define HC_Show_Color_By_Key			/* kS v */
+#define HC_Show_Explicit_Color_By_Key		/* kssZSS v */
+#define HC_Show_One_Color_By_Key		/* ksS v */
+
+#define	HC_Set_Edge_Pattern_Explicit		/* s v */
+#define HC_Set_Edge_Pattern_Exp_By_Key		/* ks v */                      /* HC_Set_Edge_Pattern_Explicit_By_Key */
+#define	HC_Show_Edge_Pattern_Explicit		/* S v */
+#define	HC_Show_Net_Edge_Pattern_Explic	        /* S v */                       /* HC_Show_Net_Edge_Pattern_Explicit */
+
+#define	HC_Set_Line_Pattern_Explicit		/* s v */
+#define HC_Set_Line_Pattern_Exp_By_Key	        /* ks v */                      /* HC_Set_Line_Pattern_Explicit_By_Key */
+#define	HC_Show_Line_Pattern_Explicit		/* S v */
+#define	HC_Show_Net_Line_Pattern_Explic	        /* S v */                       /* HC_Show_Net_Line_Pattern_Explicit */
+
+
+#define	HC_Set_User_Data					/* mul v */
+#define	HC_Show_One_User_Data				/* mUl l */
+#define	HC_Show_One_Net_User_Data			/* mUl l */
+#define	HC_Show_User_Data_Indices			/* Ml l */
+#define	HC_UnSet_One_User_Data				/* m v */
+
+#define	HC_Set_User_Data_By_Key				/* kmul v */
+#define	HC_Show_One_User_Data_By_Key		/* kmUl l */
+#define	HC_Show_User_Data_Indices_By_Ke	    /* kMl l */                     /* HC_Show_User_Data_Indices_By_Key */
+#define	HC_UnSet_One_User_Data_By_Key		/* km v */
+
+#define	HC_PShow_One_Net_User_Data			/* ijmUl l */
+
+#define HC_Set_Rendering_Options_By_Key	/* ks v */
+#define HC_UnSet_Rendering_Options_By_K	/* k v */		/* HC_UnSet_Rendering_Options_By_Key */
+#define HC_Show_One_Rendering_Opt_By_K	/* ksS v */		/* HC_Show_One_Rendering_Option_By_Key */
+#define HC_Show_Rendering_Options_By_K	/* kS v */		/* HC_Show_Rendering_Options_By_Key */
+
+#define HC_MShow_Vertex_Colors_With_Ex	/* ksiiUFPQ i */ /* HC_MShow_Vertex_Colors_With_Existence */
+
+/* 19.0 */
+
+#define	HC_Insert_Compressed_Image			/* fffsiiiu v */
+#define	HC_Show_Compressed_Image			/* kFFFSIIIU v */
+#define	HC_Show_Compressed_Image_Size		/* kSIII v */
+#define HC_Show_Image_Format				/* kS v */
+
+#define	HC_MSet_Specific_Vertex_Normals		/* kiyp v */
+#define HC_MSet_Specific_Face_Normals	/* kiyp v */
+#define HC_MUnSet_Vertex_Normals	/* kii v */
+#define HC_MUnSet_Face_Normals	/* kii v */
+#define HC_MUnSet_Specific_Vert_Normals	/* kiy v */
+#define HC_MUnSet_Specific_Face_Normals	/* kiy v */
+#define HC_MShow_Specific_Vert_Normals	/* kiyP v */
+#define HC_MShow_Specific_Face_Normals	/* kiyP v */
+#define HC_MUnSet_Vertex_Parameters	/* kii v */
+#define HC_MSet_Spec_Vertex_Parameters	/* kiyiz v */	/* HC_MSet_Specific_Vertex_Parameters */
+#define HC_MUnSet_Spec_Vert_Parameters	/* kiy v */	/* HC_MUnSet_Specific_Vertex_Parameters */
+#define HC_MUnSet_Vertex_Colors2	/* ksii v */
+#define HC_MUnSet_Spec_Vertex_Colors2	/* ksiy v */	/* HC_MUnSet_Specific_Vertex_Colors2 */
+
+#define HC_MShow_Spec_Vert_Colors_W_Ex	/* ksiyUFPQ i */ /* HC_MShow_Specific_Vertex_Colors_With_Existence */
+#define HC_MShow_Face_Colors_With_Ex	/* ksiiUFP i */ /* HC_MShow_Face_Colors_With_Existence */
+#define HC_MShow_Spec_Face_Colors_W_Ex	/* ksiyUFP i */ /* HC_MShow_Specific_Face_Colors_With_Existence */
+#define HC_MShow_Vertex_Parameters_W_Ex	/* kiiUIF i */ /* HC_MShow_Vertex_Parameters_With_Existence */
+#define HC_MShow_Spec_Vertex_Params_W_Ex /* kiyUIF i */ /* HC_MShow_Specific_Vertex_Parameters_With_Existence */
+#define HC_MShow_Vertex_Vis_W_Ex		/* kiiUU i */ /* HC_MShow_Vertex_Visibilities_With_Existence */
+#define HC_MShow_Spec_Vertex_Vis_W_Ex	/* kiyUU i */ /* HC_MShow_Specific_Vertex_Visibilities_With_Existence */
+#define HC_MShow_Face_Vis_W_Ex			/* kiiUU i */ /* HC_MShow_Face_Visibilities_With_Existence */
+#define HC_MShow_Spec_Face_Vis_W_Ex		/* kiyUU i */ /* HC_MShow_Specific_Face_Visibilities_With_Existence */
+#define HC_MShow_Vertex_Normals_W_Ex	/* kiiUP i */ /* HC_MShow_Vertex_Normals_With_Existence */
+#define HC_MShow_Spec_Vert_Normals_W_Ex	/* kiyUP i */ /* HC_MShow_Specific_Vertex_Normals_With_Existence */
+#define HC_MShow_Face_Normals_W_Ex		/* kiiUP i */ /* HC_MShow_Face_Normals_With_Existence */
+#define HC_MShow_Spec_Face_Normals_W_Ex	/* kiyUP i */ /* HC_MShow_Specific_Face_Normals_With_Existence */
+
+#define HC_Set_Line_Pattern_By_Key			/* ks v */
+#define HC_UnSet_Line_Pattern_By_Key		/* k v */
+#define HC_Show_Line_Pattern_By_Key			/* kS v */
+
+#define HC_Set_Line_Weight_By_Key 			/* kf v */
+#define HC_UnSet_Line_Weight_By_Key			/* k v */
+#define HC_Show_Line_Weight_By_Key			/* kF v */
+
+#define HC_Set_Variable_Line_Weight_By_K	/* ks v */	/* HC_Set_Variable_Line_Weight_By_Key */
+#define HC_Show_Variable_Line_Weight_By		/* kS v */	/* HC_Show_Variable_Line_Weight_By_Key */
+
+#define HC_Set_Edge_Pattern_By_Key			/* ks v */
+#define HC_UnSet_Edge_Pattern_By_Key		/* k v */
+#define HC_Show_Edge_Pattern_By_Key			/* kS v */
+
+#define HC_Set_Edge_Weight_By_Key 			/* kf v */
+#define HC_UnSet_Edge_Weight_By_Key			/* k v */
+#define HC_Show_Edge_Weight_By_Key			/* kF v */
+
+#define HC_Set_Variable_Edge_Weight_By_K	/* ks v */	/* HC_Set_Variable_Edge_Weight_By_Key */
+#define HC_Show_Variable_Edge_Weight_By		/* kS v */	/* HC_Show_Variable_Edge_Weight_By_Key */
+
+#define	HC_Set_Camera_Up_Vector_By_Key		/* kfff v */
+#define	HC_Set_Camera_Position_By_Key		/* kfff v */
+#define	HC_Set_Camera_Target_By_Key			/* kfff v */
+#define	HC_Set_Camera_Projection_By_Key		/* ks v */
+#define	HC_Set_Camera_Field_By_Key			/* kff v */
+
+#define	HC_Define_Glyph_By_Key			/* ksic v */
+#define	HC_UnDefine_Glyph_By_Key		/* ks v */
+#define	HC_Show_Glyph_By_Key			/* ksC v */
+#define	HC_Show_Glyph_Size_By_Key		/* ksI v */
+#define	HC_Begin_Glyph_Search_By_Key		/* k v */
+
+#define	HC_Define_Line_Style_By_Key		/* kss v */
+#define	HC_UnDefine_Line_Style_By_Key		/* ks v */
+#define	HC_Show_Line_Style_By_Key		/* ksS v */
+#define	HC_Show_Line_Style_Size_By_Key		/* ksI v */
+#define	HC_Begin_Line_Style_Search_By_Key	/* k v */
+
+#define	HC_Begin_Local_Texture_Search_By_Key	/* k v */
+#define	HC_Define_Local_Texture_By_Key		/* kss v */
+#define	HC_UnDefine_Local_Texture_By_Key	/* ks v */
+#define	HC_Show_Local_Texture_By_Key		/* ksS v */
+
+#define	HC_Define_Shader					/* sss v */
+#define	HC_Define_Shader_By_Key				/* ksss v */
+#define	HC_Begin_Shader_Search				/* v v */
+#define	HC_Begin_Shader_Search_By_Key		/* k v */
+#define HC_End_Shader_Search				/* v v */
+#define	HC_Find_Shader						/* s b */
+#define	HC_Show_Shader						/* sSS v */
+#define	HC_UnDefine_Shader					/* s v */
+#define	HC_UnDefine_Shader_By_Key			/* ks v */
+#define	HC_Show_Net_Shader					/* sSS v */
+#define	HC_PShow_Net_Shader					/* ijsSS v */
+#define	HC_Show_One_Net_Shader_Option		/* ssS v */
+#define	HC_PShow_One_Net_Shader_Option		/* ijssS v */
+

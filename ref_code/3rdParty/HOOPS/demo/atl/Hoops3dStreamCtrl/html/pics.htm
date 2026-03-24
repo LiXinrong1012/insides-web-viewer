@@ -1,0 +1,113 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Developer Studio">
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1">
+<TITLE>Document Title</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+
+var isAborted = false
+var loadname = ""
+
+function tester2(name)
+{
+	if (parent.frames[0].atltest.DLinProgress == true)
+	{			
+		if (!isAborted)
+		{
+ 			parent.frames[0].atltest.AbortDownload()
+			isAborted = true
+			loadname = name
+		}
+
+ 		setTimeout("tester2()",1000)
+
+	}
+	else
+	{		
+		if (isAborted)
+		{
+			isAborted = false
+			parent.frames[0].atltest.Filename = loadname
+			name = loadname;
+		}
+		else				
+ 			parent.frames[0].atltest.Filename = name
+		parent.frames[0].viewlist.options.length=0
+ 		parent.frames[0].addOpt("Select View")
+  		parent.frames[0].addOpt("Front")
+ 		parent.frames[0].addOpt("Side")
+ 		parent.frames[0].addOpt("Iso")
+ 		parent.frames[0].addOpt(" ")
+
+		if (name.lastIndexOf("tractor")!=-1)
+		{
+   			parent.frames[0].addOpt("Cockpit")
+   			parent.frames[0].addOpt("Right Wheel")
+   			parent.frames[0].addOpt("Showel")
+   			parent.frames[0].addOpt("Logo")
+			parent.frames[0].filenum = 0
+  
+		}
+		if (name.lastIndexOf("snowmobile")!=-1)
+		{
+    		parent.frames[0].addOpt("Track")
+   			parent.frames[0].addOpt("Instruments")
+   			parent.frames[0].addOpt("Slides")
+   			parent.frames[0].addOpt("Wheels")
+			parent.frames[0].filenum = 1  
+		}
+		if (name.lastIndexOf("mouse")!=-1)
+		{
+   			parent.frames[0].addOpt("Transistor")
+   			parent.frames[0].addOpt("Exterior")
+   			parent.frames[0].addOpt("IC")
+ 			parent.frames[0].filenum = 2  
+		}
+		if (name.lastIndexOf("bridge")!=-1)
+		{
+   			parent.frames[0].addOpt("Trees")
+   			parent.frames[0].addOpt("Sidewalk")
+  			parent.frames[0].filenum = 3
+		}
+		if (name.lastIndexOf("cadds")!=-1)
+		{
+   			parent.frames[0].addOpt("Heater")
+   			parent.frames[0].addOpt("Pumpsystem")
+   			parent.frames[0].filenum = 4  
+		}
+  
+		if (name.lastIndexOf("floorplan")!=-1)
+		{
+			
+   			parent.frames[0].addOpt("Office 1")
+   			parent.frames[0].filenum = 5
+			parent.frames[0].atltest.FileType = "2dmodel"
+  
+		}
+ 
+
+	}
+	
+}
+
+ 	
+
+
+
+</SCRIPT>
+
+
+</HEAD>
+<BODY>
+<CENTER>
+<br>
+<a href="javascript:tester2('http://www.hoops3d.com/gallery/samples/bridge.hsf')">
+<IMG src = "bridge.gif" border = "0">
+</a>
+(151k)
+<br>
+<br> 
+<!-- Insert HTML here -->
+
+</BODY>
+</HTML>

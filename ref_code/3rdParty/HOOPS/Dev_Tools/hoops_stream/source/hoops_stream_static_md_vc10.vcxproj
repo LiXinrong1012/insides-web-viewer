@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E4912CE8-CF18-433E-8105-22502D334BE2}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">hoops_streamstat_md</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">hoops_streamstat_md</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">hoops_streamstatd_md</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">hoops_streamstatd_md</TargetName>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\lib\nt_i386_vc10\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release_nt_i386_vc10_md_static\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\lib\nt_x64_vc10\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Release_nt_x64_vc10_md_static\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\lib\nt_i386_vc10\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug_nt_i386_vc10_md_static\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\lib\nt_x64_vc10\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Debug_nt_x64_vc10_md_static\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>.\Jpeg;.\Zlib;.\stream_common;../../hoops_3dgs/source;../../utility/source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;BBINFILETK_EXPORTS;HBINFILETK_EXPORTS;HSTREAM_STATIC_LIB;BSTREAM_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>.\Release_nt_i386_vc10_md_static/hoops_stream_static_md.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release_nt_i386_vc10_md_static/</AssemblerListingLocation>
+      <ObjectFileName>.\Release_nt_i386_vc10_md_static/</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>.\Jpeg;.\Zlib;.\stream_common;../../hoops_3dgs/source;../../utility/source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;BBINFILETK_EXPORTS;HBINFILETK_EXPORTS;HSTREAM_STATIC_LIB;BSTREAM_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>.\Release_nt_x64_vc10_md_static/hoops_stream_static_md.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release_nt_x64_vc10_md_static/</AssemblerListingLocation>
+      <ObjectFileName>.\Release_nt_x64_vc10_md_static/</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\Jpeg;.\Zlib;.\stream_common;../../hoops_3dgs/source;../../utility/source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;HSTREAM_STATIC_LIB;BSTREAM_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>.\Debug_nt_i386_vc10_md_static/hoops_stream_static_md.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug_nt_i386_vc10_md_static/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug_nt_i386_vc10_md_static/</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\Jpeg;.\Zlib;.\stream_common;../../hoops_3dgs/source;../../utility/source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;HSTREAM_STATIC_LIB;BSTREAM_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>.\Debug_nt_x64_vc10_md_static/hoops_stream_static_md.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug_nt_x64_vc10_md_static/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug_nt_x64_vc10_md_static/</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="stream_common\BAscii.cpp" />
+    <ClCompile Include="stream_common\BCompress.cpp" />
+    <ClCompile Include="stream_common\BCompressData.cpp" />
+    <ClCompile Include="stream_common\BEdgeBreakerCommon.cpp" />
+    <ClCompile Include="stream_common\BEdgeBreakerCompress.cpp" />
+    <ClCompile Include="stream_common\BEdgeBreakerDecompress.cpp" />
+    <ClCompile Include="stream_common\BOpcodeHandler.cpp" />
+    <ClCompile Include="stream_common\BOpcodeShell.cpp" />
+    <ClCompile Include="stream_common\BOpcodeShellAscii.cpp" />
+    <ClCompile Include="stream_common\BPointCloud.cpp" />
+    <ClCompile Include="stream_common\BPolyhedron.cpp" />
+    <ClCompile Include="stream_common\BPolyhedronAscii.cpp" />
+    <ClCompile Include="stream_common\BPolyPoly.cpp" />
+    <ClCompile Include="stream_common\BStreamFileToolkit.cpp" />
+    <ClCompile Include="HOpcodeHandler.cpp" />
+    <ClCompile Include="HOpcodeShell.cpp" />
+    <ClCompile Include="HPolyhedron.cpp" />
+    <ClCompile Include="HPolyPoly.cpp" />
+    <ClCompile Include="HStream.cpp" />
+    <ClCompile Include="HStreamFileToolkit.cpp" />
+    <ClCompile Include="parse.cpp" />
+    <ClCompile Include="pattern.cpp" />
+    <ClCompile Include="Jpeg\jcapimin.c" />
+    <ClCompile Include="Jpeg\jcapistd.c" />
+    <ClCompile Include="Jpeg\jccoefct.c" />
+    <ClCompile Include="Jpeg\jccolor.c" />
+    <ClCompile Include="Jpeg\jcdctmgr.c" />
+    <ClCompile Include="Jpeg\jchuff.c" />
+    <ClCompile Include="Jpeg\jcinit.c" />
+    <ClCompile Include="Jpeg\jcmainct.c" />
+    <ClCompile Include="Jpeg\jcmarker.c" />
+    <ClCompile Include="Jpeg\jcmaster.c" />
+    <ClCompile Include="Jpeg\jcomapi.c" />
+    <ClCompile Include="Jpeg\jcparam.c" />
+    <ClCompile Include="Jpeg\jcphuff.c" />
+    <ClCompile Include="Jpeg\jcprepct.c" />
+    <ClCompile Include="Jpeg\jcsample.c" />
+    <ClCompile Include="Jpeg\jctrans.c" />
+    <ClCompile Include="Jpeg\jdapimin.c" />
+    <ClCompile Include="Jpeg\jdapistd.c" />
+    <ClCompile Include="Jpeg\jdatadst.c" />
+    <ClCompile Include="Jpeg\jdatasrc.c" />
+    <ClCompile Include="Jpeg\jdcoefct.c" />
+    <ClCompile Include="Jpeg\jdcolor.c" />
+    <ClCompile Include="Jpeg\jddctmgr.c" />
+    <ClCompile Include="Jpeg\jdhuff.c" />
+    <ClCompile Include="Jpeg\jdinput.c" />
+    <ClCompile Include="Jpeg\jdmainct.c" />
+    <ClCompile Include="Jpeg\jdmarker.c" />
+    <ClCompile Include="Jpeg\jdmaster.c" />
+    <ClCompile Include="Jpeg\jdmerge.c" />
+    <ClCompile Include="Jpeg\jdphuff.c" />
+    <ClCompile Include="Jpeg\jdpostct.c" />
+    <ClCompile Include="Jpeg\jdsample.c" />
+    <ClCompile Include="Jpeg\jdtrans.c" />
+    <ClCompile Include="Jpeg\jerror.c" />
+    <ClCompile Include="Jpeg\jfdctflt.c" />
+    <ClCompile Include="Jpeg\jfdctfst.c" />
+    <ClCompile Include="Jpeg\jfdctint.c" />
+    <ClCompile Include="Jpeg\jidctflt.c" />
+    <ClCompile Include="Jpeg\jidctfst.c" />
+    <ClCompile Include="Jpeg\jidctint.c" />
+    <ClCompile Include="Jpeg\jidctred.c" />
+    <ClCompile Include="Jpeg\jmemmgr.c" />
+    <ClCompile Include="Jpeg\jmemnobs.c" />
+    <ClCompile Include="Jpeg\jquant1.c" />
+    <ClCompile Include="Jpeg\jquant2.c" />
+    <ClCompile Include="Jpeg\jutils.c" />
+    <ClCompile Include="Zlib\adler32.c" />
+    <ClCompile Include="Zlib\crc32.c" />
+    <ClCompile Include="Zlib\deflate.c" />
+    <ClCompile Include="Zlib\infblock.c" />
+    <ClCompile Include="Zlib\infcodes.c" />
+    <ClCompile Include="Zlib\inffast.c" />
+    <ClCompile Include="Zlib\inflate.c" />
+    <ClCompile Include="Zlib\inftrees.c" />
+    <ClCompile Include="Zlib\infutil.c" />
+    <ClCompile Include="Zlib\trees.c" />
+    <ClCompile Include="Zlib\zutil.c" />
+    <ClCompile Include="stream_common\vwrapper_stream.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="hoops_stream_static.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Jpeg\jchuff.h" />
+    <ClInclude Include="Jpeg\jconfig.h" />
+    <ClInclude Include="Jpeg\jdct.h" />
+    <ClInclude Include="Jpeg\jdhuff.h" />
+    <ClInclude Include="Jpeg\jerror.h" />
+    <ClInclude Include="Jpeg\jinclude.h" />
+    <ClInclude Include="Jpeg\jmemsys.h" />
+    <ClInclude Include="Jpeg\jmorecfg.h" />
+    <ClInclude Include="Jpeg\jpegint.h" />
+    <ClInclude Include="Jpeg\jpeglib.h" />
+    <ClInclude Include="Jpeg\jversion.h" />
+    <ClInclude Include="Zlib\deflate.h" />
+    <ClInclude Include="Zlib\infblock.h" />
+    <ClInclude Include="Zlib\infcodes.h" />
+    <ClInclude Include="Zlib\inffast.h" />
+    <ClInclude Include="Zlib\inffixed.h" />
+    <ClInclude Include="Zlib\inftrees.h" />
+    <ClInclude Include="Zlib\infutil.h" />
+    <ClInclude Include="Zlib\trees.h" />
+    <ClInclude Include="Zlib\zutil.h" />
+    <ClInclude Include="stream_common\vwrapper_stream.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Jpeg\jconfig.vc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

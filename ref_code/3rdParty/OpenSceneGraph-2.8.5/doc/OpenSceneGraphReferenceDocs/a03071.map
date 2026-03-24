@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node7" href="$a00139.html" title="osgParticle::ConstantRateCounter" alt="" coords="5,237,224,267"/>
+<area shape="rect" id="node9" href="$a01063.html" title="osgParticle::VariableRateCounter" alt="" coords="248,237,461,267"/>
+<area shape="rect" id="node2" href="$a00500.html" title="Base class/standard interface for objects which require IO support, cloning and reference counting..." alt="" coords="191,83,279,112"/>
+<area shape="rect" id="node4" href="$a00628.html" title="Base class from providing referencing counted objects." alt="" coords="177,5,292,35"/>
+<area shape="rect" id="node11" href="$a00611.html" title="osgParticle::RandomRateCounter" alt="" coords="248,315,461,344"/>
+</map>

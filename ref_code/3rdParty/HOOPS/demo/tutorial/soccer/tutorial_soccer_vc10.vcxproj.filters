@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{00dfe51b-aecc-4b1d-9bd6-7b0b672a5532}</UniqueIdentifier>
+      <Extensions>txt</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Soccer.ico" />
+    <None Include="Soccer.rc2" />
+    <None Include="SoccerDoc.ico" />
+    <None Include="Toolbar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="HOpCreateRectangle.cpp" />
+    <ClCompile Include="HSoccerModel.cpp" />
+    <ClCompile Include="HSoccerSelectionSet.cpp" />
+    <ClCompile Include="HSoccerView.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="Soccer.cpp" />
+    <ClCompile Include="SoccerDoc.cpp" />
+    <ClCompile Include="SoccerView.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="HOpCreateRectangle.h" />
+    <ClInclude Include="HSoccerModel.h" />
+    <ClInclude Include="HSoccerSelectionSet.h" />
+    <ClInclude Include="HSoccerView.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Soccer.h" />
+    <ClInclude Include="SoccerDoc.h" />
+    <ClInclude Include="SoccerView.h" />
+    <ClInclude Include="StdAfx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Soccer.rc" />
+  </ItemGroup>
+</Project>

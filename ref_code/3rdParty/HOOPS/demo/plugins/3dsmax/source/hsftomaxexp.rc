@@ -1,0 +1,206 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 165
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 69
+    END
+
+    IDD_HsfExpORT_DLG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 252
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "#include ""veroverrides.h""\r\n"
+    "#include ""maxversion.r""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 172, 76
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About HSF Export"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,60,55,50,14
+    RTEXT           "HSF File Exporter\nVersion 0.1\nCopyright 2008 Tech Soft 3D",IDC_STATIC,10,13,151,36
+    GROUPBOX        "",IDC_STATIC,7,7,158,44
+END
+
+IDD_HsfExpORT_DLG DIALOGEX 0, 0, 363, 255
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "HSF Export"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "Include Meshes",IDC_OBJ_GEOM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,233,20,67,10
+    CONTROL         "Include Shapes",IDC_OBJ_SHAPE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,233,33,65,10
+    CONTROL         "Include Cameras",IDC_OBJ_CAMERA,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,233,46,69,10
+    CONTROL         "Include Lights",IDC_OBJ_LIGHT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,233,58,60,10
+    CONTROL         "Helpers",IDC_OBJ_HELPER,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,292,224,40,10
+    CONTROL         "Mesh Definition",IDC_MESHDATA,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,241,217,73,10
+    CONTROL         "Materials",IDC_MATERIAL,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,181,214,95,10
+    CONTROL         "Include Transform Animations",IDC_ANIMKEYS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,231,147,113,10
+    CONTROL         "Animated Camera/Light Settings",IDC_CAMLIGHTANIM,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,147,210,120,10
+    CONTROL         "Include Vertex Normals",IDC_NORMALS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,106,95,10
+    CONTROL         "Include Texture Coordinates",IDC_TEXCOORDS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,119,109,10
+    CONTROL         "Include Vertex Colors",IDC_VERTEXCOLORS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,133,83,10
+    DEFPUSHBUTTON   "OK",IDOK,307,208,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,307,228,50,14
+    CONTROL         "Use Keys",IDC_RADIO_USEKEYS,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,158,218,56,10
+    CONTROL         "Force Sample",IDC_RADIO_SAMPLE,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,181,214,64,10
+    CONTROL         "",IDC_CONT_STEP,"CustEdit",WS_TABSTOP,310,187,25,10
+    CONTROL         "",IDC_MESH_STEP,"CustEdit",NOT WS_VISIBLE | WS_TABSTOP,222,217,25,10
+    CONTROL         "",IDC_STATIC_FRAME,"CustEdit",NOT WS_VISIBLE | WS_TABSTOP,250,218,25,10
+    GROUPBOX        "Output Options",IDC_STATIC,5,7,215,83
+    GROUPBOX        "Mesh Options",IDC_STATIC,5,92,214,58
+    GROUPBOX        "Scene Options",IDC_STATIC,224,7,132,127
+    CONTROL         "",IDC_CONT_STEP_SPIN,"SpinnerControl",0x0,336,187,7,10
+    RTEXT           "Frames Per Sample",IDC_STATIC,229,188,74,8
+    GROUPBOX        "Animation Output",IDC_STATIC,224,134,132,69
+    CONTROL         "",IDC_MESH_STEP_SPIN,"SpinnerControl",NOT WS_VISIBLE,230,217,7,10
+    RTEXT           "Animated Objects:",IDC_STATIC,163,218,60,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_STATIC_FRAME_SPIN,"SpinnerControl",NOT WS_VISIBLE,271,215,7,10
+    RTEXT           "Frame #:",IDC_STATIC,259,224,31,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_PREC,"CustEdit",NOT WS_VISIBLE | WS_TABSTOP,255,221,25,10
+    CONTROL         "",IDC_PREC_SPIN,"SpinnerControl",NOT WS_VISIBLE,255,218,7,10
+    RTEXT           "Decimals:",IDC_STATIC,202,215,31,8,NOT WS_VISIBLE
+    CONTROL         "Inverse Kinematics Joints",IDC_IKJOINTS,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,169,214,110,10
+    CONTROL         "Animated Mesh",IDC_MESHANIM,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,171,217,95,10
+    CONTROL         "Use Advanced (lossless) Compression (incr. export time)",IDC_CONNECTIVITY_COMPRESSION,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,22,192,10
+    CONTROL         "Vertex Compression",IDC_VERTEX_COMPRESSION,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,37,82,10
+    CONTROL         "Normal Compression",IDC_NORMAL_COMPRESSION,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,51,85,10
+    CONTROL         "Use Specular For Blending",IDC_SPECULAR_FOR_ENVIRONMENT,
+                    "Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,171,212,105,10
+    CONTROL         "Disable Reflection Texture",IDC_DISABLE_ENV,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,211,220,105,10
+    CONTROL         "",IDC_VERTEX_COMPRESSION_BITS,"CustEdit",WS_TABSTOP,179,37,25,10
+    CONTROL         "",IDC_VERTEX_COMPRESSION_BITS_SPIN,"SpinnerControl",0x0,205,37,7,10
+    LTEXT           "Bits Per Vertex (24 - 96):",IDC_STATIC,100,38,77,8
+    CONTROL         "",IDC_NORMAL_COMPRESSION_BITS,"CustEdit",WS_TABSTOP,180,51,25,10
+    CONTROL         "",IDC_NORMAL_COMPRESSION_BITS_SPIN,"SpinnerControl",0x0,206,51,7,10
+    LTEXT           "Bits Per Normal (24 - 96):",IDC_STATIC,100,52,79,8
+    CONTROL         "Image Compression",IDC_IMAGE_COMPRESSION,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,66,83,10
+    CONTROL         "",IDC_IMAGE_COMPRESSION_BITS,"CustEdit",WS_TABSTOP,179,66,25,10
+    CONTROL         "",IDC_IMAGE_COMPRESSION_BITS_SPIN,"SpinnerControl",0x0,205,66,7,10
+    LTEXT           "Compr. Factor (5 - 100):",IDC_STATIC,100,66,74,8
+    CONTROL         "Include Textures",IDC_OBJ_TEXTURES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,233,70,69,10
+    LTEXT           "Coordinate System Handedness:",IDC_STATIC,231,95,104,8
+    CONTROL         "left",IDC_RADIO_LEFTHANDED,"Button",BS_AUTORADIOBUTTON,234,108,34,10
+    CONTROL         "right",IDC_RADIO_RIGHTHANDED,"Button",BS_AUTORADIOBUTTON,268,108,34,10
+    CONTROL         "default",IDC_RADIO_DEFAULTHANDED,"Button",BS_AUTORADIOBUTTON,304,109,34,10
+    DEFPUSHBUTTON   "Visit techsoft3d.com",ID_VISITHOOPS3D,8,224,76,13
+    LTEXT           "HSF Export Plug-in for 3ds max\nCopyright © 2008 Tech Soft 3D",IDC_STATIC,117,158,107,34
+    LTEXT           "For information about the HOOPS 3D Application Framework send email to info@techsoft3d.com or visit www.techsoft3d.com",IDC_STATIC,10,197,201,27
+    CONTROL         "Define Cameras As Animations",IDC_CAMERA_AS_ANIMATIONS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,242,161,110,10
+    CONTROL         "Inactive By Default",IDC_INACTIVE_BY_DEFAULT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,242,174,110,10
+    LTEXT           "(Larger Value = Higher Quality But Larger File Size)",IDC_STATIC,28,78,176,8
+    CONTROL         "Defer To End of File",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,253,81,105,10
+    CONTROL         "Flip Axis",IDC_OBJ_FLIPAXIS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,235,120,41,10
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,6,158,98,32
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP                  "AboutHoops.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_HsfExp              "AsciiExp"
+    IDS_CATEGORY            "Standard"
+    IDS_EXTENSION1          "AS2"
+    IDS_LONGDESC            "3ds max HSF Exporter"
+    IDS_SHORTDESC           "HSF  Export"
+    IDS_COPYRIGHT           "Copyright 2008 Tech Soft AMerica."
+    IDS_PROGRESS_MSG        "Exporting file..."
+    IDS_VERSIONSTRING       "HsfExport Version"
+    IDS_LIBDESCRIPTION      "HSF file exporter (TSA)"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+#include "veroverrides.h"
+#include "maxversion.r"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

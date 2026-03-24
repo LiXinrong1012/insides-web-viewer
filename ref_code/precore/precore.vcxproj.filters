@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{2da1231d-8d6b-4e9e-bd10-abfa06b74d0b}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{a29762f2-0d01-45f7-bff1-a8353f37d88b}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Command">
+      <UniqueIdentifier>{9088941e-b7de-4e51-b4fd-10b7faf365b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Results">
+      <UniqueIdentifier>{5f43f215-1627-429f-90c0-62a275955ddb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Items">
+      <UniqueIdentifier>{7d93b86a-200c-450d-bc40-a5c4cfc97cec}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="precore_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="precore_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="precore_func.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeDataManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UAPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="removecommand.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="addcommand.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseItemFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseItemManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelDataXMLExchange.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UAPI_.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExchangeAPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ISelectionSupplier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modifycommand.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseItemHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EasyResults.h">
+      <Filter>Results</Filter>
+    </ClInclude>
+    <ClInclude Include="IResultItem.h">
+      <Filter>Results</Filter>
+    </ClInclude>
+    <ClInclude Include="IResults.h">
+      <Filter>Results</Filter>
+    </ClInclude>
+    <ClInclude Include="LazyFrameResults.h">
+      <Filter>Results</Filter>
+    </ClInclude>
+    <ClInclude Include="MyAnimationControler.h">
+      <Filter>Results</Filter>
+    </ClInclude>
+    <ClInclude Include="Results.h">
+      <Filter>Results</Filter>
+    </ClInclude>
+    <ClInclude Include="RigidResultItem.h">
+      <Filter>Results</Filter>
+    </ClInclude>
+    <ClInclude Include="FlexResultItem.h">
+      <Filter>Results</Filter>
+    </ClInclude>
+    <ClInclude Include="JResults.h">
+      <Filter>Results</Filter>
+    </ClInclude>
+    <ClInclude Include="JRigidResultItem.h">
+      <Filter>Results</Filter>
+    </ClInclude>
+    <ClInclude Include="ResultExchangeVersion1_0.h">
+      <Filter>Results</Filter>
+    </ClInclude>
+    <ClInclude Include="modeldocumentlistener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BulkResultItem.h">
+      <Filter>Results</Filter>
+    </ClInclude>
+    <ClInclude Include="Assembly.h">
+      <Filter>Items</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseItem.h">
+      <Filter>Items</Filter>
+    </ClInclude>
+    <ClInclude Include="ParametersBaseItem.h">
+      <Filter>Items</Filter>
+    </ClInclude>
+    <ClInclude Include="FEMPartBaseItem.h">
+      <Filter>Items</Filter>
+    </ClInclude>
+    <ClInclude Include="itemlist.h">
+      <Filter>Items</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicResultItem.h">
+      <Filter>Results</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TypeDataManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UAPI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addcommand.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="removecommand.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="projectselector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseItemFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseItemManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="precore_data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelDataXMLExchange.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UAPI_.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataExchangeAPI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ISelectionSupplier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modifycommand.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="precore_global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseItemHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EasyResults.cpp">
+      <Filter>Results</Filter>
+    </ClCompile>
+    <ClCompile Include="FlexResultItem.cpp">
+      <Filter>Results</Filter>
+    </ClCompile>
+    <ClCompile Include="IResultItem.cpp">
+      <Filter>Results</Filter>
+    </ClCompile>
+    <ClCompile Include="IResults.cpp">
+      <Filter>Results</Filter>
+    </ClCompile>
+    <ClCompile Include="LazyFrameResults.cpp">
+      <Filter>Results</Filter>
+    </ClCompile>
+    <ClCompile Include="MyAnimationControler.cpp">
+      <Filter>Results</Filter>
+    </ClCompile>
+    <ClCompile Include="ResultDocument.cpp">
+      <Filter>Results</Filter>
+    </ClCompile>
+    <ClCompile Include="Results.cpp">
+      <Filter>Results</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidResultItem.cpp">
+      <Filter>Results</Filter>
+    </ClCompile>
+    <ClCompile Include="document.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JResults.cpp">
+      <Filter>Results</Filter>
+    </ClCompile>
+    <ClCompile Include="ResultExchangeVersion1_0.cpp">
+      <Filter>Results</Filter>
+    </ClCompile>
+    <ClCompile Include="JRigidResultItem.cpp">
+      <Filter>Results</Filter>
+    </ClCompile>
+    <ClCompile Include="visibilitydelegate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_visibilitydelegate.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_visibilitydelegate.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="category_register.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modeldocument.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_document.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_document.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="BulkResultItem.cpp">
+      <Filter>Results</Filter>
+    </ClCompile>
+    <ClCompile Include="ParametersBaseItem.cpp">
+      <Filter>Items</Filter>
+    </ClCompile>
+    <ClCompile Include="FEMPartBaseItem.cpp">
+      <Filter>Items</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseItem.cpp">
+      <Filter>Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Assembly.cpp">
+      <Filter>Items</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicResultItem.cpp">
+      <Filter>Results</Filter>
+    </ClCompile>
+    <ClCompile Include="femappearanceitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="projectselector.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ResultDocument.h">
+      <Filter>Results</Filter>
+    </CustomBuild>
+    <CustomBuild Include="document.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="visibilitydelegate.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="category_register.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="modeldocument.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="femappearanceitem.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

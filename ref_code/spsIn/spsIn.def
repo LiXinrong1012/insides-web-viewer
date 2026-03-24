@@ -1,0 +1,6 @@
+LIBRARY	"spsIn"
+
+EXPORTS
+
+setShapeManager
+importShapesCollection

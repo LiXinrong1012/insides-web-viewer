@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5689f3e5-e06d-4725-a4f6-202f83f071a5}</UniqueIdentifier>
+      <Extensions>txt</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Spheres.ico" />
+    <None Include="Spheres.rc2" />
+    <None Include="SpheresDoc.ico" />
+    <None Include="Toolbar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="HIOUtilitySpheres.cpp" />
+    <ClCompile Include="HMyCreateSphere.cpp" />
+    <ClCompile Include="HSpheresModel.cpp" />
+    <ClCompile Include="HSpheresSelectionSet.cpp" />
+    <ClCompile Include="HSpheresView.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="Spheres.cpp" />
+    <ClCompile Include="SpheresDoc.cpp" />
+    <ClCompile Include="SpheresView.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="HIOUtilitySpheres.h" />
+    <ClInclude Include="HMyCreateSphere.h" />
+    <ClInclude Include="HSpheresModel.h" />
+    <ClInclude Include="HSpheresSelectionSet.h" />
+    <ClInclude Include="HSpheresView.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Spheres.h" />
+    <ClInclude Include="SpheresDoc.h" />
+    <ClInclude Include="SpheresView.h" />
+    <ClInclude Include="StdAfx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Spheres.rc" />
+  </ItemGroup>
+</Project>

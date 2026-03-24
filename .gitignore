@@ -21,3 +21,43 @@ uploads/
 # OS
 .DS_Store
 Thumbs.db
+
+# Binary / build artifacts (ref_code)
+*.dll
+*.lib
+*.exe
+*.so
+*.dylib
+*.a
+*.o
+*.obj
+*.exp
+*.ilk
+*.idb
+*.pdb
+*.pch
+*.gch
+*.ipch
+*.sdf
+*.opensdf
+*.suo
+*.tlog
+*.lastbuildstate
+*.VC.db
+*.VC.opendb
+
+# Archives
+*.zip
+*.7z
+*.rar
+*.tar.gz
+
+# Documentation artifacts
+*.qch
+*.pdf
+*.html
+
+# Large data / media files
+*.osg
+*.tiff
+*.ai

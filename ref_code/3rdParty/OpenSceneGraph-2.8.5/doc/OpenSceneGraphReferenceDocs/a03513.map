@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$a00332.html" title="Base class for providing Windowing API agnostic access to creating and managing graphics window and e..." alt="" coords="77,237,264,267"/>
+<area shape="rect" id="node4" href="$a00328.html" title="Base class for providing Windowing API agnostic access to creating and managing graphics context..." alt="" coords="5,160,152,189"/>
+<area shape="rect" id="node6" href="$a00500.html" title="Base class/standard interface for objects which require IO support, cloning and reference counting..." alt="" coords="35,83,123,112"/>
+<area shape="rect" id="node8" href="$a00628.html" title="Base class from providing referencing counted objects." alt="" coords="21,5,136,35"/>
+<area shape="rect" id="node10" href="$a00339.html" title="Abstract base class defining the interface by which GUIEventHandlers may request actions of the GUI s..." alt="" coords="176,160,349,189"/>
+</map>

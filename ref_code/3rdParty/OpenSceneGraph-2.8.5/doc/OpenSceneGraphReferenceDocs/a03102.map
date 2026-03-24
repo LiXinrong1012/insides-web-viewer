@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node9" href="$a00247.html" title="An abstract base class for particle emitters." alt="" coords="45,315,181,344"/>
+<area shape="rect" id="node13" href="$a00580.html" title="An abstract ParticleProcessor descendant for modifying particles &quot;on the fly&quot; during the cu..." alt="" coords="224,315,368,344"/>
+<area shape="rect" id="node2" href="$a00490.html" title="Base class for all internal nodes in the scene graph." alt="" coords="173,160,253,189"/>
+<area shape="rect" id="node4" href="$a00500.html" title="Base class/standard interface for objects which require IO support, cloning and reference counting..." alt="" coords="169,83,257,112"/>
+<area shape="rect" id="node6" href="$a00628.html" title="Base class from providing referencing counted objects." alt="" coords="156,5,271,35"/>
+<area shape="rect" id="node11" href="$a00475.html" title="An emitter class that holds three objects to control the creation of particles." alt="" coords="5,392,187,421"/>
+<area shape="rect" id="node15" href="$a00294.html" title="A program class for performing operations on particles using a sequence of operators." alt="" coords="211,392,381,421"/>
+<area shape="rect" id="node17" href="$a00476.html" title="A program class for performing operations on particles using a sequence of operators." alt="" coords="405,392,595,421"/>
+</map>

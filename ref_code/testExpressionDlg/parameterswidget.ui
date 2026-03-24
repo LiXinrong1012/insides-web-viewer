@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ParametersWidget</class>
+ <widget class="QWidget" name="ParametersWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>597</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Parameters &amp; Expressions</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_4">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Parameter list</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="tablewidget">
+         <property name="rowCount">
+          <number>0</number>
+         </property>
+         <property name="columnCount">
+          <number>3</number>
+         </property>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Name</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Expression</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Description</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnAdd">
+         <property name="text">
+          <string>Add</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnRemove">
+         <property name="text">
+          <string>Remove</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnModify">
+         <property name="text">
+          <string>Modify</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnUp">
+         <property name="text">
+          <string>v</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnDown">
+         <property name="text">
+          <string>^</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnAdd</sender>
+   <signal>clicked()</signal>
+   <receiver>ParametersWidget</receiver>
+   <slot>onAdd()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>544</x>
+     <y>229</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>572</x>
+     <y>377</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnRemove</sender>
+   <signal>clicked()</signal>
+   <receiver>ParametersWidget</receiver>
+   <slot>onRemove()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>521</x>
+     <y>258</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>573</x>
+     <y>434</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnModify</sender>
+   <signal>clicked()</signal>
+   <receiver>ParametersWidget</receiver>
+   <slot>onModify()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>510</x>
+     <y>280</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>579</x>
+     <y>484</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnUp</sender>
+   <signal>clicked()</signal>
+   <receiver>ParametersWidget</receiver>
+   <slot>onUp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>531</x>
+     <y>309</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>572</x>
+     <y>419</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnDown</sender>
+   <signal>clicked()</signal>
+   <receiver>ParametersWidget</receiver>
+   <slot>onDown()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>522</x>
+     <y>338</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>579</x>
+     <y>469</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tablewidget</sender>
+   <signal>cellClicked(int,int)</signal>
+   <receiver>ParametersWidget</receiver>
+   <slot>onBtnState(int,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>464</x>
+     <y>115</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>576</x>
+     <y>130</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tablewidget</sender>
+   <signal>itemSelectionChanged()</signal>
+   <receiver>ParametersWidget</receiver>
+   <slot>onBtnChangeState()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>453</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>526</x>
+     <y>83</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onAdd()</slot>
+  <slot>onRemove()</slot>
+  <slot>onModify()</slot>
+  <slot>onUp()</slot>
+  <slot>onDown()</slot>
+  <slot>onBtnState(int,int)</slot>
+  <slot>onBtnChangeState()</slot>
+ </slots>
+</ui>

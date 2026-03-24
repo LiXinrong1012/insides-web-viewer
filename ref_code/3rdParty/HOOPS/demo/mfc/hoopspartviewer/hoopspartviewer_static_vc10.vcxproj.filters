@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{1204dc95-957b-4c31-85c3-fb73e140b2aa}</UniqueIdentifier>
+      <Extensions>*.cpp, *.c, *.cxx</Extensions>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{97e46561-13b5-4780-9cfa-477b0aa8c5aa}</UniqueIdentifier>
+      <Extensions>*.h, *.hxx</Extensions>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{ca2e3261-33d4-4ebd-8f2a-b71ebf489128}</UniqueIdentifier>
+      <Extensions>*.rc, *.bmp, *.ico</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="partviewer_common\AviOptionsDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\BusyLodDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\CAppSettings.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\CErrorBrowserDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\ClashDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\ClashSelect.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\CModelBrowserDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\CMultiModelDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\CommandLineOutputDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\CSegmentBrowser.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\CSegmentBrowserDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\CSegmentManipulatorDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\CSolidHoopsApp.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\CSolidHoopsChildFrm.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\CSolidHoopsDoc.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\CSolidHoopsFrm.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\CSolidHoopsView.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\DetailPropertySheet.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\DWFExportOptionsDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\EditLightsDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\ErrorDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\FileLoadProgressDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\FramerateDialog.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\FrameratePage.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="HMySelectionSet.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\HoopsSegmentTree.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\HoopsStyle.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\HSolidModel.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\HSolidView.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\HSOpCameraOrbit.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\HSOpCameraPan.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\HSOpCameraWalk.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\HSOpCameraZoom.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\HSOpCameraZoomBox.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\HSOpMoveHandle.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\HSQuery.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\HSQueryAdvanced.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\HSSelectionSet.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\HStreamProgressDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\HSUtility.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\HUIUtilityMFC.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\ImageViewer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\KeyframeEditor.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\LodDialog.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\LodPage.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\LodSlider.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\MainStyleWindow.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\MaterialPropertiesDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\OpcodeHandlers.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\OptimizeDialog.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\PartViewerOptionPages.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\PDFExportDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\QueryDialog.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\SelectStyleWindow.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\StdAfx.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\StreamingThread.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\StyleDialog.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\TextInput.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\TreeGraph.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\UserPasswordDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\WindowsTreeGraph.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="partviewer_common\XMLEditorDlg.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="partviewer_common\AviOptionsDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\BusyLodDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\CAppSettings.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\CErrorBrowserDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\ClashDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\ClashSelect.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\CModelBrowserDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\CMultiModelDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\CommandLineOutputDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\CSegmentBrowser.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\CSegmentBrowserDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\CSegmentManipulatorDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\CSolidHoopsApp.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\CSolidHoopsChildFrm.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\CSolidHoopsDoc.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\CSolidHoopsFrm.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\CSolidHoopsView.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\DetailPropertySheet.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\DWFExportOptionsDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\EditLightsDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\ErrorDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\FileLoadProgressDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\FramerateDialog.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\FrameratePage.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="HMySelectionSet.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HoopsSegmentTree.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HoopsStyle.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HSInclude.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HSolidModel.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HSolidView.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HSOpCameraOrbit.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HSOpCameraPan.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HSOpCameraWalk.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HSOpCameraZoom.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HSOpCameraZoomBox.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HSOpMoveHandle.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HSQuery.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HSQueryAdvanced.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HSSelectionSet.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HStreamProgressDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HSUtility.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\HUIUtilityMFC.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\ImageViewer.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\KeyframeEditor.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\LodDialog.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\LodPage.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\LodSlider.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\MainStyleWindow.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\MaterialPropertiesDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\OpcodeHandlers.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\OptimizeDialog.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\PartViewerOptionPages.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\PDFExportDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\QueryDialog.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\Resource.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\SelectStyleWindow.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\StdAfx.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\StreamingThread.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\StyleDialog.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\TestCreate.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\TextInput.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\TreeGraph.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\UserPasswordDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\WindowsTreeGraph.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="XMLDisplayDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="partviewer_common\XMLEditorDlg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="partviewer_common\AboutAcisHoops.bmp">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="partviewer_common\AboutGraniteHoops.bmp">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="partviewer_common\acis.bmp">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="partviewer_common\hoops.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="hoops1.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="partviewer_common\hoops_only.bmp">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="idr_main.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="partviewer_common\item_checked.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="partviewer_common\parasolid.bmp">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="partviewer_common\parasolid.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="partviewer_common\ptc.bmp">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="partviewer_common\ptc.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="partviewer_common\spatial.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="Toolbar.bmp">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="toolbar1.bmp">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="partviewer_common\toolbar_marktxt.bmp">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="partviewer_common\toolbar_point_cloud.bmp">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="partviewer_common\toolbar_stdviews.bmp">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="partviewer_common\toolbar_tools.bmp">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="partviewer_common\simple_check_bitmap.bmp" />
+    <None Include="partviewer_common\toolbar_bhv.bmp" />
+    <None Include="partviewer_common\toolbar_hoops_only.bmp" />
+    <None Include="partviewer_common\toolbar_keyframe.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="partviewer_common\partviewer.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuildStep Include="partviewer_common\HIOUtilityLeadTools.h">
+      <Filter>Header</Filter>
+    </CustomBuildStep>
+  </ItemGroup>
+</Project>

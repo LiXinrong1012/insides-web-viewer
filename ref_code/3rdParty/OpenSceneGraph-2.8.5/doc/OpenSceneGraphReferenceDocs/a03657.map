@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$a01037.html" title="osgWidget::UIObjectParent\&lt; Widget \&gt;" alt="" coords="88,101,333,131"/>
+<area shape="rect" id="node15" href="$a01037.html" title="osgWidget::UIObjectParent\&lt; Window \&gt;" alt="" coords="357,101,608,131"/>
+<area shape="rect" id="node5" href="$a01110.html" title="osgWidget::Window" alt="" coords="141,181,280,211"/>
+<area shape="rect" id="node7" href="$a00072.html" title="The Box object is a Window subclass that can be configured to uniformly (or non&#45;uniformly) position i..." alt="" coords="5,261,120,291"/>
+<area shape="rect" id="node9" href="$a00093.html" title="osgWidget::Canvas" alt="" coords="144,261,277,291"/>
+<area shape="rect" id="node11" href="$a00855.html" title="osgWidget::Table" alt="" coords="301,261,424,291"/>
+<area shape="rect" id="node13" href="$a00304.html" title="osgWidget::Frame" alt="" coords="299,341,427,371"/>
+<area shape="rect" id="node17" href="$a01114.html" title="osgWidget::WindowManager" alt="" coords="389,181,576,211"/>
+</map>

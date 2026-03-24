@@ -1,0 +1,1867 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{b01355c3-2b66-487e-ac81-b67862008705}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\freetype-237">
+      <UniqueIdentifier>{48927703-14d0-4034-b24a-d62358fe67f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\glew">
+      <UniqueIdentifier>{1a3dca41-8e00-4b06-97d2-9adceb3d88dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Zlib">
+      <UniqueIdentifier>{deadbeef-6c1f-4be9-8914-f30fdeadbeef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\png">
+      <UniqueIdentifier>{88110baa-6c1f-4be9-8914-f30fdeadbeef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jpeg">
+      <UniqueIdentifier>{6f86527d-2e12-4169-ae53-95d76b12e6dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\attribute">
+      <UniqueIdentifier>{a6ef80fc-c98e-49ee-8c59-89d4879f8e8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\color">
+      <UniqueIdentifier>{8e0ccabb-9598-4296-911c-dac26dff65a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\compute">
+      <UniqueIdentifier>{27632eaf-f7ab-4b01-8c71-0b5cd8a02559}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\compute\lod">
+      <UniqueIdentifier>{86771abc-ea18-4fe8-aacf-4652466833d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\control">
+      <UniqueIdentifier>{a6187be5-d4d6-4d9e-9876-bdc8cd035672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\driver">
+      <UniqueIdentifier>{aedbf5bf-f09d-4424-be4e-cbed2960169d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\driver\buffer">
+      <UniqueIdentifier>{8ccfe86a-675d-4422-8952-d469b0609b19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\driver\font">
+      <UniqueIdentifier>{3829bda3-f732-42c4-9877-d838d8ee4c84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\driver\hidden">
+      <UniqueIdentifier>{307db32e-7205-4ca1-bce7-3aee04906d4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\driver\hl">
+      <UniqueIdentifier>{d05fb552-1c6a-48df-8686-ad86d159c95c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\driver\select">
+      <UniqueIdentifier>{d279bec5-b4be-4e03-9e09-f4214ce0195d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\driver\standard">
+      <UniqueIdentifier>{36a2e2ca-752c-4ca6-810d-520a4b4870ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\driver\util">
+      <UniqueIdentifier>{438500e9-7901-4ddc-8172-118ecb654774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\driver\winding">
+      <UniqueIdentifier>{0822ae4a-f144-47b6-8b5e-20281d54e0d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\geometry">
+      <UniqueIdentifier>{36932059-54c6-4238-8455-21986d3ed455}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\geometry\phedron">
+      <UniqueIdentifier>{d1ea14b9-d941-4154-b8df-baf16017a81f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\input">
+      <UniqueIdentifier>{7eac28d7-e6a3-469f-80a7-38d5068d79b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\memoirs">
+      <UniqueIdentifier>{1bed0581-42b0-4d7e-8e2f-ddb1ef8a1e70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\segment">
+      <UniqueIdentifier>{18f356aa-52ca-4d05-8558-d8c05169e941}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\system">
+      <UniqueIdentifier>{2199aceb-4df8-4bae-a96e-d31ee8a3544b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utility">
+      <UniqueIdentifier>{89a43485-d934-4bed-96ea-31e5deeea1a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utility\Utility Source Files">
+      <UniqueIdentifier>{86243d75-5cdf-4d9b-841d-1f12f566a447}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{478a4b07-a9ce-413a-8a0c-9b1321d843a2}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{09fe5f04-1c45-4c95-8aa9-693cbb52bf12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utility Header Files">
+      <UniqueIdentifier>{4ff2adcf-990b-4eaa-ad22-fa7ed1efc3f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Build Files">
+      <UniqueIdentifier>{bf5b42e3-d6b1-483e-a72b-68ff81a49c75}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="hcd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\autofit\autofit.c">
+      <Filter>Source Files\freetype-237</Filter>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\cff\cff.c">
+      <Filter>Source Files\freetype-237</Filter>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\base\ftbase.c">
+      <Filter>Source Files\freetype-237</Filter>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\base\ftbitmap.c">
+      <Filter>Source Files\freetype-237</Filter>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\base\ftglyph.c">
+      <Filter>Source Files\freetype-237</Filter>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\base\ftinit.c">
+      <Filter>Source Files\freetype-237</Filter>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\base\ftsystem.c">
+      <Filter>Source Files\freetype-237</Filter>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\psaux\psaux.c">
+      <Filter>Source Files\freetype-237</Filter>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\pshinter\pshinter.c">
+      <Filter>Source Files\freetype-237</Filter>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\psnames\psnames.c">
+      <Filter>Source Files\freetype-237</Filter>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\raster\raster.c">
+      <Filter>Source Files\freetype-237</Filter>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\sfnt\sfnt.c">
+      <Filter>Source Files\freetype-237</Filter>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\smooth\smooth.c">
+      <Filter>Source Files\freetype-237</Filter>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\truetype\truetype.c">
+      <Filter>Source Files\freetype-237</Filter>
+    </ClCompile>
+    <ClCompile Include="freetype-237\src\type1\type1.c">
+      <Filter>Source Files\freetype-237</Filter>
+    </ClCompile>
+    <ClCompile Include="glew\src\glew.c">
+      <Filter>Source Files\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="Zlib\adler32.c">
+      <Filter>Source Files\Zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="Zlib\compress.c">
+      <Filter>Source Files\Zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="Zlib\crc32.c">
+      <Filter>Source Files\Zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="Zlib\deflate.c">
+      <Filter>Source Files\Zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="Zlib\gzio.c">
+      <Filter>Source Files\Zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="Zlib\infblock.c">
+      <Filter>Source Files\Zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="Zlib\infcodes.c">
+      <Filter>Source Files\Zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="Zlib\inffast.c">
+      <Filter>Source Files\Zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="Zlib\inflate.c">
+      <Filter>Source Files\Zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="Zlib\inftrees.c">
+      <Filter>Source Files\Zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="Zlib\infutil.c">
+      <Filter>Source Files\Zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="Zlib\trees.c">
+      <Filter>Source Files\Zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="Zlib\uncompr.c">
+      <Filter>Source Files\Zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="Zlib\zutil.c">
+      <Filter>Source Files\Zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="hoops_png.cpp">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="png\png.c">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="png\pngerror.c">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="png\pngget.c">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="png\pngmem.c">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="png\pngpread.c">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="png\pngread.c">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="png\pngrio.c">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="png\pngrtran.c">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="png\pngrutil.c">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="png\pngset.c">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="png\pngtrans.c">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="png\pngvcrd.c">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="png\pngwio.c">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="png\pngwrite.c">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="png\pngwtran.c">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="png\pngwutil.c">
+      <Filter>Source Files\png</Filter>
+    </ClCompile>
+    <ClCompile Include="hoops_jpeg.cpp">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jcapimin.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jcapistd.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jccoefct.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jccolor.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jcdctmgr.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jchuff.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jcinit.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jcmainct.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jcmarker.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jcmaster.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jcomapi.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jcparam.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jcphuff.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jcprepct.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jcsample.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jctrans.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jdapimin.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jdapistd.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jdatadst.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jdatasrc.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jdcoefct.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jdcolor.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jddctmgr.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jdhuff.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jdinput.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jdmainct.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jdmarker.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jdmaster.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jdmerge.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jdphuff.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jdpostct.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jdsample.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jdtrans.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jerror.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jfdctflt.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jfdctfst.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jfdctint.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jidctflt.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jidctfst.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jidctint.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jidctred.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jmemmgr.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jmemnobs.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jquant1.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jquant2.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpeg\jutils.c">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="bounding.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="callback.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="clip_region.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="color.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="color_map.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="conditions.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="driver_options.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="find_attribute.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="find_net_attribute.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="glyphs.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="handedness.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="heuristics.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="line_styles.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="modelling_matrix.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="named_defs.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="normal.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="onebytes.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="onefloats.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="parameter.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="priority.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="redraw_attribute.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering_options.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="selectability.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="set_attribute.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="set_onename.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="show_one_color.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="streaming_mode.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="text_font.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_matrix.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="textures.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="unset_one.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="user_options.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="visibility.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="window.cpp">
+      <Filter>Source Files\attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="define_color.cpp">
+      <Filter>Source Files\color</Filter>
+    </ClCompile>
+    <ClCompile Include="evaluate_color.cpp">
+      <Filter>Source Files\color</Filter>
+    </ClCompile>
+    <ClCompile Include="compute_boolean_shell.cpp">
+      <Filter>Source Files\compute</Filter>
+    </ClCompile>
+    <ClCompile Include="compute_bounding.cpp">
+      <Filter>Source Files\compute</Filter>
+    </ClCompile>
+    <ClCompile Include="compute_color.cpp">
+      <Filter>Source Files\compute</Filter>
+    </ClCompile>
+    <ClCompile Include="compute_convex_hull.cpp">
+      <Filter>Source Files\compute</Filter>
+    </ClCompile>
+    <ClCompile Include="compute_intersect_polyline.cpp">
+      <Filter>Source Files\compute</Filter>
+    </ClCompile>
+    <ClCompile Include="compute_matrix_math.cpp">
+      <Filter>Source Files\compute</Filter>
+    </ClCompile>
+    <ClCompile Include="compute_minimized_shell.cpp">
+      <Filter>Source Files\compute</Filter>
+    </ClCompile>
+    <ClCompile Include="compute_point_inside_shell.cpp">
+      <Filter>Source Files\compute</Filter>
+    </ClCompile>
+    <ClCompile Include="compute_selection_by_shell.cpp">
+      <Filter>Source Files\compute</Filter>
+    </ClCompile>
+    <ClCompile Include="compute_transform.cpp">
+      <Filter>Source Files\compute</Filter>
+    </ClCompile>
+    <ClCompile Include="compute_transform_matrix.cpp">
+      <Filter>Source Files\compute</Filter>
+    </ClCompile>
+    <ClCompile Include="compute_vector.cpp">
+      <Filter>Source Files\compute</Filter>
+    </ClCompile>
+    <ClCompile Include="compute_window_extent.cpp">
+      <Filter>Source Files\compute</Filter>
+    </ClCompile>
+    <ClCompile Include="shell_utilities.cpp">
+      <Filter>Source Files\compute</Filter>
+    </ClCompile>
+    <ClCompile Include="lod_main.cpp">
+      <Filter>Source Files\compute\lod</Filter>
+    </ClCompile>
+    <ClCompile Include="regenerate_lod.cpp">
+      <Filter>Source Files\compute\lod</Filter>
+    </ClCompile>
+    <ClCompile Include="age_activity.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="code_generation.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="control_update.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="define_callback_name.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="define_default_colors.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="define_driver_config.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="define_system_options.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="error.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="exit_program.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="read_metafile.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="reset_internal_data.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="reset_system.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="set_default_attributes.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="show_device_info.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="show_system_info.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="start_hoops.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="text_font_defined.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="update_display.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="write_metafile.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="3d_common.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="3d_common_post.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="3d_common_tristrip.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="cgm3_driver.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="direct3d_utility.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="display_lists.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="dx9_driver.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="hpgl2_driver.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="hpgl_driver.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="image_driver.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="msw_driver.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="ogl.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="ogl2.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="ogl2_agl.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="ogl2_glx.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="ogl2_post.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="ogl2_wgl.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="ogl_agl.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="ogl_glx.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="ogl_wgl.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="oglvstrip.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="pdf_driver.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="postscript_driver.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="printf_driver.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="qt_driver.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="qtzdrive.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="start_drivers.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="whip2d_driver.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="x11_driver.cpp">
+      <Filter>Source Files\driver</Filter>
+    </ClCompile>
+    <ClCompile Include="buffer_dc_dot.cpp">
+      <Filter>Source Files\driver\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="buffer_dc_line.cpp">
+      <Filter>Source Files\driver\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="buffer_dc_raster.cpp">
+      <Filter>Source Files\driver\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="buffer_dc_rectangle.cpp">
+      <Filter>Source Files\driver\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="buffer_dc_triangle.cpp">
+      <Filter>Source Files\driver\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="rasterize_dc_span.cpp">
+      <Filter>Source Files\driver\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="span_dc_line.cpp">
+      <Filter>Source Files\driver\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="span_dc_rectangle.cpp">
+      <Filter>Source Files\driver\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="span_dc_triangle.cpp">
+      <Filter>Source Files\driver\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="span_utilities.cpp">
+      <Filter>Source Files\driver\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="szb_line.cpp">
+      <Filter>Source Files\driver\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="szb_rectangle.cpp">
+      <Filter>Source Files\driver\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="szb_triangle.cpp">
+      <Filter>Source Files\driver\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_builtin_text.cpp">
+      <Filter>Source Files\driver\font</Filter>
+    </ClCompile>
+    <ClCompile Include="hoops_freetype.cpp">
+      <Filter>Source Files\driver\font</Filter>
+    </ClCompile>
+    <ClCompile Include="text_font_gather.cpp">
+      <Filter>Source Files\driver\font</Filter>
+    </ClCompile>
+    <ClCompile Include="text_font_process.cpp">
+      <Filter>Source Files\driver\font</Filter>
+    </ClCompile>
+    <ClCompile Include="w32fonts.cpp">
+      <Filter>Source Files\driver\font</Filter>
+    </ClCompile>
+    <ClCompile Include="cut_hidden_by_plane.cpp">
+      <Filter>Source Files\driver\hidden</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_hidden_item.cpp">
+      <Filter>Source Files\driver\hidden</Filter>
+    </ClCompile>
+    <ClCompile Include="free_hidden_list.cpp">
+      <Filter>Source Files\driver\hidden</Filter>
+    </ClCompile>
+    <ClCompile Include="hide_dc_items.cpp">
+      <Filter>Source Files\driver\hidden</Filter>
+    </ClCompile>
+    <ClCompile Include="insert_in_hidden_tree.cpp">
+      <Filter>Source Files\driver\hidden</Filter>
+    </ClCompile>
+    <ClCompile Include="linearize_hidden_tree.cpp">
+      <Filter>Source Files\driver\hidden</Filter>
+    </ClCompile>
+    <ClCompile Include="see_whats_hidden.cpp">
+      <Filter>Source Files\driver\hidden</Filter>
+    </ClCompile>
+    <ClCompile Include="hl_hide_dc_items.cpp">
+      <Filter>Source Files\driver\hl</Filter>
+    </ClCompile>
+    <ClCompile Include="hl_see_whats_hidden.cpp">
+      <Filter>Source Files\driver\hl</Filter>
+    </ClCompile>
+    <ClCompile Include="elaborate_selection.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="select_curve.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="select_dot.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="select_ellipse.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="select_elliptical_arc.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="select_fundamental.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="select_grid.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="select_image.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="select_inner_window.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="select_marker.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="select_nurbs_surface.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="select_polyglin.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="select_polyhedron.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="select_sphere.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="select_text.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="selection_downwind.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="selection_render.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="std_select.cpp">
+      <Filter>Source Files\driver\select</Filter>
+    </ClCompile>
+    <ClCompile Include="clip_dc_geometry.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="defer_tree.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_deferred_trees.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_indexicated_3d_polyedge.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_indexicated_3d_tristrip.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_lighted_face.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_overlay_tree.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_partial_erase_tree.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_silhouette_edges.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_software_z_buffered_tree.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_trimmed_dc_image.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="get_actions.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="get_current_info.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="get_physical_info.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="preprocess.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="simple_shadow.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_compute_shading.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_compute_texture.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_curve.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_cylinder.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_ellipse.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_grid.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_image.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_light.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_marker.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_nurbs_surface.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_polyedge.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_polygon.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_polyhedron.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_polyline.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_polymarker.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_sphere.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_stencil.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_text.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_3d_tristrip.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_dc_colorized_face.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_dc_colorized_line.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_dc_colorized_marker.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_dc_dot.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_dc_ellipse.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_dc_elliptical_arc.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_dc_face.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_dc_gouraud_line.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_dc_image.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_dc_line.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_dc_marker.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_dc_polygon.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_dc_polyline.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_dc_rectangle.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_dc_stencil.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_dc_triangle.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_inter_text.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_overlay_list.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_tree.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_window.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_draw_window_frame.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_driver.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_render.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="std_update.cpp">
+      <Filter>Source Files\driver\standard</Filter>
+    </ClCompile>
+    <ClCompile Include="acquire_clip_points.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="collect_cut_geometry.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="compute_screen_transform.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="driver_utility.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="figure_light.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="find_cutting_planes.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="find_geometry_screen_plane.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="find_lights.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="gather_device_info.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="gather_screen_extent.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="generic_size_units.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="get_bit_patterns.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="hic_wrap.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="image_to_rasters.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="intermediate.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="octree.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="point_within_cutting_planes.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="transform_and_test.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="transform_and_test_bounding.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="validate_world_to_screen.cpp">
+      <Filter>Source Files\driver\util</Filter>
+    </ClCompile>
+    <ClCompile Include="delete_renditions.cpp">
+      <Filter>Source Files\driver\winding</Filter>
+    </ClCompile>
+    <ClCompile Include="downwind_camera.cpp">
+      <Filter>Source Files\driver\winding</Filter>
+    </ClCompile>
+    <ClCompile Include="downwind_color.cpp">
+      <Filter>Source Files\driver\winding</Filter>
+    </ClCompile>
+    <ClCompile Include="downwind_color_map.cpp">
+      <Filter>Source Files\driver\winding</Filter>
+    </ClCompile>
+    <ClCompile Include="downwind_handedness.cpp">
+      <Filter>Source Files\driver\winding</Filter>
+    </ClCompile>
+    <ClCompile Include="downwind_modelling_matrix.cpp">
+      <Filter>Source Files\driver\winding</Filter>
+    </ClCompile>
+    <ClCompile Include="downwind_rendition.cpp">
+      <Filter>Source Files\driver\winding</Filter>
+    </ClCompile>
+    <ClCompile Include="downwind_text_font.cpp">
+      <Filter>Source Files\driver\winding</Filter>
+    </ClCompile>
+    <ClCompile Include="downwind_window.cpp">
+      <Filter>Source Files\driver\winding</Filter>
+    </ClCompile>
+    <ClCompile Include="record_driver_options.cpp">
+      <Filter>Source Files\driver\winding</Filter>
+    </ClCompile>
+    <ClCompile Include="renditions.cpp">
+      <Filter>Source Files\driver\winding</Filter>
+    </ClCompile>
+    <ClCompile Include="set_dc_cutting_planes.cpp">
+      <Filter>Source Files\driver\winding</Filter>
+    </ClCompile>
+    <ClCompile Include="set_z_buffering_transform.cpp">
+      <Filter>Source Files\driver\winding</Filter>
+    </ClCompile>
+    <ClCompile Include="undo_redo_screen.cpp">
+      <Filter>Source Files\driver\winding</Filter>
+    </ClCompile>
+    <ClCompile Include="upwind_driver_options.cpp">
+      <Filter>Source Files\driver\winding</Filter>
+    </ClCompile>
+    <ClCompile Include="circle.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="circular_arc.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="curve.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="cutting_plane.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="cylinder.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="ellipse.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="elliptical_arc.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="geometry_bounding.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="geometry.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="grid.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="image.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="infinite_line.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="ink.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="insert_geometry.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="light.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="line.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="marker.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="nurbs_surface.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="open_edge.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="open_face.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="open_geometry.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="open_lod.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="open_vertex.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="polygon.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="polyline.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="regions.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="shell.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="sphere.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="string_cursor.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="text.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="text_region.cpp">
+      <Filter>Source Files\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="assemble_3d_polyedges.cpp">
+      <Filter>Source Files\geometry\phedron</Filter>
+    </ClCompile>
+    <ClCompile Include="assemble_3d_polymarkers.cpp">
+      <Filter>Source Files\geometry\phedron</Filter>
+    </ClCompile>
+    <ClCompile Include="assemble_3d_tristrips.cpp">
+      <Filter>Source Files\geometry\phedron</Filter>
+    </ClCompile>
+    <ClCompile Include="assemble_edge_normals.cpp">
+      <Filter>Source Files\geometry\phedron</Filter>
+    </ClCompile>
+    <ClCompile Include="assemble_face_normals.cpp">
+      <Filter>Source Files\geometry\phedron</Filter>
+    </ClCompile>
+    <ClCompile Include="assemble_mesh_tristrips.cpp">
+      <Filter>Source Files\geometry\phedron</Filter>
+    </ClCompile>
+    <ClCompile Include="assemble_shell_tristrips.cpp">
+      <Filter>Source Files\geometry\phedron</Filter>
+    </ClCompile>
+    <ClCompile Include="mset_face_specific.cpp">
+      <Filter>Source Files\geometry\phedron</Filter>
+    </ClCompile>
+    <ClCompile Include="mset_vertex_colors.cpp">
+      <Filter>Source Files\geometry\phedron</Filter>
+    </ClCompile>
+    <ClCompile Include="mset_vertex_normals.cpp">
+      <Filter>Source Files\geometry\phedron</Filter>
+    </ClCompile>
+    <ClCompile Include="mset_vertex_parameters.cpp">
+      <Filter>Source Files\geometry\phedron</Filter>
+    </ClCompile>
+    <ClCompile Include="mset_vertex_visibilities.cpp">
+      <Filter>Source Files\geometry\phedron</Filter>
+    </ClCompile>
+    <ClCompile Include="compute_selection.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="events.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="find_driver.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="au_revoir.cpp">
+      <Filter>Source Files\memoirs</Filter>
+    </ClCompile>
+    <ClCompile Include="generic_delete.cpp">
+      <Filter>Source Files\memoirs</Filter>
+    </ClCompile>
+    <ClCompile Include="hoops_memory.cpp">
+      <Filter>Source Files\memoirs</Filter>
+    </ClCompile>
+    <ClCompile Include="disentangle.cpp">
+      <Filter>Source Files\memoirs</Filter>
+    </ClCompile>
+    <ClCompile Include="alias.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="contents_search.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="segment_search.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="bring_to_front.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="copy_segment.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="create_segment.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="decipher_type_names.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="delete_by_key.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="delete_segment.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="segment_bounding.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="flush_by_key.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="flush_segment.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="for_each.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="include_segment.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="move_by_key.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="open_segment.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="optimize_tree.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="output_parse.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="parse_path.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="rename_segment.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="renumber_key.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="show_existence.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="show_owner.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="show_pathname_expansion.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="styles.cpp">
+      <Filter>Source Files\segment</Filter>
+    </ClCompile>
+    <ClCompile Include="aix_system.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="generic_system.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="hpux_system.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="irix_system.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="linux_system.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="osx_system.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="solaris_system.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="threaded_time.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="win32_system.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="create_polygon_wedge_tree.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="define_nice_option.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="exponentiate.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="find_polygon_plane.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="find_scoping_window.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="generate_curve_polyline.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="hvbsp.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="more_or_less.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="normalize.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="parse_options.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="parse_string.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="propagate_activity.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="propagate_bounding.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="propagate_maybes.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="returns.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="scans.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="show_key_type.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="sincos.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="sort_array.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="sprintf1.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="string_utilities.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="tessellate_nurbs_surface.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="text_font_encoding.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="triangulate_face.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="uv_trim.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="vwrapper.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="wings_intersect.cpp">
+      <Filter>Source Files\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\huffman.cpp">
+      <Filter>Source Files\utility\Utility Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\vdlist.cpp">
+      <Filter>Source Files\utility\Utility Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\vhash.cpp">
+      <Filter>Source Files\utility\Utility Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\vlist.cpp">
+      <Filter>Source Files\utility\Utility Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Zlib\deflate.h">
+      <Filter>Source Files\Zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="Zlib\infblock.h">
+      <Filter>Source Files\Zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="Zlib\infcodes.h">
+      <Filter>Source Files\Zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="Zlib\inffast.h">
+      <Filter>Source Files\Zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="Zlib\inffixed.h">
+      <Filter>Source Files\Zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="Zlib\inftrees.h">
+      <Filter>Source Files\Zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="Zlib\infutil.h">
+      <Filter>Source Files\Zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="Zlib\trees.h">
+      <Filter>Source Files\Zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="Zlib\zconf.h">
+      <Filter>Source Files\Zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="Zlib\zlib.h">
+      <Filter>Source Files\Zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="Zlib\zutil.h">
+      <Filter>Source Files\Zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="png\pngconf.h">
+      <Filter>Source Files\png</Filter>
+    </ClInclude>
+    <ClInclude Include="png\png.h">
+      <Filter>Source Files\png</Filter>
+    </ClInclude>
+    <ClInclude Include="Jpeg\jchuff.h">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="Jpeg\jdct.h">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="Jpeg\jdhuff.h">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="Jpeg\jerror.h">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="Jpeg\jinclude.h">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="Jpeg\jmemsys.h">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="Jpeg\jmorecfg.h">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="Jpeg\jpegint.h">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="Jpeg\jpeglib.h">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="Jpeg\jversion.h">
+      <Filter>Source Files\Jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="3d_common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="adt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="csutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="database.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="driver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="filedata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hc_proto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hcd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hd_proto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hi_proto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hic_calls.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hic_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hic_wrap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hidden.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hmutex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hoops.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hoops_memory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hpserror.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hqsort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hversion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="metafile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="msw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ogl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ogl2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oglext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="path.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="patterns.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="phdraw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="phedron.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="please.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="searchh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="select.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="span.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tandt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="task_queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="topology.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="windows_wrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x11data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\hqsort.h">
+      <Filter>Header Files\Utility Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\varray.h">
+      <Filter>Header Files\Utility Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\vdlist.h">
+      <Filter>Header Files\Utility Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\vhash.h">
+      <Filter>Header Files\Utility Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\vheap.h">
+      <Filter>Header Files\Utility Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\vlist.h">
+      <Filter>Header Files\Utility Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Jpeg\jconfig.vc">
+      <Filter>Source Files\Jpeg</Filter>
+    </None>
+    <None Include="hoops.ico">
+      <Filter>Source Files\system</Filter>
+    </None>
+    <None Include="cocoa_common.mm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dx9_common.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dx9_header.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dx9_pixel.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dx9_post_header.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dx9_post_pixel.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dx9_post_vertex.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dx9_post_vertex_3d.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dx9_vertex.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_common.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_macros.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_material.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_pixel.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_add_8.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_ambient_occlusion.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_ambient_occlusion_filter.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_apply_reflection.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_capture_bloom.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_capture_depth.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_clear_alpha.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_copy.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_depth_filter.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_depth_of_field.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_depth_to_focus.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_external_silhouette.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_filter.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_filter_12.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_filter_16.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_filter_4.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_filter_8.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_focus_filter.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_mask_bloom.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_reproject.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_post_silhouette.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="h3d_vertex.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ogl2_cocoa.mm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ogl2_common.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ogl2_header.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ogl2_pixel.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ogl2_post_header.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ogl2_post_pixel.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ogl2_post_vertex.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ogl2_post_vertex_3d.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ogl2_vertex.hlsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ogl_cocoa.mm">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="hoops32.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuildStep Include="3d_common_shader.h">
+      <Filter>Header Files</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="ogl2_post.h">
+      <Filter>Header Files</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="exceptions">
+      <Filter>Build Files</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="filemap">
+      <Filter>Build Files</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="gen-exp.pl">
+      <Filter>Build Files</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="gen-fort.pl">
+      <Filter>Build Files</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="gen-hch.pl">
+      <Filter>Build Files</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="gen-py.pl">
+      <Filter>Build Files</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="gen-rc.pl">
+      <Filter>Build Files</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="hc.nam">
+      <Filter>Build Files</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="hp.pas">
+      <Filter>Build Files</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="make-obf.pl">
+      <Filter>Build Files</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="makefile">
+      <Filter>Build Files</Filter>
+    </CustomBuildStep>
+  </ItemGroup>
+</Project>

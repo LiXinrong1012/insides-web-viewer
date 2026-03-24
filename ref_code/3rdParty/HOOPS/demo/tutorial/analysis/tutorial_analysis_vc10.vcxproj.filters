@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{8c746855-1d8a-48e0-b09d-43966bc8085b}</UniqueIdentifier>
+      <Extensions>txt</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Analysis.ico" />
+    <None Include="Analysis.rc2" />
+    <None Include="AnalysisDoc.ico" />
+    <None Include="Toolbar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Analysis.cpp" />
+    <ClCompile Include="AnalysisDoc.cpp" />
+    <ClCompile Include="AnalysisView.cpp" />
+    <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="HAnalysisModel.cpp" />
+    <ClCompile Include="HAnalysisSelectionSet.cpp" />
+    <ClCompile Include="HAnalysisView.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Analysis.h" />
+    <ClInclude Include="AnalysisDoc.h" />
+    <ClInclude Include="AnalysisView.h" />
+    <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="HAnalysisModel.h" />
+    <ClInclude Include="HAnalysisSelectionSet.h" />
+    <ClInclude Include="HAnalysisView.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="StdAfx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Analysis.rc" />
+  </ItemGroup>
+</Project>

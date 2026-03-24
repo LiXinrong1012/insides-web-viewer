@@ -1,0 +1,23 @@
+HKCR
+{
+	Hoops3dStream.Hoops3dStreamProperty.1 = s 'Hoops3dStreamProperty Class'
+	{
+		CLSID = s '%PROPID%'
+	}
+	Hoops3dStream.Hoops3dStreamProperty = s 'Hoops3dStreamProperty Class'
+	{
+		CLSID = s '%PROPID%'
+		CurVer = s 'Hoops3dStream.Hoops3dStreamProperty.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove %PROPID% = s 'Hoops3dStreamProperty Class'
+		{
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}

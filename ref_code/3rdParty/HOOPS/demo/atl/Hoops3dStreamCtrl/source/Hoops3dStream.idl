@@ -1,0 +1,652 @@
+// Hoops3dStream.idl : IDL source for Hoops3dStream.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Hoops3dStream.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+#include "olectl.h"
+#include "guidlist.h"
+	
+
+	[
+		object,
+		uuid(CLSID_HOOPS3DSTREAMCTRL_MIDL),
+		dual,
+		helpstring("IHoops3dStreamCtrl Interface"),
+		pointer_default(unique)
+	]
+
+	/*! \interface IHoops3dStreamCtrl
+		Defines the Hoops3dStreamCtrl interface, which includes Properties and methods.
+	*/
+	interface IHoops3dStreamCtrl : IDispatch
+	{
+		[propput, id(DISPID_BACKCOLOR)]
+		HRESULT BackColor([in]OLE_COLOR clr);
+		[propget, id(DISPID_BACKCOLOR)]
+		HRESULT BackColor([out,retval]OLE_COLOR* pclr);
+		[propget, id(DISPID_HWND)]
+		HRESULT Window([out, retval]long* phwnd);
+
+		/*! This stock property gets file that will be automatically loaded into the control. */
+		[propget, id(1), helpstring("property Filename")] HRESULT Filename([out, retval] BSTR *pVal);
+		/*! This stock property sets the file that will be automatically loaded into the control.  */
+		[propput, id(1), helpstring("property Filename")] HRESULT Filename([in] BSTR newVal);
+
+		[propget, id(20), helpstring("property DLinProgress")] HRESULT DLinProgress([out, retval] BOOL *pVal);
+		[propget, id(21), helpstring("property DownloadDataReceived")] HRESULT DownloadDataReceived([out, retval] long *pVal);
+		[propget, id(22), helpstring("property DownloadDataMax")] HRESULT DownloadDataMax([out, retval] long *pVal);
+		
+		[id(23), helpstring("method AbortDownload")] HRESULT AbortDownload();
+ 		
+		/*! Get the current interaction operator */
+		[propget, id(27), helpstring("property CurrentOperator")] HRESULT CurrentOperator([out, retval] BSTR *pVal);
+
+				
+		[id(45), helpstring("method SaveRestoreMarkup")] HRESULT SaveRestoreMarkup(int layernum);
+
+		/*! Get the camera parameters */
+		[propget, id(30), helpstring("property CameraParameters")] HRESULT CameraParameters([out, retval] BSTR *pVal);
+		
+		/*! Get the state of the 'Embed' property, which indicates whether the file associated with the control should be embedded in the container document */
+		[propget, id(31), helpstring("property Embed")] HRESULT Embed([out, retval] BOOL *pVal);
+		/*! Sets the state of the 'Embed' property, which indicates whether the file associated with the control should be embedded in the container document */
+		[propput, id(31), helpstring("property Embed")] HRESULT Embed([in] BOOL newVal);
+ 		
+		/*! DEPRECATED; rely on other properties to control 2d vs 3d UI techniques. Stock Property; Gets the type of file that is currently loaded into the control, either '2dmodel' or '3dmodel'. */
+		[propget, id(33), helpstring("property FileType")] HRESULT FileType([out, retval] BSTR *pVal);
+		/*! DEPRECATED; rely on other properties to control 2d vs 3d UI techniques. Stock Property; Sets the type of file that is currently loaded into the control, either '2dmodel' or '3dmodel'. */
+		[propput, id(33), helpstring("property FileType")] HRESULT FileType([in] BSTR newVal);
+		
+		/*! Sets the  background color(s).  Different 'top' and 'bottom' colors along with a percentage allow for a gradient background */
+		[id(34), helpstring("method SetBackgroundColors")] HRESULT SetBackgroundColors(float r_top, float g_top, float b_top, float r_bottom, float g_bottom, float b_bottom, int percentage);
+ 		
+
+		
+		/*! Fit the camera to the scene's extents */
+		[id(28), helpstring("method FitWorld")] HRESULT FitWorld();	
+		/*! Set a specific camera */
+		[id(29), helpstring("method SetCamera")] HRESULT SetCamera(float px, float py, float pz, float tx, float ty, float tz, float ux, float uy, float uz, float width, float height);
+		/*! Sets a specific camera target plane */
+		[id(38), helpstring("method SetCameraToPlaneXY")] HRESULT SetCameraToPlaneXY();
+		/*! Sets a specific camera target plane */
+		[id(39), helpstring("method SetCameraToPlaneXZ")] HRESULT SetCameraToPlaneXZ();
+		/*! Sets a specific camera target plane */
+		[id(40), helpstring("method SetCameraToPlaneYZ")] HRESULT SetCameraToPlaneYZ();
+		/*! Sets a specific camera target plane */
+		[id(41), helpstring("method SetCameraToPlaneZX")] HRESULT SetCameraToPlaneZX();
+		/*! Sets a specific camera target plane */
+		[id(42), helpstring("method SetCameraToPlaneZY")] HRESULT SetCameraToPlaneZY();
+		/*! Sets a specific camera target plane */
+		[id(43), helpstring("method SetCameraToPlaneYX")] HRESULT SetCameraToPlaneYX();
+		/*! Sets an iso view camera */
+		[id(44), helpstring("method SetCameraToIsometric")] HRESULT SetCameraToIsometric();
+		/*! Sets an iso view camera */
+		[id(46), helpstring("method SetProjectionModePerspective")] HRESULT SetProjectionModePerspective();
+		/*! Sets an iso view camera */
+		[id(47), helpstring("method SetProjectionModeOrthographic")] HRESULT SetProjectionModeOrthographic();
+		/*! Sets an iso view camera */
+		[propget, id(113), helpstring("property ProjectionMode")] HRESULT ProjectionMode([out, retval] BSTR *pVal);
+		/*! Sets an iso view camera */
+		[propput, id(113), helpstring("property ProjectionMode")] HRESULT ProjectionMode([in] BSTR newVal);
+		/*! Sets the interaction operator */
+		[id(35), helpstring("method SetOperator")] HRESULT SetOperator(BSTR operator_name);
+		/*! Sets the rendermode; values can be shaded/flat/gouraud/gouraud with edges/wireframe/hidden line */
+		[id(36), helpstring("method SetRenderMode")] HRESULT SetRenderMode(BSTR mode);
+		
+		/*! Inserts a cutting plane */
+ 		[id(37), helpstring("method InsertCuttingPlane")] HRESULT InsertCuttingPlane();
+		/* Toggles visibility of a named cutting plane */
+		[id(111), helpstring("method ShowCuttingPlane")] HRESULT ShowCuttingPlane(BSTR name, int onoff);
+		/* Get the status of whether a named cutting plane exists*/
+		[propget, id(115), helpstring("property CuttingPlaneStatus")] HRESULT CuttingPlaneStatus(BSTR name, [out, retval] BOOL *pVal);
+		
+
+		/*! Fushes the contents of the scene*/
+		[id(70), helpstring("method FlushScene")] HRESULT FlushScene();
+
+
+		/*! Toggles the shadow */
+		[id(48), helpstring("method SetShadowMode")] HRESULT SetShadowMode(BOOL onoff);
+		/*! Turns on scene antialiasing */
+		[id(49), helpstring("method AntialiasScene")] HRESULT AntialiasScene();
+		/*! Sets pgon handedness to left */
+		[id(50), helpstring("method SetPolygonHandednessLeft")] HRESULT SetPolygonHandednessLeft();
+		/*! SSets pgon handedness to left */
+		[id(51), helpstring("method SetPolygonHandednessRight")] HRESULT SetPolygonHandednessRight();
+		/*! Sets pgon handedness to 'none' */
+		[id(52), helpstring("method SetPolygonHandednessNone")] HRESULT SetPolygonHandednessNone();
+		/*! Toggles backplane culling */
+		[id(53), helpstring("method SetBackplaneCullingMode")] HRESULT SetBackplaneCullingMode(BOOL onoff);
+		/*! Toggles framerate rendering logic */
+		[id(54), helpstring("method SetFramerateMode")] HRESULT SetFramerateMode(BOOL onoff);
+		
+		/*! Opens the HOOPS/3dGS scene-graph segment that represents the top of the scene hierarchy */
+		[id(56), helpstring("method OpenSceneSegment")] HRESULT OpenSceneSegment();
+		/*! Opens the HOOPS/3dGS scene-graph segment that represents the top of the model hierarchy*/
+		[id(57), helpstring("method OpenModelSegment")] HRESULT OpenModelSegment();
+
+		/*! Updates the scene */
+		[id(60), helpstring("method Update")] HRESULT Update();
+		
+		/*! Gets the status of the NoOrbit property, which indicates whether the user can orbit the scene */
+		[propget, id(62), helpstring("property NoOrbit")] HRESULT NoOrbit([out, retval] BOOL *pVal);
+		/*! Sets the status of the NoOrbit property, which indicates whether the user can orbit the scene*/
+		[propput, id(62), helpstring("property NoOrbit")] HRESULT NoOrbit([in] BOOL newVal);
+		/*! Gets whether the control is active*/
+		[propget, id(63), helpstring("property ControlActive")] HRESULT ControlActive([out, retval] BOOL *pVal);
+
+		/*! This stock property gets the framerate-antialiasing state.  In other words, it indicates whether AA is being used as part of the framerate logic. */
+		[propget, id(68), helpstring("property Antialiasing")] HRESULT Antialiasing([out, retval] BOOL *pVal);
+		/*! This stock property sets the framerate-antialiasing state.  In otherwords, it specifies whether AA is being used as part of the framerate logic. */
+		[propput, id(68), helpstring("property Antialiasing")] HRESULT Antialiasing([in] BOOL newVal); 
+ 		/*! This stock property gets the states of the 'AllowMenu' property, which controls whether the right-click popup menu is enabled. */
+		[propget, id(69), helpstring("property AllowMenu")] HRESULT AllowMenu([out, retval] BOOL *pVal);
+		/*! This stock property sets the states of the 'AllowMenu' property, which controls whether the right-click popup menu is enabled.  */
+		[propput, id(69), helpstring("property AllowMenu")] HRESULT AllowMenu([in] BOOL newVal);
+		
+
+
+		/*! This stock property enables/disable Hardware Antialiasing which controls whether the scene whould be rendered with AA. */
+		[propput, id(73), helpstring("property HardwareAntialiasing")] HRESULT HardwareAntialiasing([in] BOOL newVal); 
+ 		/*! This stock property returns the state of the HardwareAntialiasing property which controls whether the scene whould be rendered with AA. */
+		[propget, id(73), helpstring("property HardwareAntialiasing")] HRESULT HardwareAntialiasing([out, retval] BOOL *pVal);
+		/*! This stock property sets the state of the 'AxisMode' property, which controls display of the 3d-axis-triad. */
+		[propput, id(74), helpstring("property AxisMode")] HRESULT AxisMode([in] BOOL newVal); 
+ 		/*! This stock property gets the state of the 'AxisMode' property, which controls display of the 3d-axis-triad/  */
+		[propget, id(74), helpstring("property AxisMode")] HRESULT AxisMode([out, retval] BOOL *pVal);
+
+		/*! Plays the animation, if any exists */
+		[id(64), helpstring("method BhvPlay")] HRESULT BhvPlay();
+		/*! Pauses the animation, if any exists  */
+		[id(65), helpstring("method BhvPause")] HRESULT BhvPause();
+		/*! Rewinds the animation, if any exists  */
+		[id(66), helpstring("method BhvRewind")] HRESULT BhvRewind();
+		/*! Returns the value of the 'IsPlaying' property */
+		[propget, id(67), helpstring("property IsPlaying")] HRESULT IsPlaying([out, retval] BOOL *pVal);
+		/*! Activates all animation, if any exist  */
+		[id(75), helpstring("method BhvActivateAllAnimations")] HRESULT BhvActivateAllAnimations();
+		/*! Deactivates all animations, if any exist  */
+		[id(76), helpstring("method BhvDeactivateAllAnimations")] HRESULT BhvDeactivateAllAnimations();
+		/*! Activates a single animation by name, if it exists */
+		[id(77), helpstring("method BhvActivateAnimation")] HRESULT BhvActivateAnimation(BSTR animationname, BOOL allowPartial);
+		/*! Deactivates a single animation by name, if it exists */
+		[id(78), helpstring("method BhvDeactivateAnimation")] HRESULT BhvDeactivateAnimation(BSTR animationname, BOOL allowPartial);
+		/*! Starts a specific animiation */
+		[id(79), helpstring("method BhvStartAnimation")] HRESULT BhvStartAnimation(BSTR animationname);
+		/*! Stops a specific animiation  */
+		[id(80), helpstring("method BhvStopAnimation")] HRESULT BhvStopAnimation(BSTR animationname);
+		/*! Sets the animations to play without being stoppped  */
+		[id(82), helpstring("method BhvSetInfinitePlay")] HRESULT BhvSetInfinitePlay(BOOL onoff);
+		/*! Rewinds a single animation by name, if it exists */
+		[id(83), helpstring("method BhvRewindAnimation")] HRESULT BhvRewindAnimation(BSTR animationname);
+		/*! This stock property enables/disables continuous play for an animation. */
+		[propput, id(112), helpstring("property BhvContinuousPlay")] HRESULT BhvContinuousPlay([in] BOOL newVal); 
+ 		/*! This stock property returns whether continuous play has been set for an animation.*/
+		[propget, id(112), helpstring("property BhvContinuousPlay")] HRESULT BhvContinuousPlay([out, retval] BOOL *pVal);
+		
+		/*! Displays the FileOpen Dialog */
+		[id(81), helpstring("method ShowFileOpenDialog")] HRESULT ShowFileOpenDialog();
+		/*! Displays the FileSave Dialog */
+		[id(104), helpstring("method ShowFileSaveDialog")] HRESULT ShowFileSaveDialog();
+		/*! Copies the scene to Clipboard*/
+		[id(105), helpstring("method CopyToClipboard")] HRESULT CopyToClipboard();
+		/*! Displays the Print Dialog  */
+		[id(106), helpstring("method ShowPrintDialog")] HRESULT ShowPrintDialog();
+		/*! Displays the Page Setup Dialog */
+		[id(107), helpstring("method ShowPageSetupDialog")] HRESULT ShowPageSetupDialog();
+		/* Sets an iso view camera */
+		[id(108), helpstring("method GenerateNavigationInfo")] HRESULT GenerateNavigationInfo([in] int level, [out, retval] BSTR *filepath);
+		/* Sets an iso view camera */
+		[id(109), helpstring("method Select")] HRESULT Select(BSTR key);
+  		/*! This stock property lets you specify whether 
+		<a href="../../HoopsMVO/prog_guide/02_fundamentals.html#selection sets">specific graphical items can be selected</a> and not just 'segments'. */
+		[propput, id(110), helpstring("property AllowEntitySelection")] HRESULT AllowEntitySelection([in] BOOL newVal); 
+ 		/*! This stock property returns where specific graphical items can be selected and not just 'segments'. */
+		[propget, id(110), helpstring("property AllowEntitySelection")] HRESULT AllowEntitySelection([out, retval] BOOL *pVal);
+
+		/* Sets an iso view camera */
+		[id(116), helpstring("method SelectFromIdentifier")] HRESULT SelectFromIdentifier(int identifier);
+  		/* Sets an iso view camera */
+		[id(117), helpstring("method KeyToIndex")] HRESULT KeyToIndex([in] BSTR key, [out, retval] int* pIndex);
+  		/* Sets an iso view camera */
+		[propget, id(118), helpstring("property ModelStructureTypeList")] HRESULT ModelStructureTypeList([out, retval] BSTR *pVal);
+ 		/* Sets an iso view camera */
+		[propput, id(119), helpstring("property ModelStructureFilter")] HRESULT ModelStructureFilter([in] BSTR newVal);
+		/* Sets an iso view camera */
+		[id(120), helpstring("method GenerateNavigationInfoFromNodePath")] HRESULT GenerateNavigationInfoFromNodePath([in] BSTR nodepath, [out, retval] BSTR *filepath);
+		/* Sets an iso view camera */
+		[id(121), helpstring("method GetPathFromIndex")] HRESULT GetPathFromIndex([in] int index, [out, retval] BSTR *pPath);
+		/* Sets an iso view camera */
+		[id(122), helpstring("method SelectFromPath")] HRESULT SelectFromPath(BSTR path);
+  		/*! Gets the 'SmoothTransitionMode' properlty, which indicates whether changes from one camera position to another interpolate smoothly */
+		[propget, id(123), helpstring("property SmoothTransitionMode")] HRESULT SmoothTransitionMode([out, retval] BOOL *pVal);
+		/*! Sets the 'SmoothTransitionMode' properlty, which indicates whether changes from one camera position to another interpolate smoothly*/
+		[propput, id(123), helpstring("property SmoothTransitionMode")] HRESULT SmoothTransitionMode([in] BOOL newVal);
+		/*! Sets the selection face color */
+		[id(124), helpstring("method SetSelectionFaceColor")] HRESULT SetSelectionFaceColor(float r, float g, float b, float a);
+		/*! Sets the edge selection color*/
+		[id(125), helpstring("method SetSelectionEdgeColor")] HRESULT SetSelectionEdgeColor(float r, float g, float b, float a);
+		/*! Sets the marker selection color */
+		[id(126), helpstring("method SetSelectionMarkerColor")] HRESULT SetSelectionMarkerColor(float r, float g, float b, float a);
+ 		/*! Gets the state of the 'SofwareRendering' property */
+		[propget, id(127), helpstring("property SoftwareRendering")] HRESULT SoftwareRendering([out, retval] BOOL *pVal);
+		/*! Sets the state of the 'SofwareRendering' property; SW rendering causes the scene to be rendered without using any gfx hardware acceleration; usually reserved for debugging purposes only*/
+		[propput, id(127), helpstring("property SoftwareRendering")] HRESULT SoftwareRendering([in] BOOL newVal);
+		/*! Add the specified filetype to the list of the control's supported types.  The control will process such file type bug associated custom file-handled in logic must be in place for anything to occur */
+		[id(128), helpstring("method AddFileType")] HRESULT AddFileType(BSTR filetype);
+		
+		[propput, id(129), helpstring("property ConfigFile")] HRESULT ConfigFile([in] BSTR newVal);
+ 		[propget, id(129), helpstring("property ConfigFile")] HRESULT ConfigFile([out, retval] BSTR *pVal);
+ 		
+		[id(130), helpstring("method ConfigureFromFile")] HRESULT ConfigureFromFile();
+		[id(131), helpstring("method ShowOptionsDialog")] HRESULT ShowOptionsDialog();
+ 		
+		[propget, id(133), helpstring("property HasModelStructureInfo")] HRESULT HasModelStructureInfo([out, retval] BOOL *pVal);
+		
+		[id(134), helpstring("method SetAmbientColor")] HRESULT SetAmbientColor(float r, float g, float b);
+  		
+		[propget, id(135), helpstring("property DataNavigatorMode")] HRESULT DataNavigatorMode([out, retval] BOOL *pVal);
+		[propput, id(135), helpstring("property DataNavigatorMode")] HRESULT DataNavigatorMode([in] BOOL newVal);
+  		[propget, id(136), helpstring("property UndoAvailable")] HRESULT UndoAvailable([out, retval] BOOL *pVal);
+  		[propget, id(137), helpstring("property RedoAvailable")] HRESULT RedoAvailable([out, retval] BOOL *pVal);
+
+		/*returns the last key that was set*/
+		[propget, id(138), helpstring("property Key")] HRESULT Key([out, retval] LONG *pVal);
+		[propget, id(139), helpstring("property String1")] HRESULT String1([out, retval] BSTR *pVal);
+		[propget, id(140), helpstring("property String2")] HRESULT String2([out, retval] BSTR *pVal);
+		[propget, id(141), helpstring("property String3")] HRESULT String3([out, retval] BSTR *pVal);
+		[propget, id(142), helpstring("property Int1")] HRESULT Int1([out, retval] int *pVal);
+
+
+		[id(114), helpstring("method Run")] HRESULT Run(BSTR command);
+		
+		[id(143), helpstring("method SetViewAxis")] HRESULT SetViewAxis(float fx, float fy, float fz, float tx, float ty, float tz);
+
+		/*! This stock property sets the Framerate Type which can be FramerateFixed, FramerateTarget or 
+		FramerateOff as described in HOOPS/MVO Programming Guide on 
+		<a href="../../HoopsMVO/prog_guide/05_maintaining_constant_framerate.html">Constant Framerate</a>. */
+		[propput, id(144), helpstring("property FramerateType")] HRESULT FramerateType([in] BSTR newVal);
+		/*! This stock property gets the Framerate Type which can be FramerateFixed, FramerateTarget or 
+		FramerateOff as described in HOOPS/MVO Programming Guide on 
+		<a href="../../HoopsMVO/prog_guide/05_maintaining_constant_framerate.html">Constant Framerate</a>. */
+		[propget, id(144), helpstring("property FramerateType")] HRESULT FramerateType([out, retval] BSTR *pVal);
+		/*! This stock property sets the Driver Type which can be opengl or dx9. */
+		[propput, id(145), helpstring("property DriverType")] HRESULT DriverType([in] BSTR newVal);
+		[propget, id(145), helpstring("property DriverType")] HRESULT DriverType([out, retval] BSTR *pVal);
+		[propput, id(146), helpstring("property DefaultConfigFile")] HRESULT DefaultConfigFile([in] BSTR newVal);
+ 		[propget, id(146), helpstring("property DefaultConfigFile")] HRESULT DefaultConfigFile([out, retval] BSTR *pVal);
+		/*! This stock property enables/disables <a href="../../Hoops3DGS/prog_guide/07_4_performance_rendering_selection.html#7_4_1_DisplayLists">Segment Display Lists</a>. The default value is false */
+		[propput, id(132), helpstring("property SegmentDL")] HRESULT SegmentDL([in] BOOL newVal);
+		[propget, id(132), helpstring("property SegmentDL")] HRESULT SegmentDL([out, retval] BOOL *pVal);
+
+		/*! This stock property enables/disables <a href="../../Hoops3DGS/prog_guide/07_2_performance_segments.html#7_2_1_2_StaticModel">Static Model</a>. The default value is false*/
+		[propput, id(147), helpstring("property StaticModel")] HRESULT StaticModel([in] BOOL newVal);
+		[propget, id(147), helpstring("property StaticModel")] HRESULT StaticModel([out, retval] BOOL *pVal);
+		/*! This stock property sets the \ref Set_Driver_Options_anti-alias "antialiasing level". */
+		[propput, id(148), helpstring("property AntialiasingLevel")] HRESULT AntialiasingLevel([in] int newVal);
+		[propget, id(148), helpstring("property AntialiasingLevel")] HRESULT AntialiasingLevel([out, retval] int *pVal);
+		/*! This stock property sets the culling threshold equivalent to calling HBaseView::SetCullingThreshold.*/
+		[propput, id(149), helpstring("property CullingThreshold")] HRESULT CullingThreshold([in] int newVal);
+		[propget, id(149), helpstring("property CullingThreshold")] HRESULT CullingThreshold([out, retval] int *pVal);
+		/*! This stock property sets the framerate in seconds when 
+		<a href="../../HoopsMVO/prog_guide/05_maintaining_constant_framerate.html">framerate</a> is active.*/
+		[propput, id(150), helpstring("property FrameRate")] HRESULT FrameRate([in] float newVal);
+		[propget, id(150), helpstring("property FrameRate")] HRESULT FrameRate([out, retval] float *pVal);
+		/*! This stock property sets a maximum threshold value if 
+		<a href="../../HoopsMVO/prog_guide/05_maintaining_constant_framerate.html">framerate</a> is active. */
+		[propput, id(151), helpstring("property MaximumThreshold")] HRESULT MaximumThreshold([in] int newVal);
+		[propget, id(151), helpstring("property MaximumThreshold")] HRESULT MaximumThreshold([out, retval] int *pVal);
+		[propput, id(152), helpstring("property TransparencyOptions")] HRESULT TransparencyOptions([in] BSTR newVal);
+		[propget, id(152), helpstring("property TransparencyOptions")] HRESULT TransparencyOptions([out, retval] BSTR *pVal);
+
+
+		/*Insert functions*/
+		/*! A wrapper for HOOPS/3dGS ::Insert_Circle */
+		[id(200), helpstring("method HATL_Insert_Circle")] HRESULT HATL_Insert_Circle(float p1_x, float p1_y, float p1_z, float p2_x, float p2_y, float p2_z, float p3_x, float p3_y, float p3_z, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Circle_By_Radius */
+		[id(201), helpstring("method HATL_Insert_Circle_By_Radius")] HRESULT HATL_Insert_Circle_By_Radius(float c_x, float c_y, float c_z, float radius, float n_x, float n_y, float n_z, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Circular_Arc */
+		[id(202), helpstring("method HATL_Insert_Circular_Arc")] HRESULT HATL_Insert_Circular_Arc(float p1_x, float p1_y, float p1_z, float p2_x, float p2_y, float p2_z, float p3_x, float p3_y, float p3_z, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Circular_Chord */
+		[id(203), helpstring("method HATL_Insert_Circular_Chord")] HRESULT HATL_Insert_Circular_Chord(float p1_x, float p1_y, float p1_z, float p2_x, float p2_y, float p2_z, float p3_x, float p3_y, float p3_z, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Circular_Wedge */
+		[id(204), helpstring("method HATL_Insert_Circular_Wedge")] HRESULT HATL_Insert_Circular_Wedge(float p1_x, float p1_y, float p1_z, float p2_x, float p2_y, float p2_z, float p3_x, float p3_y, float p3_z, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Cutting_Plane */
+		[id(205), helpstring("method HATL_Insert_Cutting_Plane")] HRESULT HATL_Insert_Cutting_Plane(float a, float b, float c, float d, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Cutting_Section */
+		[id(206), helpstring("method HATL_Insert_Cutting_Section")] HRESULT HATL_Insert_Cutting_Section(int count, VARIANT *planes_var, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Cylinder */
+		[id(207), helpstring("method HATL_Insert_Cylinder")] HRESULT HATL_Insert_Cylinder(float p1_x, float p1_y, float p1_z, float p2_x, float p2_y, float p2_z, float r, BSTR cap, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Ellipse */
+		[id(208), helpstring("method HATL_Insert_Ellipse")] HRESULT HATL_Insert_Ellipse(float c_x, float c_y, float c_z, float major_x, float major_y, float major_z, float minor_x, float minor_y, float minor_z, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Elliptical_Arc */
+		[id(209), helpstring("method HATL_Insert_Elliptical_Arc")] HRESULT HATL_Insert_Elliptical_Arc(float c_x, float c_y, float c_z, float major_x, float major_y, float major_z, float minor_x, float minor_y, float minor_z, float start, float end, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Grid */
+		[id(210), helpstring("method HATL_Insert_Grid")] HRESULT HATL_Insert_Grid(BSTR type, float o_x, float o_y, float o_z, float ref1_x, float ref1_y, float ref1_z, float ref2_x, float ref2_y, float ref2_z, int count1, int count2, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Image */
+		[id(211), helpstring("method HATL_Insert_Image")] HRESULT HATL_Insert_Image(float x, float y, float z, BSTR format, int width, int height, VARIANT *pixeldata_var, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Ink */
+		[id(212), helpstring("method HATL_Insert_Ink")] HRESULT HATL_Insert_Ink(float x, float y, float z, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Line */
+		[id(213), helpstring("method HATL_Insert_Line")] HRESULT HATL_Insert_Line(float xa, float ya, float za,float xb, float yb, float zb, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Distant_Light */
+		[id(214), helpstring("method HATL_Insert_Distant_Light")] HRESULT HATL_Insert_Distant_Light(float di, float dj, float dk, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Local_Light */
+		[id(215), helpstring("method HATL_Insert_Local_Light")] HRESULT HATL_Insert_Local_Light(float x, float y, float z, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Spot_Light */
+		[id(216), helpstring("method HATL_Insert_Spot_Light")] HRESULT HATL_Insert_Spot_Light(float p_x, float p_y, float p_z, float t_x, float t_y, float t_z, BSTR list, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Marker */
+		[id(217), helpstring("method HATL_Insert_Marker")] HRESULT HATL_Insert_Marker(float x, float y, float z, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Mesh */
+		[id(218), helpstring("method HATL_Insert_Mesh")] HRESULT HATL_Insert_Mesh(int rows, int columns, VARIANT *points, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_NURBS_Curve */
+		[id(219), helpstring("method HATL_Insert_NURBS_Curve")] HRESULT HATL_Insert_NURBS_Curve(int degree, int cpcount, VARIANT *cpoints, VARIANT *weights, VARIANT *knots, float start_u, float end_u, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_NURBS_Surface */
+		[id(220), helpstring("method HATL_Insert_NURBS_Surface")] HRESULT HATL_Insert_NURBS_Surface(int u_degree, int v_degree, int u_count, int v_count, VARIANT *points_var, VARIANT *weights_var, VARIANT *u_knots_var, VARIANT *v_knots_var, long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Polycylinder */
+		[id(221), helpstring("method HATL_Insert_PolyCylinder")] HRESULT HATL_Insert_Polycylinder(int pcount, VARIANT * points_var, int r_count, VARIANT *radii_var, BSTR capping, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Polygon */
+		[id(222), helpstring("method HATL_Insert_Polygon")] HRESULT HATL_Insert_Polygon(int count, VARIANT *points_var, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Polyline */
+		[id(223), helpstring("method HATL_Insert_Polyline")] HRESULT HATL_Insert_Polyline(int count, VARIANT *points_var, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Shell */
+		[id(224), helpstring("method HATL_Insert_Shell")] HRESULT HATL_Insert_Shell(int npoints, VARIANT *test, int flen, VARIANT *test2, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Shell_By_Tristrips */
+		[id(225), helpstring("method HATL_Insert_Shell_By_Tristrips")] HRESULT HATL_Insert_Shell_By_Tristrips(int pcount, VARIANT *points_var, int tlen, VARIANT *tlist_var, int flen, VARIANT *flist_var, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Shell_From_Region */
+		[id(226), helpstring("method HATL_Insert_Shell_From_Region")] HRESULT HATL_Insert_Shell_From_Region(long key1, int region, BSTR options, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Sphere */
+		[id(227), helpstring("method HATL_Insert_Sphere")] HRESULT HATL_Insert_Sphere( float c_x, float c_y, float c_z, float radius, float a_x, float a_y, float a_z, float o_x, float o_y, float o_z, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Text */
+		[id(228), helpstring("method HATL_Insert_Text")] HRESULT HATL_Insert_Text(float x, float y, float z, BSTR text, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Text_With_Encoding */
+		[id(229), helpstring("method HATL_Insert_Text_With_Encoding")] HRESULT HATL_Insert_Text_With_Encoding(float x, float y, float z, BSTR encoding, VARIANT *text, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Insert_Unicode_Text */
+		[id(230), helpstring("method HATL_Insert_Unicode_Text")] HRESULT HATL_Insert_Unicode_Text(float x, float y, float z, VARIANT *text, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Open_Segment */
+		[id(300), helpstring("method HATL_Open_Segment")] HRESULT HATL_Open_Segment(BSTR segment, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Close_Segment */
+		[id(301), helpstring("method HATL_Close_Segment")] HRESULT HATL_Close_Segment();
+		/*! A wrapper for HOOPS/3dGS ::Open_Geometry */
+		[id(302), helpstring("method HATL_Open_Geometry")] HRESULT HATL_Open_Geometry(long key);
+		/*! A wrapper for HOOPS/3dGS ::Close_Geometry */
+		[id(303), helpstring("method HATL_Close_Geometry")] HRESULT HATL_Close_Geometry();
+		/*! A wrapper for HOOPS/3dGS ::Open_Edge */
+		[id(304), helpstring("method HATL_Open_Edge")] HRESULT HATL_Open_Edge(int offset1, int offset2);
+		/*! A wrapper for HOOPS/3dGS ::Close_Edge */
+		[id(305), helpstring("method HATL_Close_Edge")] HRESULT HATL_Close_Edge();
+		/*! A wrapper for HOOPS/3dGS ::Open_Face */
+		[id(306), helpstring("method HATL_Open_Face")] HRESULT HATL_Open_Face(int offset);
+		/*! A wrapper for HOOPS/3dGS ::Close_Face */
+		[id(307), helpstring("method HATL_Close_Face")] HRESULT HATL_Close_Face();
+		/*! A wrapper for HOOPS/3dGS ::Include_Segment */
+		[id(308), helpstring("method HATL_Include_Segment")] HRESULT HATL_Include_Segment(BSTR segment, [out, retval]long *retkey);
+		/*! A wrapper for HOOPS/3dGS ::Delete_By_Key */
+		[id(309), helpstring("method HATL_Delete_By_Key")] HRESULT HATL_Delete_By_Key(long key);
+		/*! A wrapper for HOOPS/3dGS ::Flush_Contents */
+		[id(310), helpstring("method HATL_Flush_Contents")] HRESULT HATL_Flush_Contents(BSTR segment, BSTR filter);
+		/*! A wrapper for HOOPS/3dGS ::Set_Camera */
+		[id(400), helpstring("method HATL_Set_Camera")] HRESULT HATL_Set_Camera(float p_x, float p_y, float p_z, float t_x, float t_y, float t_z, float u_x, float u_y, float u_z, float width, float height, BSTR projection);
+		/*! A wrapper for HOOPS/3dGS ::Set_Camera_By_Volume */
+		[id(401), helpstring("method HATL_Set_Camera_By_Volume")] HRESULT HATL_Set_Camera_By_Volume(BSTR projection, float xmin, float xmax, float ymin, float ymax);
+		/*! A wrapper for HOOPS/3dGS ::Set_Camera_Field */
+		[id(402), helpstring("method HATL_Set_Camera_Field")] HRESULT HATL_Set_Camera_Field(float width, float height);
+		/*! A wrapper for HOOPS/3dGS ::Set_Camera_Near_Limit */
+		[id(403), helpstring("method HATL_Set_Camera_Near_Limit")] HRESULT HATL_Set_Camera_Near_Limit(float wlimit);
+		/*! A wrapper for HOOPS/3dGS ::Set_Camera_Position */
+		[id(404), helpstring("method HATL_Set_Camera_Position")] HRESULT HATL_Set_Camera_Position(float p_x, float p_y, float p_z);
+		/*! A wrapper for HOOPS/3dGS ::Set_Camera_Projection */
+		[id(405), helpstring("method HATL_Set_Camera_Projection")] HRESULT HATL_Set_Camera_Projection(BSTR projection);
+		/*! A wrapper for HOOPS/3dGS ::Set_Camera_Target */
+		[id(406), helpstring("method HATL_Set_Camera_Target")] HRESULT HATL_Set_Camera_Target(float t_x, float t_y, float t_z);
+		/*! A wrapper for HOOPS/3dGS ::Set_Camera_Up_Vector */
+		[id(407), helpstring("method HATL_Set_Camera_Up_Vector")] HRESULT HATL_Set_Camera_Up_Vector(float u_x, float u_y, float u_z);
+		/*! A wrapper for HOOPS/3dGS ::Set_Circular_Center */
+		[id(408), helpstring("method HATL_Set_Circular_Center")] HRESULT HATL_Set_Circular_Center(float x, float y, float z);
+		/*! A wrapper for HOOPS/3dGS ::Set_Circular_Center_By_Key */
+		[id(409), helpstring("method HATL_Set_Circular_Center_By_Key")] HRESULT HATL_Set_Circular_Center_By_Key(long key, float x, float y, float z);
+		/*! A wrapper for HOOPS/3dGS ::Set_Color */
+		[id(410), helpstring("method HATL_Set_Color")] HRESULT HATL_Set_Color(BSTR col);
+		/*! A wrapper for HOOPS/3dGS ::Set_Color_By_FIndex */
+		[id(411), helpstring("method HATL_Set_Color_By_FIndex")] HRESULT HATL_Set_Color_By_FIndex(BSTR types, float findex);
+		/*! A wrapper for HOOPS/3dGS ::Set_Color_By_Index */
+		[id(412), helpstring("method HATL_Set_Color_By_Index")] HRESULT HATL_Set_Color_By_Index(BSTR types, int index);
+		/*! A wrapper for HOOPS/3dGS ::Set_Color_By_Value */
+		[id(413), helpstring("method HATL_Set_Color_By_Value")] HRESULT HATL_Set_Color_By_Value(BSTR types, BSTR colspace, float a, float b, float c);
+		/*! A wrapper for HOOPS/3dGS ::Set_Color_Map */
+		[id(414), helpstring("method HATL_Set_Color_Map")] HRESULT HATL_Set_Color_Map(BSTR col);
+		/*! A wrapper for HOOPS/3dGS ::Set_Color_Map_By_Value */
+		[id(415), helpstring("method HATL_Set_Color_Map_By_Value")] HRESULT HATL_Set_Color_Map_By_Value(BSTR col, int count, VARIANT *values_var);
+		/*! A wrapper for HOOPS/3dGS ::Set_Conditions */
+		[id(416), helpstring("method HATL_Set_Conditions")] HRESULT HATL_Set_Conditions(BSTR conditions);
+		/*! A wrapper for HOOPS/3dGS ::Set_Driver_Options */
+		[id(417), helpstring("method HATL_Set_Driver_Options")] HRESULT HATL_Set_Driver_Options(BSTR driver_options);
+		/*! A wrapper for HOOPS/3dGS ::Insert_CHATL_Set_Edge_Patternircle */
+		[id(418), helpstring("method HATL_Set_Edge_Pattern")] HRESULT HATL_Set_Edge_Pattern(BSTR pattern);
+		/*! A wrapper for HOOPS/3dGS ::Set_Edge_Weight */
+		[id(419), helpstring("method HATL_Set_Edge_Weight")] HRESULT HATL_Set_Edge_Weight(float weight);
+		/*! A wrapper for HOOPS/3dGS ::Set_Face_Pattern */
+		[id(420), helpstring("method HATL_Set_Face_Pattern")] HRESULT HATL_Set_Face_Pattern(BSTR pattern);
+		/*! A wrapper for HOOPS/3dGS ::Set_Faces */
+		[id(421), helpstring("method HATL_Set_Faces")] HRESULT HATL_Set_Faces(int first_face, int face_count);
+		/*! A wrapper for HOOPS/3dGS ::Set_Handedness */
+		[id(422), helpstring("method HATL_Set_Handedness")] HRESULT HATL_Set_Handedness(BSTR handedness);
+		/*! A wrapper for HOOPS/3dGS ::Set_Heuristics */
+		[id(423), helpstring("method HATL_Set_Heuristics")] HRESULT HATL_Set_Heuristics(BSTR heuristics);
+		/*! A wrapper for HOOPS/3dGS ::Set_Line_Pattern */
+		[id(424), helpstring("method HATL_Set_Line_Pattern")] HRESULT HATL_Set_Line_Pattern(BSTR pattern);
+		/*! A wrapper for HOOPS/3dGS ::Set_Line_Weight */
+		[id(425), helpstring("method HATL_Set_Line_Weight")] HRESULT HATL_Set_Line_Weight(float weight);
+		/*! A wrapper for HOOPS/3dGS ::Set_Marker_Size */
+		[id(426), helpstring("method HATL_Set_Marker_Size")] HRESULT HATL_Set_Marker_Size(float weight);
+		/*! A wrapper for HOOPS/3dGS ::Set_Marker_Symbol */
+		[id(427), helpstring("method HATL_Set_Marker_Symbol")] HRESULT HATL_Set_Marker_Symbol(BSTR symbol);
+		/*! A wrapper for HOOPS/3dGS ::Set_Modelling_Matrix */
+		[id(428), helpstring("method HATL_Set_Modelling_Matrix")] HRESULT HATL_Set_Modelling_Matrix(VARIANT *matrix_var);
+		/*! A wrapper for HOOPS/3dGS ::Set_Normal */
+		[id(429), helpstring("method HATL_Set_Normal")] HRESULT HATL_Set_Normal(float x, float y, float z);
+		/*! A wrapper for HOOPS/3dGS ::Set_Parameter */
+		[id(430), helpstring("method HATL_Set_Parameter")] HRESULT HATL_Set_Parameter(int number, VARIANT *parameters_var);
+		/*! A wrapper for HOOPS/3dGS ::Set_Polygonal_Clip_Region */
+		[id(431), helpstring("method HATL_Set_Polygonal_Clip_Region")] HRESULT HATL_Set_Polygonal_Clip_Region(int count, VARIANT *points_var, BSTR options);
+		/*! A wrapper for HOOPS/3dGS ::Set_Priority */
+		[id(432), helpstring("method HATL_Set_Priority")] HRESULT HATL_Set_Priority(long key, long priority);
+		/*! A wrapper for HOOPS/3dGS ::Set_Region */
+		[id(433), helpstring("method HATL_Set_Region")] HRESULT HATL_Set_Region(int region);
+		/*! A wrapper for HOOPS/3dGS ::Set_Rendering_Options */
+		[id(434), helpstring("method HATL_Set_Rendering_Options")] HRESULT HATL_Set_Rendering_Options(BSTR rendering_options);
+		/*! A wrapper for HOOPS/3dGS ::Set_Selectability */
+		[id(435), helpstring("method HATL_Set_Selectability")] HRESULT HATL_Set_Selectability(BSTR list);
+		/*! A wrapper for HOOPS/3dGS ::Set_Streaming_Mode */
+		[id(436), helpstring("method HATL_Set_Streaming_Mode")] HRESULT HATL_Set_Streaming_Mode (BSTR flag);
+		/*! A wrapper for HOOPS/3dGS ::Set_Text_Alignment */
+		[id(437), helpstring("method HATL_Set_Text_Alignment")] HRESULT HATL_Set_Text_Alignment(BSTR locater);
+		/*! A wrapper for HOOPS/3dGS ::Set_Text_Font */
+		[id(438), helpstring("method HATL_Set_Text_Font")] HRESULT HATL_Set_Text_Font(BSTR text_font);
+		/*! A wrapper for HOOPS/3dGS ::Set_Text_Path */
+		[id(439), helpstring("method HATL_Set_Text_Path")] HRESULT HATL_Set_Text_Path(float x, float y, float z);
+		/*! A wrapper for HOOPS/3dGS ::Set_Text_Region */
+		[id(440), helpstring("method HATL_Set_Text_Region")] HRESULT HATL_Set_Text_Region(int pCount, VARIANT *points_var, BSTR options);
+		/*! A wrapper for HOOPS/3dGS ::Set_Text_Spacing */
+		[id(441), helpstring("method HATL_Set_Text_Spacing")] HRESULT HATL_Set_Text_Spacing(float spacing);
+		/*! A wrapper for HOOPS/3dGS ::Set_Texture_Matrix */
+		[id(442), helpstring("method HATL_Set_Texture_Matrix")] HRESULT HATL_Set_Texture_Matrix(VARIANT *matrix_var);
+		/*! A wrapper for HOOPS/3dGS ::Set_Trim_Operation */
+		[id(443), helpstring("method HATL_Set_Trim_Operation")] HRESULT HATL_Set_Trim_Operation(int index, BSTR operation);
+		/*! A wrapper for HOOPS/3dGS ::Set_Unicode_Options */
+		[id(444), helpstring("method HATL_Set_Unicode_Options")] HRESULT HATL_Set_Unicode_Options(VARIANT *options_var);
+		/*! A wrapper for HOOPS/3dGS ::Set_User_Index */
+		[id(445), helpstring("method HATL_Set_User_Index")] HRESULT HATL_Set_User_Index(int index, VARIANT *data_var);
+		/*! A wrapper for HOOPS/3dGS ::Set_User_Options */
+		[id(446), helpstring("method HATL_Set_User_Options")] HRESULT HATL_Set_User_Options(BSTR list);
+		/*! A wrapper for HOOPS/3dGS ::Set_Variable_Edge_Weight */
+		[id(447), helpstring("method HATL_Set_Variable_Edge_Weight")] HRESULT HATL_Set_Variable_Edge_Weight(BSTR weight);
+		/*! A wrapper for HOOPS/3dGS ::Set_Variable_Line_Weight */
+		[id(448), helpstring("method HATL_Set_Variable_Line_Weight")] HRESULT HATL_Set_Variable_Line_Weight(BSTR weight);
+		/*! A wrapper for HOOPS/3dGS ::Set_Variable_Marker_Size */
+		[id(449), helpstring("method HATL_Set_Variable_Marker_Size")] HRESULT HATL_Set_Variable_Marker_Size(BSTR weight);
+		/*! A wrapper for HOOPS/3dGS ::Set_Visibility */
+		[id(450), helpstring("method HATL_Set_Visibility")] HRESULT HATL_Set_Visibility(BSTR vis);
+		/*! A wrapper for HOOPS/3dGS ::Set_Window */
+		[id(451), helpstring("method HATL_Set_Window")] HRESULT HATL_Set_Window(float left, float right, float bottom, float top);
+		/*! A wrapper for HOOPS/3dGS ::Set_Window_Frame */
+		[id(452), helpstring("method HATL_Set_Window_Frame")] HRESULT HATL_Set_Window_Frame(BSTR flag);
+		/*! A wrapper for HOOPS/3dGS ::Set_Window_Pattern */
+		[id(453), helpstring("method HATL_Set_Window_Pattern")] HRESULT HATL_Set_Window_Pattern(BSTR pattern);
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Camera */
+		[id(500), helpstring("method HATL_UnSet_Camera")] HRESULT HATL_UnSet_Camera();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Color */
+		[id(501), helpstring("method HATL_UnSet_Color")] HRESULT HATL_UnSet_Color();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Color_Map */
+		[id(502), helpstring("method HATL_UnSet_Color_Map")] HRESULT HATL_UnSet_Color_Map();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Driver_Options */
+		[id(503), helpstring("method HATL_UnSet_Driver_Options")] HRESULT HATL_UnSet_Driver_Options();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Edge_Pattern */
+		[id(504), helpstring("method HATL_UnSet_Edge_Pattern")] HRESULT HATL_UnSet_Edge_Pattern();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Edge_Weight */
+		[id(505), helpstring("method HATL_UnSet_Edge_Weight")] HRESULT HATL_UnSet_Edge_Weight();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Face_Pattern */
+		[id(506), helpstring("method HATL_UnSet_Face_Pattern")] HRESULT HATL_UnSet_Face_Pattern();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Handedness */
+		[id(507), helpstring("method HATL_UnSet_Handedness")] HRESULT HATL_UnSet_Handedness();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Heuristics */
+		[id(508), helpstring("method HATL_UnSet_Heuristics")] HRESULT HATL_UnSet_Heuristics();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Line_Pattern */
+		[id(509), helpstring("method HATL_UnSet_Line_Pattern")] HRESULT HATL_UnSet_Line_Pattern();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Line_Weight */
+		[id(510), helpstring("method HATL_UnSet_Line_Weight")] HRESULT HATL_UnSet_Line_Weight();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Marker_Size */
+		[id(511), helpstring("method HATL_UnSet_Marker_Size")] HRESULT HATL_UnSet_Marker_Size();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Marker_Symbol */
+		[id(512), helpstring("method HATL_UnSet_Marker_Symbol")] HRESULT HATL_UnSet_Marker_Symbol();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Modelling_Matrix */
+		[id(513), helpstring("method HATL_UnSet_Modelling_Matrix")] HRESULT HATL_UnSet_Modelling_Matrix();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Normal */
+		[id(514), helpstring("method HATL_UnSet_Normal")] HRESULT HATL_UnSet_Normal();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_One_Color */
+		[id(515), helpstring("method HATL_UnSet_One_Color")] HRESULT HATL_UnSet_One_Color(BSTR which);
+		/*! A wrapper for HOOPS/3dGS ::UnSet_One_Driver_Option */
+		[id(516), helpstring("method HATL_UnSet_One_Driver_Option")] HRESULT HATL_UnSet_One_Driver_Option(BSTR which);
+		/*! A wrapper for HOOPS/3dGS ::UnSet_One_Heuristic */
+		[id(517), helpstring("method HATL_UnSet_One_Heuristic")] HRESULT HATL_UnSet_One_Heuristic(BSTR which);
+		/*! A wrapper for HOOPS/3dGS ::UnSet_One_Rendering_Option */
+		[id(518), helpstring("method HATL_UnSet_One_Rendering_Option")] HRESULT HATL_UnSet_One_Rendering_Option(BSTR which);
+		/*! A wrapper for HOOPS/3dGS ::UnSet_One_Selectability */
+		[id(519), helpstring("method HATL_UnSet_One_Selectability")] HRESULT HATL_UnSet_One_Selectability(BSTR which);
+		/*! A wrapper for HOOPS/3dGS ::UnSet_One_Text_Font */
+		[id(520), helpstring("method HATL_UnSet_One_Text_Font")] HRESULT HATL_UnSet_One_Text_Font(BSTR which);
+		/*! A wrapper for HOOPS/3dGS ::UnSet_One_User_Index */
+		[id(521), helpstring("method HATL_UnSet_One_User_Index")] HRESULT HATL_UnSet_One_User_Index(long which);
+		/*! A wrapper for HOOPS/3dGS ::UnSet_One_User_Option */
+		[id(522), helpstring("method HATL_UnSet_One_User_Option")] HRESULT HATL_UnSet_One_User_Option(BSTR which);
+		/*! A wrapper for HOOPS/3dGS ::UnSet_One_Visibility */
+		[id(523), helpstring("method HATL_UnSet_One_Visibility")] HRESULT HATL_UnSet_One_Visibility(BSTR which);
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Parameter */
+		[id(524), helpstring("method HATL_UnSet_Parameter")] HRESULT HATL_UnSet_Parameter();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Rendering_Options */
+		[id(525), helpstring("method HATL_UnSet_Rendering_Options")] HRESULT HATL_UnSet_Rendering_Options();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Selectability */
+		[id(526), helpstring("method HATL_UnSet_Selectability")] HRESULT HATL_UnSet_Selectability();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Streaming_Mode */
+		[id(527), helpstring("method HATL_UnSet_Streaming_Mode")] HRESULT HATL_UnSet_Streaming_Mode();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Text_Alignment */
+		[id(528), helpstring("method HATL_UnSet_Text_Alignment")] HRESULT HATL_UnSet_Text_Alignment();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Text_Font */
+		[id(529), helpstring("method HATL_UnSet_Text_Font")] HRESULT HATL_UnSet_Text_Font();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Text_Path */
+		[id(530), helpstring("method HATL_UnSet_Text_Path")] HRESULT HATL_UnSet_Text_Path();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Text_Spacing */
+		[id(531), helpstring("method HATL_UnSet_Text_Spacing")] HRESULT HATL_UnSet_Text_Spacing();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Texture_Matrix */
+		[id(532), helpstring("method HATL_UnSet_Texture_Matrix")] HRESULT HATL_UnSet_Texture_Matrix();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_User_Options */
+		[id(533), helpstring("method HATL_UnSet_User_Options")] HRESULT HATL_UnSet_User_Options();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Visibility */
+		[id(534), helpstring("method HATL_UnSet_Visibility")] HRESULT HATL_UnSet_Visibility();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Window */
+		[id(535), helpstring("method HATL_UnSet_Window")] HRESULT HATL_UnSet_Window();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Window_Frame */
+		[id(536), helpstring("method HATL_UnSet_Window_Frame")] HRESULT HATL_UnSet_Window_Frame();
+		/*! A wrapper for HOOPS/3dGS ::UnSet_Window_Pattern */
+		[id(537), helpstring("method HATL_UnSet_Window_Pattern")] HRESULT HATL_UnSet_Window_Pattern();
+			 
+
+		/*Define functions*/
+		/*! A wrapper for HOOPS/3dGS ::Define_Alias */
+		[id(600), helpstring("method HATL_Define_Alias")] HRESULT HATL_Define_Alias(BSTR name, BSTR expansion);
+		/*! A wrapper for HOOPS/3dGS ::Define_Color_Name */
+		[id(601), helpstring("method HATL_Define_Color_Name")] HRESULT HATL_Define_Color_Name(BSTR name, BSTR er_name, BSTR ish_name, BSTR definition);
+		/*! A wrapper for HOOPS/3dGS ::Define_Font */
+		[id(602), helpstring("method HATL_Define_Font")] HRESULT HATL_Define_Font(BSTR name, BSTR options, int data_length, VARIANT *data_var);
+		/*! A wrapper for HOOPS/3dGS ::Define_Glyph */
+		[id(603), helpstring("method HATL_Define_Glyph")] HRESULT HATL_Define_Glyph(BSTR name, int data_size, BSTR data);
+		/*! A wrapper for HOOPS/3dGS ::Define_Line_Style */
+		[id(604), helpstring("method HATL_Define_Line_Style")] HRESULT HATL_Define_Line_Style(BSTR name, BSTR definition);
+		/*! A wrapper for HOOPS/3dGS ::Define_Local_Texture */
+		[id(605), helpstring("method HATL_Define_Local_Texture")] HRESULT HATL_Define_Local_Texture(BSTR name, BSTR definition);
+		/*! A wrapper for HOOPS/3dGS ::Define_System_Options */
+		[id(606), helpstring("method HATL_Define_System_Options")] HRESULT HATL_Define_System_Options(BSTR list);
+		/*! A wrapper for HOOPS/3dGS ::Define_Texture */
+		[id(607), helpstring("method HATL_Define_Texture")] HRESULT HATL_Define_Texture(BSTR name, BSTR definition);
+
+	
+	};
+ 
+[
+	uuid(CLSID_HOOPS3DSTREAMCTRL_TYPELIB),
+	version(1.0),
+	helpstring("Hoops3dStream 3.0 Type Library")
+]
+library Hoops3dStreamLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(CLSID_HOOPS3DSTREAMCTRL_EVENTS),
+		helpstring("__IHoops3dStreamCtrlEvents Interface")
+	]
+	dispinterface _IHoops3dStreamCtrlEvents
+	{
+		properties:
+		methods:
+		[id(1), helpstring("method OnBeginLoad")] HRESULT OnBeginLoad();
+		[id(2), helpstring("method OnEndLoad")] HRESULT OnEndLoad();
+		[id(3), helpstring("method OnSelect")] HRESULT OnSelect(BSTR sel_key);
+		[id(4), helpstring("method OnUpdateWidget")] HRESULT OnUpdateWidget(BSTR name, BSTR state, BSTR data);
+		[id(5), helpstring("method OnModelStructureParsed")] HRESULT OnModelStructureParsed();
+	};
+
+	[
+		uuid(CLSID_HOOPS3DSTREAMCTRL_CLASS),
+		helpstring("HOOPS 3D Stream Control Class")
+	]
+	coclass Hoops3dStreamCtrl
+	{
+		[default] interface IHoops3dStreamCtrl;
+		[default, source] dispinterface _IHoops3dStreamCtrlEvents;
+	};
+
+	[
+		uuid(CLSID_HOOPS3DSTREAMPROPERTY_EVENTS),
+		helpstring("_IHoops3dStreamPropertyEvents Interface")
+	]
+	dispinterface _IHoops3dStreamPropertyEvents
+	{
+		properties:
+		methods:
+	};
+
+	[
+		uuid(CLSID_HOOPS3DSTREAMPROPERTY_CLASS),
+		helpstring("Hoops3dStreamProperty Class")
+	]
+	coclass Hoops3dStreamProperty
+	{
+		interface IUnknown;
+		[default, source] dispinterface _IHoops3dStreamPropertyEvents;
+	};
+};

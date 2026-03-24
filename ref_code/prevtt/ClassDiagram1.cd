@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MyViewProducer" Collapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>prevtt.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExchangeProducer" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>prevtt.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExchangeModel" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAQAAAAAIAAgAAAAAgAAABAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>exchange.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExchangeView" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAECAAAGCAAAAACAAAAAAAAAAgABIIAAA=</HashCode>
+      <FileName>exchangeview.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProxyDataModel" Collapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAggAgAAAgAlAAAAAAIAAAAAA=</HashCode>
+      <FileName>proxydatamodel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResultSelectorWidget" Collapsed="true">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAQAgAEQBECACAACGAAEABAAAEAAAAAAIRAAAAAA=</HashCode>
+      <FileName>resultselectorwidget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VInteractiveTableWidget" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAABKFARQABAACAQgAAACAgABAAAACACAAAA=</HashCode>
+      <FileName>vinteractivetablewidget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VInteractiveTableView" Collapsed="true">
+    <Position X="2.75" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAEAAgAGCAAAAACAAAAAAAQAAgABIIIAA=</HashCode>
+      <FileName>VInteractiveTableView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InteractiveTableView" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAQAAAACAAAAEAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>interactivetableview.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InteractiveTableModel" Collapsed="true">
+    <Position X="9.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CARAAAAAQAAAAAYQAAAEAAAgAAABgAAAAAAQQQCIAAE=</HashCode>
+      <FileName>interactivetablemodel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="prevtt" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAEAAA=</HashCode>
+      <FileName>prevtt.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui_ResultSelectorWidget" Collapsed="true">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAEAAAAAQAIAAQAAAAAEAABAA=</HashCode>
+      <FileName>GeneratedFiles\ui_resultselectorwidget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui_VInteractiveTableWidget" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAABAAQAIAAAAAAAAEAAAAA=</HashCode>
+      <FileName>GeneratedFiles\ui_vinteractivetablewidget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui::ResultSelectorWidget" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratedFiles\ui_resultselectorwidget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui::VInteractiveTableWidget" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratedFiles\ui_vinteractivetablewidget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSIDES::IResultItem" Collapsed="true">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEAQigiEkAAALAAICGwAAACABAgAJAAAQ4AEBABAAAA=</HashCode>
+      <FileName>d:\tsinghuadir\insviewerplugins\src\precore\iresultitem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Base::View" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAQEAAFAAAAEAAAAAACAABAAQAAAAgAAIIAAA=</HashCode>
+      <FileName>d:\tsinghuadir\insviewerplugins\src\base\view.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="TableItemTitle" Collapsed="true">
+    <Position X="6" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAABAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>resultselectorwidget.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Microsoft YaHei" Size="9" />
+</ClassDiagram>

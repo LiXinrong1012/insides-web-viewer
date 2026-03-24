@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RibbonHoopsVisibilityWidget</class>
+ <widget class="QWidget" name="RibbonHoopsVisibilityWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>128</width>
+    <height>60</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RibbonHoopsVisibilityWidget</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QCheckBox" name="cbFace">
+       <property name="text">
+        <string>Face</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../preui/preui.qrc">
+         <normaloff>:/resources/newmenu/d024a.png</normaloff>:/resources/newmenu/d024a.png</iconset>
+       </property>
+       <property name="tristate">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QCheckBox" name="cbLine">
+       <property name="text">
+        <string>Line</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../preui/preui.qrc">
+         <normaloff>:/resources/newmenu/d025a.png</normaloff>:/resources/newmenu/d025a.png</iconset>
+       </property>
+       <property name="tristate">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QCheckBox" name="cbText">
+       <property name="text">
+        <string>Text</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../preui/preui.qrc">
+         <normaloff>:/resources/newmenu/d027a.png</normaloff>:/resources/newmenu/d027a.png</iconset>
+       </property>
+       <property name="tristate">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QCheckBox" name="cbAll">
+       <property name="text">
+        <string>All</string>
+       </property>
+       <property name="tristate">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QCheckBox" name="cbEdge">
+       <property name="text">
+        <string>Edge</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../preui/preui.qrc">
+         <normaloff>:/resources/newmenu/d026a.png</normaloff>:/resources/newmenu/d026a.png</iconset>
+       </property>
+       <property name="tristate">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QCheckBox" name="cbVertex">
+       <property name="text">
+        <string>Vertex</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../preui/preui.qrc">
+         <normaloff>:/resources/newmenu/d028a.png</normaloff>:/resources/newmenu/d028a.png</iconset>
+       </property>
+       <property name="tristate">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../preui/preui.qrc"/>
+ </resources>
+ <connections/>
+</ui>

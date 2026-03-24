@@ -1,0 +1,12 @@
+#ifndef IMPORTDEMO_GLOBAL_H
+#define IMPORTDEMO_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#ifdef IMPORTDEMO_LIB
+# define IMPORTDEMO_EXPORT Q_DECL_EXPORT
+#else
+# define IMPORTDEMO_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // IMPORTDEMO_GLOBAL_H
