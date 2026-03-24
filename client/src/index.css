@@ -1,0 +1,101 @@
+/* === Theme Variables === */
+:root,
+[data-theme="dark"] {
+  --bg-primary: #1e1e1e;
+  --bg-secondary: #252526;
+  --bg-tertiary: #2d2d30;
+  --bg-hover: #094771;
+  --text-primary: #cccccc;
+  --text-secondary: #969696;
+  --accent: #0078d4;
+  --border: #3e3e42;
+  --error: #f44747;
+  --success: #4ec9b0;
+  --scene-bg: #1a1a2e;
+}
+
+[data-theme="light"] {
+  --bg-primary: #f3f3f3;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e8e8e8;
+  --bg-hover: #cce5ff;
+  --text-primary: #1e1e1e;
+  --text-secondary: #555555;
+  --accent: #005fb8;
+  --border: #d4d4d4;
+  --error: #d32f2f;
+  --success: #2e7d32;
+  --scene-bg: #d0d8e8;
+}
+
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+}
+
+/* === React-Mosaic Overrides === */
+.mosaic {
+  background: var(--bg-primary) !important;
+}
+
+.mosaic-root {
+  background: var(--bg-primary) !important;
+}
+
+.mosaic-tile {
+  background: var(--bg-secondary) !important;
+}
+
+.mosaic-window .mosaic-window-toolbar {
+  background: var(--bg-tertiary) !important;
+  border-bottom: 1px solid var(--border);
+  height: 28px;
+}
+
+.mosaic-window .mosaic-window-title {
+  color: var(--text-primary) !important;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mosaic-window .mosaic-window-body {
+  background: var(--bg-secondary) !important;
+}
+
+.mosaic-window .mosaic-window-body-overlay {
+  background: transparent !important;
+}
+
+.mosaic-split .mosaic-split-line {
+  background: var(--border) !important;
+}
+
+.mosaic-zero-state {
+  background: var(--bg-primary) !important;
+  color: var(--text-secondary) !important;
+}
+
+/* Ensure no white leaks through */
+.mosaic-window,
+.mosaic-preview {
+  background: var(--bg-secondary) !important;
+}
+
+.mosaic-blueprint-theme .mosaic-window .mosaic-window-toolbar.draggable:hover {
+  background: var(--bg-hover) !important;
+}
