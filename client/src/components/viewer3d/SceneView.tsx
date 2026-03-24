@@ -2,6 +2,7 @@ import { useEffect, useRef, useCallback, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { useModelStore } from "../../store";
+import ContourLegend from "./ContourLegend";
 
 interface SceneItem {
   id: number;
@@ -29,6 +30,8 @@ export default function SceneView() {
   } | null>(null);
   const viewBoundsRef = useRef<{ center: THREE.Vector3; dist: number } | null>(null);
   const [info, setInfo] = useState("Ready");
+  const [contour, setContour] = useState<{ entries: any[]; title: string } | null>(null);
+  const [femPartIds, setFemPartIds] = useState<number[]>([]);
   const tree = useModelStore((s) => s.tree);
 
   // Initialize scene
@@ -181,6 +184,9 @@ export default function SceneView() {
         scene.add(mesh);
       }
 
+      const femIds = items.filter(i => i.category === "FEM_PART" && i.mesh).map(i => i.id);
+      setFemPartIds(femIds);
+
       // Auto-fit camera to scene bounds
       const box = new THREE.Box3();
       scene.children.forEach((c) => {
@@ -209,6 +215,45 @@ export default function SceneView() {
     }
   }, []);
 
+  const applyContour = useCallback(async (itemId: number, mode: number = 7) => {
+    const refs = sceneRef.current;
+    if (!refs) return;
+    try {
+      const res = await fetch(`/api/geometry/contour/${itemId}?mode=${mode}&component=magnitude`);
+      if (!res.ok) return;
+      const data = await res.json();
+
+      const mesh = refs.scene.children.find(
+        (c) => (c as THREE.Mesh).userData?.itemId === itemId
+      ) as THREE.Mesh | undefined;
+
+      if (mesh && data.colors) {
+        const colors = new Float32Array(data.colors);
+        mesh.geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+        const mat = mesh.material as THREE.MeshPhongMaterial;
+        mat.vertexColors = true;
+        mat.color.set(0xffffff);
+        mat.needsUpdate = true;
+      }
+      setContour({ entries: data.legend, title: `Mode ${mode} Disp.` });
+    } catch { /* silently fail */ }
+  }, []);
+
+  const clearContour = useCallback(() => {
+    const refs = sceneRef.current;
+    if (!refs) return;
+    refs.scene.children.forEach((c) => {
+      const m = c as THREE.Mesh;
+      if (m.isMesh && m.geometry?.getAttribute("color")) {
+        m.geometry.deleteAttribute("color");
+        const mat = m.material as THREE.MeshPhongMaterial;
+        mat.vertexColors = false;
+        mat.needsUpdate = true;
+      }
+    });
+    setContour(null);
+  }, []);
+
   useEffect(() => {
     if (tree) loadScene();
   }, [tree, loadScene]);
@@ -220,6 +265,18 @@ export default function SceneView() {
         {info}
       </div>
       <div style={{ position: "absolute", top: 4, right: 4, display: "flex", gap: 4 }}>
+        {femPartIds.length > 0 && (
+          <>
+            <button style={btnStyle} onClick={() => applyContour(femPartIds[0])}>
+              Contour
+            </button>
+            {contour && (
+              <button style={btnStyle} onClick={clearContour}>
+                Clear
+              </button>
+            )}
+          </>
+        )}
         <button style={btnStyle} onClick={loadScene}>Refresh</button>
         <button style={btnStyle} onClick={() => {
           if (sceneRef.current) {
@@ -239,6 +296,7 @@ export default function SceneView() {
           }
         }}>Reset View</button>
       </div>
+      {contour && <ContourLegend entries={contour.entries} title={contour.title} />}
     </div>
   );
 }
