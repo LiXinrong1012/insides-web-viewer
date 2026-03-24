@@ -12,6 +12,11 @@ interface SceneItem {
   radius?: number;
   height?: number;
   color?: number[];
+  mesh?: {
+    positions: number[];
+    normals: number[];
+    indices: number[];
+  };
 }
 
 export default function SceneView() {
@@ -22,6 +27,7 @@ export default function SceneView() {
     renderer: THREE.WebGLRenderer;
     controls: OrbitControls;
   } | null>(null);
+  const viewBoundsRef = useRef<{ center: THREE.Vector3; dist: number } | null>(null);
   const [info, setInfo] = useState("Ready");
   const tree = useModelStore((s) => s.tree);
 
@@ -127,29 +133,46 @@ export default function SceneView() {
         const r = item.radius ?? 0.05;
         const h = item.height ?? 0.5;
 
-        switch (item.geometry) {
-          case "sphere":
-            geometry = new THREE.SphereGeometry(r, 16, 12);
-            break;
-          case "cylinder":
-            geometry = new THREE.CylinderGeometry(r, r, h, 20);
-            break;
-          case "marker":
-            geometry = new THREE.SphereGeometry(0.02, 8, 6);
-            break;
-          default:
-            geometry = new THREE.BoxGeometry(r * 2, r * 2, r * 2);
+        if (item.mesh && item.mesh.positions.length > 0) {
+          // Buffer geometry from mesh data (STL or FEM)
+          geometry = new THREE.BufferGeometry();
+          const pos = new Float32Array(item.mesh.positions);
+          const norm = new Float32Array(item.mesh.normals);
+          const idx = new Uint32Array(item.mesh.indices);
+          geometry.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+          geometry.setAttribute("normal", new THREE.BufferAttribute(norm, 3));
+          geometry.setIndex(new THREE.BufferAttribute(idx, 1));
+        } else {
+          switch (item.geometry) {
+            case "sphere":
+              geometry = new THREE.SphereGeometry(r, 16, 12);
+              break;
+            case "cylinder":
+              geometry = new THREE.CylinderGeometry(r, r, h, 20);
+              break;
+            case "marker":
+              geometry = new THREE.SphereGeometry(0.02, 8, 6);
+              break;
+            default:
+              geometry = new THREE.BoxGeometry(r * 2, r * 2, r * 2);
+          }
         }
 
         const rgb = item.color || [128, 128, 128];
         const color = new THREE.Color(rgb[0] / 255, rgb[1] / 255, rgb[2] / 255);
 
-        const material = new THREE.MeshPhongMaterial({
-          color,
-          transparent: item.category === "MARKER",
-          opacity: item.category === "MARKER" ? 0.5 : 1.0,
-          shininess: 60,
-        });
+        const material = item.mesh
+          ? new THREE.MeshPhongMaterial({
+              color,
+              side: THREE.DoubleSide,
+              shininess: 40,
+            })
+          : new THREE.MeshPhongMaterial({
+              color,
+              transparent: item.category === "MARKER",
+              opacity: item.category === "MARKER" ? 0.5 : 1.0,
+              shininess: 60,
+            });
 
         const mesh = new THREE.Mesh(geometry, material);
         const p = item.position || [0, 0, 0];
@@ -157,6 +180,29 @@ export default function SceneView() {
         mesh.userData = { itemId: item.id, keyname: item.keyname };
         scene.add(mesh);
       }
+
+      // Auto-fit camera to scene bounds
+      const box = new THREE.Box3();
+      scene.children.forEach((c) => {
+        if ((c as THREE.Mesh).isMesh) box.expandByObject(c);
+      });
+      if (!box.isEmpty()) {
+        const center = box.getCenter(new THREE.Vector3());
+        const size = box.getSize(new THREE.Vector3());
+        const maxDim = Math.max(size.x, size.y, size.z);
+        const dist = maxDim * 1.5;
+        refs.camera.position.set(
+          center.x + dist * 0.6,
+          center.y + dist * 0.5,
+          center.z + dist * 0.6
+        );
+        refs.controls.target.copy(center);
+        refs.camera.near = Math.max(maxDim * 0.001, 0.001);
+        refs.camera.far = Math.max(maxDim * 100, 100);
+        refs.camera.updateProjectionMatrix();
+        viewBoundsRef.current = { center: center.clone(), dist };
+      }
+
       setInfo(`${items.length} objects`);
     } catch {
       setInfo("No model loaded");
@@ -177,8 +223,19 @@ export default function SceneView() {
         <button style={btnStyle} onClick={loadScene}>Refresh</button>
         <button style={btnStyle} onClick={() => {
           if (sceneRef.current) {
-            sceneRef.current.camera.position.set(2, 1.5, 2);
-            sceneRef.current.controls.target.set(0, 0, 0);
+            const bounds = viewBoundsRef.current;
+            if (bounds) {
+              const { center, dist } = bounds;
+              sceneRef.current.camera.position.set(
+                center.x + dist * 0.6,
+                center.y + dist * 0.5,
+                center.z + dist * 0.6
+              );
+              sceneRef.current.controls.target.copy(center);
+            } else {
+              sceneRef.current.camera.position.set(2, 1.5, 2);
+              sceneRef.current.controls.target.set(0, 0, 0);
+            }
           }
         }}>Reset View</button>
       </div>
