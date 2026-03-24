@@ -4,10 +4,13 @@ from typing import Any, Dict, List
 
 from fastapi import APIRouter, HTTPException
 
+from pathlib import Path
+
 from ..visualization.mesh_processor import (
     create_box_geometry,
     create_cylinder_geometry,
     create_sphere_geometry,
+    parse_stl_file,
 )
 from .routes_model import get_document
 
@@ -86,7 +89,7 @@ def _collect_renderable(
         if parent:
             position = parent
 
-        items.append({
+        entry = {
             "id": item.id,
             "keyname": item.keyname,
             "category": "SHAPE",
@@ -95,23 +98,44 @@ def _collect_renderable(
             "radius": radius,
             "height": height,
             "color": rgb,
-        })
+        }
+
+        if shape_type == "stl":
+            stl_path = item.properties.get("STL", "")
+            if isinstance(stl_path, str) and stl_path and Path(stl_path).is_file():
+                try:
+                    mesh_data = parse_stl_file(stl_path)
+                    entry["mesh"] = mesh_data
+                except Exception:
+                    pass
+
+        items.append(entry)
 
     elif item.category in (ItemCategory.RIGID_PART, ItemCategory.FEM_PART):
-        # Don't render the part itself if it has GRAPHIC children
-        has_graphics = any(
-            c.category == ItemCategory.SHAPE for c in item.children
-        )
-        if not has_graphics:
+        has_graphics = any(c.category == ItemCategory.SHAPE for c in item.children)
+        if item.category == ItemCategory.FEM_PART and not has_graphics:
             position = _extract_vector(item.properties, "QG", [0, 0, 0])
-            items.append({
+            # Try to resolve instance position
+            for inst in _find_instances(get_document().assembly):
+                part_ref = inst.properties.get("PART", "")
+                if isinstance(part_ref, str) and part_ref.upper() == item.keyname.upper():
+                    position = _extract_vector(inst.properties, "CENTER", [0, 0, 0])
+                    break
+            entry = {
                 "id": item.id,
                 "keyname": item.keyname,
-                "category": item.category.name,
+                "category": "FEM_PART",
                 "position": position,
-                "geometry": "box",
-                "radius": 0.1,
-                "height": 0.2,
+                "geometry": "fem_mesh",
+                "color": [100, 180, 255],
+            }
+            items.append(entry)
+        elif not has_graphics:
+            position = _extract_vector(item.properties, "QG", [0, 0, 0])
+            items.append({
+                "id": item.id, "keyname": item.keyname,
+                "category": item.category.name, "position": position,
+                "geometry": "box", "radius": 0.1, "height": 0.2,
                 "color": [128, 128, 200],
             })
 
@@ -126,23 +150,10 @@ def _collect_renderable(
 def _find_parent_part_instance(
     item: Any, instance_positions: Dict[str, List[float]]
 ) -> List[float]:
-    """Walk up the tree to find the instance position for a shape's parent part."""
-    # The shape is nested inside a RIGIDPART definition.
-    # The INSTANCE for that part has CENTER = position.
-    # We need to find which INSTANCE references this part.
-    parent = item
-    while parent is not None:
-        # Check if any instance references this part
-        part_keyname = getattr(parent, "keyname", "")
-        for inst_name, pos in instance_positions.items():
-            # Instance PART property matches part keyname
-            # But we stored it differently — look at the instance properties
-            pass
-        parent = getattr(parent, "_parent_ref", None)
-        break  # simple fallback
-
-    # Fallback: search instance_positions for a matching part
+    """Find the instance position for a shape's parent part."""
     from .routes_model import get_document
+    from ..models.base_item import ItemCategory
+
     doc = get_document()
     part_name = _find_part_keyname_for_shape(item, doc.assembly)
     if part_name:
@@ -150,7 +161,6 @@ def _find_parent_part_instance(
             part_ref = inst.properties.get("PART", "")
             if isinstance(part_ref, str) and part_ref.upper() == part_name.upper():
                 return _extract_vector(inst.properties, "CENTER", [0, 0, 0])
-
     return [0, 0, 0]
 
 
