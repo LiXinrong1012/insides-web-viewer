@@ -12,6 +12,7 @@ from ..visualization.mesh_processor import (
     create_sphere_geometry,
     parse_stl_file,
 )
+from ..visualization.mnf_parser import parse_mnf_xml, mnf_to_geometry
 from .routes_model import get_document
 
 router = APIRouter(prefix="/api/geometry", tags=["geometry"])
@@ -129,6 +130,19 @@ def _collect_renderable(
                 "geometry": "fem_mesh",
                 "color": [100, 180, 255],
             }
+            # Load MNF mesh if available
+            mnf_file = item.properties.get("_mnf_file", "")
+            if mnf_file:
+                mnf_path = Path(mnf_file)
+                mnf_dir = mnf_path.parent / mnf_path.stem
+                xml_path = mnf_dir / f"{mnf_path.stem}.xml"
+                if xml_path.is_file():
+                    try:
+                        mnf_data = parse_mnf_xml(str(mnf_file))
+                        mesh = mnf_to_geometry(mnf_data)
+                        entry["mesh"] = mesh
+                    except Exception:
+                        pass
             items.append(entry)
         elif not has_graphics:
             position = _extract_vector(item.properties, "QG", [0, 0, 0])
