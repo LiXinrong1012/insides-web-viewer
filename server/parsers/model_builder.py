@@ -76,6 +76,12 @@ def _handle_fem_part(builder: "ModelBuilder", ast_item: LineItem, parent: BaseIt
     if isinstance(ast_item, ASTAssembly):
         for child in ast_item.children:
             _process_part_child(builder, child, item)
+    # Hoist MNF_FILE from MNF6 child items up to FEM_PART level
+    for child_item in item.children:
+        mnf_file = child_item.properties.get("MNF_FILE")
+        if mnf_file:
+            item.properties["_mnf_file"] = mnf_file
+            break
     _add_to_folder(parent, "Parts", item)
 
 
@@ -107,6 +113,11 @@ def _process_part_child(builder: "ModelBuilder", ast_item: LineItem, part: BaseI
             for prop in ast_item.properties:
                 if prop.name.upper() in shape_types:
                     child.properties["_shape_type"] = prop.name.upper()
+                    break
+        if "_shape_type" not in child.properties:
+            for kv in ast_item.key_values:
+                if kv.keyname.upper() in shape_types:
+                    child.properties["_shape_type"] = kv.keyname.upper()
                     break
     else:
         child.category = ItemCategory.UNKNOWN
@@ -214,6 +225,11 @@ def _handle_graphic(builder: "ModelBuilder", ast_item: LineItem, parent: BaseIte
         for prop in ast_item.properties:
             if prop.name.upper() in shape_types:
                 item.properties["_shape_type"] = prop.name.upper()
+                break
+    if "_shape_type" not in item.properties:
+        for kv in ast_item.key_values:
+            if kv.keyname.upper() in shape_types:
+                item.properties["_shape_type"] = kv.keyname.upper()
                 break
     parent.add_child(item)
 
