@@ -225,15 +225,110 @@ python -m pytest tests/ -v   # 33 passed
 
 ---
 
+## Phase 7: STL 刚体 + MNF 柔性体网格可视化 ✅ (已完成)
+
+**日期**: 2026-03-25
+
+**完成内容**:
+
+### 7.1 STL 刚体网格渲染
+- 解析器修复: 从 key-value 对 (`STL = path`) 检测 STL 形状类型
+- 后端: STL 文件从磁盘加载,解析为 positions/normals/indices 缓冲数据
+- 后端: mesh 数据内联在 `/api/geometry/scene` 响应中返回
+- 前端: `THREE.BufferGeometry` 从缓冲数据创建, 双面 MeshPhongMaterial
+- 前端: 自动适配相机到场景包围盒
+
+### 7.2 MNF 柔性体网格渲染
+- 新建 `server/visualization/mnf_parser.py`: 解析 MNF XML + 二进制文件
+  - 节点坐标 (从 `<NODE>` 元素)
+  - 表面三角面片 (从 `<FACE>` 元素, 支持三角形和四边形拆分)
+  - 模态振型 (从 `.dat` 二进制文件, 6 DOF/节点: dx,dy,dz,ax,ay,az)
+- MNF 网格转 Three.js BufferGeometry (含法向量计算)
+- FEM_PART 项自动加载关联的 MNF 网格
+
+### 7.3 应力/位移云图可视化
+- 新建 `server/visualization/contour.py`: Jet 色谱映射
+- `GET /api/geometry/contour/{id}?mode=7&component=magnitude` 返回逐顶点 RGB
+- `GET /api/geometry/modes/{id}` 列出可用模态
+- 支持分量: magnitude, dx, dy, dz, ax, ay, az
+- 前端: Contour/Clear 按钮, 顶点着色, ContourLegend 色标条
+
+### 7.4 实例位置与姿态变换 (核心修复)
+- **Rodriguez 旋转向量**: PHI = [px, py, pz], ||PHI|| = 旋转角, PHI/||PHI|| = 旋转轴
+- 后端: 传递 INSTANCE.PHI 旋转向量到前端
+- 前端: `phiToQuaternion()` 将 Rodriguez 向量转为 Three.js 四元数
+- **层级装配体变换组合**: 子装配体内零件的 CENTER/PHI 是局部坐标
+  - `world_pos = asm_R * local_pos + asm_center`
+  - `world_R = asm_R * local_R`
+- **Instance-driven 渲染**: 每个 INSTANCE 生成独立渲染项
+  - 同一零件多次实例化正确显示 (如螺栓 x24, 电机 x6)
+  - 总渲染项: 57 → 270
+
+**验证**: 实际 TDY 模型 (55 STL 刚体 + 2 MNF 柔性体, 5 个子装配体) 正确显示
+
+**关键文件**:
+- `server/visualization/mnf_parser.py` — MNF XML 解析器
+- `server/visualization/contour.py` — Jet 色谱映射
+- `server/api/routes_geometry.py` — 场景 API (层级变换组合, instance-driven)
+- `client/src/components/viewer3d/SceneView.tsx` — Three.js 渲染 (BufferGeometry + 四元数旋转)
+- `client/src/components/viewer3d/ContourLegend.tsx` — 色标条
+
+**测试**: 44 tests passed (新增 11 个: STL 2, MNF 5, Contour 4)
+
+---
+
+## 环境配置 (已更新)
+
+### Conda 环境
+```
+环境名: insides_web
+Python: 3.11
+Node.js: v25.7.0 (通过 conda install nodejs)
+路径: D:\Users\xrli0\anaconda3\envs\insides_web
+```
+
+### 启动命令
+```bash
+# 后端
+cd D:\research\insides-web-viewer
+conda activate insides_web
+set PYTHONIOENCODING=utf-8
+python -m uvicorn server.main:app --reload --port 8000
+
+# 前端
+cd D:\research\insides-web-viewer\client
+npm run dev
+```
+
+### 测试
+```bash
+conda activate insides_web
+pytest tests/ -v   # 44 passed
+```
+
+---
+
+## 代码统计 (已更新)
+
+| 类别 | 文件数 | 行数 |
+|------|--------|------|
+| Python 后端 | ~23 | ~3200 |
+| TypeScript 前端 | ~16 | ~1700 |
+| 测试 | 6 | ~550 |
+| **合计** | **~45** | **~5450** |
+
+---
+
 ## 待办 (后续阶段)
 
-- [ ] Phase 7: Undo/Redo 完善
-- [ ] Phase 7: 多文档支持
-- [ ] Phase 7: 设置持久化 (localStorage)
-- [ ] Phase 7: 性能优化 (WebWorkers, 虚拟滚动, LOD)
-- [ ] Phase 7: 部署打包 (production build)
+- [ ] Phase 8: Undo/Redo 完善
+- [ ] Phase 8: 多文档支持
+- [ ] Phase 8: 设置持久化 (localStorage)
+- [ ] Phase 8: 性能优化 (WebWorkers, 虚拟滚动, LOD)
+- [ ] Phase 8: 部署打包 (production build)
 - [ ] QDataStream 二进制结果文件读取 (需要实际结果文件测试)
-- [ ] FEM 网格可视化 (需要含 FEM 的测试模型)
-- [ ] 结果云图 (标量→顶点颜色映射)
+- [x] ~~FEM 网格可视化~~ (Phase 7 完成)
+- [x] ~~结果云图~~ (Phase 7 完成)
 - [ ] XY 参数图
-- [ ] 动画播放 (3D 帧同步)
+- [ ] 3D 动画播放 (帧同步网格变形)
+- [ ] 结果后处理: 应力/应变/位移时间历程曲线
