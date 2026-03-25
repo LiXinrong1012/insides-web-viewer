@@ -9,6 +9,7 @@ interface SceneItem {
   keyname: string;
   category: string;
   position: number[];
+  phi?: number[];  // Rodriguez rotation vector
   geometry: string;
   radius?: number;
   height?: number;
@@ -18,6 +19,19 @@ interface SceneItem {
     normals: number[];
     indices: number[];
   };
+}
+
+/** Convert Rodriguez rotation vector to Three.js Quaternion.
+ *  phi = [px, py, pz] where magnitude = angle (radians), direction = axis.
+ */
+function phiToQuaternion(phi: number[]): THREE.Quaternion {
+  const px = phi[0], py = phi[1], pz = phi[2];
+  const angle = Math.sqrt(px * px + py * py + pz * pz);
+  if (angle < 1e-10) {
+    return new THREE.Quaternion(); // identity
+  }
+  const axis = new THREE.Vector3(px / angle, py / angle, pz / angle);
+  return new THREE.Quaternion().setFromAxisAngle(axis, angle);
 }
 
 export default function SceneView() {
@@ -179,7 +193,14 @@ export default function SceneView() {
 
         const mesh = new THREE.Mesh(geometry, material);
         const p = item.position || [0, 0, 0];
-        mesh.position.set(p[0], p[2], -p[1]); // TDY: X,Y,Z → Three.js: X,Z,-Y
+        // TDY uses X,Y,Z directly (no axis swap needed)
+        mesh.position.set(p[0], p[1], p[2]);
+
+        // Apply Rodriguez rotation from PHI vector
+        if (item.phi && (item.phi[0] !== 0 || item.phi[1] !== 0 || item.phi[2] !== 0)) {
+          mesh.quaternion.copy(phiToQuaternion(item.phi));
+        }
+
         mesh.userData = { itemId: item.id, keyname: item.keyname };
         scene.add(mesh);
       }
