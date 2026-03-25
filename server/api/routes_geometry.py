@@ -51,161 +51,242 @@ async def get_part_geometry(item_id: int):
 async def get_scene():
     """Get all renderable items in the scene with shape details."""
     doc = get_document()
+    # Build world transforms for all instances (with hierarchy composition)
+    world_instances = _build_instance_world_transforms(doc.assembly)
+
+    # Build a map of part_name → part BaseItem for quick lookup
+    part_map: Dict[str, Any] = {}
+    _collect_parts(doc.assembly, part_map)
+
+    # Generate renderable items: one per instance
     items: List[Dict[str, Any]] = []
-    # Collect instance transforms (center + phi) keyed by PART name
-    instance_transforms: Dict[str, Dict[str, List[float]]] = {}
-    _collect_instance_transforms(doc.assembly, instance_transforms)
-    _collect_renderable(doc.assembly, items, instance_transforms)
+    for wi in world_instances:
+        part_name = wi["part_name"]
+        part = part_map.get(part_name)
+        if part is None:
+            continue
+        _render_part_instance(part, wi["center"], wi["phi"], items)
+
     return {"items": items}
 
 
-def _collect_instance_transforms(item: Any, transforms: Dict[str, Dict[str, List[float]]]) -> None:
-    """Build a map of PART keyname → {center, phi} from INSTANCE items."""
+def _rodrigues_matrix(phi: List[float]) -> np.ndarray:
+    """Convert Rodriguez rotation vector to 3x3 rotation matrix."""
+    px, py, pz = phi[0], phi[1], phi[2]
+    theta = np.sqrt(px*px + py*py + pz*pz)
+    if theta < 1e-10:
+        return np.eye(3)
+    k = np.array([px, py, pz]) / theta
+    K = np.array([[0, -k[2], k[1]], [k[2], 0, -k[0]], [-k[1], k[0], 0]])
+    return np.cos(theta) * np.eye(3) + (1 - np.cos(theta)) * np.outer(k, k) + np.sin(theta) * K
+
+
+def _compose_transforms(
+    parent: Dict[str, List[float]], child: Dict[str, List[float]]
+) -> Dict[str, List[float]]:
+    """Compose parent and child transforms: world = parent * child.
+
+    world_pos = parent_center + parent_R * child_center
+    world_R = parent_R * child_R (converted back to rotation vector)
+    """
+    p_center = np.array(parent["center"])
+    p_phi = parent["phi"]
+    c_center = np.array(child["center"])
+    c_phi = child["phi"]
+
+    R_parent = _rodrigues_matrix(p_phi)
+    R_child = _rodrigues_matrix(c_phi)
+
+    # Compose position: parent + parent_rotation * child_local
+    world_center = p_center + R_parent @ c_center
+
+    # Compose rotation: R_world = R_parent * R_child
+    R_world = R_parent @ R_child
+    # Convert back to rotation vector using Rodrigues inverse
+    world_phi = _rotation_matrix_to_rotvec(R_world)
+
+    return {
+        "center": world_center.tolist(),
+        "phi": world_phi.tolist(),
+    }
+
+
+def _rotation_matrix_to_rotvec(R: np.ndarray) -> np.ndarray:
+    """Convert 3x3 rotation matrix to Rodriguez rotation vector."""
+    # Use scipy-like approach: angle from trace, axis from skew-symmetric part
+    cos_angle = (np.trace(R) - 1.0) / 2.0
+    cos_angle = np.clip(cos_angle, -1.0, 1.0)
+    angle = np.arccos(cos_angle)
+    if abs(angle) < 1e-10:
+        return np.zeros(3)
+    if abs(angle - np.pi) < 1e-6:
+        # Near 180 degrees: find axis from R + I
+        RpI = R + np.eye(3)
+        # Use the column with largest norm
+        col = np.argmax(np.sum(RpI**2, axis=0))
+        axis = RpI[:, col]
+        axis = axis / np.linalg.norm(axis)
+        return axis * angle
+    # General case: axis from skew-symmetric part
+    axis = np.array([R[2,1] - R[1,2], R[0,2] - R[2,0], R[1,0] - R[0,1]])
+    axis = axis / (2.0 * np.sin(angle))
+    return axis * angle
+
+
+def _build_instance_world_transforms(root: Any) -> List[Dict[str, Any]]:
+    """Build a list of (part_name, world_transform) for ALL instances.
+
+    Handles nested assemblies: composes parent assembly transform with
+    child part/assembly transforms. One part may appear multiple times
+    with different transforms (multiple instances of the same part).
+
+    Returns: [{part_name: str, center: [x,y,z], phi: [px,py,pz]}, ...]
+    """
     from ..models.base_item import ItemCategory
 
-    if item.category == ItemCategory.INSTANCE:
-        center = _extract_vector(item.properties, "CENTER", [0, 0, 0])
-        phi = _extract_vector(item.properties, "PHI", [0, 0, 0])
-        part_ref = item.properties.get("PART", "")
-        if isinstance(part_ref, str) and part_ref:
-            transforms[part_ref.upper()] = {"center": center, "phi": phi}
+    # Step 1: Collect assembly-level instance transforms
+    # assembly_name → list of {center, phi} (may be instanced multiple times)
+    asm_instances: Dict[str, List[Dict[str, List[float]]]] = {}
+    # part instances within each assembly context
+    # (parent_asm_name, part_name) → list of local {center, phi}
+    part_instances_local: List[Dict[str, Any]] = []
 
-    for child in item.children:
-        _collect_instance_transforms(child, transforms)
+    def _walk(node: Any, parent_asm: str = "") -> None:
+        if node.category == ItemCategory.INSTANCE:
+            center = _extract_vector(node.properties, "CENTER", [0, 0, 0])
+            phi = _extract_vector(node.properties, "PHI", [0, 0, 0])
+            transform = {"center": center, "phi": phi}
 
+            asm_ref = node.properties.get("ASSEMBLY", "")
+            part_ref = node.properties.get("PART", "")
 
-def _collect_renderable(
-    item: Any,
-    items: List[Dict[str, Any]],
-    instance_transforms: Dict[str, Dict[str, List[float]]],
-) -> None:
-    """Recursively collect renderable items with full shape info."""
-    from ..models.base_item import ItemCategory
+            if isinstance(asm_ref, str) and asm_ref:
+                key = asm_ref.upper()
+                asm_instances.setdefault(key, []).append(transform)
+            elif isinstance(part_ref, str) and part_ref:
+                part_instances_local.append({
+                    "part_name": part_ref.upper(),
+                    "parent_asm": parent_asm,
+                    "local_transform": transform,
+                })
 
-    if item.category == ItemCategory.SHAPE:
-        shape_type = item.properties.get("_shape_type", "box").lower()
-        rgb = _extract_rgb(item.properties)
-        radius = _float_prop(item.properties, "RADIUS", 0.05)
-        height = _float_prop(item.properties, "HEIGHT", 0.5)
+        asm_name = ""
+        if node.category == ItemCategory.ASSEMBLY and node.keyname != "Model":
+            asm_name = node.keyname
 
-        # Find parent part's instance transform (center + phi)
-        transform = _find_parent_part_transform(item, instance_transforms)
-        position = transform.get("center", [0, 0, 0])
-        phi = transform.get("phi", [0, 0, 0])
+        for child in node.children:
+            _walk(child, asm_name or parent_asm)
 
-        entry = {
-            "id": item.id,
-            "keyname": item.keyname,
-            "category": "SHAPE",
-            "position": position,
-            "phi": phi,
-            "geometry": shape_type,
-            "radius": radius,
-            "height": height,
-            "color": rgb,
-        }
+    _walk(root)
 
-        if shape_type == "stl":
-            stl_path = item.properties.get("STL", "")
-            if isinstance(stl_path, str) and stl_path and Path(stl_path).is_file():
-                try:
-                    mesh_data = parse_stl_file(stl_path)
-                    entry["mesh"] = mesh_data
-                except Exception:
-                    pass
+    # Step 2: For each part instance, compute world transform
+    result: List[Dict[str, Any]] = []
+    identity = {"center": [0, 0, 0], "phi": [0, 0, 0]}
 
-        items.append(entry)
+    for pi in part_instances_local:
+        parent_asm = pi["parent_asm"]
+        local_t = pi["local_transform"]
 
-    elif item.category in (ItemCategory.RIGID_PART, ItemCategory.FEM_PART):
-        has_graphics = any(c.category == ItemCategory.SHAPE for c in item.children)
-        if item.category == ItemCategory.FEM_PART and not has_graphics:
-            # Resolve instance transform for this FEM part
-            transform = instance_transforms.get(item.keyname.upper(), {})
-            position = transform.get("center", _extract_vector(item.properties, "QG", [0, 0, 0]))
-            phi = transform.get("phi", [0, 0, 0])
-            entry = {
-                "id": item.id,
-                "keyname": item.keyname,
-                "category": "FEM_PART",
-                "position": position,
-                "phi": phi,
-                "geometry": "fem_mesh",
-                "color": [100, 180, 255],
-            }
-            mnf_file = item.properties.get("_mnf_file", "")
-            if mnf_file:
-                mnf_path = Path(mnf_file)
-                mnf_dir = mnf_path.parent / mnf_path.stem
-                xml_path = mnf_dir / f"{mnf_path.stem}.xml"
-                if xml_path.is_file():
-                    try:
-                        mnf_data = parse_mnf_xml(str(mnf_file))
-                        mesh = mnf_to_geometry(mnf_data)
-                        entry["mesh"] = mesh
-                    except Exception:
-                        pass
-            items.append(entry)
-        elif not has_graphics:
-            position = _extract_vector(item.properties, "QG", [0, 0, 0])
-            items.append({
-                "id": item.id, "keyname": item.keyname,
-                "category": item.category.name, "position": position,
-                "phi": [0, 0, 0],
-                "geometry": "box", "radius": 0.1, "height": 0.2,
-                "color": [128, 128, 200],
+        if parent_asm and parent_asm.upper() in asm_instances:
+            # This part is inside an assembly that is instanced (possibly multiple times)
+            for asm_t in asm_instances[parent_asm.upper()]:
+                world_t = _compose_transforms(asm_t, local_t)
+                result.append({
+                    "part_name": pi["part_name"],
+                    "center": world_t["center"],
+                    "phi": world_t["phi"],
+                })
+        else:
+            # Top-level part instance - already in world coordinates
+            result.append({
+                "part_name": pi["part_name"],
+                "center": local_t["center"],
+                "phi": local_t["phi"],
             })
 
-    for child in item.children:
-        _collect_renderable(child, items, instance_transforms)
-
-
-def _find_parent_part_transform(
-    item: Any, instance_transforms: Dict[str, Dict[str, List[float]]]
-) -> Dict[str, List[float]]:
-    """Find the instance transform (center + phi) for a shape's parent part."""
-    from .routes_model import get_document
-
-    doc = get_document()
-    part_name = _find_part_keyname_for_shape(item, doc.assembly)
-    if part_name:
-        transform = instance_transforms.get(part_name.upper())
-        if transform:
-            return transform
-    return {"center": [0, 0, 0], "phi": [0, 0, 0]}
-
-
-def _find_part_keyname_for_shape(shape_item: Any, assembly: Any) -> str:
-    """Find which part definition contains this shape."""
-    from ..models.base_item import ItemCategory
-
-    def _search(node: Any) -> str:
-        if node.category in (ItemCategory.RIGID_PART, ItemCategory.FEM_PART):
-            for child in node.children:
-                if child.id == shape_item.id:
-                    return node.keyname
-        for child in node.children:
-            result = _search(child)
-            if result:
-                return result
-        return ""
-
-    return _search(assembly)
-
-
-def _find_instances(assembly: Any) -> list:
-    """Find all INSTANCE items in the tree."""
-    from ..models.base_item import ItemCategory
-
-    result = []
-
-    def _search(node: Any) -> None:
-        if node.category == ItemCategory.INSTANCE:
-            result.append(node)
-        for child in node.children:
-            _search(child)
-
-    _search(assembly)
     return result
+
+
+def _collect_parts(node: Any, part_map: Dict[str, Any]) -> None:
+    """Recursively collect all RIGID_PART and FEM_PART items by keyname."""
+    from ..models.base_item import ItemCategory
+    if node.category in (ItemCategory.RIGID_PART, ItemCategory.FEM_PART):
+        part_map[node.keyname.upper()] = node
+    for child in node.children:
+        _collect_parts(child, part_map)
+
+
+def _render_part_instance(
+    part: Any, position: List[float], phi: List[float], items: List[Dict[str, Any]]
+) -> None:
+    """Render a single part instance at the given world transform."""
+    from ..models.base_item import ItemCategory
+
+    # Check for GRAPHIC/SHAPE children
+    shapes = [c for c in part.children if c.category == ItemCategory.SHAPE]
+
+    if shapes:
+        for shape in shapes:
+            shape_type = shape.properties.get("_shape_type", "box").lower()
+            rgb = _extract_rgb(shape.properties)
+            radius = _float_prop(shape.properties, "RADIUS", 0.05)
+            height = _float_prop(shape.properties, "HEIGHT", 0.5)
+
+            entry = {
+                "id": shape.id,
+                "keyname": part.keyname,
+                "category": "SHAPE",
+                "position": position,
+                "phi": phi,
+                "geometry": shape_type,
+                "radius": radius,
+                "height": height,
+                "color": rgb,
+            }
+
+            if shape_type == "stl":
+                stl_path = shape.properties.get("STL", "")
+                if isinstance(stl_path, str) and stl_path and Path(stl_path).is_file():
+                    try:
+                        entry["mesh"] = parse_stl_file(stl_path)
+                    except Exception:
+                        pass
+
+            items.append(entry)
+
+    elif part.category == ItemCategory.FEM_PART:
+        entry = {
+            "id": part.id,
+            "keyname": part.keyname,
+            "category": "FEM_PART",
+            "position": position,
+            "phi": phi,
+            "geometry": "fem_mesh",
+            "color": [100, 180, 255],
+        }
+        mnf_file = part.properties.get("_mnf_file", "")
+        if mnf_file:
+            mnf_path = Path(mnf_file)
+            mnf_dir = mnf_path.parent / mnf_path.stem
+            xml_path = mnf_dir / f"{mnf_path.stem}.xml"
+            if xml_path.is_file():
+                try:
+                    mnf_data = parse_mnf_xml(str(mnf_file))
+                    entry["mesh"] = mnf_to_geometry(mnf_data)
+                except Exception:
+                    pass
+        items.append(entry)
+
+    else:
+        # Fallback box for parts without graphics
+        items.append({
+            "id": part.id, "keyname": part.keyname,
+            "category": part.category.name, "position": position,
+            "phi": phi, "geometry": "box", "radius": 0.1, "height": 0.2,
+            "color": [128, 128, 200],
+        })
+
+
 
 
 def _extract_rgb(props: Dict) -> List[int]:
