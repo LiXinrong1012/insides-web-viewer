@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+import { useModelStore } from "../../store";
 
 interface CompileResult {
   success: boolean;
@@ -10,9 +11,19 @@ interface CompileResult {
 export default function TDYEditor() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const lineNumRef = useRef<HTMLDivElement>(null);
-  const [text, setText] = useState(SAMPLE_TDY);
+  const tdySource = useModelStore((s) => s.tdySource);
+  const tdySourceVersion = useModelStore((s) => s.tdySourceVersion);
+  const filePath = useModelStore((s) => s.filePath);
+  const [text, setText] = useState<string>(SAMPLE_TDY);
   const [result, setResult] = useState<CompileResult | null>(null);
   const [compiling, setCompiling] = useState(false);
+
+  // Adopt external source whenever the store version bumps (new Load).
+  useEffect(() => {
+    if (tdySource != null) setText(tdySource);
+    // Intentionally ignores text changes; tdySourceVersion is our signal.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tdySourceVersion]);
 
   const compile = useCallback(async () => {
     setCompiling(true);
@@ -46,6 +57,10 @@ export default function TDYEditor() {
             {result.success ? `OK (${result.item_count} items, ${result.parameters.length} params)` : `${result.errors.length} error(s)`}
           </span>
         )}
+        <div style={{ flex: 1 }} />
+        <span style={{ color: "var(--text-secondary)", fontSize: 11, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", maxWidth: 320 }}>
+          {filePath ?? "(unsaved)"}
+        </span>
       </div>
       <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
         <div ref={lineNumRef} style={{ width: 40, background: "var(--bg-primary)", borderRight: "1px solid var(--border)", overflow: "hidden", paddingTop: 4, flexShrink: 0 }}>

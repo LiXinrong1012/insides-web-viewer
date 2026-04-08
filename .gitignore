@@ -9,6 +9,11 @@ build/
 
 # Node
 node_modules/
+client/dist/
+client/test-results/
+client/tsconfig.tsbuildinfo
+client/playwright-report/
+client/tests/e2e/screenshots/
 
 # Runtime
 uploads/

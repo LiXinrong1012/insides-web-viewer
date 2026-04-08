@@ -1,23 +1,33 @@
 import { useEffect, useState } from "react";
 import { fetchModelTree, type TreeNode } from "../../services/api";
-import { useModelStore } from "../../store";
+import { useModelStore, useVisibilityStore } from "../../store";
 
 function TreeItem({ node, depth }: { node: TreeNode; depth: number }) {
   const [expanded, setExpanded] = useState(!node.collapsed);
   const selectedId = useModelStore((s) => s.selectedItemId);
   const selectItem = useModelStore((s) => s.selectItem);
+  // Subscribing to `version` makes this component re-render whenever the
+  // visibility set changes, without us having to store a computed flag.
+  useVisibilityStore((s) => s.version);
+  const isHidden = useVisibilityStore.getState().isHidden;
   const hasChildren = node.children.length > 0;
   const isSelected = selectedId === node.id;
+  const hidden = isHidden(node.keyname);
 
   return (
     <div>
       <div
-        onClick={() => selectItem(node.id)}
+        onClick={() => selectItem(node.id, node.keyname)}
         style={{
-          display: "flex", alignItems: "center", height: 24,
+          display: "flex",
+          alignItems: "center",
+          height: 24,
           paddingLeft: depth * 16 + 4,
           background: isSelected ? "var(--bg-hover)" : "transparent",
-          cursor: "pointer", userSelect: "none", gap: 4,
+          cursor: "pointer",
+          userSelect: "none",
+          gap: 4,
+          opacity: hidden ? 0.45 : 1,
         }}
       >
         {hasChildren ? (
@@ -26,7 +36,16 @@ function TreeItem({ node, depth }: { node: TreeNode; depth: number }) {
           </span>
         ) : <span style={S.arrow}>{"\u00a0"}</span>}
         <span style={{ fontSize: 12, flexShrink: 0 }}>{categoryIcon(node.category)}</span>
-        <span style={{ fontSize: 12, whiteSpace: "nowrap", color: "var(--text-primary)" }}>{node.keyname}</span>
+        <span
+          style={{
+            fontSize: 12,
+            whiteSpace: "nowrap",
+            color: "var(--text-primary)",
+            textDecoration: hidden ? "line-through" : "none",
+          }}
+        >
+          {node.keyname}
+        </span>
       </div>
       {expanded && node.children.map((c) => <TreeItem key={c.id} node={c} depth={depth + 1} />)}
     </div>
@@ -48,13 +67,19 @@ export default function ModelTree() {
   const tree = useModelStore((s) => s.tree);
   const setTree = useModelStore((s) => s.setTree);
 
-  useEffect(() => { fetchModelTree().then(setTree).catch(() => {}); }, [setTree]);
+  // Only fetch once per session.  Re-mounting the tab (e.g. switching tabs)
+  // must not refetch and trigger a full scene reload — that caused visible
+  // flickering during playback.
+  useEffect(() => {
+    if (tree) return;
+    fetchModelTree().then(setTree).catch(() => {});
+  }, [tree, setTree]);
 
   if (!tree) {
     return <div style={S.empty}>Open a TDY file to view model tree</div>;
   }
   return (
-    <div style={S.container}>
+    <div style={S.container} data-testid="model-tree">
       <TreeItem node={tree} depth={0} />
     </div>
   );

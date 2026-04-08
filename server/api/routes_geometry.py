@@ -49,7 +49,17 @@ async def get_part_geometry(item_id: int):
 
 @router.get("/scene")
 async def get_scene():
-    """Get all renderable items in the scene with shape details."""
+    """Get all renderable items in the scene with shape details.
+
+    When a result directory has been opened, the scene is built directly from
+    topo_0.xml so that part/instance names match the .res data stream.  Otherwise
+    it falls back to the main.tdy document tree.
+    """
+    from ..results.result_manager import result_manager
+
+    if result_manager.loaded:
+        return {"items": result_manager.build_scene_items(), "source": "results"}
+
     doc = get_document()
     # Build world transforms for all instances (with hierarchy composition)
     world_instances = _build_instance_world_transforms(doc.assembly)
@@ -67,7 +77,7 @@ async def get_scene():
             continue
         _render_part_instance(part, wi["center"], wi["phi"], items)
 
-    return {"items": items}
+    return {"items": items, "source": "tdy"}
 
 
 def _rodrigues_matrix(phi: List[float]) -> np.ndarray:

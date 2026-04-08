@@ -1,67 +1,175 @@
-"""Results API: query time series, frame data, and manage result items."""
+"""Results API: open a result directory, query per-frame data for animation."""
+
+from typing import List
 
 from fastapi import APIRouter, HTTPException
+from fastapi.responses import Response
+from pydantic import BaseModel
 
-from ..results.tdy_results import results_store
+from ..results.result_manager import result_manager
 
 router = APIRouter(prefix="/api/results", tags=["results"])
 
 
-@router.get("/items")
-async def list_result_items():
-    """List all available result items."""
-    return {"items": results_store.list_items(), "frame_count": results_store.frame_count}
+class OpenRequest(BaseModel):
+    result_dir: str
 
 
-@router.get("/timeseries/{entity_id}")
-async def get_time_series(entity_id: str, section: str = "Value"):
-    """Get time series data for a result item."""
-    data = results_store.get_time_series(entity_id, section)
-    if data is None:
-        raise HTTPException(404, f"No results for {entity_id}/{section}")
-    return data
+class OpenLoadcaseRequest(BaseModel):
+    loadcase_dir: str
 
 
-@router.get("/frame/{frame_index}")
-async def get_frame(frame_index: int):
-    """Get all result data for a specific time frame."""
-    data = results_store.get_frame_data(frame_index)
-    if data is None:
-        raise HTTPException(404, f"Frame {frame_index} not found")
-    return data
+@router.post("/open")
+async def open_results(req: OpenRequest):
+    """Open a directory containing overview.xml, topo_0.xml, and result_*.res."""
+    try:
+        info = result_manager.open(req.result_dir)
+    except FileNotFoundError as exc:
+        raise HTTPException(404, str(exc))
+    except ValueError as exc:
+        raise HTTPException(400, str(exc))
+    return info
 
 
-@router.post("/load")
-async def load_results(model_dir: str = "", generate_sample: bool = False):
-    """Load results from a directory or generate sample data."""
-    if generate_sample:
-        results_store.generate_sample_results()
-        return {
-            "loaded": True,
-            "source": "sample",
-            "frame_count": results_store.frame_count,
-            "item_count": len(results_store.items),
-        }
+@router.post("/open_loadcase")
+async def open_loadcase(req: OpenLoadcaseRequest):
+    """One-shot "open a loadcase directory" flow.
 
-    if not model_dir:
-        raise HTTPException(400, "model_dir is required")
+    The loadcase dir is expected to contain:
+      - main.tdy              (TDY source driving the model tree / editor)
+      - result/overview.xml   (result metadata)
+      - result/topo_0.xml
+      - result/result_*.res
 
-    ok = results_store.load_from_directory(model_dir)
+    Returns the parsed tree + raw TDY text + result info in a single call so
+    the frontend can populate tree, TDY editor, and animation state together.
+    """
+    from pathlib import Path as _P
+
+    from .routes_model import get_document
+    from ..parsers.model_builder import ModelBuilder
+    from ..parsers.tdy_parser import TDYParser
+
+    path = _P(req.loadcase_dir)
+    if not path.is_dir():
+        raise HTTPException(404, f"loadcase dir not found: {path}")
+
+    # Locate the TDY source file (prefer main.tdy, fall back to any *.tdy)
+    tdy_path = path / "main.tdy"
+    if not tdy_path.is_file():
+        cands = sorted(path.glob("*.tdy"))
+        if not cands:
+            raise HTTPException(404, f"no .tdy file found in {path}")
+        tdy_path = cands[0]
+
+    tdy_text = tdy_path.read_text(encoding="utf-8", errors="replace")
+
+    # Parse into the in-memory document so /api/model/tree reflects it.
+    parser = TDYParser()
+    ast_root = parser.parse(tdy_text, str(tdy_path))
+    builder = ModelBuilder()
+    doc = get_document()
+    doc.file_path = str(tdy_path)
+    doc.assembly = builder.build(ast_root, tdy_path.stem)
+    doc.modified = False
+
+    # Open result/ subdir — tolerate missing (e.g. user only wants the model)
+    result_dir = path / "result"
+    result_info: dict = {"loaded": False}
+    if (result_dir / "overview.xml").is_file():
+        try:
+            result_info = result_manager.open(str(result_dir))
+            result_info["loaded"] = True
+        except Exception as exc:
+            result_info = {"loaded": False, "error": str(exc)}
+
     return {
-        "loaded": ok,
-        "source": model_dir,
-        "frame_count": results_store.frame_count,
-        "item_count": len(results_store.items),
+        "loadcase_dir": str(path),
+        "tdy_path": str(tdy_path),
+        "tdy_filename": tdy_path.name,
+        "tdy_text": tdy_text,
+        "tree": doc.get_tree(),
+        "parser_errors": [str(e) for e in parser.errors],
+        "result": result_info,
     }
+
+
+@router.post("/close")
+async def close_results():
+    result_manager.close()
+    return {"loaded": False}
 
 
 @router.get("/status")
 async def results_status():
-    """Get results loading status."""
+    return result_manager.status()
+
+
+@router.get("/topo")
+async def results_topo():
+    return result_manager.topo_summary()
+
+
+@router.get("/frames")
+async def list_frames():
+    if not result_manager.loaded:
+        return {"frames": [], "frame_count": 0}
     return {
-        "loaded": results_store.loaded,
-        "frame_count": results_store.frame_count,
-        "item_count": len(results_store.items),
-        "time_range": [results_store.time_list[0], results_store.time_list[-1]]
-            if results_store.time_list else [0, 0],
+        "frame_count": len(result_manager.frames),
+        "times": [f.time for f in result_manager.frames],
     }
+
+
+@router.get("/frame/{frame_index}/rigid_transforms")
+async def rigid_transforms(frame_index: int):
+    if not result_manager.loaded:
+        raise HTTPException(400, "no results loaded")
+    try:
+        return {"frame": frame_index, "items": result_manager.get_rigid_transforms(frame_index)}
+    except IndexError as exc:
+        raise HTTPException(404, str(exc))
+
+
+@router.get("/frame/{frame_index}/all_mnf_positions")
+async def all_mnf_positions(frame_index: int):
+    if not result_manager.loaded:
+        raise HTTPException(400, "no results loaded")
+    try:
+        return result_manager.get_all_mnf_positions(frame_index)
+    except IndexError as exc:
+        raise HTTPException(404, str(exc))
+
+
+@router.get("/frame/{frame_index}/all_mnf_positions.bin")
+async def all_mnf_positions_bin(frame_index: int):
+    """Binary version — float32 packed, ~4× faster than JSON for animation."""
+    if not result_manager.loaded:
+        raise HTTPException(400, "no results loaded")
+    try:
+        blob = result_manager.get_all_mnf_positions_bin(frame_index)
+    except IndexError as exc:
+        raise HTTPException(404, str(exc))
+    return Response(content=blob, media_type="application/octet-stream")
+
+
+@router.get("/frame/{frame_index}/part/{part_name}")
+async def mnf_frame(frame_index: int, part_name: str, fields: str = "position"):
+    if not result_manager.loaded:
+        raise HTTPException(400, "no results loaded")
+    field_list: List[str] = [f.strip() for f in fields.split(",") if f.strip()]
+    try:
+        return result_manager.get_mnf_frame(frame_index, part_name, field_list)
+    except KeyError as exc:
+        raise HTTPException(404, str(exc))
+    except IndexError as exc:
+        raise HTTPException(404, str(exc))
+
+
+@router.get("/mesh/{part_name}")
+async def mnf_rest_mesh(part_name: str):
+    if not result_manager.loaded:
+        raise HTTPException(400, "no results loaded")
+    try:
+        return result_manager.get_mnf_rest_mesh(part_name)
+    except KeyError as exc:
+        raise HTTPException(404, str(exc))

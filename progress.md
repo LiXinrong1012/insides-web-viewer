@@ -321,14 +321,290 @@ pytest tests/ -v   # 44 passed
 
 ## 待办 (后续阶段)
 
-- [ ] Phase 8: Undo/Redo 完善
-- [ ] Phase 8: 多文档支持
-- [ ] Phase 8: 设置持久化 (localStorage)
-- [ ] Phase 8: 性能优化 (WebWorkers, 虚拟滚动, LOD)
-- [ ] Phase 8: 部署打包 (production build)
-- [ ] QDataStream 二进制结果文件读取 (需要实际结果文件测试)
-- [x] ~~FEM 网格可视化~~ (Phase 7 完成)
-- [x] ~~结果云图~~ (Phase 7 完成)
+- [ ] Phase 9: Undo/Redo 完善
+- [ ] Phase 9: 多文档支持
+- [ ] Phase 9: 设置持久化 (localStorage)
+- [ ] Phase 9: 部署打包 (production build)
+- [ ] Phase 9: 相机预设 (iso / top / front / side)
+- [x] ~~Phase 8: 真实 .res 二进制结果读取~~ (2026-04-07)
+- [x] ~~Phase 8: 时变位移 + 应力云图动画播放~~ (2026-04-07)
+- [x] ~~Phase 8: UX 重构 (左 tabs + 右 3D, 多 MNF stress, Space 隐藏)~~ (2026-04-07)
+- [x] ~~Phase 8: 一次性 loadcase 加载 (TDY + tree + results)~~ (2026-04-08)
+- [x] ~~FEM 网格可视化~~ (Phase 7)
+- [x] ~~结果云图~~ (Phase 7)
 - [ ] XY 参数图
-- [ ] 3D 动画播放 (帧同步网格变形)
 - [ ] 结果后处理: 应力/应变/位移时间历程曲线
+
+---
+
+## Phase 8: 真实结果动画 + UX 大改造 ✅ (2026-04-07 / 04-08)
+
+**起因**：用户拿 `E:/zky2026_v2/loadcases/45DTPIASM/B_rot_combined` 真实样例
+（500 帧钻头仿真，17 MNF 柔性体 + 53 刚体 + 64 颗螺钉）跑起来，发现 Phase 7
+的"结果读取"只是 `TODO` 占位，MVP 的 UX 也不适合实际使用。本阶段把
+"打开 loadcase → 播放动画"链路做成真正可用。**下次 agent 必读本节**。
+
+### 1. INSIDES 结果文件格式 (必读)
+
+C++ 参考实现在 `viewer/ref_code/importtdyresult/TDYResults.cpp:71-136` 和
+`importtdybase/basetdyresult.cpp:195-329`。
+
+```
+<loadcase>/
+├── main.tdy                    ← TDY 源码 (~100 KB, parser 输入)
+├── m_*.stl                     ← 每 instance 一份 STL, 局部坐标
+├── modal/<Part>/modes_set/     ← MNF XML + 二进制模态振型 (Phase 7 用)
+└── result/
+    ├── overview.xml            ← 每帧 {id, time, startpos, length, resfile}
+    ├── topo_0.xml              ← 拓扑 + 每帧二进制布局 (~40 MB)
+    └── result_{1,135,269,403}.res   ← 原始 float64 数据，~2 GB 每段
+```
+
+**二进制布局**（所有浮点 **float64 little-endian**）：
+- `overview.xml` 给出 frame → (`resfile`, `startpos`, `length`) 切片
+- `topo_0.xml` 里每个 `<RIGIDPART>` / `<MNFPART>` 有 `<PartVariables>` 和
+  `<NodeVariables>`，每个 `<PartVariable name="..." offset="..." size="..."
+  NumberOfComponents="..."/>` 声明 frame-local 字节偏移
+- `RIGIDPART` 常见变量：`position(3), phi(3), velocity(3), omega(3)` —
+  phi 是 Rodriguez 旋转向量 (`||phi|| = angle`, `phi/||phi|| = axis`)
+- `MNFPART` 常见 `NodeVariables`：
+  - `position` (3 × N × 8) — **世界坐标**的节点位置
+  - `Up_Local` (3 × N × 8) — 局部位移
+  - `Mises Stress` (1 × N × 8) — **节点 von Mises 应力**
+- `MNFPart.rest_nodes` 在 topo 的 `<NODE>` 段，也是世界坐标
+
+验证：`PART3_INS1` 16283 nodes × 3 × 8 = 390792 → 正好 `NodeVariable.size`。
+
+样例规模：502 帧、70 instance (53 rigid + 17 mnf)、9 秒物理时间。
+
+### 2. 后端实现 (`server/results/`)
+
+| 文件 | 职责 | 核心函数 |
+|---|---|---|
+| `overview_parser.py` | 解析 `overview.xml` | `parse_overview() → List[FrameMeta]` |
+| `topo_parser.py` | `ET.iterparse` 流式解析 `topo_0.xml` | `parse_topo() → Topo{rigid_parts, mnf_parts}` |
+| `res_reader.py` | `np.memmap` + 按 `(startpos+offset, size)` 切片 | `ResReader.read_mnf_node_variable(frame, part, name)` |
+| `result_manager.py` | Singleton：topo + frames + reader + scene builder | `open() / get_all_mnf_positions_bin() / build_scene_items() / get_rigid_transforms()` |
+
+- `np.memmap` 一个文件一份，零内存占用（四个 `.res` ≈ 8 GB）
+- `build_scene_items()` 直接从 topo 构建场景（不依赖 main.tdy 的 doc），
+  对无 STL 的 rigid 直接 skip emit（避免 `BC_ADAPTER_INS1` 的 box fallback
+  穿插到电池盖板里）
+- 按 part family (`PART3_INS1..PART3_INS6 → PART3`) 哈希到 HSL pastel 色，
+  同族同色
+
+### 3. 性能关键：二进制帧端点
+
+**原本的坑**：`get_all_mnf_positions()` 返回 JSON，每帧 17 MB，
+`numpy.tolist()` + `json.dumps` **1.8 秒 / 帧** → 播放 0.55 fps。
+
+**修复**：新增 `GET /api/results/frame/{i}/all_mnf_positions.bin`，直接
+`np.tobytes()` 拼自定义 little-endian blob：
+
+```
+uint32  magic = 0x4D4E4650 ("MNFP")
+uint32  part_count
+每 part:
+  uint16  name_len
+  bytes   name (utf-8)
+  uint32  num_nodes
+  float32 positions[num_nodes * 3]
+```
+
+前端 `fetchAllMnfPositionsBin()` 用 `ArrayBuffer` **零拷贝**解析成
+`Map<partName, Float32Array>`，直接 `posAttr.array.set(...)` 写 GPU。
+
+**结果**：1820 ms → **22–49 ms / 帧** (~70× 加速)，payload 17 MB → 3.2 MB。
+
+### 4. 前端播放架构 (踩坑史)
+
+**坑 A: 刚体不动**
+- 根因：`loadScene` 和 `updateFrame` 两个 effect 在 `animLoaded` flip 时并发。
+  loadScene 先清 map → 等 HTTP → populate。updateFrame 拿到 rigid transforms
+  时 map 仍空，全部 `.get()` 返回 `undefined`，**第一次更新完全丢失**。
+- 修复：
+  - `loadScene` 用 promise 链序列化 (`loadingPromiseRef`)
+  - `sceneVersionRef` 哨兵：fetch 返回后若场景已被重建则丢弃结果
+  - `loadScene` 完成后主动 `requestRender(currentFrame)` 刷一次
+  - 删掉 `handleOpenLoadcase` 里的显式 `loadScene`（只走 effect 一条路径）
+
+**坑 B: "只看到几帧"跳帧**
+- 根因：播放循环原来在 `TimelinePanel`，用 rAF 驱动 `setFrame(next)`。
+  SceneView `updateFrame` 有 `fetchingRef` 守门，fetch 在飞就立即 return 并
+  记 `pendingKey`。rAF 一直以 wallclock 速度打卡 → 很多 setFrame 都被压成
+  pendingKey → finally 段检测到 pendingKey != key → 直接**跳到最新帧**，
+  中间全部 skip。
+- 修复：把播放循环**搬到 SceneView**，每帧 `await performUpdate` 再 advance。
+  scrubbing（非播放）路径仍保留 coalesce-to-latest。
+
+```ts
+// 正确的播放循环 (SceneView.tsx, 别再改回 rAF)
+useEffect(() => {
+  if (!animLoaded || !isPlaying) return;
+  let cancelled = false;
+  const run = async () => {
+    while (!cancelled) {
+      const state = useAnimationStore.getState();
+      if (!state.isPlaying) return;
+      const frame = state.currentFrame;
+      await performUpdate(frame);          // ← 等这一帧真正刷到 GPU
+      if (cancelled) return;
+      const waitMs = Math.max(0, 1000 / state.playbackFps - 2);
+      if (waitMs > 0) await new Promise(r => setTimeout(r, waitMs));
+      if (cancelled) return;
+      if (frame >= state.frameCount - 1) {
+        state.setPlaying(false); state.setFrame(0); return;
+      }
+      state.setFrame(frame + 1);
+    }
+  };
+  run();
+  return () => { cancelled = true; };
+}, [animLoaded, isPlaying, playbackFps, performUpdate]);
+```
+
+**坑 C: 光照"绑"在模型坐标系上**
+- 根因：`updateFrame` 只写 `BufferAttribute.position`，**不更新**
+  `BufferAttribute.normal`。法线停留在 rest-pose 朝向 → 模型绕 Z 轴旋转时
+  shader 用过期法线算光照 → 明暗面跟着模型转。
+- 修复：**MNF 材质 `flatShading: true`**。fragment shader 用 `dFdx`/`dFdy`
+  屏幕空间导数派生法线，永远正确。**零开销**。
+- 为啥不回传法线？试过服务端 `_compute_vertex_normals_fast` + `np.bincount`，
+  packet 加倍到 6.5 MB，服务端算法线 ~100 ms/frame → 总延迟 150 ms → 帧率
+  减半。flatShading 完胜。
+- **刚体 STL 保持 `flatShading: false`** —— 它们用 `mesh.quaternion` 转，
+  normalMatrix 会自动跟进，smooth 着色更好看。
+
+**坑 D: Colormap 在深色背景下发黑**
+- 原 jet 最低端纯深蓝 `#000080`，和 `#1a1a2e` 背景几乎重叠
+- 换成 **viridis**（matplotlib 默认），紫 → 青 → 黄，全程亮度 > 0.27，
+  感知均匀、色盲友好。11 个 LUT 采样在 `SceneView.viridis()` 里线性插值
+
+**坑 E: 首次帧延迟 (客户端缓存)**
+- `mnfCacheRef: Map<frame, Map<partName, Float32Array>>` LRU，容量 200 帧
+- `rigidCacheRef`: 容量 600 帧
+- `inflightMnfRef` / `inflightRigidRef` 防重复 fetch
+- 每帧渲染完 `prefetchAhead(frame, 6)` 启动未来 6 帧的后台 fetch
+- 第一遍播放冷启 ~25 ms/帧，第二遍起 100% 命中
+
+### 5. UX 大重构
+
+- **布局**：移除 `react-mosaic-component`。固定两栏 + 可拖拽分隔条：
+  左 ~28% `LeftSidebar`（Model / TDY / Solver / Curves / Table 5 个 tab），
+  右 ~72% 常驻 `SceneView`
+- **ModelTree**：`useEffect(() => { if (tree) return; fetchModelTree().then(setTree) }, [tree, setTree])` —
+  **只在 tree 为空时 fetch 一次**，避免 tab 切换 re-mount 触发
+  `setTree()` 新对象引用 → loadScene → 场景闪烁
+- **visibility store**：`useVisibilityStore`，按 `keyname.toUpperCase()` 作
+  hidden key。results 模式下 scene id 和 tree id 是两套空间，keyname 是
+  唯一交集。SceneView 全局 `keydown` 监听 Space → 读
+  `useModelStore.selectedKeyname` → toggle
+- **多 MNF 应力**：`activeMnfPart: string | null` → `activeMnfParts: string[]`，
+  TimelinePanel chip 列表 + `+ Add part…` 下拉。SceneView 用所有 active
+  parts 的**统一全局 min/max** 上色
+- **空白点击清选**：SceneView click raycast miss → `selectItem(null, null)`
+- **Play/Pause 按钮**：绿 `PLAY` / 红 `PAUSE` 大按钮，避免和 `▶` Next 撞脸
+- **五盏灯光 rig**：AmbientLight(0.55) + HemisphereLight(0.55) + Key + Fill +
+  Rim，背面不再全黑
+
+### 6. 一次性 loadcase 加载 (2026-04-08)
+
+替换 `POST /api/results/open`（只开 result 目录）为
+`POST /api/results/open_loadcase`（入参 `{ loadcase_dir }`）：
+
+1. 定位 `<loadcase>/main.tdy`（fallback 到任意 `*.tdy`）
+2. 读文本 + `TDYParser` + `ModelBuilder` → 填 `get_document().assembly`
+3. 若 `<loadcase>/result/overview.xml` 存在，调 `result_manager.open()`
+4. 一次返回 `{ tdy_path, tdy_text, tree, parser_errors, result }`
+
+前端 `handleOpenLoadcase`：
+- `tree` → `useModelStore.setTree`（ModelTree 自动渲染 612 节点）
+- `tdy_text` → `useModelStore.setTdySource(text, path)` → 触发
+  `TDYEditor useEffect` 同步到 textarea
+- `result` → `useAnimationStore.setLoaded({...})` → 触发动画
+
+### 7. 受影响文件总览
+
+**新增 (15)**：
+- 后端：`server/results/{overview_parser,topo_parser,res_reader,result_manager}.py`
+- 后端：`server/visualization/mnf_rest_mesh.py`
+- 前端：`client/src/components/shell/LeftSidebar.tsx`
+- 前端：`client/src/components/viewer3d/TimelinePanel.tsx`
+- 前端：`client/playwright.config.ts` + `client/tests/e2e/animation.spec.ts`
+- 测试：`tests/test_{overview_parser,topo_parser,res_reader,result_manager_api}.py`
+
+**删除**：`server/results/tdy_results.py` (被 `result_manager.py` 取代)
+
+**大改**：
+- `server/api/routes_results.py` — 新的 `/open_loadcase /status /topo /frames
+  /frame/{i}/rigid_transforms /frame/{i}/part/{name} /frame/{i}/all_mnf_positions.bin /mesh/{name}`
+- `server/api/routes_geometry.py` — `/scene` 结果模式分支
+- `client/src/App.tsx` — 两栏布局
+- `client/src/store.ts` — useLayoutStore / useVisibilityStore / useAnimationStore
+  多部件 + `tdySource` / `tdySourceVersion`
+- `client/src/components/viewer3d/SceneView.tsx` — 播放循环 + 缓存 +
+  prefetch + Space + multi-stress + viridis + flatShading
+- `client/src/components/tree/ModelTree.tsx` — visibility + 单次 fetch
+- `client/src/components/editor/TDYEditor.tsx` — 订阅 `tdySource`
+- `client/src/services/api.ts` — 新 API + 二进制 parser
+
+### 8. 测试状态
+
+- **pytest**: `63 passed, 7 skipped`（新增 25 个 result 相关测试）
+- **tsc + vite build**: 无错误，gzip bundle ~191 KB
+- **Playwright e2e** (`animation.spec.ts`)：遍历 11 帧截图 + 数值断言
+  螺钉 INS1 从 frame 0 到 250 位移 > 0.01 m，实测 **0.095 m** ✓
+
+### 9. 启动命令 (copy-paste 即可)
+
+```bash
+# 后端（一个窗口）
+cd D:/__insides_dev/viewer/insides_web
+PYTHONIOENCODING=utf-8 /c/Users/XinrongLI/.conda/envs/insides_web/python.exe \
+    -m uvicorn server.main:app --port 8000 --host 127.0.0.1
+
+# 前端（另一个窗口）
+cd D:/__insides_dev/viewer/insides_web/client
+npm run dev -- --port 5173 --host 127.0.0.1
+```
+
+浏览器 → http://127.0.0.1:5173 → 右上 **`Load Loadcase`** → 输入
+`E:/zky2026_v2/loadcases/45DTPIASM/B_rot_combined` → 回车。
+
+立即看到：左侧 Model 树 612 节点、TDY 标签页 98 KB 源码、3D 视图多彩钻头、
+底部 TimelinePanel 502 帧滑块。点 PLAY 流畅播放。
+
+### 10. 下次 agent 必看清单
+
+1. **数据 pipeline 唯一真相源**：`topo_0.xml` 的 `<PartVariables>` /
+   `<NodeVariables>` 声明每帧字节布局。**永远**从 `topo_parser.py` 读，
+   不要自己猜偏移。
+2. **`.res` 全是 float64**，写 GPU 时 `astype(np.float32)`。
+3. **MNF `rest_nodes` 和 `position` 都是世界坐标**；刚体 STL 是局部坐标。
+4. **BC_ADAPTER_INS1 没 STL**（`NumberOfGraphics="0"`），build_scene_items
+   显式 skip。不要再加"fallback box"。
+5. **MNF 部件必须 `flatShading: true`**，否则光照跟着模型转。
+6. **播放循环在 SceneView**，不在 TimelinePanel。**必须**
+   `await performUpdate` 再 advance。不要回退到 rAF + `setFrame(next)`，
+   那会复活跳帧 bug。
+7. **帧缓存 + prefetch-ahead** 是流畅播放的关键。
+8. **Space 键**被 SceneView 的全局 keydown handler 拦截做隐藏/恢复。想加
+   "空格播放"快捷键记得避开这个冲突。
+9. **TDYEditor 用 `tdySourceVersion`** 触发同步，不直接 watch `tdySource`，
+   因为用户在 textarea 输入会产生新 text，不能再被 store 回写覆盖。
+10. **ModelTree 单次 fetch 守护**：`if (tree) return;` —— 不要删，否则
+    tab 切换会触发场景闪烁。
+11. **后端重启方式**（没有 `--reload`）：
+    ```bash
+    netstat -ano | grep ":8000.*LISTENING" | awk '{print $5}' | xargs -I{} taskkill //F //PID {}
+    sleep 1
+    # 然后重新启动（见 9）
+    ```
+12. **Window debug handles**（在浏览器 console 里）：
+    - `__animStore.getState()` — 动画状态
+    - `__visStore.getState()` — 隐藏零件
+    - `__modelStore.getState()` — tree / selection
+    - `__rigidMeshes.current.get("HEXAGON_...")` — 某刚体的 THREE.Mesh
+    - `__mnfMeshes.current.get("PART3_INS1")`
+    - `__sceneRef.current.{scene,camera,controls}`
+    - `__openLoadcase(dir)` — 编程式触发 Load
